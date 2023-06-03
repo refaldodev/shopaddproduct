@@ -1,0 +1,50 @@
+.nav-tabs {
+  border-bottom: none;
+  .nav-item {
+    min-height: 42px;
+
+    .nav-link {
+      border: 1px solid #76cc11;
+      margin: 0 0.3rem;
+      border-radius: 1.8rem;
+      font-size: 1rem;
+      font-weight: 800;
+      color: #76cc11;
+
+      &.active,
+      &:hover {
+        border: 1px solid #76cc11;
+        background: #76cc11;
+        color: #fff;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .nav-tabs {
+    border-bottom: none;
+    .nav-item {
+      min-height: 42px;
+
+      .nav-link {
+        border: 1px solid #76cc11;
+        margin: 0 0.3rem;
+        border-radius: 1.8rem;
+        font-size: 0.875rem;
+        font-weight: 800;
+        color: #76cc11;
+
+        &.active,
+        &:hover {
+          border: 1px solid #76cc11;
+          background: #76cc11;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
