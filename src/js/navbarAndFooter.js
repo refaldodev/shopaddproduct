@@ -52,6 +52,12 @@ $(document).ready(function () {
   $(".language").on("select2:close", function (e) {
     $(e.target).parent().toggleClass("rotate");
   });
+  $(".type").on("select2:open", function (e) {
+    $(e.target).parent().toggleClass("rotate");
+  });
+  $(".type").on("select2:close", function (e) {
+    $(e.target).parent().toggleClass("rotate");
+  });
 });
 
 $(document).ready(function () {

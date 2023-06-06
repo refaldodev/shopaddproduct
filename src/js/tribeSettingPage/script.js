@@ -561,6 +561,12 @@ deleteButton.addEventListener("click", function () {
 $(document).ready(function () {
   $(".language").select2();
 });
+$(document).ready(function () {
+  $(".type").select2({
+    minimumResultsForSearch: -1,
+    dropdownCssClass: "typeColor",
+  });
+});
 
 // Function untuk mengupload video
 function uploadVideo() {
