@@ -2582,6 +2582,9 @@ main {
 .textRadioBtn {
   line-height: 140%;
   padding-top: 2px;
+  font-size: 16px;
+  color: black;
+  font-weight: 700;
 }
 .radio-container {
   position: relative;
@@ -2601,9 +2604,9 @@ main {
     &:checked {
       ~ {
         .fake-radio {
-          background-color: #76cc11;
+          background-color: #40abfa;
 
-          border-color: #76cc11;
+          border-color: #40abfa;
           &::before {
             height: 40%;
             width: 40%;
@@ -2725,4 +2728,20 @@ main {
 }
 .typeColor .select2-container--default .select2-results__option--selected {
   color: #606060 !important;
+}
+
+// icon exclamation circle
+.color-exclamation-circle {
+  color: #ff0000;
+}
+
+// wrapper-price
+.wrapper-price {
+  border: 1px solid #b8b8b8;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 20px;
 }

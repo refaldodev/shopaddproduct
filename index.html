@@ -966,7 +966,7 @@
                 <div class="wrapper-icontext d-flex align-items-center">
                 <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
               
-              <p class="text-left lineHeight160 mr-6  title-accordion">General Info </p>
+              <p class="text-left lineHeight160 mr-6  title-accordion">General Info <i class="fas fa-exclamation-circle  color-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="All must be filled"></i></p>
               <!-- <i class="fa-solid fa-chevron-down"></i> -->
             </div>
            
@@ -980,14 +980,14 @@
               </p>
              
   
-              <textarea type="text" id="profileName" rows="1" class="form-control mt-9 messageInput"  maxlength="60" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptate ut cum, eaque earum possimus asperiores culpa minus natus suscipit molestiae magnam nostrum atque, aperiam aliquam hic assumenda ratione consectetur!</textarea>
+              <textarea type="text" id="titleGeneral" rows="1" class="form-control mt-9 messageInput"  maxlength="60" >Lorem ipsum dolor sit amet consectetur adipis</textarea>
               <div class="d-flex align-items-start flex  justify-content-between">
                 <p class="error-textarea">Cannot be empty</p>
-                <p class="countNumber" id="countProfileName">0  / 60</p>
+                <p class="countNumber" id="counttitleGeneral">0  / 60</p>
             </div>
             </div>
            
-            <div class="wrapper-form mb-editor">
+            <div class="wrapper-form mb-0">
               <p class="form-title">
                 Description
             </p>
@@ -1005,6 +1005,178 @@
            
             </div>
           </div>
+
+          <!--  price -->
+          <div class="accordion-item  accordion-item mb-card-default  active" id="page-message">
+          
+            <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
+                <div class="wrapper-icontext d-flex align-items-center">
+                <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
+              
+              <p class="text-left lineHeight160 mr-6  title-accordion">Price <i class="fas fa-exclamation-circle  color-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="All must be filled"></i></p>
+              <!-- <i class="fa-solid fa-chevron-down"></i> -->
+            </div>
+           
+          
+            </div>
+          
+            <div class="accordion-body bg-opacity  ">
+          
+              <!-- container radio -->
+              <div class="mb-4  mt-12">
+                <div class="wrapper-radioContainer">
+                <label class="radio-container">
+                    
+                    <p class="textRadioBtn">One price</p>
+                    <input type="radio" name="radio" checked="true">
+                    <span class="fake-radio"></span>
+                </label>
+                <div class="wrapper-form mt-2" style="padding-left:28px">
+              
+  
+                    
+                  <div class="input-group ">
+                    <div class="input-group-prepend ">
+                      <div class="input-group-text border-custom-currency">SGD</div>
+                    </div>
+                    <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+                  </div>
+                  <div class="d-flex align-items-start flex  justify-content-start mb-2">
+                    <p class="error-textarea">Cannot be empty</p>
+                   
+                </div>
+                </div>
+              </div>
+              <div class="wrapper-radioContainer mb-3">
+                <label class="radio-container">
+                    
+                    
+                  <p class="textRadioBtn"> Multiple prices<span class="font-weight-normal"> (Buyer can only choose one) </span></p>
+                    <input type="radio" name="radio">
+                    <span class="fake-radio"></span>
+                </label>
+                <div class="container-wrapperPrice">
+                <div class="multiple-prices wrapper-price mt-2" style="margin-left: 28px;">
+                  <div class="wrapper-form mb-10">
+                    <p class="form-title">
+                     Price
+                  </p>
+                    <div class="col-auto p-0">
+                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                      <div class="input-group ">
+                        <div class="input-group-prepend ">
+                          <div class="input-group-text border-custom-currency">SGD</div>
+                        </div>
+                        <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height: 38px; overflow-y: hidden;">
+                      </div>
+                      <div class="d-flex align-items-start flex  justify-content-start mb-2">
+                        <p class="error-textarea">Cannot be empty</p>
+                       
+                    </div>
+                    </div>
+                  </div>
+                  <div class="wrapper-form mb-9">
+                    <p class="form-title">
+                        Title
+                  </p>
+                 
+      
+                  <textarea type="text" id="titleMultiplePrice" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;">Lorem ipsum dolor sit amet consectetur adipis Lorem ipsum dolor sit amet consectetur adipisLorem ipsum dolor sit </textarea>
+                  <div class="d-flex align-items-start flex  justify-content-between">
+                    <p class="error-textarea">Cannot be empty</p>
+                    <p class="countNumber" id="counttitleMultiplePrice">0  / 200</p>
+                </div>
+                </div>
+
+                <!-- multiple prices editor -->
+                <div class="wrapper-form mb-0" id="heading-element">
+                  <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element" aria-expanded="false" aria-controls="collapse-element">
+                  
+                      Description
+                  
+                  </div>
+                  <div class="collapse" id="collapse-element" aria-labelledby="heading-element" data-parent="#heading-element">
+                <div id="editorContainer2"></div>
+                
+              </div>
+                <!-- <div class="text-editor">
+                  <div id="editorJsFirst"  >
+                  
+                  </div>
+                </div> -->
+                
+            </div>
+
+            <div class="wrapperEvent d-flex mt-5px">
+              <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up"></i>
+              <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down"></i>
+              <i class="fa-regular fa-trash-can mr-20 delete-element"></i>
+            </div>
+                </div>
+              </div>
+                <div class="addOptions">
+                  <button class="addOptionsBtn btn">Add Option</button>
+                </div>
+              </div>
+              <div class="wrapper-radioContainer mb-3">
+                <label class="radio-container">
+                  
+                  <p class="textRadioBtn">  Multiple prices<span class="font-weight-normal"> (Buyer can choose more than one or all) </span></p>
+                    <input type="radio" name="radio">
+                    <span class="fake-radio"></span>
+                </label>
+                <div class="wrapperUploadImage" style="padding-left:28px">
+                  <div class="wrapper-showImage mb-14 display-none mt-2">
+                  <img src="" alt="image-supporter" id="image-supporter">
+                    
+                  </div>
+                  <div class="wrapper-upload wrapper-upploadCover mt-2">
+                    <div class="file-input-container mb-9">
+                     
+                      <div class="wrapper-upload">
+                        <label for="image-message">Upload Image</label>
+                        <input type="file" name="image-message" id="image-message" accept="image/x-png,image/gif,image/jpeg">
+                    
+                      </div>
+                     <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteImageMessageModal">
+                    <div class="wrapper-delete " data-toggle="modal" data-target="#deleteImageMessageModal" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete">
+                      <button type="button" class="" id="del-btnProfile">         
+                        <i class="fas fa-trash-alt"></i> 
+                      </button>
+                    </div>
+                  </div>
+                  </div>
+    
+    
+                <p class="error-message-imageSupporter error-message" style="color: red;"></p>
+                <ul> 
+                  <li><span class="text-ulLi">Allowed file types: JPG, JPEG, PN</span>G, GIF
+                 
+                  </li> 
+                  <li><span class="text-ulLi">  Max file size: 1MB</span></li> 
+                  <li><span class="text-ulLi"> Min image height &amp; width: 100px </span></li> 
+                </ul>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- container radio -->
+              <div class="wrapper-form">
+                <p class="form-title">
+                  Words of invitation to support
+              </p>
+             
+              <textarea name="" id="word" rows="1" class="form-control mt-9 messageTextArea" maxlength="200" ></textarea>
+              
+              <div class="d-flex align-items-start flex  justify-content-between">
+                <p class="desc-textarea">The message is displayed under “Give Support Buttons”</p>
+                <p class="countNumber" id="countword">0  / 200</p>
+            </div>
+            </div>
+            </div>
+          </div>
+          <!-- end price -->
         <div class="accordion-item  accordion-item mb-card-default " id="page-coverImage">
           
           <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
@@ -1261,144 +1433,7 @@
       </div>
           </div>
         </div>
-        <div class="accordion-item  accordion-item mb-card-default  " id="page-message">
-          
-          <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
-              <div class="wrapper-icontext d-flex align-items-center">
-              <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
-            
-            <p class="text-left lineHeight160 mr-6  title-accordion">Message For Supporters</p>
-            <!-- <i class="fa-solid fa-chevron-down"></i> -->
-          </div>
-         
         
-          </div>
-        
-          <div class="accordion-body bg-opacity  ">
-            <h3 class="titlemessage">Thank you message</h3>
-            <p class="descmessage">The message will be seen by supporters after making payment </p>
-           
-            <!-- container radio -->
-            <div class="mb-4  mt-12">
-              <div class="wrapper-radioContainer">
-              <label class="radio-container">
-                  
-                  <p class="textRadioBtn"> Text</p>
-                  <input type="radio" name="radio" checked="true">
-                  <span class="fake-radio"></span>
-              </label>
-              <div class="wrapper-form mt-2" style="padding-left:28px">
-            
-
-                  
-                <textarea name="" id="textMessage" rows="1" class="form-control mt-9 messageTextArea" maxlength="100" style="height:38px;overflow-y:hidden;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ut ex consequatur suscipit molestiae minus aliquam. Expedita dolore quibusdam deleniti nesciunt atque praesentium ullam inventore, sunt eligendi? Qui, reprehenderit doloremque. Eos suscipit vero cumque quae eum molestiae adipisci iste! Totam mollitia, autem aut ut commodi earum quibusdam id quos, eveniet optio quod! Aliquam perspiciatis libero asperiores, voluptate odio, enim, vero sed fugit nihil saepe excepturi? Sapiente asperiores, consequuntur iure quae, quia sequi, nesciunt tempora quos voluptatum sint odit suscipit reiciendis blanditiis reprehenderit. Dignissimos ullam eaque assumenda optio temporibus et voluptates nihil! Provident repellat laborum voluptatem tenetur quidem architecto at velit.</textarea>
-                <div class="d-flex align-items-start flex justify-content-end">
-                 
-                  <p class="countNumber" id="countTextMessage">0  / 100</p>
-              </div>
-              </div>
-            </div>
-            <div class="wrapper-radioContainer mb-3">
-              <label class="radio-container">
-                  
-                  
-                <p class="textRadioBtn"> Video</p>
-                  <input type="radio" name="radio">
-                  <span class="fake-radio"></span>
-              </label>
-              <div class="wrapperUploadVideo" style="padding-left:28px">
-              <!-- <div class="wrapper-showVideo mb-14 mt-2 display-none"> -->
-                <video controls="" id="sourceVideo" preload="metadata" class="wrapper-showVideo mb-14 mt-2 display-none">
-                  <source src="" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-                
-              <!-- </div> -->
-              <div class="wrapper-upload wrapper-upploadCover mt-2">
-                <div class="file-input-container mb-9">
-                 
-                  <div class="wrapper-upload">
-                    <label for="video-file">Upload Video</label>
-                    <input type="file" name="" id="video-file" accept="video/mp4,video/x-m4v,video/*">
-                
-                  </div>
-                 <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteVideo">
-                <div class="wrapper-delete " data-toggle="modal" data-target="#deleteModalVideo" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete">
-                  <button type="button" class="" id="del-btnProfile">         
-                    <i class="fas fa-trash-alt"></i> 
-                  </button>
-                </div>
-              </div>
-              </div>
-
-
-            <p class="error-message-Video error-message "></p>
-            <ul>
-               <li><span class="text-ulLi">Allowed file types: MPEG, MP4, MOV </span></li> 
-               <li><span class="text-ulLi"> Max file size: 20MB </span></li> 
-              </ul>
-              
-              </div>
-            </div>
-            </div>
-            <div class="wrapper-radioContainer mb-3">
-              <label class="radio-container">
-                
-                <p class="textRadioBtn"> Image</p>
-                  <input type="radio" name="radio">
-                  <span class="fake-radio"></span>
-              </label>
-              <div class="wrapperUploadImage" style="padding-left:28px">
-                <div class="wrapper-showImage mb-14 display-none mt-2">
-                <img src="" alt="image-supporter" id="image-supporter">
-                  
-                </div>
-                <div class="wrapper-upload wrapper-upploadCover mt-2">
-                  <div class="file-input-container mb-9">
-                   
-                    <div class="wrapper-upload">
-                      <label for="image-message">Upload Image</label>
-                      <input type="file" name="image-message" id="image-message" accept="image/x-png,image/gif,image/jpeg">
-                  
-                    </div>
-                   <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteImageMessageModal">
-                  <div class="wrapper-delete " data-toggle="modal" data-target="#deleteImageMessageModal" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete">
-                    <button type="button" class="" id="del-btnProfile">         
-                      <i class="fas fa-trash-alt"></i> 
-                    </button>
-                  </div>
-                </div>
-                </div>
-  
-  
-              <p class="error-message-imageSupporter error-message" style="color: red;"></p>
-              <ul> 
-                <li><span class="text-ulLi">Allowed file types: JPG, JPEG, PN</span>G, GIF
-               
-                </li> 
-                <li><span class="text-ulLi">  Max file size: 1MB</span></li> 
-                <li><span class="text-ulLi"> Min image height &amp; width: 100px </span></li> 
-              </ul>
-                
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- container radio -->
-            <div class="wrapper-form">
-              <p class="form-title">
-                Words of invitation to support
-            </p>
-           
-            <textarea name="" id="word" rows="1" class="form-control mt-9 messageTextArea" maxlength="200" ></textarea>
-            
-            <div class="d-flex align-items-start flex  justify-content-between">
-              <p class="desc-textarea">The message is displayed under “Give Support Buttons”</p>
-              <p class="countNumber" id="countword">0  / 200</p>
-          </div>
-          </div>
-          </div>
-        </div>
         <div class="accordion-item  accordion-item mb-card-default " id="page-collected">
           
           <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">

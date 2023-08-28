@@ -3970,6 +3970,9 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
 .textRadioBtn {
   line-height: 140%;
   padding-top: 2px;
+  font-size: 16px;
+  color: black;
+  font-weight: 700;
 }
 
 .radio-container {
@@ -3990,8 +3993,8 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   display: none;
 }
 .radio-container input:checked ~ .fake-radio {
-  background-color: #76cc11;
-  border-color: #76cc11;
+  background-color: #40abfa;
+  border-color: #40abfa;
 }
 .radio-container input:checked ~ .fake-radio::before {
   height: 40%;
@@ -4096,4 +4099,18 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
 
 .typeColor .select2-container--default .select2-results__option--selected {
   color: #606060 !important;
+}
+
+.color-exclamation-circle {
+  color: #ff0000;
+}
+
+.wrapper-price {
+  border: 1px solid #b8b8b8;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 20px;
 }/*# sourceMappingURL=links.css.map */

@@ -35,10 +35,12 @@ containerAccordion.addEventListener("click", function (e) {
           "style",
           "height:" + this.scrollHeight + "px;overflow-y:hidden;"
         );
-        if (this.id === "shortDescription") {
-          $("#countShortDescription").text(this.value.length + " " + " / 60");
-        } else if (this.id === "textMessage") {
-          $("#countTextMessage").text(this.value.length + " " + " / 100");
+        if (this.id === "titleGeneral") {
+          $("#counttitleGeneral").text(this.value.length + " " + " / 60");
+        } else if (this.id === "titleMultiplePrice") {
+          $("#counttitleMultiplePrice").text(
+            this.value.length + " " + " / 200"
+          );
         } else if (this.id === "word") {
           $("#countword").text(this.value.length + " " + " / 200");
         } else if (this.id === "profileName") {
@@ -59,10 +61,12 @@ containerAccordion.addEventListener("click", function (e) {
         this.style.height = "auto";
         this.style.height = this.scrollHeight + "px";
         var result = 0;
-        if (this.id === "shortDescription") {
-          $("#countShortDescription").text(this.value.length + " " + " / 60");
-        } else if (this.id === "textMessage") {
-          $("#countTextMessage").text(this.value.length + " " + " / 100");
+        if (this.id === "titleGeneral") {
+          $("#counttitleGeneral").text(this.value.length + " " + " / 60");
+        } else if (this.id === "titleMultiplePrice") {
+          $("#counttitleMultiplePrice").text(
+            this.value.length + " " + " / 200"
+          );
         } else if (this.id === "word") {
           $("#countword").text(this.value.length + " " + " / 200");
         } else if (this.id === "profileName") {
@@ -109,16 +113,19 @@ subContainerAccordion.addEventListener("click", function (e) {
         "easeInOutExpo"
       );
     }
+    // text area
     $("textarea")
       .each(function () {
         this.setAttribute(
           "style",
           "height:" + this.scrollHeight + "px;overflow-y:hidden;"
         );
-        if (this.id === "shortDescription") {
-          $("#countShortDescription").text(this.value.length + " " + " / 60");
-        } else if (this.id === "textMessage") {
-          $("#countTextMessage").text(this.value.length + " " + " / 100");
+        if (this.id === "titleGeneral") {
+          $("#counttitleGeneral").text(this.value.length + " " + " / 60");
+        } else if (this.id === "titleMultiplePrice") {
+          $("#counttitleMultiplePrice").text(
+            this.value.length + " " + " / 200"
+          );
         } else if (this.id === "word") {
           $("#countword").text(this.value.length + " " + " / 200");
         } else if (this.id === "profileName") {
@@ -139,10 +146,12 @@ subContainerAccordion.addEventListener("click", function (e) {
         this.style.height = "auto";
         this.style.height = this.scrollHeight + "px";
         var result = 0;
-        if (this.id === "shortDescription") {
-          $("#countShortDescription").text(this.value.length + " " + " / 60");
-        } else if (this.id === "textMessage") {
-          $("#countTextMessage").text(this.value.length + " " + " / 100");
+        if (this.id === "titleGeneral") {
+          $("#counttitleGeneral").text(this.value.length + " " + " / 60");
+        } else if (this.id === "titleMultiplePrice") {
+          $("#counttitleMultiplePrice").text(
+            this.value.length + " " + " / 200"
+          );
         } else if (this.id === "word") {
           $("#countword").text(this.value.length + " " + " / 200");
         } else if (this.id === "profileName") {
@@ -569,79 +578,79 @@ $(document).ready(function () {
 });
 
 // Function untuk mengupload video
-function uploadVideo() {
-  // Ambil element form dan file yang akan diupload
-  // const form = document.getElementById('upload-form');
-  const file = document.getElementById("video-file").files[0];
+// function uploadVideo() {
+//   // Ambil element form dan file yang akan diupload
+//   // const form = document.getElementById('upload-form');
+//   const file = document.getElementById("video-file").files[0];
 
-  // Jika tidak ada file yang dipilih, tampilkan pesan error
-  if (!file) {
-    showErrorMessageVideo("Silakan pilih file video terlebih dahulu");
-    return;
-  }
+//   // Jika tidak ada file yang dipilih, tampilkan pesan error
+//   if (!file) {
+//     showErrorMessageVideo("Silakan pilih file video terlebih dahulu");
+//     return;
+//   }
 
-  // Ambil ukuran file
-  const fileSize = file.size;
-  const fileSizeMB = fileSize / (1024 * 1024); // Ukuran file dalam MB
+//   // Ambil ukuran file
+//   const fileSize = file.size;
+//   const fileSizeMB = fileSize / (1024 * 1024); // Ukuran file dalam MB
 
-  // Jika ukuran file lebih dari 20MB, tampilkan pesan error
-  if (fileSizeMB > 20) {
-    showErrorMessageVideo("Ukuran file tidak boleh lebih dari 20MB");
-    return;
-  }
+//   // Jika ukuran file lebih dari 20MB, tampilkan pesan error
+//   if (fileSizeMB > 20) {
+//     showErrorMessageVideo("Ukuran file tidak boleh lebih dari 20MB");
+//     return;
+//   }
 
-  // Selain itu, lakukan proses upload file
-  var freader = new FileReader();
-  const fileVideo = document.getElementById("video-file").files[0];
+//   // Selain itu, lakukan proses upload file
+//   var freader = new FileReader();
+//   const fileVideo = document.getElementById("video-file").files[0];
 
-  var videoShow = document.querySelector(".wrapper-showVideo");
-  freader.readAsDataURL(fileVideo);
-  freader.onload = function () {
-    console.log(freader.result);
-    videoShow.style.display = "block";
-    document.getElementById("sourceVideo").src = freader.result;
-    var btn = document.getElementById("wrapper-deleteVideo");
-    btn.style.display = "block";
-    showErrorMessageVideo("");
-  };
-}
+//   var videoShow = document.querySelector(".wrapper-showVideo");
+//   freader.readAsDataURL(fileVideo);
+//   freader.onload = function () {
+//     console.log(freader.result);
+//     videoShow.style.display = "block";
+//     document.getElementById("sourceVideo").src = freader.result;
+//     var btn = document.getElementById("wrapper-deleteVideo");
+//     btn.style.display = "block";
+//     showErrorMessageVideo("");
+//   };
+// }
 
-// Function untuk menampilkan pesan error
-function showErrorMessageVideo(message) {
-  const errorMessage = document.querySelector(".error-message-Video");
-  errorMessage.innerText = message;
-}
+// // Function untuk menampilkan pesan error
+// function showErrorMessageVideo(message) {
+//   const errorMessage = document.querySelector(".error-message-Video");
+//   errorMessage.innerText = message;
+// }
 
-const fileInputVideo = document.getElementById("video-file");
-fileInputVideo.addEventListener("change", function () {
-  uploadVideo();
-  var vid = document.getElementById("sourceVideo");
-  var videoShow = document.querySelector(".wrapper-showVideo");
-  vid.addEventListener("loadedmetadata", (event) => {
-    vid.style.width = vid.videoWidth;
-    videoShow.style.height = videoShow.videoHeight;
-    console.log(vid.videoWidth);
-  });
-});
+// const fileInputVideo = document.getElementById("video-file");
+// fileInputVideo.addEventListener("change", function () {
+//   uploadVideo();
+//   var vid = document.getElementById("sourceVideo");
+//   var videoShow = document.querySelector(".wrapper-showVideo");
+//   vid.addEventListener("loadedmetadata", (event) => {
+//     vid.style.width = vid.videoWidth;
+//     videoShow.style.height = videoShow.videoHeight;
+//     console.log(vid.videoWidth);
+//   });
+// });
 
-// Fungsi delete untuk menghapus video
-function deleteVideo() {
-  // Mendapatkan elemen confirm-delete-btnVideo
-  var video = document.getElementById("sourceVideo");
-  var videoShow = document.querySelector(".wrapper-showVideo");
+// // Fungsi delete untuk menghapus video
+// function deleteVideo() {
+//   // Mendapatkan elemen confirm-delete-btnVideo
+//   var video = document.getElementById("sourceVideo");
+//   var videoShow = document.querySelector(".wrapper-showVideo");
 
-  videoShow.style.display = "none";
-  var btn = document.getElementById("wrapper-deleteVideo");
-  btn.style.display = "none";
-  // Mengosongkan sumber video
-  video.src = "";
-  const fileInputVideo = document.getElementById("video-file");
+//   videoShow.style.display = "none";
+//   var btn = document.getElementById("wrapper-deleteVideo");
+//   btn.style.display = "none";
+//   // Mengosongkan sumber video
+//   video.src = "";
+//   const fileInputVideo = document.getElementById("video-file");
 
-  showErrorMessageVideo("");
-}
-document
-  .getElementById("confirm-delete-btnVideo")
-  .addEventListener("click", deleteVideo);
+//   showErrorMessageVideo("");
+// }
+// document
+//   .getElementById("confirm-delete-btnVideo")
+//   .addEventListener("click", deleteVideo);
 
 // image message supporter
 function uploadImageMessage() {
@@ -852,7 +861,14 @@ var quill = new Quill("#editorContainer", {
     toolbar: toolbarOptions,
   },
 });
-
+var quill = new Quill("#editorContainer2", {
+  theme: "bubble",
+  bounds: "#editorContainer",
+  scrollingContainer: "#editorContainer",
+  modules: {
+    toolbar: toolbarOptions,
+  },
+});
 // conTOHU
 // const editor = new EditorJS({
 //   holder: "editorjs",
@@ -903,3 +919,49 @@ $(document).ready(function () {
 //     quill.theme.tooltip.edit("link", quill.getFormat().link);
 //   }
 // });
+
+// tooltip icon
+$(".color-exclamation-circle").tooltip({
+  trigger: "hover", // Menetapkan trigger manual agar tooltip tidak muncul saat hover
+});
+$(function () {
+  $(".color-exclamation-circle").tooltip();
+});
+
+// add options
+document.addEventListener("DOMContentLoaded", function () {
+  const addButton = document.querySelector(".addOptions");
+  const optionsContainer = document.querySelector(".container-wrapperPrice");
+
+  addButton.addEventListener("click", function () {
+    // Dapatkan elemen select terakhir
+    const lastSelect = optionsContainer.querySelector(
+      ".wrapper-price:last-child"
+    );
+
+    // Duplikasi elemen select
+    const newSelect = lastSelect.cloneNode(true);
+
+    // Kosongkan nilai pilihan baru
+    newSelect.selectedIndex = 0;
+
+    // Tambahkan elemen select baru ke dalam kontainer
+    optionsContainer.appendChild(newSelect);
+  });
+});
+
+const sortableContainer = document.querySelector(".container-wrapperPrice");
+
+sortableContainer.addEventListener("click", (event) => {
+  const clickedIcon = event.target;
+  if (clickedIcon.classList.contains("item-icon")) {
+    const item = clickedIcon.closest(".wrapper-price");
+    const direction = clickedIcon.getAttribute("data-direction");
+
+    if (direction === "up" && item.previousElementSibling) {
+      sortableContainer.insertBefore(item, item.previousElementSibling);
+    } else if (direction === "down" && item.nextElementSibling) {
+      sortableContainer.insertBefore(item.nextElementSibling, item);
+    }
+  }
+});

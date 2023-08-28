@@ -24,7 +24,15 @@ body {
   --font-size-10: 0.625rem;
   --green-color: #76cc11;
 }
-
+.mr-20 {
+  margin-right: 20px;
+}
+.mt-5px {
+  margin-top: 5px;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
 p {
   margin-bottom: 0;
 }
@@ -1821,4 +1829,46 @@ main {
   to {
     transform: rotate(360deg);
   }
+}
+.collapse-text::after {
+  content: "\f078";
+  color: #000;
+  font-size: 12px !important;
+  font-family: "Font Awesome 5 Free";
+  margin-left: 0px;
+  font-weight: 900;
+}
+.collapse-text[aria-expanded="true"]::after {
+  content: "\f077";
+  font-family: "Font Awesome 5 Free";
+  margin-left: 0px;
+  color: #000;
+  font-size: 12px !important;
+  font-weight: 900;
+}
+
+/* add options */
+.addOptions {
+  padding-left: 28px;
+  margin-top: 15px;
+}
+.addOptionsBtn {
+  background-color: #dff8ff;
+  color: #40abfa;
+  border: 1px solid #40abfa;
+  min-height: 40px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 900;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+
+.addOptionsBtn:hover {
+  background-color: #40abfa;
+  color: #ffffff;
+  border: 1px solid #40abfa;
 }
