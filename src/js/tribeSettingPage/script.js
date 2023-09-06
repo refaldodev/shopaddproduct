@@ -140,6 +140,7 @@ subContainerAccordion.addEventListener("click", function (e) {
           $("#countTitleAmount").text(this.value.length + " " + " / 100");
         } else if (this.id === "titleNOS") {
           $("#countTitleNOS").text(this.value.length + " " + " / 100");
+        } else if (this.id === "elementInput") {
         }
       })
       .on("input", function () {
@@ -166,6 +167,7 @@ subContainerAccordion.addEventListener("click", function (e) {
           $("#countTitleAmount").text(this.value.length + " " + " / 100");
         } else if (this.id === "titleNOS") {
           $("#countTitleNOS").text(this.value.length + " " + " / 100");
+        } else if (this.id === "elementInput") {
         }
       });
   }
@@ -203,157 +205,6 @@ subContainerAccordionSupporter.addEventListener("click", function (e) {
       );
     }
   }
-});
-
-// cover iamge
-function coverSection() {
-  //input profile image
-  // $(".cover-image").css("display", "none");
-
-  let $uploadCrop;
-  function uploadCoverSE() {
-    var isValidSize = true;
-    function readFile(input) {
-      if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        if (input.files[0].size > 1048576) {
-          isValidSize = false;
-          $(".get-cropped-img").prop("disabled", true);
-          $(".modal .image-error-msg").html("Max 1MB");
-
-          return;
-        }
-        isValidSize = true;
-        reader.onload = function (e) {
-          $(".upload-profile-img").addClass("ready");
-          $uploadCrop
-            .croppie("bind", {
-              url: e.target.result,
-            })
-            .then(function () {
-              console.log("jQuery bind complete");
-            });
-        };
-        reader.readAsDataURL(input.files[0]);
-      } else {
-        return false;
-      }
-    }
-
-    $uploadCrop = $("#upload-profile-img").croppie({
-      viewport: {
-        width: 750,
-        height: 215,
-
-        type: "square",
-      },
-
-      enableExif: true,
-
-      enableOrientation: true,
-    });
-
-    $("#upload").on("change", function (e) {
-      var _this = this;
-      if (this.files) {
-        var file, img;
-        img = new Image();
-        var objectUrl = URL.createObjectURL(this.files[0]);
-        img.onload = function () {
-          if (this.height > 215 && this.width > 1000) {
-            readFile(_this);
-            URL.revokeObjectURL(objectUrl);
-            if (isValidSize && this.height > 215 && this.width > 1000) {
-              $(".file-name").html(_this.files[0].name);
-              $(".modal .image-error-msg").html("");
-              $(".get-cropped-img").prop("disabled", false);
-            }
-          } else {
-            $(".modal .image-error-msg").html(
-              "Min height 300px dan min width 1000px"
-            );
-            $(".cover-image").css("display", "none");
-            $(".get-cropped-img").prop("disabled", true);
-          }
-        };
-        img.src = objectUrl;
-      }
-    });
-
-    $(".get-cropped-img").on("click", function (ev) {
-      $uploadCrop
-        .croppie("result", {
-          type: "canvas",
-          size: "viewport",
-        })
-        .then(function (resp) {
-          $("#cover-image").attr("src", resp);
-          fetch(resp)
-            .then((res) => res.blob())
-            .then((res) => {
-              console.log(res);
-            });
-        });
-      $(".cover-image").css("display", "block");
-      $("#wrapper-deleteIcon").css("display", "flex");
-
-      var aspect_ratio = 4 / 14;
-      // Store the jQuery object for future reference
-      var $box = jQuery(".cover-image");
-
-      // Initial resize of .box
-      jQuery(document).ready(function ($) {
-        $box.height($box.width() * aspect_ratio);
-      });
-      // Resize .box on browser resize
-      jQuery(window).resize(function () {
-        $box.height($box.width() * aspect_ratio);
-      });
-    });
-  }
-
-  uploadCoverSE();
-
-  //delete profile imag
-  $("#wrapper-deleteIcon").click(function (e) {
-    deleteConfirmation();
-  });
-
-  function deleteConfirmation() {
-    document
-      .querySelector("#confirm-delete-btn")
-      .addEventListener("click", function () {
-        $("#wrapper-deleteIcon").css("display", "none");
-
-        removeAtr();
-      });
-
-    function removeAtr() {
-      $("#cover-image").attr("src", "");
-      $("#upload-profile-img").croppie("destroy");
-      $(".file-name").html("No file selected");
-      $(".cover-image").css("display", "none");
-      uploadProfileImg();
-      document
-        .querySelector("#confirm-delete-btn")
-        .removeEventListener("click", removeAtr);
-    }
-  }
-}
-
-coverSection();
-
-var aspect_ratio = 4 / 14;
-// Store the jQuery object for future reference
-var $box = jQuery(".cover-image");
-
-// Initial resize of .box
-jQuery(document).ready(function ($) {
-  $box.height($box.width() * aspect_ratio);
-});
-// Resize .box on browser resize
-jQuery(window).resize(function () {
-  $box.height($box.width() * aspect_ratio);
 });
 
 // profile image
@@ -929,6 +780,7 @@ $(function () {
 });
 
 // add options
+/* 
 document.addEventListener("DOMContentLoaded", function () {
   const addButton = document.querySelector(".addOptions");
   const optionsContainer = document.querySelector(".container-wrapperPrice");
@@ -949,7 +801,7 @@ document.addEventListener("DOMContentLoaded", function () {
     optionsContainer.appendChild(newSelect);
   });
 });
-
+*/
 const sortableContainer = document.querySelector(".container-wrapperPrice");
 
 sortableContainer.addEventListener("click", (event) => {
@@ -963,5 +815,126 @@ sortableContainer.addEventListener("click", (event) => {
     } else if (direction === "down" && item.nextElementSibling) {
       sortableContainer.insertBefore(item.nextElementSibling, item);
     }
+
+    if (clickedIcon.classList.contains("delete-element")) {
+      item.remove();
+    }
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const addButton = document.querySelector(".addOptionsBtn");
+  const container = document.querySelector(".container-wrapperPrice");
+  let optionCount = 1;
+  let descriptionCount = 3;
+
+  addButton.addEventListener("click", () => {
+    const optionDiv = createOptionDiv();
+    container.appendChild(optionDiv);
+    optionCount++;
+    descriptionCount++;
+  });
+
+  function createOptionDiv() {
+    const optionDiv = document.createElement("div");
+    optionDiv.className = `multiple-prices wrapper-price mt-2 ml-28 `;
+
+    const div = `
+    <div class="wrapper-form mb-10">
+                    <p class="form-title">
+                     Price
+                  </p>
+                    <div class="col-auto p-0">
+                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                      <div class="input-group ">
+                        <div class="input-group-prepend ">
+                          <div class="input-group-text border-custom-currency">SGD</div>
+                        </div>
+                        <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height: 38px; overflow-y: hidden;">
+                      </div>
+                      <div class="d-flex align-items-start flex  justify-content-start mb-2">
+                        <p class="error-textarea">Cannot be empty</p>
+                       
+                    </div>
+                    </div>
+                  </div>
+                  <div class="wrapper-form mb-9">
+                    <p class="form-title">
+                        Title
+                  </p>
+                 
+      
+                  <textarea type="text" id="titleMultiplePrice${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;">Lorem ipsum dolor sit amet consectetur adipis Lorem ipsum dolor sit amet consectetur adipisLorem ipsum dolor sit </textarea>
+                  <div class="d-flex align-items-start flex  justify-content-between">
+                    <p class="error-textarea">Cannot be empty</p>
+                    <p class="countNumber" id="counttitleMultiplePrice${optionCount}">0  / 200</p>
+                </div>
+                </div>
+
+                <!-- multiple prices editor -->
+                <div class="wrapper-form mb-0" id="heading-element">
+                  <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element" aria-expanded="false" aria-controls="collapse-element">
+                  
+                      Description
+                  
+                  </div>
+                  <div class="collapse" id="collapse-element" aria-labelledby="heading-element" data-parent="#heading-element">
+                <div id="editorContainer${descriptionCount}"></div>
+                
+              </div>
+                <!-- <div class="text-editor">
+                  <div id="editorJsFirst"  >
+                  
+                  </div>
+                </div> -->
+                
+            </div>
+
+            <div class="wrapperEvent d-flex mt-5px">
+              <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up" data-toggle="tooltip" data-placement="top" title="Move position up"></i>
+              <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down" data-toggle="tooltip" data-placement="top" title="Move position down"></i>
+              <i class="fa-regular fa-trash-can mr-20 delete-element item-icon" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
+            </div>
+`;
+    optionDiv.innerHTML = div;
+
+    /*   const iconsWrapper = optionDiv.querySelector(".wrapperEvent");
+    const toTopIcon = createIcon("fa-circle-up", "to-top", "up");
+    const toBottomIcon = createIcon("fa-circle-down", "to-bottom", "down");
+    const deleteIcon = createIcon("fa-trash", "delete-element", "delete");
+
+    iconsWrapper.appendChild(toTopIcon);
+    iconsWrapper.appendChild(toBottomIcon);
+    iconsWrapper.appendChild(deleteIcon);
+ */
+
+    return optionDiv;
+  }
+
+  function deleteElement(element) {
+    element.remove();
+  }
+});
+
+function toggleInput() {
+  var wrapperAddLinkInput = document.getElementById("wrapper-elementInput");
+  if (
+    wrapperAddLinkInput.style.display === "none" ||
+    wrapperAddLinkInput.style.display === ""
+  ) {
+    wrapperAddLinkInput.style.display = "block";
+  } else {
+    wrapperAddLinkInput.style.display = "none";
+  }
+}
+
+// add file
+
+function addLink() {
+  const linkContainer = document.getElementById("linkContainer");
+
+  const link = document.createElement("a");
+  link.href = "#"; // Ganti "#" dengan URL yang sesuai
+  link.textContent = "Tautan ke file: " + fileInput.value;
+  linkContainer.appendChild(link);
+}

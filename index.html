@@ -31,37 +31,7 @@
   </head>
   <body>
 
-    <!-- cover input modal -->
-    <div class="modal fade croppie-imgcover-modal" id="profile-img-modal" tabindex="-1" role="dialog" aria-labelledby="profile-img-modal" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="crop-container">
-              <div class="upload-profile-img-wrap">
-                <div id="upload-profile-img"></div>
-              </div>
-            </div>
-            <div class="file-input-container">
-              <label for="upload">Choose file</label>
-              <input type="file" name='cropped' id="upload" accept="image/x-png,image/gif,image/jpeg">
-              <p class="file-name">No file selected</p>
-            </div>
-            <p class="tenpx gray-font mb-0 mt-2">Hanya format jpg, jpeg, png | Max 1MB |  Min height 285px dan Min width 1000px              </p>
-            <p class="image-error-msg mb-0 text-message tenpx" style="color: red;"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="get-cropped-img pointer btn-fill-light active py-2" class="close" data-dismiss="modal" aria-label="Close">Simpan</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- cover input modal -->
-
+  
 <!--Delete Modal cover -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -1007,7 +977,7 @@
           </div>
 
           <!--  price -->
-          <div class="accordion-item  accordion-item mb-card-default  active" id="page-message">
+          <div class="accordion-item  accordion-item mb-card-default  " id="page-message">
           
             <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
                 <div class="wrapper-icontext d-flex align-items-center">
@@ -1031,10 +1001,7 @@
                     <input type="radio" name="radio" checked="true">
                     <span class="fake-radio"></span>
                 </label>
-                <div class="wrapper-form mt-2" style="padding-left:28px">
-              
-  
-                    
+                <div class="wrapper-form mt-2" style="padding-left:28px"> 
                   <div class="input-group ">
                     <div class="input-group-prepend ">
                       <div class="input-group-text border-custom-currency">SGD</div>
@@ -1056,7 +1023,7 @@
                     <span class="fake-radio"></span>
                 </label>
                 <div class="container-wrapperPrice">
-                <div class="multiple-prices wrapper-price mt-2" style="margin-left: 28px;">
+                <div class="multiple-prices wrapper-price mt-2 ml-28" >
                   <div class="wrapper-form mb-10">
                     <p class="form-title">
                      Price
@@ -1108,15 +1075,18 @@
             </div>
 
             <div class="wrapperEvent d-flex mt-5px">
-              <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up"></i>
-              <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down"></i>
-              <i class="fa-regular fa-trash-can mr-20 delete-element"></i>
+              <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up" data-toggle="tooltip" data-placement="top" title="Move position up"></i>
+              <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down" data-toggle="tooltip" data-placement="top" title="Move position down"></i>
+              <i class="fa-regular fa-trash-can mr-20 delete-element item-icon" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
             </div>
+
+            
                 </div>
+                
               </div>
-                <div class="addOptions">
-                  <button class="addOptionsBtn btn">Add Option</button>
-                </div>
+              <div class="addOptions">
+                <button class="addOptionsBtn btn">Add Option</button>
+              </div>
               </div>
               <div class="wrapper-radioContainer mb-3">
                 <label class="radio-container">
@@ -1160,30 +1130,64 @@
                   </div>
                 </div>
               </div>
+<!--             free   -->
+              <div class="wrapper-radioContainer mb-3">
+                <label class="radio-container">
+                  
+                  <p class="textRadioBtn">Free</p>
+                    <input type="radio" name="radio">
+                    <span class="fake-radio"></span>
+                </label>
+                <p class="textFree ml-28 mt-1">Only for digital products/contents</p>
+              </div>
+
             </div>
             <!-- container radio -->
-              <div class="wrapper-form">
-                <p class="form-title">
-                  Words of invitation to support
-              </p>
-             
-              <textarea name="" id="word" rows="1" class="form-control mt-9 messageTextArea" maxlength="200" ></textarea>
-              
-              <div class="d-flex align-items-start flex  justify-content-between">
-                <p class="desc-textarea">The message is displayed under “Give Support Buttons”</p>
-                <p class="countNumber" id="countword">0  / 200</p>
+              <div class="wrapper-form" id="element-buyers">
+                <div class="collapse-buyers  mb-2 collapsed" data-toggle="collapse" data-target="#element-buyersCollapse" aria-expanded="false" aria-controls="element-buyersCollapse">
+                <!-- <p class="form-title "> -->
+                  Buyers can pay what they want
+              <!-- </p> -->
+            </div>
+              <div class="wrapper-buyers collapse " id="element-buyersCollapse" aria-labelledby="element-buyers" data-parent="#element-buyers">
+              <div class="wrapper-switch mt-0"> 
+                <span class="switch-text">
+                Off
+              </span>
+                <div class="switch">
+                  <input type="checkbox" id="switch-1"><label for="switch-1">Toggle</label> 
+                </div>
+                <span class="switch-text">
+                On
+                </span>
+              </div>
+              <div class="wrapper-minimum">
+                <p class="f-size14 lh-140 ">Minimum</p>
+                <div class="wrapper-minimumForm my-1 pl-0">
+                  <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+                  <div class="input-group">
+                   
+                    <input type="number" class="form-control form-minimum" id="inlineFormInputGroupUsername" >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text  precent-text">%</div>
+                    </div>
+                  </div>
+                </div>
+                <p class="f-size14 lh-140 mb-11">from the original price</p>
+                <p class="f-size12 lh-140 font-weight-normal">Set it to 0% if there is no minimum</p>
+              </div>  
             </div>
             </div>
             </div>
           </div>
           <!-- end price -->
-        <div class="accordion-item  accordion-item mb-card-default " id="page-coverImage">
+        <div class="accordion-item  accordion-item mb-card-default active" id="page-coverImage">
           
           <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
               <div class="wrapper-icontext d-flex align-items-center">
               <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
             
-            <p class="text-left lineHeight160 mr-6  title-accordion">Cover Image</p>
+              <p class="text-left lineHeight160 mr-6  title-accordion">Digital Products/Contents<span class="font-weight-normal"> (Files/Links) </span> <i class="fas fa-exclamation-circle  color-exclamation-circle"  data-toggle="tooltip" data-placement="top" title="All must be filled"></i></p>
             <!-- <i class="fa-solid fa-chevron-down"></i> -->
           </div>
          
@@ -1191,30 +1195,57 @@
           </div>
         
           <div class="accordion-body pt-0 bg-opacity  ">
-         <div class="cover-image display-none">
-          <img src="" alt="cover-image"  id="cover-image" class="w-100 h-100"> 
+         <div class="upload-digital-product display-none">
+          
          </div>
         
             <div class="wrapper-upload wrapper-upploadCover">
               <div class="file-input-container">
-              
-              <button class="button button-modalUpload " data-toggle="modal" data-target="#profile-img-modal">Upload Image</button>
-               <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteIcon">
-              <div class="wrapper-delete " data-toggle="modal" data-target="#deleteModal" data-tooltip="tooltip" data-placement="top"     title="" data-original-title="Delete">
-                <button type="button" class="" id="del-btn" >         
-                  <i class="fas fa-trash-alt"></i> 
-                </button>
-              </div>
+              <input type="file" class=" d-none" id="uploadFile">
+              <label class="button button-modalUpload "  for="uploadFile">Upload File</label>
+              <button class="button button-modalAddFile " onclick="toggleInput()">Add File</button>
+             
             </div>
+            <div class="wrapper-elementInput mb-20"  id="wrapper-elementInput" style="display: none;" >
+              
+              <textarea type="text" id="elementInput" rows="1" class="form-control mt-9 messageInput mb-10 "   ></textarea>
+              <button class="btn button-AddLink " onclick="addLink()" >Add Link</button>
+            </div>
+
+            <div class="wrapper-uploadFile mb-5">
+              <div class="wrapper-file d-flex justify-content-between align-items-center">
+                <div class="wrapper-drag">
+                  <button class="drag-btn btn " data-tooltip="tooltip" data-placement="left" title="" data-original-title="Drag to rearrange">        
+                    <i class="fas fa-ellipsis-v"></i>      
+                </button>
+                </div>
+                <div class="wrapperName-file">
+                  <p class="name-file" data-tooltip="tooltip" data-placement="bottom" title="" data-original-title="file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed">file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed</p>
+                </div>
+                <div class="btn-event d-flex">
+                  <button class="download-file btn px-2" data-tooltip="tooltip" data-placement="left" title="" data-original-title="download file">        
+                    <i class="fa-solid fa-download"></i>
+                </button>
+                  <button class="delete-file btn px-2" data-tooltip="tooltip" data-placement="left" title="" data-original-title="delet file">        
+                    <i class="fas fa-trash-alt"></i>    
+                </button>
+              <!-- 
+              <button class="redirect-file btn" data-tooltip="tooltip" data-placement="left" title="" data-original-title="redirect file">        
+                <i class="fa-solid fa-up-right-from-square"></i>
+            </button> -->
+                </div>
+              </div>
+              
             </div>
             <div class="content-ul">
+              <p class="font-weight-bold fs-14">Important:</p> 
+
             <ul>
-              <li> <span class="text-ulLi"> The image is displayed at the top of your page </span></li>
-              <li> <span class="text-ulLi"> Allowed file types: JPG, JPEG, PNG  </span></li>
-              <li> <span class="text-ulLi"> Max file size: 1MB  </span></li>
-              <li> <span class="text-ulLi"> Min image width: 1000px</span></li>
-              <li> <span class="text-ulLi">  Min image height: 285px </span></li>
-              <li> <span class="text-ulLi">  Recommended image ratio: 14 : 4 (width : height) </span></li>
+              <li> <span class="text-ulLi">Maximum size per file: 20MB </span></li>
+              <li> <span class="text-ulLi">If the format you’re trying to upload is not supported, save it as a zip file and upload again.</span></li>
+              <li> <span class="text-ulLi">If the file you're trying to upload is larger than 20MB, upload it to Google Drive (or something similar), then add it as a link.</span></li>
+              <li> <span class="text-ulLi">The file or link that you upload must be the final product that buyers will receive, not a preview.</span></li>
+             
               
             </ul>
           </div> 
@@ -2440,7 +2471,7 @@ $("#simplePage-support-link").on("click", function (e) {
 
 
     // donate simple
-    $("#simplePage-donate-link").tooltip({ trigger: "click" });
+ $("#simplePage-donate-link").tooltip({ trigger: "click" });
 
 $("#simplePage-donate-link").on("click", function (e) {
   $("#simplePage-donate-link").tooltip("show");
@@ -2465,6 +2496,7 @@ $("#simplePage-give-link").on("click", function (e) {
 
 }
 actionCopy ()
+$("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
 </script>
 

@@ -4,7 +4,22 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
+button,
+label,
+p,
+a,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", sans-serif !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word;
+  word-break: break-word;
+}
 :root {
   --soft-gray: #fafafa;
   --bg-gray: rgb(242, 242, 242);
@@ -33,16 +48,35 @@ body {
 .mb-15 {
   margin-bottom: 15px;
 }
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.ml-28 {
+  margin-left: 28px;
+}
+.mb-11 {
+  margin-bottom: 11px;
+}
 p {
   margin-bottom: 0;
 }
-
+.lh-140 {
+  line-height: 140%;
+}
 /* main {
   max-width: 1440px;
   margin: auto;
   min-height: calc(100vh);
   padding: 2.25rem 0rem;
 } */
+.textFree {
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 140%;
+}
 
 textarea:focus,
 input[type="text"]:focus,
@@ -106,6 +140,28 @@ li {
 button {
   word-break: break-all;
 }
+.wrapper-switch {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  margin-bottom: 23px;
+}
+.wrapper-switch .switch {
+  margin: 0 7px 0 8px;
+  min-width: 30px;
+}
+.wrapper-switch .switch-text {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  /* identical to box height, or 20px */
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
 .select2-container {
   box-sizing: border-box;
   display: inline-block;
@@ -1846,7 +1902,29 @@ main {
   font-size: 12px !important;
   font-weight: 900;
 }
-
+.collapse-buyers {
+  cursor: pointer;
+}
+.collapse-buyers::after {
+  content: "\f078";
+  color: #000;
+  font-size: 12px !important;
+  font-family: "Font Awesome 5 Free";
+  margin-left: 0px;
+  font-weight: 900;
+  position: absolute;
+  right: 20px;
+}
+.collapse-buyers[aria-expanded="true"]::after {
+  content: "\f077";
+  font-family: "Font Awesome 5 Free";
+  margin-left: 0px;
+  color: #000;
+  font-size: 12px !important;
+  font-weight: 900;
+  position: absolute;
+  right: 20px;
+}
 /* add options */
 .addOptions {
   padding-left: 28px;
@@ -1871,4 +1949,85 @@ main {
   background-color: #40abfa;
   color: #ffffff;
   border: 1px solid #40abfa;
+}
+
+/* minimum price */
+.wrapper-minimumForm {
+  width: 90px;
+}
+.form-minimum {
+  width: 55px;
+  border-radius: 6px 0 0 6px !important;
+  -webkit-border-radius: 6px 0 0 6px !important;
+  -moz-border-radius: 6px 0 0 6px !important;
+  -ms-border-radius: 6px 0 0 6px !important;
+  -o-border-radius: 6px 0 0 6px !important;
+}
+.form-minimum::-webkit-outer-spin-button,
+.form-minimum::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  -moz-appearance: textfield; /* Firefox */
+}
+.precent-text {
+  border-radius: 0 6px 6px 0 !important;
+  -webkit-border-radius: 0 6px 6px 0 !important;
+  -moz-border-radius: 0 6px 6px 0 !important;
+  -ms-border-radius: 0 6px 6px 0 !important;
+  -o-border-radius: 0 6px 6px 0 !important;
+}
+.f-size14 {
+  font-size: 14px;
+}
+
+.f-size12 {
+  font-size: 12px;
+}
+
+/* digital product */
+.wrapper-drag {
+  width: 22px;
+  border-right: 1px solid #b8b8b8;
+}
+.wrapper-file {
+  border: 1px solid #b8b8b8;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  word-break: break-word;
+  max-width: 100%;
+}
+.wrapper-file,
+.wrapper-uploadFile {
+  width: 100%;
+}
+.wrapper-file i {
+  color: #b8b8b8;
+}
+.wrapperName-file {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 6px 8px;
+}
+.name-file {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #000000;
+}
+.btn-event {
+  /* border-left: 1px solid #b8b8b8; */
+  width: 67px;
+}
+.drag-btn {
+  padding-right: 8px;
+  padding-left: 8px;
 }
