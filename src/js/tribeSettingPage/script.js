@@ -929,12 +929,122 @@ function toggleInput() {
 }
 
 // add file
+// JavaScript untuk menambahkan file dan tautan secara terpisah
+// JavaScript untuk menambahkan file dan tautan secara terpisah
+
+const fileInput = document.getElementById("uploadFile");
+const fileInputLabel = document.getElementById("uploadFileLabel");
+const uploadedFilesContainer = document.getElementById("wrapper-uploadFile");
+
+// JavaScript untuk menambahkan file dan tautan secara terpisah
+
+fileInput.addEventListener("change", function () {
+  if (fileInput.files.length > 0) {
+    const fileName = fileInput.files[0].name;
+    const uploadedFile = createUploadedFileElement(fileName);
+    uploadedFilesContainer.appendChild(uploadedFile);
+    fileInputLabel.textContent = "Upload File"; // Mengubah label setelah file dipilih
+  } else {
+    // Jika pengguna membatalkan pemilihan file, reset tampilan
+    uploadedFilesContainer.innerHTML = "";
+    fileInputLabel.textContent = "Pilih File"; // Mengembalikan label ke tampilan awal
+  }
+});
+
+function createUploadedFileElement(fileName) {
+  const elementFile = `
+        
+  <div class="wrapper-drag">
+  <button class="drag-btn btn " data-tooltip="tooltip" data-placement="left" title="Drag to rearrange">        
+    <i class="fas fa-ellipsis-v"></i>      
+</button>
+</div>
+<div class="wrapperName-file">
+  <p class="name-file" data-tooltip="tooltip" data-placement="bottom" title="${fileName}">${fileName}</p>
+</div>
+<div class="btn-event d-flex">
+          
+    <i class="fa-solid fa-download " data-tooltip="tooltip" data-placement="left" title="download file"></i>
+
+  
+    <i class="fas fa-trash-alt " data-tooltip="tooltip" data-placement="left" title="delete file"></i>    
+
+
+</div>
+       
+    `;
+
+  const uploadedFile = document.createElement("div");
+  uploadedFile.classList.add(
+    "wrapper-file",
+    "d-flex",
+    "justify-content-between",
+    "align-items-center"
+  );
+  uploadedFile.innerHTML = elementFile;
+  // $(document).ready(function () {
+  //   $('[data-toggle="tooltip"]').tooltip();
+  // });
+  return uploadedFile;
+}
 
 function addLink() {
-  const linkContainer = document.getElementById("linkContainer");
+  const uploadedFilesContainer = document.getElementById("wrapper-uploadFile");
+  var inputValue = document.getElementById("inputAddLink").value;
+  var clearinputValue = document.getElementById("inputAddLink");
+  console.log(inputValue);
+  const elementFile = `
+        
+  <div class="wrapper-drag">
+  <button class="drag-btn btn " data-tooltip="tooltip" data-placement="left" title="Drag to rearrange">        
+    <i class="fas fa-ellipsis-v"></i>      
+</button>
+</div>
+<div class="wrapperName-file">
+  <p class="name-file color-a" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}"> <a href="${inputValue}" target="_blank">${inputValue} </a></p>
+</div>
+<div class="btn-event d-flex">
+<a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square " data-tooltip="tooltip" data-placement="left" title="Open link"></i> </a>
 
-  const link = document.createElement("a");
-  link.href = "#"; // Ganti "#" dengan URL yang sesuai
-  link.textContent = "Tautan ke file: " + fileInput.value;
-  linkContainer.appendChild(link);
+<i class="fas fa-trash-alt " data-tooltip="tooltip" data-placement="left" title="delete file"></i>   
+
+
+</div>
+       
+    `;
+
+  const uploadedFile = document.createElement("div");
+  uploadedFile.classList.add(
+    "wrapper-file",
+    "d-flex",
+    "justify-content-between",
+    "align-items-center"
+  );
+  uploadedFile.innerHTML = elementFile;
+
+  uploadedFilesContainer.appendChild(uploadedFile);
+  clearinputValue.value = "";
 }
+
+function rearrangeHandler() {
+  //for input form
+  let inputFormContainer = document.querySelector(".wrapper-uploadFile");
+  new Sortable(inputFormContainer, {
+    animation: 150,
+    handle: ".drag-btn",
+    ghostClass: "ghost",
+    forceFallback: true,
+    onStart: function (evt) {
+      document.documentElement.classList.add("draggable-cursor");
+      $("[data-toggle=tooltip]").tooltip("hide");
+      $("[data-toggle=tooltip]").tooltip("disable");
+    },
+    // Restores default page cursor
+    onEnd: function (evt) {
+      document.documentElement.classList.remove("draggable-cursor");
+      $("[data-toggle=tooltip]").tooltip("enable");
+    },
+  });
+}
+
+rearrangeHandler();

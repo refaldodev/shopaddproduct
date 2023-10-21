@@ -1201,40 +1201,41 @@
         
             <div class="wrapper-upload wrapper-upploadCover">
               <div class="file-input-container">
-              <input type="file" class=" d-none" id="uploadFile">
-              <label class="button button-modalUpload "  for="uploadFile">Upload File</label>
-              <button class="button button-modalAddFile " onclick="toggleInput()">Add File</button>
+              <input type="file" class=" d-none" id="uploadFile"  >
+              <label class="button button-modalUpload "  for="uploadFile" id="uploadFileLabel" >Upload File</label>
+              <button class="button button-modalAddLink "  onclick="toggleInput()" >Add Link</button>
              
             </div>
             <div class="wrapper-elementInput mb-20"  id="wrapper-elementInput" style="display: none;" >
               
-              <textarea type="text" id="elementInput" rows="1" class="form-control mt-9 messageInput mb-10 "   ></textarea>
+              <textarea type="text" id="inputAddLink" rows="1" class="form-control mt-9 inputAddLink mb-10 "   ></textarea>
               <button class="btn button-AddLink " onclick="addLink()" >Add Link</button>
             </div>
 
-            <div class="wrapper-uploadFile mb-5">
-              <div class="wrapper-file d-flex justify-content-between align-items-center">
-                <div class="wrapper-drag">
-                  <button class="drag-btn btn " data-tooltip="tooltip" data-placement="left" title="" data-original-title="Drag to rearrange">        
+            <div class="wrapper-uploadFile mb-5" id="wrapper-uploadFile">
+              <div class="wrapper-file d-flex justify-content-between align-items-center" style="overflow: hidden;">
+                <div class="wrapper-drag drag-btn " style="cursor: grab;" data-tooltip="tooltip" data-placement="left" title="" data-original-title="Drag to reorder">
+                  <button class=" drag-btnElement btn " style="cursor: grab;" data-tooltip="tooltip" data-placement="left" title="" data-original-title="Drag to reorder">        
                     <i class="fas fa-ellipsis-v"></i>      
                 </button>
                 </div>
                 <div class="wrapperName-file">
-                  <p class="name-file" data-tooltip="tooltip" data-placement="bottom" title="" data-original-title="file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed">file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed</p>
+                  <p class="name-file" data-tooltip="tooltip" data-placement="bottom" title="file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed" >file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed</p>
                 </div>
                 <div class="btn-event d-flex">
-                  <button class="download-file btn px-2" data-tooltip="tooltip" data-placement="left" title="" data-original-title="download file">        
-                    <i class="fa-solid fa-download"></i>
-                </button>
-                  <button class="delete-file btn px-2" data-tooltip="tooltip" data-placement="left" title="" data-original-title="delet file">        
-                    <i class="fas fa-trash-alt"></i>    
-                </button>
+                          
+                    <i class="fa-solid fa-download " data-tooltip="tooltip" data-placement="left" title="download file"></i>
+                
+                  
+                    <i class="fas fa-trash-alt " data-tooltip="tooltip" data-placement="left" title="delete file"></i>    
+            
               <!-- 
               <button class="redirect-file btn" data-tooltip="tooltip" data-placement="left" title="" data-original-title="redirect file">        
-                <i class="fa-solid fa-up-right-from-square"></i>
+                <i class="fa-solid fa-up-right-from-square" data-tooltip="tooltip" data-placement="left" title="Open link"></i>
             </button> -->
                 </div>
               </div>
+            
               
             </div>
             <div class="content-ul">
@@ -2370,6 +2371,7 @@
 
     <script src="./src/js/tribeSettingPage/bundle.js"></script>
     <script src="./src/js/tribeSettingPage/script.js"></script>
+    <!-- <script src="./src/js/tribeSettingPage/rearrangeHandler.js"></script> -->
     <script src="./src/js/navbarAndFooter.js"></script>
     <script>
 
@@ -2493,11 +2495,12 @@ $("#simplePage-give-link").on("click", function (e) {
   }, 800);
 });
 
-
+ 
 }
 actionCopy ()
 $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 
+   
 </script>
 
 

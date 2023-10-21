@@ -1202,7 +1202,7 @@ main {
             border: 1px solid #2c92db;
           }
         }
-        .button-modalAddFile {
+        .button-modalAddLink {
           border: 1px solid #40abfa;
           font-family: "Open Sans";
           font-style: normal;
@@ -1629,7 +1629,7 @@ main {
             border: 1px solid #2c92db;
           }
         }
-        .button-modalAddFile {
+        .button-modalAddLink {
           border: 1px solid #40abfa;
           font-family: "Open Sans";
           font-style: normal;
@@ -2094,7 +2094,7 @@ main {
             border: 1px solid #2c92db;
           }
         }
-        .button-modalAddFile {
+        .button-modalAddLink {
           border: 1px solid #40abfa;
           font-family: "Open Sans";
           font-style: normal;
@@ -2722,8 +2722,8 @@ main {
   font-weight: 800 !important;
   font-size: 14px;
   line-height: 140%;
-  min-width: 105px;
-  min-height: 45px;
+  // min-width: 105px;
+  min-height: 36px;
   max-height: 300px;
   color: #40abfa;
   background-color: #dff8ff;
@@ -2732,7 +2732,7 @@ main {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
-  padding: 12px 16px;
+  padding: 8px 16px;
   //margin-right: 10px;
   margin-bottom: 0;
   &:hover {

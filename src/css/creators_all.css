@@ -1999,12 +1999,33 @@ main {
   word-break: break-word;
   max-width: 100%;
 }
+.wrapper-file:not(:last-child) {
+  margin-bottom: 10px;
+}
+.wrapper-file:last-child {
+  margin-bottom: 0;
+}
 .wrapper-file,
 .wrapper-uploadFile {
   width: 100%;
 }
 .wrapper-file i {
   color: #b8b8b8;
+  padding-right: 10px;
+}
+.btn-event a {
+  width: 26px;
+  /* position: inherit; */
+  padding-right: 10px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.btn-event a i {
+  /* position: inherit; */
+  padding-right: 0px !important;
 }
 .wrapperName-file {
   flex: 1;
@@ -2023,11 +2044,27 @@ main {
   text-overflow: ellipsis;
   color: #000000;
 }
+.name-file a {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  overflow: hidden;
+  white-space: nowrap;
+  /* text-overflow: ellipsis; */
+  color: #007aff !important;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.color-a {
+  color: #007aff !important;
+}
 .btn-event {
   /* border-left: 1px solid #b8b8b8; */
-  width: 67px;
+  width: 50px;
 }
-.drag-btn {
+.drag-btnElement {
   padding-right: 8px;
   padding-left: 8px;
 }
