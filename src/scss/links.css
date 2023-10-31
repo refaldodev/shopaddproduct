@@ -3211,7 +3211,11 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   height: 100px;
   width: 100px;
   background-color: #c2c2c2;
-  border-radius: 50%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
   overflow: hidden;
   position: relative;
   flex: 0 0 100px;
@@ -3219,6 +3223,14 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
 }
 .wrapper-accordion .subAccordion-containerSupporter .profile-img-container2 img[src=""] {
   display: none;
+}
+.wrapper-accordion .subAccordion-containerSupporter .profile-img-container2 .custom-position-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  cursor: pointer;
 }
 .wrapper-accordion .subAccordion-containerSupporter .profile-img-container2 img {
   height: 100%;
@@ -3243,6 +3255,27 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   align-items: flex-end;
   font-size: 5rem;
   color: #888787;
+}
+.wrapper-accordion .subAccordion-containerSupporter .wrapper-video {
+  width: 255px;
+}
+.wrapper-accordion .subAccordion-containerSupporter .wrapper-video .profile-video-container {
+  height: 142.8px;
+  width: 100%;
+  background-color: #c2c2c2;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.wrapper-accordion .subAccordion-containerSupporter .wrapper-video .profile-video-container img[src=""] {
+  display: none;
+}
+.wrapper-accordion .subAccordion-containerSupporter .wrapper-video .custom-position-iconVideo {
+  position: relative;
+  left: 50%;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  cursor: pointer;
 }
 .wrapper-accordion .subAccordion-containerSupporter .alert-duration {
   width: 60px !important;
@@ -3490,11 +3523,11 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   color: white;
 }
 .wrapper-accordion .subAccordion-containerSupporter .wrapper-upload .file-input-container .wrapper-delete button {
-  border: 1px solid #76cc11 !important;
+  border: 1px solid #40abfa !important;
   background: none;
   border: none;
   outline: none;
-  color: #76cc11;
+  color: #40abfa;
   cursor: pointer;
   width: 36px;
   height: 36px;
@@ -3505,7 +3538,7 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   -o-border-radius: 50%;
 }
 .wrapper-accordion .subAccordion-containerSupporter .wrapper-upload .file-input-container .wrapper-delete button:hover {
-  background-color: #76cc11;
+  background-color: #40abfa;
   color: white;
 }
 .wrapper-accordion .subAccordion-containerSupporter .wrapper-upload .file-input-container .button-modalUpload {
@@ -3574,10 +3607,14 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   color: #000000;
 }
 .wrapper-accordion .subAccordion-containerSupporter .profile-img-container {
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 300px;
   background-color: #c2c2c2;
-  border-radius: 50%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
   overflow: hidden;
   position: relative;
   flex: 0 0 100px;
@@ -4139,4 +4176,28 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   background-color: #40abfa;
   color: rgb(255, 255, 255);
   border: 1px solid #40abfa;
+}
+
+.text-color-blueCustom {
+  color: #40abfa !important;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+/* Elemen <p> pertama */
+.mt-custom:first-child {
+  /* Properti CSS untuk elemen <mt-custom> pertama */
+  margin-top: 8px;
+}
+
+/* Semua elemen <mt-custom> kecuali elemen pertama */
+.mt-custom:not(:first-child) {
+  /* Properti CSS untuk semua elemen <mt-custom> kecuali elemen pertama */
+  margin-top: 15px;
+}
+
+.wrappper-event {
+  display: none;
 }/*# sourceMappingURL=links.css.map */

@@ -1222,6 +1222,36 @@ ul.nav-tabs {
   cursor: pointer !important;
   word-break: break-all;
 }
+.button.button-UploadImage {
+  border: 1px solid #40abfa;
+  font-family: "Open Sans";
+
+  font-weight: 800 !important;
+  font-size: 14px;
+  line-height: 140%;
+  min-width: 132px;
+  min-height: 36px;
+  max-height: 300px;
+  color: #40abfa;
+  background-color: #dff8ff;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  padding: 12px 16px;
+
+  margin-bottom: 0;
+}
+.button.button-UploadImage:hover {
+  background-color: #40abfa;
+  color: rgb(255, 255, 255);
+  border: 1px solid #40abfa;
+}
+.image-ul {
+  font-size: 12px !important;
+  color: #595959;
+}
 .d-flex {
   /* OLD - iOS 6-, Safari 3.1-6 */
   display: -webkit-box;
@@ -2012,6 +2042,10 @@ main {
 .wrapper-file i {
   color: #b8b8b8;
   padding-right: 10px;
+  cursor: pointer;
+}
+.wrapperEvent i {
+  cursor: pointer;
 }
 .btn-event a {
   width: 26px;
@@ -2067,4 +2101,7 @@ main {
 .drag-btnElement {
   padding-right: 8px;
   padding-left: 8px;
+}
+#inputAddLink {
+  min-height: 36px !important;
 }

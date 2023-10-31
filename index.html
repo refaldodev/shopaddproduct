@@ -47,7 +47,7 @@
 
 
     <!-- profile input modal -->
-    <div class="modal fade croppie-img-modal" id="profile-pic-modal" tabindex="-1" role="dialog" aria-labelledby="profile-img-modal" aria-hidden="true">
+    <!-- <div class="modal fade croppie-img-modal" id="profile-pic-modal" tabindex="-1" role="dialog" aria-labelledby="profile-img-modal" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -74,7 +74,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- profile input modal -->
 <!--Delete Modal profile -->
 <div class="modal fade" id="deleteModalProfile" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
@@ -152,7 +152,7 @@
           <label class="radio-container2" for="radio1">
             <p class="text-control"><span class="font-weight-bold">Sejak awal hingga sekarang</span>
             </p>
-              <input type="radio" name="radioedit" class="radioedit" id="radio1" checked="true">
+              <input type="radio" name="radioedit" class="radioedit" id="radio1" >
               <span class="fake-radio"></span>
           </label>
           <label class="radio-container2" for="radio2">
@@ -382,7 +382,7 @@
           <label class="radio-container2" for="radioEdit1">
             <p class="text-control"><span class="font-weight-bold">Sejak awal hingga sekarang</span>
             </p>
-              <input type="radio" name="radioedit2" class="radioedit2" id="radioEdit1" checked="true">
+              <input type="radio" name="radioedit2" class="radioedit2" id="radioEdit1" >
               <span class="fake-radio"></span>
           </label>
           <label class="radio-container2" for="radioEdit2">
@@ -993,15 +993,15 @@
             <div class="accordion-body bg-opacity  ">
           
               <!-- container radio -->
-              <div class="mb-4  mt-12">
-                <div class="wrapper-radioContainer">
+              <div class="mb-4  ">
+                <div class="wrapper-radioContainer mb-3">
                 <label class="radio-container">
                     
                     <p class="textRadioBtn">One price</p>
-                    <input type="radio" name="radio" checked="true">
+                    <input type="radio" name="radioGroup" onclick="cekRadioButton(1)" >
                     <span class="fake-radio"></span>
                 </label>
-                <div class="wrapper-form mt-2" style="padding-left:28px"> 
+                <div class="wrapper-form wrappper-event mt-2" style="padding-left:28px" id="wrapperForm1"> 
                   <div class="input-group ">
                     <div class="input-group-prepend ">
                       <div class="input-group-text border-custom-currency">SGD</div>
@@ -1019,11 +1019,12 @@
                     
                     
                   <p class="textRadioBtn"> Multiple prices<span class="font-weight-normal"> (Buyer can only choose one) </span></p>
-                    <input type="radio" name="radio">
+                    <input type="radio" name="radioGroup" onclick="cekRadioButton(2)">
                     <span class="fake-radio"></span>
                 </label>
-                <div class="container-wrapperPrice">
-                <div class="multiple-prices wrapper-price mt-2 ml-28" >
+                <div class="wrappper-event" id="wrapperForm2">
+                <div class="container-wrapperPrice " id="container-wrapperPrice1">
+                <div class="multiple-prices wrapper-price mt-custom ml-28" >
                   <div class="wrapper-form mb-10">
                     <p class="form-title">
                      Price
@@ -1084,66 +1085,129 @@
                 </div>
                 
               </div>
+
               <div class="addOptions">
-                <button class="addOptionsBtn btn">Add Option</button>
+                <button class="addOptionsBtn btn" id="addOptionsBtnPrice1">Add Option</button>
               </div>
+            </div>
               </div>
               <div class="wrapper-radioContainer mb-3">
                 <label class="radio-container">
                   
                   <p class="textRadioBtn">  Multiple prices<span class="font-weight-normal"> (Buyer can choose more than one or all) </span></p>
-                    <input type="radio" name="radio">
+                    <input type="radio" name="radioGroup" onclick="cekRadioButton(3)">
                     <span class="fake-radio"></span>
                 </label>
-                <div class="wrapperUploadImage" style="padding-left:28px">
-                  <div class="wrapper-showImage mb-14 display-none mt-2">
-                  <img src="" alt="image-supporter" id="image-supporter">
-                    
-                  </div>
-                  <div class="wrapper-upload wrapper-upploadCover mt-2">
-                    <div class="file-input-container mb-9">
-                     
-                      <div class="wrapper-upload">
-                        <label for="image-message">Upload Image</label>
-                        <input type="file" name="image-message" id="image-message" accept="image/x-png,image/gif,image/jpeg">
-                    
+                <div class="wrappper-event" id="wrapperForm3">
+                <div class="container-wrapperPrice "   >
+                  <div class="multiple-prices wrapper-price mt-2 ml-28 pb-1 ">
+                    <div class="wrapper-form mb-10">
+                      <p class="form-title text-color-blueCustom">
+                       Price to buy all
+                    </p>
+                      <div class="col-auto p-0">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group ">
+                          <div class="input-group-prepend ">
+                            <div class="input-group-text border-custom-currency">SGD</div>
+                          </div>
+                          <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height: 38px; overflow-y: hidden;">
+                        </div>
+                        <div class="d-flex align-items-start flex  justify-content-start mb-2">
+                          <p class="error-textarea">Cannot be empty</p>
+                         
                       </div>
-                     <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteImageMessageModal">
-                    <div class="wrapper-delete " data-toggle="modal" data-target="#deleteImageMessageModal" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete">
-                      <button type="button" class="" id="del-btnProfile">         
-                        <i class="fas fa-trash-alt"></i> 
-                      </button>
+                      </div>
                     </div>
+                   
+                
+              
                   </div>
-                  </div>
-    
-    
-                <p class="error-message-imageSupporter error-message" style="color: red;"></p>
-                <ul> 
-                  <li><span class="text-ulLi">Allowed file types: JPG, JPEG, PN</span>G, GIF
-                 
-                  </li> 
-                  <li><span class="text-ulLi">  Max file size: 1MB</span></li> 
-                  <li><span class="text-ulLi"> Min image height &amp; width: 100px </span></li> 
-                </ul>
                   
-                  </div>
                 </div>
+                <div class="container-wrapperPrice"  id="container-wrapperPrice2">
+                  <div class="multiple-prices wrapper-price mt-15 ml-28">
+                    <div class="wrapper-form mb-10">
+                      <p class="form-title">
+                       Price
+                    </p>
+                      <div class="col-auto p-0">
+                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                        <div class="input-group ">
+                          <div class="input-group-prepend ">
+                            <div class="input-group-text border-custom-currency">SGD</div>
+                          </div>
+                          <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height: 38px; overflow-y: hidden;">
+                        </div>
+                        <div class="d-flex align-items-start flex  justify-content-start mb-2">
+                          <p class="error-textarea">Cannot be empty</p>
+                         
+                      </div>
+                      </div>
+                    </div>
+                    <div class="wrapper-form mb-9">
+                      <p class="form-title">
+                          Title
+                    </p>
+                   
+        
+                    <textarea type="text" id="titleMultiplePrice" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;">Lorem ipsum dolor sit amet consectetur adipis Lorem ipsum dolor sit amet consectetur adipisLorem ipsum dolor sit </textarea>
+                    <div class="d-flex align-items-start flex  justify-content-between">
+                      <p class="error-textarea">Cannot be empty</p>
+                      <p class="countNumber" id="counttitleMultiplePrice">0  / 200</p>
+                  </div>
+                  </div>
+  
+                  <!-- multiple prices editor -->
+                  <div class="wrapper-form mb-0" id="heading-element">
+                    <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element" aria-expanded="false" aria-controls="collapse-element">
+                    
+                        Description
+                    
+                    </div>
+                    <div class="collapse" id="collapse-element" aria-labelledby="heading-element" data-parent="#heading-element">
+                  <div id="editorContainer2"></div>
+                  
+                </div>
+                  <!-- <div class="text-editor">
+                    <div id="editorJsFirst"  >
+                    
+                    </div>
+                  </div> -->
+                  
+              </div>
+  
+              <div class="wrapperEvent d-flex mt-5px">
+                <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up" data-toggle="tooltip" data-placement="top" title="" data-original-title="Move position up"></i>
+                <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down" data-toggle="tooltip" data-placement="top" title="" data-original-title="Move position down"></i>
+                <i class="fa-regular fa-trash-can mr-20 delete-element item-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+              </div>
+  
+              
+                  </div>
+                  
+                </div>
+                <div class="addOptions">
+                  <button class="addOptionsBtn btn" id="addOptionsBtnPrice2">Add Option</button>
+                </div>
+              </div>
               </div>
 <!--             free   -->
               <div class="wrapper-radioContainer mb-3">
                 <label class="radio-container">
                   
                   <p class="textRadioBtn">Free</p>
-                    <input type="radio" name="radio">
+                    <input type="radio" name="radioGroup" onclick="cekRadioButton(4)">
                     <span class="fake-radio"></span>
                 </label>
+                <div class="wrappper-event" id="wrapperForm4">
                 <p class="textFree ml-28 mt-1">Only for digital products/contents</p>
+              </div>
               </div>
 
             </div>
             <!-- container radio -->
-              <div class="wrapper-form" id="element-buyers">
+              <div class="wrapper-form " id="element-buyers">
                 <div class="collapse-buyers  mb-2 collapsed" data-toggle="collapse" data-target="#element-buyersCollapse" aria-expanded="false" aria-controls="element-buyersCollapse">
                 <!-- <p class="form-title "> -->
                   Buyers can pay what they want
@@ -1181,7 +1245,10 @@
             </div>
           </div>
           <!-- end price -->
-        <div class="accordion-item  accordion-item mb-card-default active" id="page-coverImage">
+          
+          
+          <!-- digital products -->
+        <div class="accordion-item  accordion-item mb-card-default  " id="page-coverImage">
           
           <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
               <div class="wrapper-icontext d-flex align-items-center">
@@ -1199,7 +1266,7 @@
           
          </div>
         
-            <div class="wrapper-upload wrapper-upploadCover">
+            <div class="wrapper-upload d-none wrapper-upploadCover" id="wrapperOnePrice">
               <div class="file-input-container">
               <input type="file" class=" d-none" id="uploadFile"  >
               <label class="button button-modalUpload "  for="uploadFile" id="uploadFileLabel" >Upload File</label>
@@ -1208,14 +1275,14 @@
             </div>
             <div class="wrapper-elementInput mb-20"  id="wrapper-elementInput" style="display: none;" >
               
-              <textarea type="text" id="inputAddLink" rows="1" class="form-control mt-9 inputAddLink mb-10 "   ></textarea>
-              <button class="btn button-AddLink " onclick="addLink()" >Add Link</button>
+              <textarea type="text" id="inputAddLink" rows="1" class="form-control mt-9 inputAddLink mb-10 " id="inputAddLink" ></textarea>
+              <button class="btn button-AddLink " id="button-AddLink" type="button" >Add Link</button>
             </div>
 
             <div class="wrapper-uploadFile mb-5" id="wrapper-uploadFile">
               <div class="wrapper-file d-flex justify-content-between align-items-center" style="overflow: hidden;">
-                <div class="wrapper-drag drag-btn " style="cursor: grab;" data-tooltip="tooltip" data-placement="left" title="" data-original-title="Drag to reorder">
-                  <button class=" drag-btnElement btn " style="cursor: grab;" data-tooltip="tooltip" data-placement="left" title="" data-original-title="Drag to reorder">        
+                <div class="wrapper-drag drag-btn " style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+                  <button class=" drag-btnElement btn hover-tooltips "  style="cursor: grab;">        
                     <i class="fas fa-ellipsis-v"></i>      
                 </button>
                 </div>
@@ -1224,14 +1291,14 @@
                 </div>
                 <div class="btn-event d-flex">
                           
-                    <i class="fa-solid fa-download " data-tooltip="tooltip" data-placement="left" title="download file"></i>
+                    <i class="fa-solid fa-download hover-tooltips "   data-tooltip="tooltip" data-placement="top" title="Download"></i>
                 
                   
-                    <i class="fas fa-trash-alt " data-tooltip="tooltip" data-placement="left" title="delete file"></i>    
+                    <i class="fas fa-trash-alt  item-icon-delete hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
             
               <!-- 
-              <button class="redirect-file btn" data-tooltip="tooltip" data-placement="left" title="" data-original-title="redirect file">        
-                <i class="fa-solid fa-up-right-from-square" data-tooltip="tooltip" data-placement="left" title="Open link"></i>
+              <button class="redirect-file btn" data-tooltip="tooltip" data-placement="top" title="" data-original-title="redirect file">        
+                <i class="fa-solid fa-up-right-from-square" data-tooltip="tooltip" data-placement="top" title="Open link"></i>
             </button> -->
                 </div>
               </div>
@@ -1251,16 +1318,224 @@
             </ul>
           </div> 
             </div>
+            <!--  CONTOH SUB ACCORDION  -->
+            <div class="wrapper-accordion mt-0 d-none" id="wrapperMultiplePrice">
+              <div class="subAccordion-container">
+                <div class="subAccordion-item  subAccordion-item mb-card-default ">
+                  <div class="subAccordion-header  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
+                      <div class="wrapper-icontext d-flex align-items-center">
+                      <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
+                    
+                    <p class="text-left lineHeight160 mr-6  title-accordion">Product #1 <i class="fas fa-exclamation-circle  color-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="All must be filled"></i></p> 
+                    <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                  </div>
+                 
+                
+                  </div>
+                  <div class="subAccordion-body bg-opacity ">
+
+                    <div class="wrapper-upload  wrapper-upploadCover">
+                      <div class="file-input-container">
+                      <input type="file" class=" d-none" id="uploadFile"  >
+                      <label class="button button-modalUpload "  for="uploadFile" id="uploadFileLabel" >Upload File</label>
+                      <button class="button button-modalAddLink "  onclick="toggleInput()" >Add Link</button>
+                     
+                    </div>
+                    <div class="wrapper-elementInput mb-20"  id="wrapper-elementInput" style="display: none;" >
+                      
+                      <textarea type="text" id="inputAddLink" rows="1" class="form-control mt-9 inputAddLink mb-10 " id="inputAddLink" ></textarea>
+                      <button class="btn button-AddLink " id="button-AddLink" type="button" >Add Link</button>
+                    </div>
+        
+                    <div class="wrapper-uploadFile mb-5" id="wrapper-uploadFile">
+                      <div class="wrapper-file d-flex justify-content-between align-items-center" style="overflow: hidden;">
+                        <div class="wrapper-drag drag-btn " style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+                          <button class=" drag-btnElement btn hover-tooltips "  style="cursor: grab;">        
+                            <i class="fas fa-ellipsis-v"></i>      
+                        </button>
+                        </div>
+                        <div class="wrapperName-file">
+                          <p class="name-file" data-tooltip="tooltip" data-placement="bottom" title="file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed" >file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed</p>
+                        </div>
+                        <div class="btn-event d-flex">
+                                  
+                            <i class="fa-solid fa-download hover-tooltips "   data-tooltip="tooltip" data-placement="top" title="Download"></i>
+                        
+                          
+                            <i class="fas fa-trash-alt  item-icon-delete hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
+                    
+                      <!-- 
+                      <button class="redirect-file btn" data-tooltip="tooltip" data-placement="top" title="" data-original-title="redirect file">        
+                        <i class="fa-solid fa-up-right-from-square" data-tooltip="tooltip" data-placement="top" title="Open link"></i>
+                    </button> -->
+                        </div>
+                      </div>
+                    
+                      
+                    </div>
+                    <div class="content-ul">
+                      <p class="font-weight-bold fs-14">Important:</p> 
+        
+                    <ul>
+                      <li> <span class="text-ulLi">Maximum size per file: 20MB </span></li>
+                      <li> <span class="text-ulLi">If the format you’re trying to upload is not supported, save it as a zip file and upload again.</span></li>
+                      <li> <span class="text-ulLi">If the file you're trying to upload is larger than 20MB, upload it to Google Drive (or something similar), then add it as a link.</span></li>
+                      <li> <span class="text-ulLi">The file or link that you upload must be the final product that buyers will receive, not a preview.</span></li>
+                     
+                      
+                    </ul>
+                  </div> 
+                    </div>
+                  </div>
+                </div>     
+                <div class="subAccordion-item  subAccordion-item mb-card-default ">
+                  <div class="subAccordion-header  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
+                      <div class="wrapper-icontext d-flex align-items-center">
+                      <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
+                    
+                    <p class="text-left lineHeight160 mr-6  title-accordion">Product #2 <i class="fas fa-exclamation-circle  color-exclamation-circle" data-toggle="tooltip" data-placement="top" title="" data-original-title="All must be filled"></i></p>
+                    <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                  </div>
+                 
+                
+                  </div>
+                  <div class="subAccordion-body bg-opacity active ">
+                    <div class="wrapper-upload  wrapper-upploadCover">
+                      <div class="file-input-container">
+                      <input type="file" class=" d-none" id="uploadFile">
+                      <label class="button button-modalUpload " for="uploadFile" id="uploadFileLabel">Upload File</label>
+                      <button class="button button-modalAddLink " onclick="toggleInput()">Add Link</button>
+                     
+                    </div>
+                    <div class="wrapper-elementInput mb-20" id="wrapper-elementInput" style="display: none;">
+                      
+                      <textarea type="text" id="inputAddLink" rows="1" class="form-control mt-9 inputAddLink mb-10 " style="height:0px;overflow-y:hidden;"></textarea>
+                      <button class="btn button-AddLink " id="button-AddLink" type="button">Add Link</button>
+                    </div>
+        
+                    <div class="wrapper-uploadFile mb-5" id="wrapper-uploadFile">
+                      <div class="wrapper-file d-flex justify-content-between align-items-center" style="overflow: hidden;">
+                        <div class="wrapper-drag drag-btn " style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+                          <button class=" drag-btnElement btn hover-tooltips " style="cursor: grab;">        
+                            <i class="fas fa-ellipsis-v"></i>      
+                        </button>
+                        </div>
+                        <div class="wrapperName-file">
+                          <p class="name-file" data-tooltip="tooltip" data-placement="bottom" title="" data-original-title="file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed">file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed</p>
+                        </div>
+                        <div class="btn-event d-flex">
+                                  
+                            <i class="fa-solid fa-download hover-tooltips " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Download"></i>
+                        
+                          
+                            <i class="fas fa-trash-alt  item-icon-delete hover-tooltips " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>    
+                    
+                      <!-- 
+                      <button class="redirect-file btn" data-tooltip="tooltip" data-placement="top" title="" data-original-title="redirect file">        
+                        <i class="fa-solid fa-up-right-from-square" data-tooltip="tooltip" data-placement="top" title="Open link"></i>
+                    </button> -->
+                        </div>
+                      </div>
+                    
+                      
+                    </div>
+                    <div class="content-ul">
+                      <p class="font-weight-bold fs-14">Important:</p> 
+        
+                    <ul>
+                      <li> <span class="text-ulLi">Maximum size per file: 20MB </span></li>
+                      <li> <span class="text-ulLi">If the format you’re trying to upload is not supported, save it as a zip file and upload again.</span></li>
+                      <li> <span class="text-ulLi">If the file you're trying to upload is larger than 20MB, upload it to Google Drive (or something similar), then add it as a link.</span></li>
+                      <li> <span class="text-ulLi">The file or link that you upload must be the final product that buyers will receive, not a preview.</span></li>
+                     
+                      
+                    </ul>
+                  </div> 
+                    </div>
+                  </div>
+                </div>
+                <div class="subAccordion-item  subAccordion-item mb-card-default ">
+                  <div class="subAccordion-header  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
+                      <div class="wrapper-icontext d-flex align-items-center">
+                      <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
+                    
+                    <p class="text-left lineHeight160 mr-6  title-accordion ">Bonus for buyers if they buy all  <span class="font-weight-normal">(optional)</span></p>
+                    <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                  </div>
+                 
+                
+                  </div>
+                  <div class="subAccordion-body bg-opacity active ">
+                    <div class="wrapper-upload  wrapper-upploadCover">
+                      <div class="file-input-container">
+                      <input type="file" class=" d-none" id="uploadFile">
+                      <label class="button button-modalUpload " for="uploadFile" id="uploadFileLabel">Upload File</label>
+                      <button class="button button-modalAddLink " onclick="toggleInput()">Add Link</button>
+                     
+                    </div>
+                    <div class="wrapper-elementInput mb-20" id="wrapper-elementInput" style="display: none;">
+                      
+                      <textarea type="text" id="inputAddLink" rows="1" class="form-control mt-9 inputAddLink mb-10 " style="height:0px;overflow-y:hidden;"></textarea>
+                      <button class="btn button-AddLink " id="button-AddLink" type="button">Add Link</button>
+                    </div>
+        
+                    <div class="wrapper-uploadFile mb-5" id="wrapper-uploadFile">
+                      <div class="wrapper-file d-flex justify-content-between align-items-center" style="overflow: hidden;">
+                        <div class="wrapper-drag drag-btn " style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+                          <button class=" drag-btnElement btn hover-tooltips " style="cursor: grab;">        
+                            <i class="fas fa-ellipsis-v"></i>      
+                        </button>
+                        </div>
+                        <div class="wrapperName-file">
+                          <p class="name-file" data-tooltip="tooltip" data-placement="bottom" title="" data-original-title="file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed">file-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sedfile-name-here-lorem-ipsum-sit-amet-consectetur-adipiscing-elit-sed</p>
+                        </div>
+                        <div class="btn-event d-flex">
+                                  
+                            <i class="fa-solid fa-download hover-tooltips " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Download"></i>
+                        
+                          
+                            <i class="fas fa-trash-alt  item-icon-delete hover-tooltips " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>    
+                    
+                      <!-- 
+                      <button class="redirect-file btn" data-tooltip="tooltip" data-placement="top" title="" data-original-title="redirect file">        
+                        <i class="fa-solid fa-up-right-from-square" data-tooltip="tooltip" data-placement="top" title="Open link"></i>
+                    </button> -->
+                        </div>
+                      </div>
+                    
+                      
+                    </div>
+                    <div class="content-ul">
+                      <p class="font-weight-bold fs-14">Important:</p> 
+        
+                    <ul>
+                      <li> <span class="text-ulLi">Maximum size per file: 20MB </span></li>
+                      <li> <span class="text-ulLi">If the format you’re trying to upload is not supported, save it as a zip file and upload again.</span></li>
+                      <li> <span class="text-ulLi">If the file you're trying to upload is larger than 20MB, upload it to Google Drive (or something similar), then add it as a link.</span></li>
+                      <li> <span class="text-ulLi">The file or link that you upload must be the final product that buyers will receive, not a preview.</span></li>
+                     
+                      
+                    </ul>
+                  </div> 
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- END CONTOH SUB ACCORDION  -->
           </div>
         </div>
+        <!-- end digital products -->
         
-        <div class="accordion-item  accordion-item mb-card-default " id="page-profilePicture">
+        <div class="accordion-item  accordion-item mb-card-default  active" id="page-profilePicture">
          
           <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
               <div class="wrapper-icontext d-flex align-items-center">
               <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
             
-            <p class="text-left lineHeight160 mr-6  title-accordion">Profile Picture</p>
+            <p class="text-left lineHeight160 mr-6  title-accordion">Cover Image & Previews</p>
             <!-- <i class="fa-solid fa-chevron-down"></i> -->
           </div>
          
@@ -1270,8 +1545,22 @@
 
           <div class="accordion-body bg-opacity    pt-0">
          
-         <!-- user -->
-         <div class="profile-img-container profile-image display-none">
+       
+            <div class="subAccordion-containerSupporter">
+              <div class="subAccordion-itemSupporter mb-card-default">
+                <div class="subAccordion-headerSupporter  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
+                    <div class="wrapper-icontext d-flex align-items-center">
+                    <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
+                  
+                  <p class="text-left lineHeight160 mr-6  title-accordion">Cover Image</p>
+                  <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                </div>
+               
+              
+                </div>
+                <div class="subAccordion-bodySupporter bg-opacity  ">
+                   <!-- user -->
+         <div class="profile-img-container profile-image ">
           <img src="" alt="profile-image"  id="profile-image">
                  
                 </div>
@@ -1279,7 +1568,7 @@
             <div class="wrapper-upload wrapper-upploadCover">
               <div class="file-input-container">
                
-              <button class="button button-modalUpload " data-toggle="modal" data-target="#profile-pic-modal">Upload Image</button>
+              <button class="button button-UploadImage font-weight-bolder" data-toggle="modal" data-target="#profile-pic-modal">Upload Image</button>
                <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteIconProfile">
               <div class="wrapper-delete " data-toggle="modal" data-target="#deleteModalProfile" data-tooltip="tooltip" data-placement="top"     title="" data-original-title="Delete">
                 <button type="button" class="" id="del-btnProfile" >         
@@ -1288,13 +1577,106 @@
               </div>
             </div>
             </div>
-            <ul>
-              <li> <span class="text-ulLi">Allowed file types: JPG, JPEG, PNG   </span></li>
-              <li> <span class="text-ulLi">Max file size: 1MB   </span></li>
-              <li> <span class="text-ulLi">Min image height and width: 320px </span></li>
+            <ul class="image-ul">
+              <li> <span class="text-ulLi">Only this format: JPG, JPEG, PNG   </span></li>
+              <li> <span class="text-ulLi">Max file size: 2MB   </span></li>
+              <li> <span class="text-ulLi">Minimum image width: 800px </span></li>
+              <li> <span class="text-ulLi">Minimum image height: 350px</span></li>
+              <li> <span class="text-ulLi">Recommended image ratio: 1 : 1 (width : height)</span></li>
 
             </ul>
             
+            </div>
+                </div>
+              </div>     
+              <div class="subAccordion-itemSupporter mb-card-default ">
+                <div class="subAccordion-headerSupporter  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
+                    <div class="wrapper-icontext d-flex align-items-center">
+                    <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
+                  
+                  <p class="text-left lineHeight160 mr-6  title-accordion">Preview: Image</p>
+                  <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                </div>
+               
+              
+                </div>
+                <div class="subAccordion-bodySupporter bg-opacity  ">
+                   <!-- user -->
+                   <div class="d-flex flex-wrap">
+         <div class="profile-img-container2 mr-20 profile-image ">
+          <img src="" alt="profile-image"  id="profile-image">
+          <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-icon " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+                </div>
+               
+              </div>
+                <!-- user -->
+            <div class="wrapper-upload wrapper-upploadCover">
+              <div class="file-input-container">
+               
+              <button class="button button-UploadImage font-weight-bolder" data-toggle="modal" data-target="#profile-pic-modal">Upload Image</button>
+               <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteIconProfile">
+              <div class="wrapper-delete " data-toggle="modal" data-target="#deleteModalProfile" data-tooltip="tooltip" data-placement="top"     title="" data-original-title="Delete">
+                <button type="button" class="" id="del-btnProfile" >         
+                  <i class="fas fa-trash-alt"></i> 
+                </button>
+              </div>
+            </div>
+            </div>
+            <ul class="image-ul">
+              <li> <span class="text-ulLi">Only this format: JPG, JPEG, PNG   </span></li>
+              <li> <span class="text-ulLi">Max file size: 2MB   </span></li>
+              <li> <span class="text-ulLi">Minimum image width: 350px </span></li>
+              <li> <span class="text-ulLi">Minimum image height: 350px</span></li>
+           
+
+            </ul>
+            
+            </div>
+                </div>
+              </div>   
+              <div class="subAccordion-itemSupporter mb-card-default active">
+                <div class="subAccordion-headerSupporter  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
+                    <div class="wrapper-icontext d-flex align-items-center">
+                    <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
+                  
+                  <p class="text-left lineHeight160 mr-6  title-accordion">Preview: Video</p>
+                  <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                </div>
+               
+              
+                </div>
+                <div class="subAccordion-bodySupporter bg-opacity  ">
+                   <!-- user -->
+                  
+                <!-- user -->
+                <div class="wrapper-upload  wrapper-upploadCover">
+                 
+                <div class="wrapper-elementInput mb-20"  id="wrapper-elementInput"  >
+                  
+                  <textarea type="text" id="inputAddVideo" rows="1" class="form-control mt-9 inputAddLink mb-10 " id="inputAddLink" ></textarea>
+                  <button class="btn button-AddLink " id="button-AddLink" type="button" >Add Video</button>
+                </div>
+    
+            
+                </div>
+                <div class="wrapper-container-video d-flex">
+                <div class="wrapper-video  mr-20">
+                  <div class="profile-video-container  ">
+                  
+                  
+                         </div>
+                         <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-iconVideo " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+                       </div>
+                       <div class="wrapper-video  mr-20">
+                        <div class="profile-video-container  ">
+                        
+                        
+                               </div>
+                               <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-iconVideo " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+                             </div>
+                      </div>
+                </div>
+              </div>   
             </div>
           </div>
         </div>
@@ -1305,7 +1687,7 @@
               <div class="wrapper-icontext d-flex align-items-center">
               <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
             
-            <p class="text-left lineHeight160 mr-6  title-accordion">Give Support Buttons</p>
+            <p class="text-left lineHeight160 mr-6  title-accordion">Additional Settings</p>
             <!-- <i class="fa-solid fa-chevron-down"></i> -->
           </div>
          
@@ -1315,153 +1697,7 @@
           <div class="accordion-body bg-opacity  pt-0">
 
             <div class="wrapper-accordion mt-0">
-        <div class="subAccordion-container">
-          <div class="subAccordion-item  subAccordion-item mb-card-default ">
-            <div class="subAccordion-header  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
-                <div class="wrapper-icontext d-flex align-items-center">
-                <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
-              
-              <p class="text-left lineHeight160 mr-6  title-accordion">Button #1</p>
-              <!-- <i class="fa-solid fa-chevron-down"></i> -->
-            </div>
-           
-          
-            </div>
-            <div class="subAccordion-body bg-opacity ">
-              <div class="wrapper-switch"> 
-                <span class="switch-text">
-                Off
-              </span>
-                <div class="switch">
-                  <input type="checkbox" id="switch-1"><label for="switch-1">Toggle</label> 
-                </div>
-                <span class="switch-text">
-                On
-                </span>
-              </div>
-              <div class="wrapper-form">
-                <p class="form-title">
-                  Text on button
-              </p>
-             
-  
-              <textarea type="text" id="TextonButton" rows="1" class="form-control mt-9 messageInput"  maxlength="20" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque facilis magni molestias. Eveniet, quaerat doloremque. Placeat soluta voluptas ipsum aperiam exercitationem, dolor rerum ea, maxime libero vero suscipit eos odio, fugiat sunt voluptatem. Sunt odit, aut optio a dignissimos similique neque, est facilis quaerat eligendi labore doloribus fugiat impedit ipsa iusto ab ipsum tenetur voluptatibus praesentium natus dolorem sit. Id quas veniam nobis ab voluptatum repellat in </textarea>
-              <div class="d-flex align-items-start flex  justify-content-end">
-               
-                <p class="countNumber" id="countTextonButton">0  / 20</p>
-            </div>
-            </div>
-            </div>
-          </div>     
-          <div class="subAccordion-item  subAccordion-item mb-card-default ">
-            <div class="subAccordion-header  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
-                <div class="wrapper-icontext d-flex align-items-center">
-                <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
-              
-              <p class="text-left lineHeight160 mr-6  title-accordion">Button #2</p>
-              <!-- <i class="fa-solid fa-chevron-down"></i> -->
-            </div>
-           
-          
-            </div>
-            <div class="subAccordion-body bg-opacity active ">
-              <div class="wrapper-switch">
-              <span class="switch-text">
-              Off
-            </span>
-              <div class="switch">
-                <input type="checkbox" id="switch-circle-2"><label for="switch-circle-2">Toggle</label> 
-              </div>
-              <span class="switch-text">
-              On
-              </span>
-            </div>
-            <div class="wrapper-form mb-9">
-              <p class="form-title">
-                Text on button
-            </p>
-           
-
-            <textarea type="text" id="TextonButton2" rows="1" class="form-control mt-9 messageInput"  maxlength="20" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet tempora quia ex eligendi aspernatur eius delectus nemo exercitationem veritatis fugiat, alias quidem, non magni voluptates dicta accusamus hic possimus quisquam distinctio. Labore amet cum eveniet dolorum, atque, sequi deleniti assumenda necessitatibus eos aspernatur corporis quaerat accusamus aliquam et officiis at, omnis ex quos laudantium enim! Corporis, magni velit neque, fugit hic libero cum quibusdam nihil repudiandae modi beatae consectetur praesentium sit! Quia pariatur fugit soluta laboriosam earum. Iste est perspiciatis in illo, perferendis cupiditate sit. Amet, qui. Placeat voluptate a ea rem quos ipsam qui dolor, impedit, consequuntur tempore doloribus.</textarea>
-            <div class="d-flex align-items-start flex  justify-content-end">
-             
-              <p class="countNumber" id="countTextonButton2">0  / 20</p>
-          </div>
-          </div>  
-          <div class="wrapper-form mb-9">
-            <p class="form-title">
-              Item name
-          </p>
-         
-
-          <textarea type="text" id="ItemName" rows="1" class="form-control mt-9 messageInput"  maxlength="20" >  </textarea>  
-          <div class="d-flex align-items-start flex  justify-content-end">
-           
-            <p class="countNumber" id="countItemName">0  / 20</p>
-        </div>
-        </div>
         
-        <div class="wrapper-form mb-24">
-          <p class="form-title">
-            Item picture
-        </p>
-          <!-- user -->
-          <div class="profile-img-container2  mb-2 mt-2 profile-image display-none  " id="wrapperitem-image">
-            <img src="" alt="item-image"  id="item-image">
-                   
-                  </div>
-                  <!-- user -->
-              <div class="wrapper-upload wrapper-upploadCover mt-10">
-                <div class="file-input-container mb-9">
-                 
-                  <div class="wrapper-upload">
-                    <label for="uploadItem">Upload Image</label>
-                    <input type="file" name="uploadItem" id="uploadItem" accept="image/x-png,image/gif,image/jpeg" >
-                
-                  </div>
-                 <div class="display-none wrapper-deleteMarginLeft " id="wrapper-deleteItem">
-                <div class="wrapper-delete " data-toggle="modal" data-target="#deleteModalItem" data-tooltip="tooltip" data-placement="top"     title="" data-original-title="Delete">
-                  <button type="button" class="" id="del-btnProfile" >         
-                    <i class="fas fa-trash-alt"></i> 
-                  </button>
-                </div>
-              </div>
-              </div>
-
-
-            <p class="error-message-item error-message" style="color: red;" id="error-message"></p>
-              <ul>
-                <li><span class="text-ulLi">Allowed file types: JPG, JPEG, PNG  </span></li>
-                <li><span class="text-ulLi">Max file size: 500kb  </span></li>
-                <li><span class="text-ulLi">Min image height and width: 100px</span></li>
-  
-              </ul>
-              
-              </div>
-
-      </div>
-      <div class="wrapper-form mb-24">
-        <p class="form-title">
-          Price per unit      </p>
-     
-      <!-- <div class="wrapper-elemen-form">
-
-        <input type="text" id="ItemName" rows="1" class="form-control mt-9 messageInput"  maxlength="20" >
-      </div> -->
-
-      <div class="col-auto p-0">
-        <label class="sr-only" for="inlineFormInputGroup">Username</label>
-        <div class="input-group mb-2">
-          <div class="input-group-prepend ">
-            <div class="input-group-text border-custom-currency">SGD</div>
-          </div>
-          <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup">
-        </div>
-      </div>
-    </div>
-            </div>
-          </div>
-        </div>
       </div>
           </div>
         </div>
@@ -1670,7 +1906,7 @@
             <div class="mb-2 mt-1">
               <label class="radio-container mb-2">
 <p  class="textRadioBtn">  According to the language of the visitor's country</p>
-                  <input type="radio" name="radio2" checked="true">
+                  <input type="radio" name="radio2" >
                   <span class="fake-radio"></span>
               </label>
               <label class="radio-container">
@@ -2350,6 +2586,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3.2/jquery.easing.min.js" integrity="sha512-qJw3EXcEMHpFae2o6eQmiDc1TACjjT7xMGnMcsmDFB55XiL/6SdZEsRv08wRR+OLJ7sijqHksLHDAlbB94glxg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./src/js/lib/popper.min.js"></script>
     <script src="./src/js/lib/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./src/js/lib/bootstrap.min.js"></script>
     <script src="./src/js/lib/select2.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
@@ -2498,8 +2735,14 @@ $("#simplePage-give-link").on("click", function (e) {
  
 }
 actionCopy ()
-$("body").tooltip({ selector: '[data-toggle=tooltip]' });
+// $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+$('body').tooltip({
+    selector: '.item-icon'
+});
 
+$('body').tooltip({
+    selector: '.hover-tooltips'
+});
    
 </script>
 
