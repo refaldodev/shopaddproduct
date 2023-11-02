@@ -826,13 +826,13 @@ footer .row:first-of-type::after {
   min-width: 120px;
 }
 #deleteModal .modal-content .modal-body .btn-fill-light:hover {
-  background-color: #76cc11;
+  background-color: #40abfa;
 }
 #deleteModal .modal-content .modal-body .btn-fill-light.active {
-  background-color: #76cc11;
+  background-color: #40abfa;
 }
 #deleteModal .modal-content .modal-body .btn-fill-light.active:hover {
-  background-color: #6fc211;
+  background-color: #2c92db;
 }
 
 #deleteModalProfile .modal-content {
@@ -850,13 +850,13 @@ footer .row:first-of-type::after {
   min-width: 120px;
 }
 #deleteModalProfile .modal-content .modal-body .btn-fill-light:hover {
-  background-color: #76cc11;
+  background-color: #40abfa;
 }
 #deleteModalProfile .modal-content .modal-body .btn-fill-light.active {
-  background-color: #76cc11;
+  background-color: #40abfa;
 }
 #deleteModalProfile .modal-content .modal-body .btn-fill-light.active:hover {
-  background-color: #6fc211;
+  background-color: #2c92db;
 }
 
 #deleteModalItem .modal-content {
@@ -874,13 +874,13 @@ footer .row:first-of-type::after {
   min-width: 120px;
 }
 #deleteModalItem .modal-content .modal-body .btn-fill-light:hover {
-  background-color: #76cc11;
+  background-color: #40abfa;
 }
 #deleteModalItem .modal-content .modal-body .btn-fill-light.active {
-  background-color: #76cc11;
+  background-color: #40abfa;
 }
 #deleteModalItem .modal-content .modal-body .btn-fill-light.active:hover {
-  background-color: #6fc211;
+  background-color: #2c92db;
 }
 
 #deleteModalVideo .modal-content {
@@ -898,13 +898,13 @@ footer .row:first-of-type::after {
   min-width: 120px;
 }
 #deleteModalVideo .modal-content .modal-body .btn-fill-light:hover {
-  background-color: #76cc11;
+  background-color: #40abfa;
 }
 #deleteModalVideo .modal-content .modal-body .btn-fill-light.active {
-  background-color: #76cc11;
+  background-color: #40abfa;
 }
 #deleteModalVideo .modal-content .modal-body .btn-fill-light.active:hover {
-  background-color: #6fc211;
+  background-color: #2c92db;
 }
 
 #deleteImageMessageModal .modal-content {
@@ -2136,7 +2136,7 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
     margin-bottom: 18px !important;
   }
   .accordion-item:not(:last-child) {
-    margin-bottom: 20px !important;
+    margin-bottom: 30px;
   }
   main .content-wrapper {
     padding: 0;
@@ -2869,7 +2869,7 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   color: #000000;
 }
 .wrapper-accordion .subAccordion-container .subAccordion-item:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .wrapper-accordion .subAccordion-container .subAccordion-item .subAccordion-header {
   background: transparent;
@@ -3277,6 +3277,13 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   font-size: 14px;
   cursor: pointer;
 }
+.wrapper-accordion .subAccordion-containerSupporter .wrapper-audio .audio {
+  flex: 1;
+}
+.wrapper-accordion .subAccordion-containerSupporter .wrapper-audio .item-delete-audio {
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
 .wrapper-accordion .subAccordion-containerSupporter .alert-duration {
   width: 60px !important;
   height: 40px !important;
@@ -3331,7 +3338,7 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   color: #000000;
 }
 .wrapper-accordion .subAccordion-containerSupporter .subAccordion-itemSupporter:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 .wrapper-accordion .subAccordion-containerSupporter .subAccordion-itemSupporter .subAccordion-headerSupporter {
   -webkit-user-select: none;
@@ -3484,22 +3491,24 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   min-height: 36px;
 }
 .wrapper-accordion .subAccordion-containerSupporter .wrapper-upload .file-input-container label {
-  border: 1px solid #76cc11;
+  border: 1px solid #40abfa;
   font-family: "Open Sans";
   font-style: normal;
-  font-weight: 800;
+  font-weight: 800 !important;
   font-size: 14px;
   line-height: 140%;
-  min-width: 105px;
-  max-height: 46px;
-  color: #76cc11;
-  background-color: #dffbdf;
+  min-width: 132px;
+  text-align: center;
+  min-height: 36px;
+  max-height: 300px;
+  color: #40abfa;
+  background-color: #dff8ff;
   border-radius: 20px;
   padding: 0.5rem 1rem;
   margin-bottom: 0;
 }
 .wrapper-accordion .subAccordion-containerSupporter .wrapper-upload .file-input-container label:hover {
-  background-color: #76cc11;
+  background-color: #40abfa;
   color: white;
 }
 .wrapper-accordion .subAccordion-containerSupporter .wrapper-upload .file-input-container input[type=file] {

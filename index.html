@@ -76,12 +76,12 @@
       </div>
     </div> -->
     <!-- profile input modal -->
-<!--Delete Modal profile -->
+<!--Delete Modal cover image  -->
 <div class="modal fade" id="deleteModalProfile" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <button type="button" class="btn btn-fill-light active mb-3" data-dismiss="modal" id="confirm-delete-btnProfile">Hapus</button>
+        <button type="button" class="btn btn-fill-light active mb-3" data-dismiss="modal" id="confirm-delete-btnCoverImg">Hapus</button>
         <button type="button" class="btn btn-fill-light" data-dismiss="modal" id="cancel-delete-btn">Cancel</button>
       </div>
     </div>
@@ -793,114 +793,8 @@
 
     <main class="">
       <section class="content-wrapper">
-          <div class="d-flex justify-content-center mb-30">
-            <img
-              class="head-logo "
-              src="./src/img/feature-tribe.png"
-              alt="logo"
-            />
-          </div>
-          
-          <!--Feature Page navigation-->
-          <ul
-            class="nav nav-tabs d-flex justify-content-center"
-            id="sbgigsTab"
-            role="tablist"
-          >
-            <li class="nav-item height-link ">
-              <a
-                class="nav-link break-word active"
-                id="links-tab-btn"
-                href="index.html"
-                role="tab"
-                aria-controls="links"
-                aria-selected="true"
-                font-weight-x-bold
-                >Page Settings</a
-              >
-            </li>
-            <li class="nav-item height-link ">
-              <a
-                class="nav-link "
-                id="style-tab-btn"
-                href="./style.html"
-                role="tab"
-                aria-controls="style"
-                aria-selected="true"
-                font-weight-x-bold
-                >Options / Tiers</a
-              >
-            </li>
-            
-            <li class="nav-item height-link ">
-              <a
-                class="nav-link"
-                id="analytics-tab-btn"
-                href="analytics.html"
-                role="tab"
-                aria-controls="Analytics"
-                aria-selected="false"
-                >Poll / Vote</a
-              >
-            </li>
-            <li class="nav-item height-link ">
-              <a
-                class="nav-link"
-                id="settings​-tab-btn"
-                href="settings.html"
-                role="tab"
-                aria-controls=settings​"
-                aria-selected="false"
-                >Banner</a
-              >
-            </li>
-            <li class="nav-item height-link ">
-              <a
-                class="nav-link"
-                id="settings​-tab-btn"
-                href="settings.html"
-                role="tab"
-                aria-controls=settings​"
-                aria-selected="false"
-                >Integrations</a
-              >
-            </li>
-            <li class="nav-item height-link ">
-              <a
-                class="nav-link"
-                id="settings​-tab-btn"
-                href="settings.html"
-                role="tab"
-                aria-controls=settings​"
-                aria-selected="false"
-                >Lorem Ipsum</a
-              >
-            </li>
-            <li class="nav-item height-link ">
-              <a
-                class="nav-link"
-                id="settings​-tab-btn"
-                href="settings.html"
-                role="tab"
-                aria-controls=settings​"
-                aria-selected="false"
-                >Lorem Ipsum Dolor Sit Amet</a
-              >
-            </li>
-            <li class="nav-item height-link ">
-              <a
-                class="nav-link"
-                id="settings​-tab-btn"
-                href="settings.html"
-                role="tab"
-                aria-controls="settings​"
-                aria-selected="false"
-                >Lorem Ipsum</a
-              >
-            </li>
-          </ul>
-          <!--Feature Page navigation-->
-          
+        
+    
           
          <!-- accordion -->
          
@@ -908,7 +802,7 @@
 
      
     
-    <div class="wrapper-accordion">
+    <div class="wrapper-accordion mt-0">
       <!-- SELECT2 TYPE -->
       <div class="wrapper-form mt-2 mb-30" >
                 
@@ -1261,7 +1155,7 @@
         
           </div>
         
-          <div class="accordion-body pt-0 bg-opacity  ">
+          <div class="accordion-body bg-opacity  ">
          <div class="upload-digital-product display-none">
           
          </div>
@@ -1543,11 +1437,11 @@
           </div>
       
 
-          <div class="accordion-body bg-opacity    pt-0">
+          <div class="accordion-body bg-opacity    ">
          
        
             <div class="subAccordion-containerSupporter">
-              <div class="subAccordion-itemSupporter mb-card-default">
+              <div class="subAccordion-itemSupporter mb-card-default ">
                 <div class="subAccordion-headerSupporter  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
                     <div class="wrapper-icontext d-flex align-items-center">
                     <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
@@ -1560,18 +1454,19 @@
                 </div>
                 <div class="subAccordion-bodySupporter bg-opacity  ">
                    <!-- user -->
-         <div class="profile-img-container profile-image ">
-          <img src="" alt="profile-image"  id="profile-image">
+         <div class="profile-img-container profile-image display-none" id="wrapper-cover-image">
+          <img src="" alt="profile-image"  id="cover-image">
                  
                 </div>
                 <!-- user -->
             <div class="wrapper-upload wrapper-upploadCover">
               <div class="file-input-container">
-               
-              <button class="button button-UploadImage font-weight-bolder" data-toggle="modal" data-target="#profile-pic-modal">Upload Image</button>
-               <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteIconProfile">
+                <input type="file" class=" d-none" id="uploadFileImage">
+                <label class="button button-UploadImage font-weight-bolder " for="uploadFileImage" id="uploadFileImageLabel">Upload Image</label>
+              <!-- <button class="button button-UploadImage font-weight-bolder" data-toggle="modal" data-target="#profile-pic-modal">Upload Image</button> -->
+               <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteCoverImg">
               <div class="wrapper-delete " data-toggle="modal" data-target="#deleteModalProfile" data-tooltip="tooltip" data-placement="top"     title="" data-original-title="Delete">
-                <button type="button" class="" id="del-btnProfile" >         
+                <button type="button" class="" id="del-btnImage" >         
                   <i class="fas fa-trash-alt"></i> 
                 </button>
               </div>
@@ -1602,25 +1497,22 @@
                 </div>
                 <div class="subAccordion-bodySupporter bg-opacity  ">
                    <!-- user -->
-                   <div class="d-flex flex-wrap">
-         <div class="profile-img-container2 mr-20 profile-image ">
-          <img src="" alt="profile-image"  id="profile-image">
-          <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-icon " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+                   <div class="d-flex flex-wrap" id="wrapper-flex-preview">
+         <div class="profile-img-container2 mr-20 profile-image  ">
+          <div class="hover-tooltips wrapperImg" data-tooltip="tooltip" data-placement="top" title="" data-original-title="nama file" style="cursor: grab;">
+          <img src="./src/img/card.png" class="img-preview hover-tooltips" alt="profile-image"  id="profile-image" >
+        </div>
+          <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-icon " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it" data-toggle="modal" data-target="#deleteModalItem" ></i>
                 </div>
                
               </div>
                 <!-- user -->
             <div class="wrapper-upload wrapper-upploadCover">
               <div class="file-input-container">
-               
-              <button class="button button-UploadImage font-weight-bolder" data-toggle="modal" data-target="#profile-pic-modal">Upload Image</button>
-               <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteIconProfile">
-              <div class="wrapper-delete " data-toggle="modal" data-target="#deleteModalProfile" data-tooltip="tooltip" data-placement="top"     title="" data-original-title="Delete">
-                <button type="button" class="" id="del-btnProfile" >         
-                  <i class="fas fa-trash-alt"></i> 
-                </button>
-              </div>
-            </div>
+                <input type="file" class=" d-none" id="uploadFileImagePreview">
+                <label class="button button-UploadImage font-weight-bolder " for="uploadFileImagePreview" id="uploadFileImageLabel">Upload Image</label>
+              <!-- <button class="button button-UploadImage font-weight-bolder" data-toggle="modal" data-target="#profile-pic-modal">Upload Image</button> -->
+              
             </div>
             <ul class="image-ul">
               <li> <span class="text-ulLi">Only this format: JPG, JPEG, PNG   </span></li>
@@ -1634,7 +1526,7 @@
             </div>
                 </div>
               </div>   
-              <div class="subAccordion-itemSupporter mb-card-default active">
+              <div class="subAccordion-itemSupporter mb-card-default ">
                 <div class="subAccordion-headerSupporter  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
                     <div class="wrapper-icontext d-flex align-items-center">
                     <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
@@ -1654,29 +1546,83 @@
                 <div class="wrapper-elementInput mb-20"  id="wrapper-elementInput"  >
                   
                   <textarea type="text" id="inputAddVideo" rows="1" class="form-control mt-9 inputAddLink mb-10 " id="inputAddLink" ></textarea>
-                  <button class="btn button-AddLink " id="button-AddLink" type="button" >Add Video</button>
+                  <button class="btn button-AddLink " id="button-AddLink" type="button" onclick="showVideoPreview()" >Add Video</button>
                 </div>
     
             
                 </div>
-                <div class="wrapper-container-video d-flex">
-                <div class="wrapper-video  mr-20">
-                  <div class="profile-video-container  ">
-                  
-                  
-                         </div>
-                         <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-iconVideo " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
-                       </div>
-                       <div class="wrapper-video  mr-20">
-                        <div class="profile-video-container  ">
-                        
-                        
-                               </div>
-                               <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-iconVideo " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
-                             </div>
+                <div class="wrapper-container-video d-flex flex-wrap">
+               
                       </div>
                 </div>
               </div>   
+              <div class="subAccordion-itemSupporter mb-card-default  active">
+                <div class="subAccordion-headerSupporter  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
+                    <div class="wrapper-icontext d-flex align-items-center">
+                    <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
+                  
+                  <p class="text-left lineHeight160 mr-6  title-accordion">Preview: Audio</p>
+                  <!-- <i class="fa-solid fa-chevron-down"></i> -->
+                </div>
+               
+              
+                </div>
+                <div class="subAccordion-bodySupporter bg-opacity  ">
+                   <!-- user -->
+                       <div id="audio-preview">
+
+                   <!-- <div class="wrapper-audio d-flex align-items-center mb-20">
+                    <audio controls class="audio mr-10">
+                      <source src="horse.ogg" type="audio/ogg">
+                      <source src="horse.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                    </audio>
+                    <i class="fas fa-trash-alt  item-delete-audio  " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+              </div>
+              <div class="wrapper-audio d-flex align-items-center mb-20">
+                <audio controls class="audio mr-10">
+                  <source src="horse.ogg" type="audio/ogg">
+                  <source src="horse.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+                </audio>
+                <i class="fas fa-trash-alt  item-delete-audio  " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+          </div>
+          <div class="wrapper-audio d-flex align-items-center mb-20">
+            <audio controls class="audio mr-10">
+              <source src="horse.ogg" type="audio/ogg">
+              <source src="horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>
+            <i class="fas fa-trash-alt  item-delete-audio  " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+      </div> -->
+    </div>
+                <!-- user -->
+            <div class="wrapper-upload wrapper-upploadCover">
+              <div class="file-input-container">
+               
+                <input type="file" class=" d-none" id="uploadFileAudio">
+                <label class="button button-UploadImage font-weight-bolder " for="uploadFileAudio" id="uploadFileImageLabel">Upload Audio</label>
+               <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteIconProfile">
+              <div class="wrapper-delete " data-toggle="modal" data-target="#deleteModalProfile" data-tooltip="tooltip" data-placement="top"     title="" data-original-title="Delete">
+                <button type="button" class="" id="del-btnProfile" >         
+                  <i class="fas fa-trash-alt"></i> 
+                </button>
+              </div>
+            </div>
+            </div>
+            <ul class="image-ul">
+             
+              <li> <span class="text-ulLi">Only this format: MP3 </span></li>
+              <li> <span class="text-ulLi">Maximum size per file: 10MB</span></li>
+              <li> <span class="text-ulLi">Maximum 5 audio files.</span></li>
+           
+
+            </ul>
+            
+            </div>
+                </div>
+              </div>   
+             
             </div>
           </div>
         </div>
@@ -1702,557 +1648,10 @@
           </div>
         </div>
         
-        <div class="accordion-item  accordion-item mb-card-default " id="page-collected">
-          
-          <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
-              <div class="wrapper-icontext d-flex align-items-center">
-              <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
-            
-            <p class="text-left lineHeight160 mr-6  title-accordion">Amount Collected</p>
-            <!-- <i class="fa-solid fa-chevron-down"></i> -->
-          </div>
-         
-        
-          </div>
-          
-          <div class="accordion-body bg-opacity  ">
-            <div class="wrapper-switch mt-0">
-              <span class="switch-text">
-              Off
-            </span>
-              <div class="switch">
-                <input type="checkbox" id="switch-circle-3" ><label for="switch-circle-3">Toggle</label> 
-              </div>
-              <span class="switch-text">
-              On
-              </span>
-            </div>
-
-            <div class="wrapper-form mb-9">
-              <p class="form-title">
-                Title
-            </p>
-           
-
-            <textarea type="text" id="titleAmount" rows="1" class="form-control mt-9 messageInput"  maxlength="100" > </textarea>
-            <div class="d-flex align-items-start flex  justify-content-end">
-             
-              <p class="countNumber" id="countTitleAmount">0  / 100</p>
-          </div>
-          </div>
-          <div class="wrapper-form mb-editor">
-            <p class="form-title">
-              Target amount</p>
-         
-          <!-- <div class="wrapper-elemen-form">
-    
-            <input type="text" id="ItemName" rows="1" class="form-control mt-9 messageInput"  maxlength="20" >
-          </div> -->
-    
-          <div class="col-auto p-0">
-            <label class="sr-only" for="inlineFormInputGroup">Username</label>
-            <div class="input-group mb-2">
-              <div class="input-group-prepend ">
-                <div class="input-group-text border-custom-currency">SGD</div>
-              </div>
-              <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
-            </div>
-          </div>
-        </div>
-          <div class="wrapper-form mb-editor">
-            <p class="form-title">
-              Description / about the target 
-          </p>
-          <div id="editorQuillAmount"></div>
-          <!-- <div class="text-editor">
-          <div id="editorJsTarget"  >
-          
-          </div>
-        </div> -->
-        </div>
-         <div class="wrapper-form ">
-            <p class="form-title" style="margin-bottom: 4px;">
-              Show amount per <span  data-toggle="modal" data-target="#edit" class="text-edit">Edit</span> 
-              </p>
-              <span class="desc-amount">From the beginning until now</span>
-        </div>
-          </div>
-        </div>
-          <div class="accordion-item  accordion-item mb-card-default " id="page-supporter">
-            
-          <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
-              <div class="wrapper-icontext d-flex align-items-center">
-              <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
-            
-            <p class="text-left lineHeight160 mr-6  title-accordion">Number Of Supporters</p>
-            <!-- <i class="fa-solid fa-chevron-down"></i> -->
-          </div>
-         
-        
-          </div>
-        
-          <div class="accordion-body bg-opacity  ">
-            <div class="wrapper-switch  mt-0">
-              <span class="switch-text">
-              Off
-            </span>
-              <div class="switch">
-                <input type="checkbox" id="switch-circle-4" ><label for="switch-circle-4">Toggle</label> 
-              </div>
-              <span class="switch-text">
-              On
-              </span>
-            </div>
-
-            <div class="wrapper-form mb-9">
-              <p class="form-title">
-                Title
-            </p>
-           
-
-            <textarea type="text" id="titleNOS" rows="1" class="form-control mt-9 messageInput"  maxlength="100" > </textarea>
-            <div class="d-flex align-items-start flex  justify-content-end">
-             
-              <p class="countNumber" id="countTitleNOS">0  / 100</p>
-          </div>
-          </div>
-          <div class="wrapper-form mb-editor">
-            <p class="form-title">
-              Target amount</p>
-         
-          <!-- <div class="wrapper-elemen-form">
-    
-            <input type="text" id="ItemName" rows="1" class="form-control mt-9 messageInput"  maxlength="20" >
-          </div> -->
-    
-       <input type="number"  rows="1" class="form-control mt-9 messageInput"   >
-        </div>
-          <div class="wrapper-form mb-editor ">
-            <p class="form-title">
-              Description / about the target 
-          </p>
-          <!-- <div id="editorQuillSupporter"  >
-       
-          </div> -->
-          <div class="text-editor">
-            <div id="editorJsTarget2"  >
-            
-            </div>
-          </div>
-        </div>
-         <div class="wrapper-form ">
-            <p class="form-title" style="margin-bottom: 4px;">
-              Show amount per <span data-toggle="modal" data-target="#edit2"  class="text-edit">Edit</span> 
-              </p>
-              <span class="desc-amount">From the beginning until now</span>
-        </div>
-          </div>
-        </div>
-        <div class="accordion-item  accordion-item mb-card-default " id="page-setting">
-          <!-- <a href="#page-setting" class="accordion-scroll"> -->
-          <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
-              <div class="wrapper-icontext d-flex align-items-center">
-              <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
-            
-            <p class="text-left lineHeight160 mr-6  title-accordion">Other Page Settings</p>
-            <!-- <i class="fa-solid fa-chevron-down"></i> -->
-          </div>
-         
-        
-          </div>
-        <!-- </a> -->
-          <div class="accordion-body bg-opacity  ">
-           
-
-            <div class="wrapper-form mb-editor">
-              <p class="form-title">
-                Top 10 supporters
-            </p>
-           
-
-            <div class="wrapper-switch mt-0">
-              
-              <div class="switch ml-0">
-                <input type="checkbox" id="switch-circle-5" ><label for="switch-circle-5">Toggle</label> 
-              </div>
-              <span class="switch-text">
-                Show on page
-              </span>
-            </div>
-          </div>
-         
-          <div class="wrapper-form mb-editor">
-            <p class="form-title">
-              Messages from supporters          </p>
-         
-
-          <div class="wrapper-switch mt-0">
-            
-            <div class="switch ml-0">
-              <input type="checkbox" id="switch-circle-6" ><label for="switch-circle-6">Toggle</label> 
-            </div>
-            <span class="switch-text">
-              Show on page
-            </span>
-          </div>
-        </div>
-         <div class="wrapper-form ">
-            <p class="form-title mb-1">
-              Default language for your page         
-            </p>
-         
-<p class="desc-pagesetting">This is the language in which your page is initially displayed. Visitors to your page have the option to change it to any other language they want. Only texts from SociaBuzz are translated, not the content that you posted.</p>
-            
-            <div class="mb-2 mt-1">
-              <label class="radio-container mb-2">
-<p  class="textRadioBtn">  According to the language of the visitor's country</p>
-                  <input type="radio" name="radio2" >
-                  <span class="fake-radio"></span>
-              </label>
-              <label class="radio-container">
-                <p class="textRadioBtn">This language:</p>
-                  <input type="radio" name="radio2">
-                  <span class="fake-radio"></span>
-              </label>
-              <div class="wrapper-form mt-2" style="padding-left: 28px;">
-                
-                <div class="select-container select-container-languageAccordion ml-0">
-                  <select class="language">
-                      <option value="AF" selected>
-                          Afrikaans
-                      </option>
-                      <option value="SQ">Albanian</option>
-                      <option value="AR">Arabic</option>
-                      <option value="HY">Armenian</option>
-                      <option value="EU">Basque</option>
-                      <option value="BN">Bengali</option>
-                      <option value="BG">
-                          Bulgarian
-                      </option>
-                      <option value="CA">Catalan</option>
-                      <option value="KM">
-                          Cambodian
-                      </option>
-                      <option value="ZH">
-                          Chinese (Mandarin)
-                      </option>
-                      <option value="HR">Croatian</option>
-                      <option value="CS">Czech</option>
-                      <option value="DA">Danish</option>
-                      <option value="NL">Dutch</option>
-                      <option value="EN">English</option>
-                      <option value="ET">Estonian</option>
-                      <option value="FJ">Fiji</option>
-                      <option value="FI">Finnish</option>
-                      <option value="FR">French</option>
-                      <option value="KA">Georgian</option>
-                      <option value="DE">German</option>
-                      <option value="EL">Greek</option>
-                      <option value="GU">Gujarati</option>
-                      <option value="HE">Hebrew</option>
-                      <option value="HI">Hindi</option>
-                      <option value="HU">
-                          Hungarian
-                      </option>
-                      <option value="IS">
-                          Icelandic
-                      </option>
-                      <option value="ID">
-                          Indonesian
-                      </option>
-                      <option value="GA">Irish</option>
-                      <option value="IT">Italian</option>
-                      <option value="JA">Japanese</option>
-                      <option value="JW">Javanese</option>
-                      <option value="KO">Korean</option>
-                      <option value="LA">Latin</option>
-                      <option value="LV">Latvian</option>
-                      <option value="LT">
-                          Lithuanian
-                      </option>
-                      <option value="MK">
-                          Macedonian
-                      </option>
-                      <option value="MS">Malay</option>
-                      <option value="ML">
-                          Malayalam
-                      </option>
-                      <option value="MT">Maltese</option>
-                      <option value="MI">Maori</option>
-                      <option value="MR">Marathi</option>
-                      <option value="MN">
-                          Mongolian
-                      </option>
-                      <option value="NE">Nepali</option>
-                      <option value="NO">
-                          Norwegian
-                      </option>
-                      <option value="FA">Persian</option>
-                      <option value="PL">Polish</option>
-                      <option value="PT">
-                          Portuguese
-                      </option>
-                      <option value="PA">Punjabi</option>
-                      <option value="QU">Quechua</option>
-                      <option value="RO">Romanian</option>
-                      <option value="RU">Russian</option>
-                      <option value="SM">Samoan</option>
-                      <option value="SR">Serbian</option>
-                      <option value="SK">Slovak</option>
-                      <option value="SL">
-                          Slovenian
-                      </option>
-                      <option value="ES">Spanish</option>
-                      <option value="SW">Swahili</option>
-                      <option value="SV">Swedish</option>
-                      <option value="TA">Tamil</option>
-                      <option value="TT">Tatar</option>
-                      <option value="TE">Telugu</option>
-                      <option value="TH">Thai</option>
-                      <option value="BO">Tibetan</option>
-                      <option value="TO">Tonga</option>
-                      <option value="TR">Turkish</option>
-                      <option value="UK">
-                          Ukrainian
-                      </option>
-                      <option value="UR">Urdu</option>
-                      <option value="UZ">Uzbek</option>
-                      <option value="VI">
-                          Vietnamese
-                      </option>
-                      <option value="CY">Welsh</option>
-                      <option value="XH">Xhosa</option>
-                  </select>
-                  <span class="arrow-icon">
-                      <i class="fas fa-chevron-down"></i>
-                  </span>
-              </div>
-               
-              </div>
-          </div>
-          
-        </div>
-          </div>
-        </div>
-        <div class="accordion-item  accordion-item mb-card-default  " id="page-supporterRelate">
-          <!-- <a href="#page-supporterRelate" class="accordion-scroll"> -->
-          <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
-              <div class="wrapper-icontext d-flex align-items-center">
-              <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
-            
-            <p class="text-left lineHeight160 mr-6  title-accordion">Supporter Related Settings</p>
-            <!-- <i class="fa-solid fa-chevron-down"></i> -->
-          </div>
-         
-        
-          </div>
-        <!-- </a> -->
-          <div class="accordion-body bg-opacity  ">
-          <div class="wrapper-form mb-editor">
-            <p class="form-title">
-              Minimum amount per support
-          </p>
-            <div class="col-auto p-0">
-              <label class="sr-only" for="inlineFormInputGroup">Username</label>
-              <div class="input-group mb-2">
-                <div class="input-group-prepend ">
-                  <div class="input-group-text border-custom-currency">SGD</div>
-                </div>
-                <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height: 38px; overflow-y: hidden;">
-              </div>
-            </div>
-          </div>
-           <div class="wrapper-form mb-editor">
-            <p class="form-title">
-              Payment fee is borne by the supporters
-          </p>
-          <div class="wrapper-switch mb-6 mt-0">
-              
-            <div class="switch ml-0">
-              <input type="checkbox" id="switch-circle-7" style="height:0px;overflow-y:hidden;"><label for="switch-circle-7">Toggle</label> 
-            </div>
-            <span class="switch-text">
-              Yes
-            </span>
-          </div>
-          <p class="desc-payment">Each payment method has different payment fees (fixed cost and/or percentage) from our payment service providers.<span class="desc-paymentRed"> If disabled, payment fees will be deducted from your earnings, and will not be charged to supporters.</span></p>
-          </div>
-            <div class="wrapper-form mb-editor">
-            <p class="form-title">
-              Supporters must fill in their email
-          </p>
-          <div class="wrapper-switch mb-6 mt-0">
-              
-            <div class="switch ml-0">
-              <input type="checkbox" id="switch-circle-8" style="height:0px;overflow-y:hidden;"><label for="switch-circle-8">Toggle</label> 
-            </div>
-            <span class="switch-text">
-              Yes
-            </span>
-          </div>
-          <p class="desc-payment"><span class="desc-paymentRed">Warning:</span> If disabled, the same supporter may be registered as a different supporter, because without knowing the email, our system cannot know that the supporter is the same person.</p>
-          </div>
-          <!--  sub accordion supporter -->
-
-          <div class="subAccordion-containerSupporter">
-            <div class="subAccordion-itemSupporter mb-card-default">
-              <div class="subAccordion-headerSupporter  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
-                  <div class="wrapper-icontext d-flex align-items-center">
-                  <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
-                
-                <p class="text-left lineHeight160 mr-6  title-accordion">Supporters can send voice messages</p>
-                <!-- <i class="fa-solid fa-chevron-down"></i> -->
-              </div>
-             
-            
-              </div>
-              <div class="subAccordion-bodySupporter bg-opacity  ">
-                <div class="wrapper-form mb-editor">
-                  <p class="form-title">
-                    Supporters can send voice messages
-                </p>
-                <div class="wrapper-switch mb-6 mt-0">
-                    
-                  <div class="switch ml-0">
-                    <input type="checkbox" id="switch-circle-9" style="height:0px;overflow-y:hidden;"><label for="switch-circle-9">Toggle</label> 
-                  </div>
-                  <span class="switch-text">
-                    Yes
-                  </span>
-                </div>
-                <p class="desc-payment">If enabled, the option to send voice message will appear on your page.</p>
-                </div>
-                <div class="wrapper-form mb-editor">
-                  <p class="form-title">
-                    Minimum amount per support to send voice message
-                </p>
-                  <div class="col-auto p-0">
-                    <label class="sr-only" for="inlineFormInputGroup"></label>
-                    <div class="input-group mb-2">
-                      <div class="input-group-prepend ">
-                        <div class="input-group-text border-custom-currency">SGD</div>
-                      </div>
-                      <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" >
-                    </div>
-                  </div>
-                </div>
-                <div class="wrapper-form mb-editor">
-                  <p class="form-title">
-                    Maximum duration of voice message
-                </p>
-                <div class="form-group mb-1 d-flex align-items-center">
-                  <input type="number" class="form-control d-inline-block  p-2 alert-duration input" name="timer" id="timer" value="" min="0" max="60">
-                  <span class="input-content-font">seconds</span>
-              </div>
-              <p class="text-light-grayCustom small mb-0">
-                Max 15 seconds
-            </p>
-            
-                </div>
-                <div class="wrapper-form ">
-              
-              <p class="caution">
-               <span class="font-weight-bold">Use with caution.</span>  By using this feature, you understand that voice messages from supporters will appear as is without filter/censorship.
-            </p>
-            
-                </div>
-              </div>
-            </div>     
-            
-          </div>
-          <!-- end sub accordion supporter -->
-           </div>
-        </div>
-        <div class="accordion-item  accordion-item mb-card-default " id="page">
-          <!-- <a href="#page" class="accordion-scroll"> -->
-          <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
-              <div class="wrapper-icontext d-flex align-items-center">
-              <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
-            <p class="text-left lineHeight160 mr-6  title-accordion">Your Page Link</p>
-            <!-- <i class="fa-solid fa-chevron-down"></i> -->
-          </div>
-         
-        
-          </div>
-        <!-- </a>     -->
-          <div class="accordion-body bg-opacity  ">
-           <div class="wrapper-link">
-            <div class="wrapper-mainPage">
-              <h6 class="wrapper-mainPage--title mb-4px">Main page</h6>
-              <p class="wrapper-mainPage--description">Which displays all the information based on your page settings</p>
-              <div class="wrappper__card--itemModal modal-link-mainPage ">
-                  <div class="link-urlModal fs16">
-                    <a href="https://sociabuzz.com/" target="_blank" class="link-anchor link-anchor--modalTribe">https://sociabuzz.com/xxxxxxxxxxxxxxxxxxxx/<b>tribe</b></a>
-                  </div>
-                  <div class="modal-link-action d-flex">
-                   <div class="modal-copy-link mr-14" id="mainPage-tribe-link" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Link copied!">
-                       <i class="far fa-copy mr-2px"></i>
-                       Copy link
-                   </div>
-                   <div class="modal-open-link">
-                       
-                       <i class="fas fa-external-link-alt mr-2px"></i>
-                       Open link
-                   </div>
-                   </div>
-                 </div>
-          </div>
-          <div class="wrapper-simplePage">
-            <h6 class="wrapper-mainPage--title mb-4px">Simple page</h6>
-            <p class="wrapper-mainPage--description">Which only displays a form to give support</p>
-            <div class="wrappper__card--itemModal modal-link-simplePage ">
-                <div class="link-urlModal fs16">
-                  <a href="https://sociabuzz.com/" target="_blank" class="link-anchor link-anchorDefault">https://sociabuzz.com/xxxxxxxxxxxxxxxxxxxx/<b>support</b></a>
-                </div>
-                <div class="modal-link-action d-flex">
-                 <div class="modal-copy-linkDefault mr-14" id="simplePage-support-link" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Link copied!">
-                     <i class="far fa-copy mr-2px"></i>
-                     Copy link
-                 </div>
-                 <div class="modal-open-linkDefault">
-                     
-                     <i class="fas fa-external-link-alt mr-2px"></i>
-                     Open link
-                 </div>
-                 </div>
-               </div>
-               <div class="wrappper__card--itemModal modal-link-simplePage ">
-                <div class="link-urlModal fs16">
-                  <a href="https://sociabuzz.com/" target="_blank" class="link-anchor link-anchorDefault">https://sociabuzz.com/xxxxxxxxxxxxxxxxxxxx/<b>donate</b></a>
-                </div>
-                <div class="modal-link-action d-flex">
-                 <div class="modal-copy-linkDefault mr-14" id="simplePage-donate-link" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Link copied!">
-                     <i class="far fa-copy mr-2px"></i>
-                     Copy link
-                 </div>
-                 <div class="modal-open-linkDefault">
-                     
-                     <i class="fas fa-external-link-alt mr-2px"></i>
-                     Open link
-                 </div>
-                 </div>
-               </div>
-               <div class="wrappper__card--itemModal modal-link-simplePage ">
-                <div class="link-urlModal fs16">
-                  <a href="https://sociabuzz.com/" target="_blank" class="link-anchor link-anchorDefault">https://sociabuzz.com/xxxxxxxxxxxxxxxxxxxx/<b>give</b></a>
-                </div>
-                <div class="modal-link-action d-flex">
-                 <div class="modal-copy-linkDefault mr-14" id="simplePage-give-link" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Link copied!">
-                     <i class="far fa-copy mr-2px"></i>
-                     Copy link
-                 </div>
-                 <div class="modal-open-linkDefault">
-                     
-                     <i class="fas fa-external-link-alt mr-2px"></i>
-                     Open link
-                 </div>
-                 </div>
-               </div>
-        </div>
-           </div>
-          </div>
-        </div>
-      
+      <p class="text-danger-custom">Please make sure all required fields above are filled in correctly</p>
+      <button class="btn w-100 bg-blue">Save and publish</button>
+      <button class="btn w-100 bg-blue-outline">Save as draft</button>
+      <button class="btn w-100 bg-blueoutlineWhite">Delete it</button>
     </div>
 
 

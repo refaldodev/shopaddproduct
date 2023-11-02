@@ -38,9 +38,84 @@ h6 {
   --font-size-16: 1rem;
   --font-size-10: 0.625rem;
   --green-color: #76cc11;
+  --blue-color: #40abfa;
+  --blue-light-color: #dff8ff;
+}
+.bg-blue {
+  background-color: var(--blue-color);
+  color: white;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  min-height: 46px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.bg-blue:hover {
+  background-color: #2c92db;
+  color: white;
+
+  text-align: center;
+}
+.bg-blue-outline {
+  background-color: var(--blue-light-color);
+  border: 1px solid var(--blue-color);
+  color: var(--blue-color);
+  border-radius: 100px;
+  margin-bottom: 20px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  min-height: 46px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 16px;
+}
+.bg-blue-outline:hover {
+  background-color: var(--blue-color);
+  color: white;
+
+  text-align: center;
+}
+.bg-blueoutlineWhite {
+  background-color: transparent;
+  border: 1px solid var(--blue-color);
+  color: var(--blue-color);
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  min-height: 46px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 16px;
+}
+.bg-blueoutlineWhite:hover {
+  background-color: var(--blue-color);
+  color: white;
+
+  text-align: center;
+}
+.text-danger-custom {
+  color: #ff0000;
+  font-weight: 800;
+  font-size: 14px;
+  text-align: center;
+  font-weight: normal;
+  margin-bottom: 15px;
 }
 .mr-20 {
   margin-right: 20px;
+}
+
+.mr-10 {
+  margin-right: 10px;
 }
 .mt-5px {
   margin-top: 5px;
@@ -1250,7 +1325,7 @@ ul.nav-tabs {
 }
 .image-ul {
   font-size: 12px !important;
-  color: #595959;
+  color: #595959 !important;
 }
 .d-flex {
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1383,17 +1458,17 @@ ul.nav-tabs {
   line-height: 1.2;
 }
 .btn-fill-light.active {
-  background-color: var(--green-color);
+  background-color: var(--blue-color);
   color: #fff !important;
 }
 .btn-fill-light.active:hover {
-  background-color: var(--green-color);
+  background-color: var(--blue-color);
   filter: brightness(0.95);
 }
 .btn-outline-primary:hover,
 .btn-fill-light:hover,
 .btn-edit-sm:hover {
-  background-color: var(--green-color);
+  background-color: var(--blue-color);
 }
 a.btn.btn-primary {
   /* OLD - iOS 6-, Safari 3.1-6 */
@@ -1417,7 +1492,7 @@ a.btn.btn-primary {
   border-radius: 30px;
   min-height: unset;
   padding: 12px 0.75rem;
-  color: var(--green-color) !important;
+  color: var(--blue-color) !important;
   width: 100%;
 }
 
@@ -2104,4 +2179,17 @@ main {
 }
 #inputAddLink {
   min-height: 36px !important;
+}
+.img-preview {
+  cursor: pointer;
+}
+.wrapperImg {
+  height: 100%;
+  width: 100%;
+  cursor: grab;
+}
+#yt-preview {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
 }

@@ -535,7 +535,7 @@ main {
   }
   .accordion-item {
     &:not(:last-child) {
-      margin-bottom: 20px !important;
+      margin-bottom: 30px;
     }
   }
   main {
@@ -1382,7 +1382,7 @@ main {
         color: #000000;
       }
       &:not(:last-child) {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
       }
       .subAccordion-header {
         background: transparent;
@@ -1817,7 +1817,15 @@ main {
         cursor: pointer;
       }
     }
-
+    .wrapper-audio {
+      .audio {
+        flex: 1;
+      }
+      .item-delete-audio {
+        color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+    }
     .alert-duration {
       width: 60px !important;
       height: 40px !important;
@@ -1878,7 +1886,7 @@ main {
         color: #000000;
       }
       &:not(:last-child) {
-        margin-bottom: 20px;
+        margin-bottom: 30px;
       }
       .subAccordion-headerSupporter {
         -webkit-user-select: none;
@@ -2041,22 +2049,24 @@ main {
         margin-bottom: 13px;
         min-height: 36px;
         label {
-          border: 1px solid #76cc11;
+          border: 1px solid #40abfa;
           font-family: "Open Sans";
           font-style: normal;
-          font-weight: 800;
+          font-weight: 800 !important;
           font-size: 14px;
           line-height: 140%;
-          min-width: 105px;
-          max-height: 46px;
-          color: #76cc11;
-          background-color: #dffbdf;
+          min-width: 132px;
+          text-align: center;
+          min-height: 36px;
+          max-height: 300px;
+          color: #40abfa;
+          background-color: #dff8ff;
           border-radius: 20px;
           padding: 0.5rem 1rem;
           margin-bottom: 0;
 
           &:hover {
-            background-color: #76cc11;
+            background-color: #40abfa;
             color: white;
           }
         }

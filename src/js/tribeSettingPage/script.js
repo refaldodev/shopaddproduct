@@ -1221,3 +1221,275 @@ sortableContainer.addEventListener("click", (event) => {
     item.remove();
   }
 });
+
+// cover image
+function uploadCover() {
+  var fileInput = document.getElementById("uploadFileImage");
+  var profileImage = document.getElementById("cover-image");
+
+  fileInput.addEventListener("change", function () {
+    var file = fileInput.files[0];
+
+    if (file) {
+      // Validasi format file
+      var allowedFormats = ["image/jpeg", "image/jpg", "image/png"];
+      if (allowedFormats.indexOf(file.type) === -1) {
+        alert("Hanya file JPG, JPEG, atau PNG yang diizinkan.");
+        fileInput.value = ""; // Reset input file
+        return;
+      }
+
+      // Validasi ukuran file (maksimum 2MB)
+      if (file.size > 2 * 1024 * 1024) {
+        alert("Ukuran file maksimum adalah 2MB.");
+        fileInput.value = ""; // Reset input file
+        return;
+      }
+
+      // Tampilkan gambar dalam elemen dengan ID 'profile-image'
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var cover = document.getElementById("wrapper-cover-image");
+        profileImage.src = e.target.result;
+        var btn = document.getElementById("wrapper-deleteCoverImg");
+        btn.style.display = "block";
+        cover.style.display = "block";
+      };
+      reader.readAsDataURL(file);
+    } else {
+      // Reset gambar saat tidak ada file yang dipilih
+      profileImage.src = "";
+    }
+  });
+
+  function deleteImageItem() {
+    // Ambil element gambar
+    // const image = document.getElementById("item-image");
+    $("#cover-image").attr("src", "");
+    // Hapus element gambar
+    var item = document.getElementById("wrapper-cover-image");
+    var btn = document.getElementById("wrapper-deleteCoverImg");
+    btn.style.display = "none";
+
+    // image.parentNode.removeChild(image);
+    item.style.display = "none";
+  }
+
+  // // Event listener untuk menghapus image ketika tombol hapus diklik
+  const deleteButton = document.getElementById("confirm-delete-btnCoverImg");
+  deleteButton.addEventListener("click", function () {
+    deleteImageItem();
+    console.log("oke");
+  });
+}
+
+uploadCover();
+
+function uploadImagePreview() {
+  var fileInput = document.getElementById("uploadFileImagePreview");
+
+  fileInput.addEventListener("change", function () {
+    var file = fileInput.files[0];
+    var profileImageContainer = document.querySelector("#wrapper-flex-preview");
+
+    if (file) {
+      // Validasi format file
+      var fileName = file.name;
+
+      var allowedFormats = ["image/jpeg", "image/jpg", "image/png"];
+      if (allowedFormats.indexOf(file.type) === -1) {
+        alert("Hanya file JPG, JPEG, atau PNG yang diizinkan.");
+        fileInput.value = ""; // Reset input file
+        return;
+      }
+
+      // Validasi ukuran file (maksimum 2MB)
+      if (file.size > 2 * 1024 * 1024) {
+        alert("Ukuran file maksimum adalah 2MB.");
+        fileInput.value = ""; // Reset input file
+        return;
+      }
+
+      // Validasi dimensi gambar
+      var imageElement = new Image();
+      imageElement.onload = function () {
+        // Buat elemen img
+        var divElement = document.createElement("div");
+        divElement.className = "profile-img-container2 mr-20 profile-image  ";
+        var wrapperdivElement = document.createElement("div");
+        wrapperdivElement.className = "hover-tooltips  wrapperImg";
+        wrapperdivElement.setAttribute("data-tooltip", "tooltip");
+        wrapperdivElement.setAttribute("data-placement", "top");
+        wrapperdivElement.setAttribute("title", `${fileName}`);
+
+        var imageElement = document.createElement("img");
+        imageElement.src = URL.createObjectURL(file);
+        imageElement.alt = "profile-image";
+        imageElement.id = "profile-image";
+
+        imageElement.className = "img-preview";
+        // imageElement.setAttribute("data-original-title", `${fileName}`);
+        // Buat elemen ikon delete
+        var deleteIcon = document.createElement("i");
+        deleteIcon.className =
+          "fas fa-trash-alt item-icon-delete hover-tooltips custom-position-icon";
+        deleteIcon.setAttribute("data-tooltip", "tooltip");
+        deleteIcon.setAttribute("data-placement", "top");
+        deleteIcon.setAttribute("title", "Delete it");
+        // deleteIcon.setAttribute("data-original-title", "Delete it");
+        deleteIcon.setAttribute("data-toggle", "modal");
+        deleteIcon.setAttribute("data-target", "#deleteModalItem");
+
+        // // Bersihkan isi dari profileImageContainer
+        // profileImageContainer.innerHTML = "";
+
+        // Tambahkan elemen gambar dan ikon delete ke dalam profileImageContainer
+        wrapperdivElement.appendChild(imageElement);
+        divElement.appendChild(wrapperdivElement);
+        divElement.appendChild(deleteIcon);
+        profileImageContainer.appendChild(divElement);
+        // }
+      };
+
+      imageElement.src = URL.createObjectURL(file);
+    } else {
+      // Reset gambar dan ikon delete saat tidak ada file yang dipilih
+      profileImageContainer.innerHTML = "";
+    }
+  });
+}
+uploadImagePreview();
+function removeImgPreview() {
+  // Temukan elemen induk yang berisi gambar dan ikon delete
+  var imageContainer = document.querySelector(".profile-img-container2");
+
+  // Tambahkan event listener ke elemen induk untuk menangani klik pada ikon delete
+  imageContainer.addEventListener("click", function (event) {
+    // Periksa apakah elemen yang diklik adalah ikon delete
+    if (event.target.classList.contains("item-icon-delete")) {
+      // Temukan elemen gambar yang bersesuaian dengan ikon delete yang diklik
+      var imageElement = event.target.previousElementSibling;
+
+      // var div = event.target.parentNode;
+      // Hapus elemen gambar dan ikon delete
+      imageElement.remove();
+      event.target.remove();
+      // div.remove();
+    }
+  });
+}
+removeImgPreview();
+function rearrangeHandlerImgPreview() {
+  //for input form
+  let inputFormContainer = document.querySelector("#wrapper-flex-preview");
+  new Sortable(inputFormContainer, {
+    animation: 150,
+    handle: ".wrapperImg",
+    ghostClass: "ghost",
+    forceFallback: true,
+    onStart: function (evt) {
+      document.documentElement.classList.add("draggable-cursor");
+      $("[data-toggle=tooltip]").tooltip("hide");
+      $("[data-toggle=tooltip]").tooltip("disable");
+    },
+    // Restores default page cursor
+    onEnd: function (evt) {
+      document.documentElement.classList.remove("draggable-cursor");
+      // $("[data-toggle=tooltip]").tooltip("enable");
+    },
+  });
+}
+
+rearrangeHandlerImgPreview();
+
+// add video
+function showVideoPreview() {
+  var youtubeLink = document.getElementById("inputAddVideo").value;
+  var videoId = extractVideoId(youtubeLink);
+
+  if (videoId) {
+    var videoPreview = document.querySelector(".wrapper-container-video");
+
+    const wrapper = document.createElement("div");
+
+    wrapper.className = "wrapper-video  mr-20";
+    // Tambahkan video preview baru
+    var wrapperVideo = `
+     
+                  <div class="profile-video-container  ">
+                
+                  <iframe src="https://www.youtube.com/embed/${videoId}" class="preview" id="yt-preview">
+                    </iframe>
+                         </div>
+                         <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-iconVideo " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+                       
+      
+      `;
+    wrapper.innerHTML = wrapperVideo;
+    videoPreview.appendChild(wrapper);
+  } else {
+    alert("Tautan YouTube tidak valid.");
+  }
+}
+function extractVideoId(url) {
+  var regExp =
+    /^(https?:\/\/)?(www\.)?(youtube|youtu|youtube-nocookie)\.(com|be)\/(watch\?v=|embed\/|v\/|.+\?v=)?([^&=%\?]{11})/;
+  var match = url.match(regExp);
+
+  if (match && match[6].length === 11) {
+    return match[6];
+  } else {
+    return null;
+  }
+}
+
+// audio
+const audioFilesInput = document.getElementById("uploadFileAudio");
+const audioPreviewContainer = document.getElementById("audio-preview");
+
+audioFilesInput.addEventListener("change", function () {
+  const files = audioFilesInput.files;
+
+  if (files.length > 5) {
+    alert("Maximum 5 audio files allowed.");
+    return;
+  }
+
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+
+    // if (file.type !== "audio/mp3") {
+    //   alert("Invalid audio format. Only MP3 files allowed.");
+    //   return;
+    // }
+
+    if (file.size > 10000000) {
+      alert("File size exceeds the limit of 10MB.");
+      return;
+    }
+
+    const audioElement = document.createElement("audio");
+    audioElement.controls = true;
+    audioElement.className = "audio mr-10";
+    const sourceElement = document.createElement("source");
+    sourceElement.src = URL.createObjectURL(file);
+    sourceElement.type = "audio/mpeg";
+    audioElement.appendChild(sourceElement);
+
+    const deleteButton = document.createElement("i");
+    deleteButton.className = "fas fa-trash-alt item-delete-audio";
+    deleteButton.setAttribute("data-tooltip", "tooltip");
+    deleteButton.setAttribute("data-placement", "top");
+    deleteButton.setAttribute("title", "Delete it");
+    deleteButton.addEventListener("click", function () {
+      audioPreviewContainer.removeChild(audioElement.parentElement);
+    });
+
+    const audioWrapper = document.createElement("div");
+    audioWrapper.className = "wrapper-audio d-flex align-items-center mb-20";
+    audioWrapper.appendChild(audioElement);
+    audioWrapper.appendChild(deleteButton);
+
+    audioPreviewContainer.appendChild(audioWrapper);
+  }
+});
