@@ -3618,6 +3618,7 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
 .wrapper-accordion .subAccordion-containerSupporter .profile-img-container {
   height: 300px;
   width: 300px;
+  max-width: 100%;
   background-color: #c2c2c2;
   border-radius: 10px;
   -webkit-border-radius: 10px;

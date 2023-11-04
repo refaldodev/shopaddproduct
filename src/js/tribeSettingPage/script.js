@@ -41,6 +41,10 @@ containerAccordion.addEventListener("click", function (e) {
           $("#counttitleMultiplePrice").text(
             this.value.length + " " + " / 200"
           );
+        } else if (this.id === "titleMultiplePrices") {
+          $("#counttitleMultiplePrices").text(
+            this.value.length + " " + " / 200"
+          );
         } else if (this.id === "word") {
           $("#countword").text(this.value.length + " " + " / 200");
         } else if (this.id === "profileName") {
@@ -65,6 +69,10 @@ containerAccordion.addEventListener("click", function (e) {
           $("#counttitleGeneral").text(this.value.length + " " + " / 60");
         } else if (this.id === "titleMultiplePrice") {
           $("#counttitleMultiplePrice").text(
+            this.value.length + " " + " / 200"
+          );
+        } else if (this.id === "titleMultiplePrices") {
+          $("#counttitleMultiplePrices").text(
             this.value.length + " " + " / 200"
           );
         } else if (this.id === "word") {
@@ -126,6 +134,10 @@ subContainerAccordion.addEventListener("click", function (e) {
           $("#counttitleMultiplePrice").text(
             this.value.length + " " + " / 200"
           );
+        } else if (this.id === "titleMultiplePrices") {
+          $("#counttitleMultiplePrices").text(
+            this.value.length + " " + " / 200"
+          );
         } else if (this.id === "word") {
           $("#countword").text(this.value.length + " " + " / 200");
         } else if (this.id === "profileName") {
@@ -151,6 +163,10 @@ subContainerAccordion.addEventListener("click", function (e) {
           $("#counttitleGeneral").text(this.value.length + " " + " / 60");
         } else if (this.id === "titleMultiplePrice") {
           $("#counttitleMultiplePrice").text(
+            this.value.length + " " + " / 200"
+          );
+        } else if (this.id === "titleMultiplePrices") {
+          $("#counttitleMultiplePrices").text(
             this.value.length + " " + " / 200"
           );
         } else if (this.id === "word") {
@@ -910,6 +926,7 @@ function addOption1() {
     iconsWrapper.appendChild(toBottomIcon);
     iconsWrapper.appendChild(deleteIcon);
  */
+      // text area add options
 
       return optionDiv;
     }
@@ -945,7 +962,7 @@ function addOption2() {
   document.addEventListener("DOMContentLoaded", function () {
     const addButton = document.getElementById("addOptionsBtnPrice2");
     const container = document.getElementById("container-wrapperPrice2");
-    let optionCount = 1;
+    let optionCount = 2;
     let descriptionCount = 3;
 
     addButton.addEventListener("click", () => {
@@ -985,10 +1002,10 @@ function addOption2() {
                   </p>
                  
       
-                  <textarea type="text" id="titleMultiplePrice${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;">Lorem ipsum dolor sit amet consectetur adipis Lorem ipsum dolor sit amet consectetur adipisLorem ipsum dolor sit </textarea>
+                  <textarea type="text" id="titleMultiplePrices${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;">Lorem ipsum dolor sit amet consectetur adipis Lorem ipsum dolor sit amet consectetur adipisLorem ipsum dolor sit </textarea>
                   <div class="d-flex align-items-start flex  justify-content-between">
                     <p class="error-textarea">Cannot be empty</p>
-                    <p class="countNumber" id="counttitleMultiplePrice${optionCount}">0  / 200</p>
+                    <p class="countNumber" id="counttitleMultiplePrices${optionCount}">0  / 200</p>
                 </div>
                 </div>
 
@@ -1079,6 +1096,28 @@ function cekRadioButton(option) {
   } else if (option === 2 || 3) {
     $("#wrapperOnePrice").removeClass("d-block");
     $("#wrapperMultiplePrice").addClass("d-block");
+    $("textarea")
+      .each(function () {
+        this.setAttribute(
+          "style",
+          "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+        );
+        if (this.id === `titleMultiplePrice`) {
+          $(`#counttitleMultiplePrice`).text(
+            this.value.length + " " + " / 200"
+          );
+        }
+      })
+      .on("input", function () {
+        this.style.height = "auto";
+        this.style.height = this.scrollHeight + "px";
+        var result = 0;
+        if (this.id === `titleMultiplePrice`) {
+          $(`#counttitleMultiplePrice`).text(
+            this.value.length + " " + " / 200"
+          );
+        }
+      });
   }
   //  else if( optio)
 }
