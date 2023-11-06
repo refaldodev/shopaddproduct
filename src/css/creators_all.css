@@ -506,7 +506,7 @@ select {
   .select2-selection--multiple.select2-selection--clearable {
   padding-right: 25px;
 }
-.select2-container--default
+/* .select2-container--default
   .select2-selection--multiple
   .select2-selection__clear {
   cursor: pointer;
@@ -523,6 +523,7 @@ select {
   .select2-selection__choice {
   background-color: #e4e4e4;
   border: 1px solid #aaa;
+
   border-radius: 4px;
   box-sizing: border-box;
   display: inline-block;
@@ -570,7 +571,7 @@ select {
   background-color: #f1f1f1;
   color: #333;
   outline: none;
-}
+} */
 .select2-container--default[dir="rtl"]
   .select2-selection--multiple
   .select2-selection__choice {
@@ -2195,4 +2196,67 @@ main {
   width: 100%;
   border-radius: 10px;
   height: auto;
+}
+/* CATEGORY */
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__clear {
+  cursor: pointer;
+  font-weight: bold;
+  height: 20px;
+  margin-right: 10px;
+  margin-top: 5px;
+  position: absolute;
+  right: 0;
+  padding: 1px;
+}
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice {
+  background-color: #f7f7f7;
+  border: 1px solid #f7f7f7;
+  border-radius: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: 5px;
+  padding: 0;
+
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice__display {
+  cursor: default;
+  padding-left: 2px;
+  padding-right: 22px;
+}
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice__remove {
+  border-right: unset;
+  top: -1px;
+  right: 0;
+  left: unset;
+  padding: 0px 7px;
+  font-size: 16px;
+}
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice__remove:hover,
+.select2-container--default
+  .select2-selection--multiple
+  .select2-selection__choice__remove:focus {
+  color: #333;
+  outline: none;
+  background-color: transparent;
 }

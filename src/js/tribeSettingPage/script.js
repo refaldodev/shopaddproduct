@@ -220,6 +220,71 @@ subContainerAccordionSupporter.addEventListener("click", function (e) {
         "easeInOutExpo"
       );
     }
+    // text area
+    $("textarea")
+      .each(function () {
+        this.setAttribute(
+          "style",
+          "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+        );
+        if (this.id === "titleGeneral") {
+          $("#counttitleGeneral").text(this.value.length + " " + " / 60");
+        } else if (this.id === "titleMultiplePrice") {
+          $("#counttitleMultiplePrice").text(
+            this.value.length + " " + " / 200"
+          );
+        } else if (this.id === "titleMultiplePrices") {
+          $("#counttitleMultiplePrices").text(
+            this.value.length + " " + " / 200"
+          );
+        } else if (this.id === "word") {
+          $("#countword").text(this.value.length + " " + " / 200");
+        } else if (this.id === "profileName") {
+          $("#countProfileName").text(this.value.length + " " + " / 60");
+        } else if (this.id === "TextonButton") {
+          $("#countTextonButton").text(this.value.length + " " + " / 20");
+        } else if (this.id === "TextonButton2") {
+          $("#countTextonButton2").text(this.value.length + " " + " / 20");
+        } else if (this.id === "ItemName") {
+          $("#countItemName").text(this.value.length + " " + " / 20");
+        } else if (this.id === "titleAmount") {
+          $("#countTitleAmount").text(this.value.length + " " + " / 100");
+        } else if (this.id === "titleNOS") {
+          $("#countTitleNOS").text(this.value.length + " " + " / 100");
+        } else if (this.id === "elementInput") {
+        }
+      })
+      .on("input", function () {
+        this.style.height = "auto";
+        this.style.height = this.scrollHeight + "px";
+        var result = 0;
+        if (this.id === "titleGeneral") {
+          $("#counttitleGeneral").text(this.value.length + " " + " / 60");
+        } else if (this.id === "titleMultiplePrice") {
+          $("#counttitleMultiplePrice").text(
+            this.value.length + " " + " / 200"
+          );
+        } else if (this.id === "titleMultiplePrices") {
+          $("#counttitleMultiplePrices").text(
+            this.value.length + " " + " / 200"
+          );
+        } else if (this.id === "word") {
+          $("#countword").text(this.value.length + " " + " / 200");
+        } else if (this.id === "profileName") {
+          $("#countProfileName").text(this.value.length + " " + " / 60");
+        } else if (this.id === "TextonButton") {
+          $("#countTextonButton").text(this.value.length + " " + " / 20");
+        } else if (this.id === "TextonButton2") {
+          $("#countTextonButton2").text(this.value.length + " " + " / 20");
+        } else if (this.id === "ItemName") {
+          $("#countItemName").text(this.value.length + " " + " / 20");
+        } else if (this.id === "titleAmount") {
+          $("#countTitleAmount").text(this.value.length + " " + " / 100");
+        } else if (this.id === "titleNOS") {
+          $("#countTitleNOS").text(this.value.length + " " + " / 100");
+        } else if (this.id === "elementInput") {
+        }
+      });
   }
 });
 
@@ -729,12 +794,22 @@ var quill = new Quill("#editorContainer", {
 });
 var quill = new Quill("#editorContainer2", {
   theme: "bubble",
-  bounds: "#editorContainer",
-  scrollingContainer: "#editorContainer",
+  bounds: "#editorContainer2",
+  scrollingContainer: "#editorContainer2",
   modules: {
     toolbar: toolbarOptions,
   },
 });
+
+var quill = new Quill("#editorContainer199", {
+  theme: "bubble",
+  bounds: "#editorContainer199",
+  scrollingContainer: "#editorContainer199",
+  modules: {
+    toolbar: toolbarOptions,
+  },
+});
+
 // conTOHU
 // const editor = new EditorJS({
 //   holder: "editorjs",
@@ -756,18 +831,18 @@ var quill = new Quill("#editorContainer2", {
 //   minHeight: 0,
 // });
 
-const editorJsTarget2 = new EditorJS({
-  holder: "editorJsTarget2",
-  inlineToolbar: ["bold", "italic", "underline", "link"],
-  tools: {
-    list: List,
-    underline: Underline,
-  },
-  minHeight: 0,
-});
-var tooltip = quill.theme.tooltip;
-var input = tooltip.root.querySelector("input[data-link]");
-input.dataset.link = "www.sociabuzz.com";
+// const editorJsTarget2 = new EditorJS({
+//   holder: "editorJsTarget2",
+//   inlineToolbar: ["bold", "italic", "underline", "link"],
+//   tools: {
+//     list: List,
+//     underline: Underline,
+//   },
+//   minHeight: 0,
+// });
+// var tooltip = quill.theme.tooltip;
+// var input = tooltip.root.querySelector("input[data-link]");
+// input.dataset.link = "www.sociabuzz.com";
 
 $(document).ready(function () {
   $(".ql-tooltip-editor input").on("keydown", function (e) {
@@ -843,15 +918,35 @@ function addOption1() {
   document.addEventListener("DOMContentLoaded", function () {
     const addButton = document.getElementById("addOptionsBtnPrice1");
     const container = document.getElementById("container-wrapperPrice1");
-    let optionCount = 1;
+
+    let optionCount = 3;
     let descriptionCount = 3;
 
     addButton.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
+
+      var toolbarOptions = [
+        // ["bold", "italic", "underline"], // toggled buttons
+        [
+          "bold",
+          "italic",
+          "underline",
+          { list: "ordered" },
+          { list: "bullet" },
+          "link",
+        ],
+      ];
+      var quill = new Quill(`#editorContainer${optionCount}`, {
+        theme: "bubble",
+        bounds: `#editorContainer${optionCount}`,
+        scrollingContainer: `#editorContainer${optionCount}`,
+        modules: {
+          toolbar: toolbarOptions,
+        },
+      });
       optionCount++;
       descriptionCount++;
-      console.log("oke");
     });
 
     function createOptionDiv() {
@@ -891,13 +986,13 @@ function addOption1() {
                 </div>
 
                 <!-- multiple prices editor -->
-                <div class="wrapper-form mb-0" id="heading-element">
-                  <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element" aria-expanded="false" aria-controls="collapse-element">
+                <div class="wrapper-form mb-0" id="heading-element${optionCount}">
+                  <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element${optionCount}" aria-expanded="false" aria-controls="collapse-element${optionCount}">
                   
                       Description
                   
                   </div>
-                  <div class="collapse" id="collapse-element" aria-labelledby="heading-element" data-parent="#heading-element">
+                  <div class="collapse" id="collapse-element${optionCount}" aria-labelledby="heading-element${optionCount}" data-parent="#heading-element${optionCount}">
                 <div id="editorContainer${descriptionCount}"></div>
                 
               </div>
@@ -962,12 +1057,32 @@ function addOption2() {
   document.addEventListener("DOMContentLoaded", function () {
     const addButton = document.getElementById("addOptionsBtnPrice2");
     const container = document.getElementById("container-wrapperPrice2");
-    let optionCount = 2;
-    let descriptionCount = 3;
+    let optionCount = 200;
+    let descriptionCount = 200;
 
     addButton.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
+
+      var toolbarOptions = [
+        // ["bold", "italic", "underline"], // toggled buttons
+        [
+          "bold",
+          "italic",
+          "underline",
+          { list: "ordered" },
+          { list: "bullet" },
+          "link",
+        ],
+      ];
+      var quill = new Quill(`#editorContainer${optionCount}`, {
+        theme: "bubble",
+        bounds: `#editorContainer${optionCount}`,
+        scrollingContainer: `#editorContainer${optionCount}`,
+        modules: {
+          toolbar: toolbarOptions,
+        },
+      });
       optionCount++;
       descriptionCount++;
       console.log("oke");
@@ -1010,13 +1125,13 @@ function addOption2() {
                 </div>
 
                 <!-- multiple prices editor -->
-                <div class="wrapper-form mb-0" id="heading-element">
-                  <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element" aria-expanded="false" aria-controls="collapse-element">
+                <div class="wrapper-form mb-0" id="heading-element${optionCount}">
+                  <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element${optionCount}" aria-expanded="false" aria-controls="collapse-element${optionCount}">
                   
                       Description
                   
                   </div>
-                  <div class="collapse" id="collapse-element" aria-labelledby="heading-element" data-parent="#heading-element">
+                  <div class="collapse" id="collapse-element${optionCount}" aria-labelledby="heading-element${optionCount}" data-parent="#heading-element${optionCount}">
                 <div id="editorContainer${descriptionCount}"></div>
                 
               </div>
@@ -1451,7 +1566,7 @@ function showVideoPreview() {
 
     const wrapper = document.createElement("div");
 
-    wrapper.className = "wrapper-video  mr-20";
+    wrapper.className = "wrapper-video ";
     // Tambahkan video preview baru
     var wrapperVideo = `
      
@@ -1531,4 +1646,41 @@ audioFilesInput.addEventListener("change", function () {
 
     audioPreviewContainer.appendChild(audioWrapper);
   }
+});
+
+$("#category").select2({
+  tags: true,
+  tokenSeparators: [",", " "],
+  templateSelection: function (selection) {
+    if (selection.selected) {
+      return $.parseHTML(
+        '<span class="customclass">' + selection.text + "</span>"
+      );
+    } else {
+      return $.parseHTML(
+        '<span class="customclass">' + selection.text + "</span>"
+      );
+    }
+  },
+});
+$("#test").on("select2:select", function (e) {
+  $("li[aria-selected='true']").addClass("customclass");
+  $("li[aria-selected='false']").removeClass("customclass");
+
+  $(".select2-search-choice:not(.my-custom-css)", this).addClass(
+    "my-custom-css"
+  );
+});
+
+$("#test").on("select2:unselect", function (e) {
+  $("li[aria-selected='false']").removeClass("customclass");
+});
+
+$("#test").on("select2:select select2:unselect", function (e) {
+  //this returns all the selected item
+  var items = $(this).val();
+  console.log(items);
+  //Gets the last selected item
+  var lastSelectedItem = e.params.data.id;
+  console.log(lastSelectedItem);
 });

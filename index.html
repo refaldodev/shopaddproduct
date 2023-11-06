@@ -1053,14 +1053,14 @@
                   </div>
   
                   <!-- multiple prices editor -->
-                  <div class="wrapper-form mb-0" id="heading-element">
-                    <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element" aria-expanded="false" aria-controls="collapse-element">
+                  <div class="wrapper-form mb-0" id="heading-element199">
+                    <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element199" aria-expanded="false" aria-controls="collapse-element199">
                     
                         Description
                     
                     </div>
-                    <div class="collapse" id="collapse-element" aria-labelledby="heading-element" data-parent="#heading-element">
-                  <div id="editorContainer2"></div>
+                    <div class="collapse" id="collapse-element199" aria-labelledby="heading-element" data-parent="#heading-element199">
+                  <div id="editorContainer199"></div>
                   
                 </div>
                   <!-- <div class="text-editor">
@@ -1652,32 +1652,8 @@
               <!-- </p> -->
             </div>
               <div class="wrapper-buyers collapse " id="element-collapse1" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse">
-              <div class="wrapper-switch mt-0"> 
-                <span class="switch-text">
-                Off
-              </span>
-                <div class="switch">
-                  <input type="checkbox" id="switch-1"><label for="switch-1">Toggle</label> 
-                </div>
-                <span class="switch-text">
-                On
-                </span>
-              </div>
-              <div class="wrapper-minimum">
-                <p class="f-size14 lh-140 ">Minimum</p>
-                <div class="wrapper-minimumForm my-1 pl-0">
-                  <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
-                  <div class="input-group">
-                   
-                    <input type="number" class="form-control form-minimum" id="inlineFormInputGroupUsername">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text  precent-text">%</div>
-                    </div>
-                  </div>
-                </div>
-                <p class="f-size14 lh-140 mb-11">from the original price</p>
-                <p class="f-size12 lh-140 font-weight-normal">Set it to 0% if there is no minimum</p>
-              </div>  
+                <div id="editorContainer2"></div>
+                For example: instructions for use, how to access, etc.
             </div>
             </div>
             <div class="wrapper-form  mb-25" id="wrapper-element-collapse2">
@@ -1687,7 +1663,7 @@
             <!-- </p> -->
           </div>
             <div class="wrapper-buyers collapse " id="element-collapse2" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse2">
-             Lorem10
+              <div id="editorContainer2"></div>
           </div>
           </div>
          
@@ -1698,7 +1674,32 @@
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse3" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse3">
- Lorem10
+  <button class="btn button-AddLink " id="button-AddQuestions" type="button" onclick="showAddQuestions()">Add Questions</button>
+
+  <div class="container-wrapperPrice " id="container-wrapperPrice1">
+    <div class="wrapper-questions mt-custom " >
+     
+      <div class="wrapper-form mb-9">
+       
+     
+
+      <textarea type="text" id="titleMultiplePrice" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;">Lorem ipsum dolor sit amet consectetur adipis Lorem ipsum dolor sit amet consectetur adipisLorem ipsum dolor sit </textarea>
+      <div class="d-flex align-items-start flex  justify-content-between">
+        <p class="error-textarea">Cannot be empty</p>
+        <p class="countNumber" id="counttitleMultiplePrice">0  / 200</p>
+    </div>
+    </div>
+
+<div class="wrapperEvent d-flex mt-5px">
+  <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up" data-toggle="tooltip" data-placement="top" title="Move position up"></i>
+  <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down" data-toggle="tooltip" data-placement="top" title="Move position down"></i>
+  <i class="fa-regular fa-trash-can mr-20 delete-element item-icon" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
+</div>
+
+
+    </div>
+    
+  </div>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse4">
@@ -1708,7 +1709,9 @@
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse4" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse4">
- Lorem10
+  <select class="form-control" multiple="multiple" id="category">
+   
+  </select>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse5">

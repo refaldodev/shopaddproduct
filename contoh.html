@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .input-wrapper {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+      }
+
+      .category-preview {
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: 10px;
+      }
+
+      .category-preview span {
+        margin-right: 5px;
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      .close-icon {
+        cursor: pointer;
+        color: #ff0000;
+      }
+
+      .preview-wrapper {
+        margin-top: 20px;
+      }
+
+      .preview-wrapper h2 {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input-wrapper">
+      <div id="category-preview" class="category-preview"></div>
+      <input
+        type="text"
+        id="category-input"
+        class="category-input"
+        placeholder="Masukkan kategori"
+      />
+    </div>
+
+    <div class="preview-wrapper">
+      <h2>Preview:</h2>
+      <div id="category-preview-bottom" class="category-preview"></div>
+    </div>
+
+    <script>
+      // Dapatkan elemen input field
+      const categoryInput = document.getElementById("category-input");
+
+      // Dapatkan elemen div untuk menampilkan kategori di atas input
+      const categoryPreview = document.getElementById("category-preview");
+
+      // Dapatkan elemen div untuk menampilkan kategori di bawah input
+      const categoryPreviewBottom = document.getElementById(
+        "category-preview-bottom"
+      );
+
+      // Tambahkan event listener untuk menanggapi tombol "Enter"
+      categoryInput.addEventListener("keyup", function (event) {
+        // Cek apakah tombol yang ditekan adalah "Enter"
+        if (event.key === "Enter" && categoryInput.value.trim() !== "") {
+          // Dapatkan nilai kategori baru
+          const newCategory = categoryInput.value.trim();
+          // Tambahkan kategori baru ke dalam div preview di atas input
+          const categoryElement = createCategoryElement(newCategory);
+          categoryPreview.appendChild(categoryElement);
+          // Tambahkan kategori baru ke dalam input field
+          categoryInput.value = newCategory;
+          // Tambahkan kategori baru ke dalam div preview di bawah input
+          const categoryElementBottom = createCategoryElement(newCategory);
+          categoryPreviewBottom.appendChild(categoryElementBottom);
+        }
+      });
+
+      // Fungsi untuk membuat elemen kategori
+      function createCategoryElement(categoryText) {
+        const categoryElement = document.createElement("span");
+        categoryElement.innerHTML = `${categoryText} <span class="close-icon" onclick="removeCategory(this)">x</span>`;
+        return categoryElement;
+      }
+
+      // Fungsi untuk menghapus kategori
+      function removeCategory(element) {
+        // Hapus kategori yang sesuai dengan elemen close-icon yang ditekan dari kedua preview
+        element.parentNode.remove();
+        // Kosongkan input field saat menghapus kategori
+        categoryInput.value = "";
+      }
+    </script>
+  </body>
+</html>
