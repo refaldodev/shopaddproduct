@@ -1195,6 +1195,58 @@ function toggleInput() {
   }
 }
 
+function toggleInput1() {
+  $("textarea#inputAddLinkMultiplePrice")
+    .each(function () {
+      this.setAttribute(
+        "style",
+        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+      );
+    })
+    .on("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+      var result = 0;
+    });
+  var wrapperAddLinkInput = document.getElementById(
+    "wrapper-elementInputMultiplePrice"
+  );
+  if (
+    wrapperAddLinkInput.style.display === "none" ||
+    wrapperAddLinkInput.style.display === ""
+  ) {
+    wrapperAddLinkInput.style.display = "block";
+  } else {
+    wrapperAddLinkInput.style.display = "none";
+  }
+}
+
+function toggleInput2() {
+  $("textarea#inputAddLinkMultiplePrice2")
+    .each(function () {
+      this.setAttribute(
+        "style",
+        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+      );
+    })
+    .on("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+      var result = 0;
+    });
+  var wrapperAddLinkInput = document.getElementById(
+    "wrapper-elementInputMultiplePrice2"
+  );
+  if (
+    wrapperAddLinkInput.style.display === "none" ||
+    wrapperAddLinkInput.style.display === ""
+  ) {
+    wrapperAddLinkInput.style.display = "block";
+  } else {
+    wrapperAddLinkInput.style.display = "none";
+  }
+}
+
 function cekRadioButton(option) {
   // Menyembunyikan semua elemen wrapper-form terlebih dahulu
   var wrappers = document.querySelectorAll(".wrappper-event");
@@ -1364,6 +1416,162 @@ function rearrangeHandler() {
 }
 
 rearrangeHandler();
+
+function addLinkMultiplePrice() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const uploadedFilesContainer = document.getElementById(
+      "wrapper-uploadFileMultiplePrice"
+    );
+    const btnAddLink = document.getElementById("button-AddLinkMultiplePrice");
+
+    btnAddLink.addEventListener("click", () => {
+      const optionDiv = createOptionDiv();
+      uploadedFilesContainer.appendChild(optionDiv);
+
+      console.log("oke");
+    });
+    function createOptionDiv() {
+      var inputValue = document.getElementById(
+        "inputAddLinkMultiplePrice"
+      ).value;
+      var clearinputValue = document.getElementById(
+        "inputAddLinkMultiplePrice"
+      );
+      console.log(inputValue);
+      const uploadedFile = document.createElement("div");
+      uploadedFile.className = `wrapper-file d-flex justify-content-between align-items-center `;
+      const elementFile = `
+  <div class="wrapper-drag drag-btnMultiplePrice" style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+  <button class=" drag-btnElement btn hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Drag to rearrange">        
+    <i class="fas fa-ellipsis-v "></i>      
+</button>
+</div>
+<div class="wrapperName-file">
+  <p class="name-file color-a" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
+</div>
+<div class="btn-event d-flex">
+<a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
+
+<i class="fas fa-trash-alt item-icon-delete hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Delete it"></i>   
+</div>
+    `;
+
+      // $('[data-toggle="tooltip"]').tooltip();
+      uploadedFile.innerHTML = elementFile;
+
+      clearinputValue.value = "";
+      return uploadedFile;
+    }
+
+    $("body").tooltip({
+      selector: ".hover-tooltips",
+    });
+  });
+}
+addLinkMultiplePrice();
+
+function rearrangeHandlerMultiplePrice() {
+  //for input form
+  let inputFormContainer = document.querySelector(
+    "#wrapper-uploadFileMultiplePrice"
+  );
+  new Sortable(inputFormContainer, {
+    animation: 150,
+    handle: ".drag-btnMultiplePrice",
+    ghostClass: "ghost",
+    forceFallback: true,
+    onStart: function (evt) {
+      document.documentElement.classList.add("draggable-cursor");
+      $("[data-toggle=tooltip]").tooltip("hide");
+      $("[data-toggle=tooltip]").tooltip("disable");
+    },
+    // Restores default page cursor
+    onEnd: function (evt) {
+      document.documentElement.classList.remove("draggable-cursor");
+      $("[data-toggle=tooltip]").tooltip("enable");
+    },
+  });
+}
+
+rearrangeHandlerMultiplePrice();
+
+function addLinkMultiplePrice2() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const uploadedFilesContainer = document.getElementById(
+      "wrapper-uploadFileMultiplePrice2"
+    );
+    const btnAddLink = document.getElementById("button-AddLinkMultiplePrice2");
+
+    btnAddLink.addEventListener("click", () => {
+      const optionDiv = createOptionDiv();
+      uploadedFilesContainer.appendChild(optionDiv);
+
+      console.log("oke");
+    });
+    function createOptionDiv() {
+      var inputValue = document.getElementById(
+        "inputAddLinkMultiplePrice2"
+      ).value;
+      var clearinputValue = document.getElementById(
+        "inputAddLinkMultiplePrice2"
+      );
+      console.log(inputValue);
+      const uploadedFile = document.createElement("div");
+      uploadedFile.className = `wrapper-file d-flex justify-content-between align-items-center `;
+      const elementFile = `
+  <div class="wrapper-drag drag-btnMultiplePrice2" style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+  <button class=" drag-btnElement btn hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Drag to rearrange">        
+    <i class="fas fa-ellipsis-v "></i>      
+</button>
+</div>
+<div class="wrapperName-file">
+  <p class="name-file color-a" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
+</div>
+<div class="btn-event d-flex">
+<a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
+
+<i class="fas fa-trash-alt item-icon-delete hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Delete it"></i>   
+</div>
+    `;
+
+      // $('[data-toggle="tooltip"]').tooltip();
+      uploadedFile.innerHTML = elementFile;
+
+      clearinputValue.value = "";
+      return uploadedFile;
+    }
+
+    $("body").tooltip({
+      selector: ".hover-tooltips",
+    });
+  });
+}
+addLinkMultiplePrice2();
+
+function rearrangeHandlerMultiplePrice2() {
+  //for input form
+  let inputFormContainer = document.querySelector(
+    "#wrapper-uploadFileMultiplePrice2"
+  );
+  new Sortable(inputFormContainer, {
+    animation: 150,
+    handle: ".drag-btnMultiplePrice2",
+    ghostClass: "ghost",
+    forceFallback: true,
+    onStart: function (evt) {
+      document.documentElement.classList.add("draggable-cursor");
+      $("[data-toggle=tooltip]").tooltip("hide");
+      $("[data-toggle=tooltip]").tooltip("disable");
+    },
+    // Restores default page cursor
+    onEnd: function (evt) {
+      document.documentElement.classList.remove("draggable-cursor");
+      $("[data-toggle=tooltip]").tooltip("enable");
+    },
+  });
+}
+
+rearrangeHandlerMultiplePrice2();
 
 const sortableContainer = document.getElementById("wrapper-uploadFile");
 
