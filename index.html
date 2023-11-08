@@ -1650,12 +1650,12 @@
               <div class="wrapper-form  mb-25" id="wrapper-element-collapse">
                 <div class="collapse-buyers  mb-2 collapsed" data-toggle="collapse" data-target="#element-collapse1" aria-expanded="false" aria-controls="element-collapse1">
                 <!-- <p class="form-title "> -->
-                  Buyers can pay what they want
+                  Information that buyers need to know after purchasing
               <!-- </p> -->
             </div>
               <div class="wrapper-buyers collapse " id="element-collapse1" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse">
-                <div id="editorContainer2"></div>
-                For example: instructions for use, how to access, etc.
+                <div id="editorContainerBuyers"></div>
+               <p class="f-size12 lh-140 font-weight-normal mt-1">For example: instructions for use, how to access, etc.</p>
             </div>
             </div>
             <div class="wrapper-form  mb-25" id="wrapper-element-collapse2">
@@ -1665,7 +1665,8 @@
             <!-- </p> -->
           </div>
             <div class="wrapper-buyers collapse " id="element-collapse2" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse2">
-              <div id="editorContainer2"></div>
+              <div id="editorContainerTY"></div>
+              <p class="f-size12 lh-140 font-weight-normal mt-1">The message will be read by buyers after making payment</p>
           </div>
           </div>
          
@@ -1679,7 +1680,32 @@
   <button class="btn button-AddLink " id="button-AddQuestions" type="button" onclick="showAddQuestions()">Add Questions</button>
 
   <div class="container-wrapperPrice " id="container-wrapperPrice1">
-    <div class="wrapper-questions mt-custom " >
+    <div class="wrapper-questions mt-customQuestions " >
+     
+      <div class="wrapper-form mb-9">
+       
+     
+
+      <textarea type="text" id="titleMultiplePrice" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;">Lorem ipsum dolor sit amet consectetur adipis Lorem ipsum dolor sit amet consectetur adipisLorem ipsum dolor sit </textarea>
+      <div class="d-flex align-items-start flex  justify-content-between">
+        <p class="error-textarea">Cannot be empty</p>
+        <p class="countNumber" id="counttitleMultiplePrice">0  / 200</p>
+    </div>
+    </div>
+
+<div class="wrapperEvent d-flex mt-5px">
+  <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up" data-toggle="tooltip" data-placement="top" title="Move position up"></i>
+  <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down" data-toggle="tooltip" data-placement="top" title="Move position down"></i>
+  <i class="fa-regular fa-trash-can mr-20 delete-element item-icon" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
+</div>
+
+
+    </div>
+    
+  </div>
+  
+  <div class="container-wrapperPrice " id="container-wrapperPrice1">
+    <div class="wrapper-questions mt-customQuestions " >
      
       <div class="wrapper-form mb-9">
        
@@ -1723,7 +1749,39 @@
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse5" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse5">
- Lorem10
+  <div class="wrapper-switch mt-0  mb-2">
+    <span class="switch-text">
+    Off
+  </span>
+    <div class="switch">
+      <input type="checkbox" id="switch-2"><label for="switch-2">Toggle</label> 
+    </div>
+    <span class="switch-text">
+    On
+    </span>
+  </div>
+  <div class="wrapper-date">
+    <select name="dateYear" id="" class="opacity date">
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+    </select>
+
+    <select name="dateMonth" id="" class="opacity date">
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+    </select>
+    <select name="dateDay" id="" class="opacity date">
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+    </select>
+  </div>
+  <p class="f-size12 lh-140 font-weight-normal mt-1 color-greyCustom ">After the specified date has passed, no one can buy it anymore.</p>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse6">
@@ -1733,7 +1791,11 @@
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse6" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse6">
- Lorem10
+  <input type="text" class="quantity">
+  <p class="f-size12 lh-140 font-weight-normal mt-1 color-greyCustom ">After reaching the limit, no one can buy it anymore.</p>
+  <p class="f-size12 lh-140 font-weight-normal color-greyCustom ">Sold : <span class="font-weight-bold">27</span>  </p>
+  <p class="f-size12 lh-140 font-weight-normal color-greyCustom ">The remaining amount that can be purchased : <span class="font-weight-bold">3</span>  </p>
+  
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse7">

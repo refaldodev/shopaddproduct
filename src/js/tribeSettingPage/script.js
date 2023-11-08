@@ -800,7 +800,23 @@ var quill = new Quill("#editorContainer2", {
     toolbar: toolbarOptions,
   },
 });
+var quill = new Quill("#editorContainerBuyers", {
+  theme: "bubble",
+  bounds: "#editorContainerBuyers",
+  scrollingContainer: "#editorContainerBuyers",
+  modules: {
+    toolbar: toolbarOptions,
+  },
+});
 
+var quill = new Quill("#editorContainerTY", {
+  theme: "bubble",
+  bounds: "#editorContainerTY",
+  scrollingContainer: "#editorContainerTY",
+  modules: {
+    toolbar: toolbarOptions,
+  },
+});
 var quill = new Quill("#editorContainer199", {
   theme: "bubble",
   bounds: "#editorContainer199",

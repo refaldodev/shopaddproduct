@@ -4244,6 +4244,11 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   margin-top: 15px;
 }
 
+.mt-customQuestions {
+  /* Properti CSS untuk semua elemen <mt-custom> kecuali elemen pertama */
+  margin-top: 15px;
+}
+
 .wrappper-event {
   display: none;
 }
