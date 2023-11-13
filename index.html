@@ -1791,7 +1791,8 @@
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse6" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse6">
-  <input type="text" class="quantity">
+  <input type="text" class="quantity" id="inputQuantity" >
+  
   <p class="f-size12 lh-140 font-weight-normal mt-1 color-greyCustom ">After reaching the limit, no one can buy it anymore.</p>
   <p class="f-size12 lh-140 font-weight-normal color-greyCustom ">Sold : <span class="font-weight-bold">27</span>  </p>
   <p class="f-size12 lh-140 font-weight-normal color-greyCustom ">The remaining amount that can be purchased : <span class="font-weight-bold">3</span>  </p>
@@ -1805,7 +1806,14 @@
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse7" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse7">
-Lorem10
+  <div class="font-weight-normal mb-14 ">
+  <p class="fs-14">Minimum</p>
+  <input type="text" class="quantity" id="inputMinimunAmount" >
+</div>
+<div class="font-weight-normal mb-14 ">
+  <p class="fs-14">Maximum</p>
+  <input type="text" class="quantity" id="inputMaximumAmount" >
+</div>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse8">
@@ -1815,7 +1823,7 @@ Lorem10
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse8" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse8">
-Lorem10
+  <button class="btn button-AddLink " id="button-AddDiscount" type="button" onclick="showAddDiscount()">Add Discount</button>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse9">
@@ -1835,7 +1843,9 @@ Lorem10
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse10" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse10">
-Lorem10
+ <span class="font-weight-normal f-size14">https://sociabuzz.com/username/p/</span> 
+  <textarea type="text" id="titleCustomize" rows="1" class="form-control mt-9 messageInput" maxlength="200" ></textarea>
+  <p class="error-textarea">Cannot be empty</p>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse11">
@@ -1845,7 +1855,8 @@ Lorem10
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse11" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse11">
-Lorem10
+  <textarea type="text" id="titleCustomize" rows="1" class="form-control mt-9 messageInput" maxlength="200" ></textarea>
+  <p class="f-size12   font-weight-normal">If empty, it will show the default text “Buy Now”</p>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse12">
@@ -1855,7 +1866,18 @@ Lorem10
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse12" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse12">
- Lorem10
+  <div class="wrapper-switch mt-0 mb-1"> 
+    <span class="switch-text">
+    Off
+  </span>
+    <div class="switch">
+      <input type="checkbox" id="switch-3"><label for="switch-3">Toggle</label> 
+    </div>
+    <span class="switch-text">
+    On
+    </span>
+  </div>
+  <p class="fs-14 font-weight-normal">If enabled, what you sell will not be displayed on your page, only accessible via direct link.</p>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse13">
@@ -1865,7 +1887,40 @@ Lorem10
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse13" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse13">
- Lorem10
+  <div class="wrapper-switch mt-0 mb-1"> 
+    <span class="switch-text">
+    Off
+  </span>
+    <div class="switch">
+      <input type="checkbox" id="switch-4"><label for="switch-4">Toggle</label> 
+    </div>
+    <span class="switch-text">
+    On
+    </span>
+  </div>
+  <p class="fs-14 font-weight-normal">Available for purchase after this date</p>
+  <div class="wrapper-date mb-1">
+    <select name="dateYear" id="" class="opacity date">
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+    </select>
+
+    <select name="dateMonth" id="" class="opacity date">
+      <option value="13">12</option>
+      <option value="12">12</option>
+      <option value="12">12</option>
+      <option value="12">12</option>
+    </select>
+    <select name="dateDay" id="" class="opacity date">
+      <option value="2022">18</option>
+      <option value="18">18</option>
+      <option value="18">18</option>
+      <option value="18">18</option>
+    </select>
+  </div>
+  <p class="f-size12 font-weight-normal lh-140" style="color: #595959;">It will be displayed on your page from the moment you make it live, but can only be purchased after the date specified above.</p>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse14">
@@ -1875,7 +1930,43 @@ Lorem10
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse14" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse14">
- Lorem10
+  <div class="wrapper-switch mt-0 mb-1"> 
+    <span class="switch-text">
+    Off
+  </span>
+    <div class="switch">
+      <input type="checkbox" id="switch-5"><label for="switch-5">Toggle</label> 
+    </div>
+    <span class="switch-text">
+    On
+    </span>
+  </div>
+  <p class="fs-14 font-weight-normal lh-140 mb-2">If enabled, the pre-order status will be displayed, so that buyers understand that they will have to wait for some time until receiving what they bought.</p>
+  <p class="fs-14 font-weight-normal lh-140 mb-1">Buyers will start receiving what they bought starting from this date</p>
+  
+  <div class="wrapper-date mb-1">
+    <select name="dateYear" id="" class="opacity date">
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+      <option value="2022">2022</option>
+    </select>
+
+    <select name="dateMonth" id="" class="opacity date">
+      <option value="13">12</option>
+      <option value="12">12</option>
+      <option value="12">12</option>
+      <option value="12">12</option>
+    </select>
+    <select name="dateDay" id="" class="opacity date">
+      <option value="2022">18</option>
+      <option value="18">18</option>
+      <option value="18">18</option>
+      <option value="18">18</option>
+    </select>
+  </div>
+  <p class="error-textarea">Cannot be empty</p>
+
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse15">
@@ -1885,7 +1976,7 @@ Lorem10
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse15" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse15">
- Lorem10
+  <button class="btn button-AddLink " id="button-AddWebhook" type="button" onclick="showAddWebhook()">Add Webhook</button>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse16">
@@ -1895,7 +1986,19 @@ Lorem10
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse16" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse16">
- Lorem10
+  <div class="wrapper-switch mt-0 mb-1"> 
+    <span class="switch-text">
+    Off
+  </span>
+    <div class="switch">
+      <input type="checkbox" id="switch-6"><label for="switch-6">Toggle</label> 
+    </div>
+    <span class="switch-text">
+    On
+    </span>
+  </div>
+  <textarea type="text" id="titleCustomize" rows="1" class="form-control mt-9 messageInput" maxlength="200"></textarea>
+  <p class="error-textarea">Cannot be empty</p>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse17">
@@ -1905,7 +2008,20 @@ Lorem10
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse17" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse17">
- Lorem10
+  <div class="wrapper-switch mt-0 mb-1"> 
+    <span class="switch-text">
+    Off
+  </span>
+    <div class="switch">
+      <input type="checkbox" id="switch-7"><label for="switch-7">Toggle</label> 
+    </div>
+    <span class="switch-text">
+    On
+    </span>
+  </div>
+  <p class="f-size12 font-weight-normal lh-140" >Customize the page title and description to optimize for keywords and rank better in search results</p>
+  <textarea type="text" id="titleCustomize" rows="1" class="form-control mt-9 messageInput" maxlength="200"></textarea>
+  <p class="f-size12 font-weight-normal lh-140">Example: Bestseller, Recommended, New, Exclusive, Limited Edition</p>
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse18">

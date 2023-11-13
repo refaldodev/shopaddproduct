@@ -1908,3 +1908,70 @@ $("#test").on("select2:select select2:unselect", function (e) {
   var lastSelectedItem = e.params.data.id;
   console.log(lastSelectedItem);
 });
+
+const inputQuantity = document.getElementById("inputQuantity");
+
+inputQuantity.addEventListener("input", function () {
+  const inputText = inputQuantity.value;
+  const textWidth = getTextWidth(
+    inputText,
+    window.getComputedStyle(inputQuantity).font
+  );
+
+  // Set width input sesuai dengan panjang teksnya, tapi tidak kurang dari min-width
+  inputQuantity.style.width = Math.max(textWidth, 90) + "px";
+});
+
+function getTextWidth(text, font) {
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
+  context.font = font;
+  const width = context.measureText(text).width;
+  canvas.remove();
+  return width;
+}
+
+const inputMinimunAmount = document.getElementById("inputMinimunAmount");
+
+inputMinimunAmount.addEventListener("input", function () {
+  const inputText = inputMinimunAmount.value;
+  const textWidth = getTextWidth(
+    inputText,
+    window.getComputedStyle(inputMinimunAmount).font
+  );
+
+  // Set width input sesuai dengan panjang teksnya, tapi tidak kurang dari min-width
+  inputMinimunAmount.style.width = Math.max(textWidth, 90) + "px";
+});
+
+function getTextWidth(text, font) {
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
+  context.font = font;
+  const width = context.measureText(text).width;
+  canvas.remove();
+  return width;
+}
+
+
+const inputMaximumAmount = document.getElementById("inputMaximumAmount");
+
+inputMaximumAmount.addEventListener("input", function () {
+  const inputText = inputMaximumAmount.value;
+  const textWidth = getTextWidth(
+    inputText,
+    window.getComputedStyle(inputMaximumAmount).font
+  );
+
+  // Set width input sesuai dengan panjang teksnya, tapi tidak kurang dari min-width
+  inputMaximumAmount.style.width = Math.max(textWidth, 90) + "px";
+});
+
+function getTextWidth(text, font) {
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
+  context.font = font;
+  const width = context.measureText(text).width;
+  canvas.remove();
+  return width;
+}
