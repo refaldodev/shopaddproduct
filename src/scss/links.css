@@ -1813,6 +1813,40 @@ body {
   user-select: text;
 }
 
+#editorContainerTY.ql-container .ql-editor {
+  min-height: 32px !important;
+  height: auto;
+  max-height: 100%;
+  border-radius: 6px;
+  border: 1px solid #b8b8b8 !important;
+  border-radius: 6px !important;
+  -webkit-border-radius: 6px !important;
+  -moz-border-radius: 6px !important;
+  -ms-border-radius: 6px !important;
+  -o-border-radius: 6px !important;
+}
+#editorContainerTY.ql-container .ql-editor a {
+  color: #007aff !important;
+  text-decoration: none;
+  -webkit-user-select: text !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word;
+  word-break: break-word;
+  -moz-user-select: text;
+  user-select: text;
+}
+#editorContainerTY.ql-container .ql-editor a:hover {
+  text-decoration: underline;
+  color: #007aff !important;
+}
+#editorContainerTY.ql-container .ql-editor:focus {
+  border: 1px solid #76cc11 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none;
+  border-color: #76cc11 !important;
+}
+
 .ql-container .ql-editor {
   min-height: 90px;
   height: auto;

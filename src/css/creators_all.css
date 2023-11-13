@@ -1364,7 +1364,9 @@ input.quantity {
   height: 40px;
   padding: 8px;
 }
-
+/* #element-collapse4 .select2-container .select2-selection--multiple {
+  height: 40px !;
+} */
 input.quantity:hover,
 input.quantity:focus {
   border-radius: 6px;
@@ -2264,7 +2266,6 @@ textarea {
   display: inline-block;
   margin-left: 5px;
   margin-top: 5px;
-  padding: 0;
 
   position: relative;
   max-width: 100%;
