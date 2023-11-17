@@ -1425,7 +1425,7 @@
         </div>
         <!-- end digital products -->
         
-        <div class="accordion-item  accordion-item mb-card-default  " id="page-profilePicture">
+        <div class="accordion-item  accordion-item mb-card-default  active" id="page-profilePicture">
          
           <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
               <div class="wrapper-icontext d-flex align-items-center">
@@ -1486,7 +1486,7 @@
             </div>
                 </div>
               </div>     
-              <div class="subAccordion-itemSupporter mb-card-default ">
+              <div class="subAccordion-itemSupporter mb-card-default active">
                 <div class="subAccordion-headerSupporter  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
                     <div class="wrapper-icontext d-flex align-items-center">
                     <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
@@ -1504,7 +1504,7 @@
           <div class="hover-tooltips wrapperImg" data-tooltip="tooltip" data-placement="top" title="" data-original-title="nama file" style="cursor: grab;">
           <img src="./src/img/card.png" class="img-preview hover-tooltips" alt="profile-image"  id="profile-image" >
         </div>
-          <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-icon " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it" data-toggle="modal" data-target="#deleteModalItem" ></i>
+          <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-icon " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it" ></i>
                 </div>
                
               </div>
@@ -1553,7 +1553,7 @@
     
             
                 </div>
-                <div class="wrapper-container-video d-flex flex-wrap">
+                <div class="wrapper-container-video d-flex flex-wrap" id="wrapper-containerVideo">
                
                       </div>
                 </div>
@@ -1629,7 +1629,7 @@
           </div>
         </div>
        
-        <div class="accordion-item  accordion-item mb-card-default  active" id="page-btn">
+        <div class="accordion-item  accordion-item mb-card-default  " id="page-btn">
           
           <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
               <div class="wrapper-icontext d-flex align-items-center">
@@ -1833,7 +1833,81 @@
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse9" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse9">
-Lorem10
+  <div class="wrapper-switch mt-0 mb-14"> 
+    <span class="switch-text">
+    Off
+  </span>
+    <div class="switch">
+      <input type="checkbox" id="switch-7"><label for="switch-7">Toggle</label> 
+    </div>
+    <span class="switch-text">
+    On
+    </span>
+  </div>
+
+  <div class="wrapper-radioContainer mb-3">
+    <label class="radio-container">
+        
+        <p class="textRadioBtn">One shipping cost for all destinations</p>
+        <input type="radio" name="RadioDelivery">
+        <span class="fake-radio"></span>
+    </label>
+    <div class="wrapper-form wrapper-form__delivery  mt-2" style="margin-left:28px" > 
+      <div class="wrapper-oneShiping mb-14">
+      <p class="f-size16 font-weight-bold lh-140">Amount alone</p>
+      <div class="input-group ">
+        <div class="input-group-prepend ">
+          <div class="input-group-text border-custom-currency">SGD</div>
+        </div>
+        <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+      </div>
+    </div>
+    <div class="wrapper-oneShiping">
+
+      <p class="f-size16 font-weight-bold lh-140">Amount with others</p>
+      <div class="input-group ">
+        <div class="input-group-prepend ">
+          <div class="input-group-text border-custom-currency">SGD</div>
+        </div>
+        <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="wrapper-radioContainer mb-3">
+    <label class="radio-container mb-5px">
+        
+        <p class="textRadioBtn">Shipping costs differ per destination</p>
+        <input type="radio" name="RadioDelivery">
+        <span class="fake-radio"></span>
+    </label>
+    <button class="btn button-AddLink " id="button-AddDestinations" type="button" onclick="showAddDestinations()" style="margin-left: 28px;
+    ">Add destinations and costs</button>
+    <div class="wrapper-form wrapper-form__delivery  mt-15" style="margin-left:28px" > 
+      <div class="wrapper-oneShiping mb-14">
+      <p class="f-size16 font-weight-bold lh-140">Amount alone</p>
+      <div class="input-group ">
+        <div class="input-group-prepend ">
+          <div class="input-group-text border-custom-currency">SGD</div>
+        </div>
+        <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+      </div>
+    </div>
+    <div class="wrapper-oneShiping">
+
+      <p class="f-size16 font-weight-bold lh-140">Amount with others</p>
+      <div class="input-group ">
+        <div class="input-group-prepend ">
+          <div class="input-group-text border-custom-currency">SGD</div>
+        </div>
+        <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+      </div>
+    </div>
+    </div>
+  </div>
+
+
 </div>
 </div>
 <div class="wrapper-form mb-25 " id="wrapper-element-collapse10">
@@ -1843,7 +1917,7 @@ Lorem10
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse10" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse10">
- <span class="font-weight-normal f-size14">https://sociabuzz.com/username/p/</span> 
+ <p class="font-weight-normal f-size14">https://sociabuzz.com/username/p/</p> 
   <textarea type="text" id="titleCustomize" rows="1" class="form-control mt-9 messageInput" maxlength="200" ></textarea>
   <p class="error-textarea">Cannot be empty</p>
 </div>

@@ -731,18 +731,18 @@ var toolbarOptions = [
 //   //   toolbar: toolbarOptions
 //   // }
 // });
-var quill2 = new Quill("#editorQuillAmount", {
-  theme: "bubble",
+// var quill2 = new Quill("#editorQuillAmount", {
+//   theme: "bubble",
 
-  bounds: "#editorQuillAmount",
-  scrollingContainer: "#editorQuillAmount",
-  modules: {
-    toolbar: toolbarOptions,
-  },
-  // modules: {
-  //   toolbar: toolbarOptions
-  // }
-});
+//   bounds: "#editorQuillAmount",
+//   scrollingContainer: "#editorQuillAmount",
+//   modules: {
+//     toolbar: toolbarOptions,
+//   },
+//   // modules: {
+//   //   toolbar: toolbarOptions
+//   // }
+// });
 // var quill3 = new Quill("#editorQuillSupporter", {
 //   theme: "bubble",
 //   modules: {
@@ -1042,9 +1042,9 @@ function addOption1() {
       return optionDiv;
     }
 
-    function deleteElement(element) {
-      element.remove();
-    }
+    // function deleteElement(element) {
+    //   element.remove();
+    // }
   });
 }
 addOption1();
@@ -1180,9 +1180,9 @@ function addOption2() {
       return optionDiv;
     }
 
-    function deleteElement(element) {
-      element.remove();
-    }
+    // function deleteElement(element) {
+    //   element.remove();
+    // }
   });
 }
 addOption2();
@@ -1715,8 +1715,8 @@ function uploadImagePreview() {
         deleteIcon.setAttribute("data-placement", "top");
         deleteIcon.setAttribute("title", "Delete it");
         // deleteIcon.setAttribute("data-original-title", "Delete it");
-        deleteIcon.setAttribute("data-toggle", "modal");
-        deleteIcon.setAttribute("data-target", "#deleteModalItem");
+        // deleteIcon.setAttribute("data-toggle", "modal");
+        // deleteIcon.setAttribute("data-target", "#deleteModalItem");
 
         // // Bersihkan isi dari profileImageContainer
         // profileImageContainer.innerHTML = "";
@@ -1739,20 +1739,31 @@ function uploadImagePreview() {
 uploadImagePreview();
 function removeImgPreview() {
   // Temukan elemen induk yang berisi gambar dan ikon delete
-  var imageContainer = document.querySelector(".profile-img-container2");
+  var imageContainer = document.querySelector("#wrapper-flex-preview");
 
   // Tambahkan event listener ke elemen induk untuk menangani klik pada ikon delete
-  imageContainer.addEventListener("click", function (event) {
-    // Periksa apakah elemen yang diklik adalah ikon delete
-    if (event.target.classList.contains("item-icon-delete")) {
-      // Temukan elemen gambar yang bersesuaian dengan ikon delete yang diklik
-      var imageElement = event.target.previousElementSibling;
+  // imageContainer.addEventListener("click", function (event) {
+  //   // Periksa apakah elemen yang diklik adalah ikon delete
+  //   if (event.target.classList.contains("item-icon-delete")) {
+  //     // Temukan elemen gambar yang bersesuaian dengan ikon delete yang diklik
+  //     var imageElement = event.target.previousElementSibling;
 
-      // var div = event.target.parentNode;
-      // Hapus elemen gambar dan ikon delete
-      imageElement.remove();
-      event.target.remove();
-      // div.remove();
+  //     // var div = event.target.parentNode;
+  //     // Hapus elemen gambar dan ikon delete
+  //     imageElement.remove();
+  //     event.target.remove();
+  //     // div.remove();
+  //   }
+  // });
+
+  imageContainer.addEventListener("click", (event) => {
+    const clickedIcon = event.target;
+    if (clickedIcon.classList.contains("item-icon-delete")) {
+      const item = clickedIcon.closest(".profile-img-container2");
+
+      if (clickedIcon.classList.contains("custom-position-icon")) {
+        item.remove();
+      }
     }
   });
 }
@@ -1809,6 +1820,21 @@ function showVideoPreview() {
     alert("Tautan YouTube tidak valid.");
   }
 }
+function deleteYt() {
+  const sortableContainer = document.getElementById("wrapper-containerVideo");
+
+  sortableContainer.addEventListener("click", (event) => {
+    const clickedIcon = event.target;
+    if (clickedIcon.classList.contains("item-icon-delete")) {
+      const item = clickedIcon.closest(".wrapper-video");
+
+      if (clickedIcon.classList.contains("custom-position-iconVideo")) {
+        item.remove();
+      }
+    }
+  });
+}
+deleteYt();
 function extractVideoId(url) {
   var regExp =
     /^(https?:\/\/)?(www\.)?(youtube|youtu|youtube-nocookie)\.(com|be)\/(watch\?v=|embed\/|v\/|.+\?v=)?([^&=%\?]{11})/;
@@ -1952,7 +1978,6 @@ function getTextWidth(text, font) {
   canvas.remove();
   return width;
 }
-
 
 const inputMaximumAmount = document.getElementById("inputMaximumAmount");
 
