@@ -2610,3 +2610,73 @@ function addWebhokLink() {
   });
 }
 addWebhokLink();
+
+// color picker
+
+const colorPicker = $("#colorPicker-profile");
+
+// Menambahkan event listener ke color picker untuk mendengarkan perubahan warna
+colorPicker.spectrum({
+  showPalette: true,
+  showInput: true,
+  showAlpha: true,
+  allowEmpty: true,
+  preferredFormat: "hex",
+  color: "#DFF8FF",
+  palette: [
+    ["#000", "#444", "#666", "#999", "#ccc", "#fff"],
+    ["#f00", "#f90", "#ff0", "#0f0", "#0ff", "#00f"],
+    ["#f4cccc", "#fce5cd", "#fff2cc", "#d9ead3", "#d0e0e3", "#cfe2f3"],
+    ["#ea9999", "#f9cb9c", "#ffe599", "#b6d7a8", "#a2c4c9", "#9fc5e8"],
+    ["#e06666", "#f6b26b", "#ffd966", "#93c47d", "#76a5af", "#6fa8dc"],
+    ["#c00", "#e69138", "#f1c232", "#6aa84f", "#45818e", "#3d85c6"],
+    ["#900", "#b45f06", "#bf9000", "#38761d", "#134f5c", "#0b5394"],
+    ["#600", "#783f04", "#7f6000", "#274e13", "#0c343d", "#073763"],
+  ],
+  move: function (color) {
+    // Saat warna diubah di color picker, perbarui warna tombol
+    const selectedColor = color.toHexString();
+    // const alpha = color.getAlpha(); // Dapatkan nilai alpha
+
+    // // Gunakan nilai alpha saat mengatur warna
+    // setButtonColor(selectedColor, alpha);
+
+    // /* setButtonColor(selectedColor); */
+    // setHoverDarkenEffect(buttonContoh, 0.8); // Sesuaikan faktor kegelapan dengan nilai antara 0 hingga 1
+  },
+});
+$("#btn-color-btn").click(function () {
+  // Tampilkan pemilih warna saat teks diklik
+  $("#colorPicker-profile").spectrum("toggle");
+  return false;
+});
+
+$("#colorPicker-text").spectrum({
+  showPalette: true,
+  showInput: true,
+  showAlpha: true,
+  allowEmpty: true,
+  preferredFormat: "hex",
+  // color: response.data.profile_icon_color,
+  color: "#40ABFA",
+  palette: [
+    ["#000", "#444", "#666", "#999", "#ccc", "#fff"],
+    ["#f00", "#f90", "#ff0", "#0f0", "#0ff", "#00f"],
+    ["#f4cccc", "#fce5cd", "#fff2cc", "#d9ead3", "#d0e0e3", "#cfe2f3"],
+    ["#ea9999", "#f9cb9c", "#ffe599", "#b6d7a8", "#a2c4c9", "#9fc5e8"],
+    ["#e06666", "#f6b26b", "#ffd966", "#93c47d", "#76a5af", "#6fa8dc"],
+    ["#c00", "#e69138", "#f1c232", "#6aa84f", "#45818e", "#3d85c6"],
+    ["#900", "#b45f06", "#bf9000", "#38761d", "#134f5c", "#0b5394"],
+    ["#600", "#783f04", "#7f6000", "#274e13", "#0c343d", "#073763"],
+  ],
+  move: function (color) {
+    // Saat warna diubah di color picker, perbarui warna tombol
+    const selectedColor = color.toHexString();
+
+    // Sesuaikan faktor kegelapan dengan nilai antara 0 hingga 1
+  },
+});
+$("#btn-color-txt").click(function () {
+  $("#colorPicker-text").spectrum("toggle");
+  return false;
+});
