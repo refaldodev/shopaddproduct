@@ -1142,7 +1142,7 @@
           
           
           <!-- digital products -->
-        <div class="accordion-item  accordion-item mb-card-default  " id="page-coverImage">
+        <div class="accordion-item  accordion-item mb-card-default active " id="page-coverImage">
           
           <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
               <div class="wrapper-icontext d-flex align-items-center">
@@ -1230,8 +1230,8 @@
 
                     <div class="wrapper-upload  wrapper-upploadCover">
                       <div class="file-input-container">
-                      <input type="file" class=" d-none" id="uploadFile"  >
-                      <label class="button button-modalUpload "  for="uploadFile" id="uploadFileLabel" >Upload File</label>
+                      <input type="file" class=" d-none" id="uploadFileMultiple"  >
+                      <label class="button button-modalUpload "  for="uploadFileMultiple" id="uploadFileLabelMultiple" >Upload File</label>
                       <button class="button button-modalAddLink "  onclick="toggleInput1()" >Add Link</button>
                      
                     </div>
@@ -1256,7 +1256,7 @@
                             <i class="fa-solid fa-download hover-tooltips "   data-tooltip="tooltip" data-placement="top" title="Download"></i>
                         
                           
-                            <i class="fas fa-trash-alt  item-icon-delete hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
+                            <i class="fas fa-trash-alt  item-icon-delete item-icon-deleteMultiple hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
                     
                       <!-- 
                       <button class="redirect-file btn" data-tooltip="tooltip" data-placement="top" title="" data-original-title="redirect file">        
@@ -1297,8 +1297,8 @@
 
                     <div class="wrapper-upload  wrapper-upploadCover">
                       <div class="file-input-container">
-                      <input type="file" class=" d-none" id="uploadFile"  >
-                      <label class="button button-modalUpload "  for="uploadFile" id="uploadFileLabel" >Upload File</label>
+                      <input type="file" class=" d-none" id="uploadFileMultiple2"  >
+                      <label class="button button-modalUpload "  for="uploadFileMultiple2" id="uploadFileLabelMultiple2" >Upload File</label>
                       <button class="button button-modalAddLink "  onclick="toggleInput2()" >Add Link</button>
                      
                     </div>
@@ -1323,7 +1323,7 @@
                             <i class="fa-solid fa-download hover-tooltips "   data-tooltip="tooltip" data-placement="top" title="Download"></i>
                         
                           
-                            <i class="fas fa-trash-alt  item-icon-delete hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
+                            <i class="fas fa-trash-alt  item-icon-delete item-icon-deleteMultiple2 hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
                     
                       <!-- 
                       <button class="redirect-file btn" data-tooltip="tooltip" data-placement="top" title="" data-original-title="redirect file">        
@@ -1364,20 +1364,20 @@
                   <div class="subAccordion-body bg-opacity active ">
                     <div class="wrapper-upload  wrapper-upploadCover">
                       <div class="file-input-container">
-                      <input type="file" class=" d-none" id="uploadFile">
-                      <label class="button button-modalUpload " for="uploadFile" id="uploadFileLabel">Upload File</label>
-                      <button class="button button-modalAddLink " onclick="toggleInput()">Add Link</button>
+                      <input type="file" class=" d-none" id="uploadFileBonus">
+                      <label class="button button-modalUpload " for="uploadFileBonus" id="uploadFileLabelBonus">Upload File</label>
+                      <button class="button button-modalAddLink " onclick="toggleInputBonus()">Add Link</button>
                      
                     </div>
-                    <div class="wrapper-elementInput mb-20" id="wrapper-elementInput" style="display: none;">
+                    <div class="wrapper-elementInput mb-20" id="wrapper-elementInputBonus" style="display: none;">
                       
-                      <textarea type="text" id="inputAddLink" rows="1" class="form-control mt-9 inputAddLink mb-10 " style="height:0px;overflow-y:hidden;"></textarea>
-                      <button class="btn button-AddLink " id="button-AddLink" type="button">Add Link</button>
+                      <textarea type="text" id="inputAddLinkBonus" rows="1" class="form-control mt-9 inputAddLink mb-10 " style="height:0px;overflow-y:hidden;"></textarea>
+                      <button class="btn button-AddLink " id="button-AddLinkBonus" type="button">Add Link</button>
                     </div>
         
-                    <div class="wrapper-uploadFile mb-5" id="wrapper-uploadFile">
+                    <div class="wrapper-uploadFile mb-5" id="wrapper-uploadFileBonus">
                       <div class="wrapper-file d-flex justify-content-between align-items-center" style="overflow: hidden;">
-                        <div class="wrapper-drag drag-btn " style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+                        <div class="wrapper-drag drag-btnBonus " style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
                           <button class=" drag-btnElement btn hover-tooltips " style="cursor: grab;">        
                             <i class="fas fa-ellipsis-v"></i>      
                         </button>
@@ -1390,7 +1390,7 @@
                             <i class="fa-solid fa-download hover-tooltips " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Download"></i>
                         
                           
-                            <i class="fas fa-trash-alt  item-icon-delete hover-tooltips " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>    
+                            <i class="fas fa-trash-alt  item-icon-delete hover-tooltips item-icon-deleteMultipleBonus" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>    
                     
                       <!-- 
                       <button class="redirect-file btn" data-tooltip="tooltip" data-placement="top" title="" data-original-title="redirect file">        
@@ -1425,7 +1425,7 @@
         </div>
         <!-- end digital products -->
         
-        <div class="accordion-item  accordion-item mb-card-default  active" id="page-profilePicture">
+        <div class="accordion-item  accordion-item mb-card-default  " id="page-profilePicture">
          
           <div class="accordion-header  wrapper__card--item accordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
               <div class="wrapper-icontext d-flex align-items-center">
@@ -1486,7 +1486,7 @@
             </div>
                 </div>
               </div>     
-              <div class="subAccordion-itemSupporter mb-card-default active">
+              <div class="subAccordion-itemSupporter mb-card-default ">
                 <div class="subAccordion-headerSupporter  wrapper__card--item subAccordion-bg-default  hover__grow d-flex justify-content-between align-content-center">
                     <div class="wrapper-icontext d-flex align-items-center">
                     <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->

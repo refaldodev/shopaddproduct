@@ -1187,82 +1187,6 @@ function addOption2() {
 }
 addOption2();
 
-function toggleInput() {
-  $("textarea#inputAddLink")
-    .each(function () {
-      this.setAttribute(
-        "style",
-        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
-      );
-    })
-    .on("input", function () {
-      this.style.height = "auto";
-      this.style.height = this.scrollHeight + "px";
-      var result = 0;
-    });
-  var wrapperAddLinkInput = document.getElementById("wrapper-elementInput");
-  if (
-    wrapperAddLinkInput.style.display === "none" ||
-    wrapperAddLinkInput.style.display === ""
-  ) {
-    wrapperAddLinkInput.style.display = "block";
-  } else {
-    wrapperAddLinkInput.style.display = "none";
-  }
-}
-
-function toggleInput1() {
-  $("textarea#inputAddLinkMultiplePrice")
-    .each(function () {
-      this.setAttribute(
-        "style",
-        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
-      );
-    })
-    .on("input", function () {
-      this.style.height = "auto";
-      this.style.height = this.scrollHeight + "px";
-      var result = 0;
-    });
-  var wrapperAddLinkInput = document.getElementById(
-    "wrapper-elementInputMultiplePrice"
-  );
-  if (
-    wrapperAddLinkInput.style.display === "none" ||
-    wrapperAddLinkInput.style.display === ""
-  ) {
-    wrapperAddLinkInput.style.display = "block";
-  } else {
-    wrapperAddLinkInput.style.display = "none";
-  }
-}
-
-function toggleInput2() {
-  $("textarea#inputAddLinkMultiplePrice2")
-    .each(function () {
-      this.setAttribute(
-        "style",
-        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
-      );
-    })
-    .on("input", function () {
-      this.style.height = "auto";
-      this.style.height = this.scrollHeight + "px";
-      var result = 0;
-    });
-  var wrapperAddLinkInput = document.getElementById(
-    "wrapper-elementInputMultiplePrice2"
-  );
-  if (
-    wrapperAddLinkInput.style.display === "none" ||
-    wrapperAddLinkInput.style.display === ""
-  ) {
-    wrapperAddLinkInput.style.display = "block";
-  } else {
-    wrapperAddLinkInput.style.display = "none";
-  }
-}
-
 function cekRadioButton(option) {
   // Menyembunyikan semua elemen wrapper-form terlebih dahulu
   var wrappers = document.querySelectorAll(".wrappper-event");
@@ -1303,64 +1227,6 @@ function cekRadioButton(option) {
       });
   }
   //  else if( optio)
-}
-
-// add file
-
-const fileInput = document.getElementById("uploadFile");
-const fileInputLabel = document.getElementById("uploadFileLabel");
-const uploadedFilesContainer = document.getElementById("wrapper-uploadFile");
-
-fileInput.addEventListener("change", function () {
-  if (fileInput.files.length > 0) {
-    const fileName = fileInput.files[0].name;
-    const uploadedFile = createUploadedFileElement(fileName);
-    uploadedFilesContainer.appendChild(uploadedFile);
-    fileInputLabel.textContent = "Upload File"; // Mengubah label setelah file dipilih
-  } else {
-    // Jika pengguna membatalkan pemilihan file, reset tampilan
-    uploadedFilesContainer.innerHTML = "";
-    fileInputLabel.textContent = "Pilih File"; // Mengembalikan label ke tampilan awal
-  }
-});
-
-function createUploadedFileElement(fileName) {
-  const elementFile = `
-        
-  <div class="wrapper-drag drag-btn" style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
-  <button class=" drag-btnElement btn hover-tooltips"  data-tooltip="tooltip" data-placement="top" title="Drag to rearrange">        
-    <i class="fas fa-ellipsis-v"></i>      
-</button>
-</div>
-<div class="wrapperName-file">
-  <p class="name-file hover-tooltips" data-tooltip="tooltip"  data-placement="bottom" title="${fileName}">${fileName}</p>
-</div>
-<div class="btn-event d-flex">
-          
-    <i class="fa-solid fa-download hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Download"></i>
-
-  
-    <i class="fas fa-trash-alt item-icon-delete hover-tooltips"  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
-
-
-</div>
-       
-    `;
-
-  const uploadedFile = document.createElement("div");
-  uploadedFile.classList.add(
-    "wrapper-file",
-    "d-flex",
-    "justify-content-between",
-    "align-items-center"
-  );
-  // $('[data-toggle="tooltip"]').tooltip();
-
-  uploadedFile.innerHTML = elementFile;
-  // $(document).ready(function () {
-  //   $('[data-toggle="tooltip"]').tooltip();
-  // });
-  return uploadedFile;
 }
 
 function addLink() {
@@ -1468,7 +1334,7 @@ function addLinkMultiplePrice() {
 <div class="btn-event d-flex">
 <a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
 
-<i class="fas fa-trash-alt item-icon-delete hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Delete it"></i>   
+<i class="fas fa-trash-alt item-icon-delete item-icon-deleteMultiple hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Delete it"></i>   
 </div>
     `;
 
@@ -1546,7 +1412,7 @@ function addLinkMultiplePrice2() {
 <div class="btn-event d-flex">
 <a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
 
-<i class="fas fa-trash-alt item-icon-delete hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Delete it"></i>   
+<i class="fas fa-trash-alt item-icon-delete item-icon-deleteMultiple2 hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Delete it"></i>   
 </div>
     `;
 
@@ -1589,16 +1455,490 @@ function rearrangeHandlerMultiplePrice2() {
 
 rearrangeHandlerMultiplePrice2();
 
-const sortableContainer = document.getElementById("wrapper-uploadFile");
+// bonus
 
-sortableContainer.addEventListener("click", (event) => {
-  const clickedIcon = event.target;
-  if (clickedIcon.classList.contains("item-icon-delete")) {
-    const item = clickedIcon.closest(".wrapper-file");
+function addLinkMultipleBonus() {
+  document.addEventListener("DOMContentLoaded", function () {
+    const uploadedFilesContainer = document.getElementById(
+      "wrapper-uploadFileBonus"
+    );
+    const btnAddLink = document.getElementById("button-AddLinkBonus");
 
-    item.remove();
+    btnAddLink.addEventListener("click", () => {
+      const optionDiv = createOptionDiv();
+      uploadedFilesContainer.appendChild(optionDiv);
+
+      console.log("oke");
+    });
+    function createOptionDiv() {
+      var inputValue = document.getElementById("inputAddLinkBonus").value;
+      var clearinputValue = document.getElementById("inputAddLinkBonus");
+
+      const uploadedFile = document.createElement("div");
+      uploadedFile.className = `wrapper-file d-flex justify-content-between align-items-center `;
+      const elementFile = `
+  <div class="wrapper-drag drag-btnBonus" style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+  <button class=" drag-btnElement btn hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Drag to rearrange">        
+    <i class="fas fa-ellipsis-v "></i>      
+</button>
+</div>
+<div class="wrapperName-file">
+  <p class="name-file color-a" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
+</div>
+<div class="btn-event d-flex">
+<a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
+
+<i class="fas fa-trash-alt item-icon-delete hover-tooltips item-icon-deleteMultipleBonus"   data-tooltip="tooltip" data-placement="top" title="Delete it"></i>   
+</div>
+    `;
+
+      // $('[data-toggle="tooltip"]').tooltip();
+      uploadedFile.innerHTML = elementFile;
+
+      clearinputValue.value = "";
+      return uploadedFile;
+    }
+
+    $("body").tooltip({
+      selector: ".hover-tooltips",
+    });
+  });
+}
+addLinkMultipleBonus();
+
+function rearrangeHandlerBonus() {
+  //for input form
+  let inputFormContainer = document.querySelector("#wrapper-uploadFileBonus");
+  new Sortable(inputFormContainer, {
+    animation: 150,
+    handle: ".drag-btnBonus",
+    ghostClass: "ghost",
+    forceFallback: true,
+    onStart: function (evt) {
+      document.documentElement.classList.add("draggable-cursor");
+      $("[data-toggle=tooltip]").tooltip("hide");
+      $("[data-toggle=tooltip]").tooltip("disable");
+    },
+    // Restores default page cursor
+    onEnd: function (evt) {
+      document.documentElement.classList.remove("draggable-cursor");
+      $("[data-toggle=tooltip]").tooltip("enable");
+    },
+  });
+}
+
+rearrangeHandlerBonus();
+
+function toggleInput() {
+  $("textarea#inputAddLink")
+    .each(function () {
+      this.setAttribute(
+        "style",
+        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+      );
+    })
+    .on("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+      var result = 0;
+    });
+  var wrapperAddLinkInput = document.getElementById("wrapper-elementInput");
+  if (
+    wrapperAddLinkInput.style.display === "none" ||
+    wrapperAddLinkInput.style.display === ""
+  ) {
+    wrapperAddLinkInput.style.display = "block";
+  } else {
+    wrapperAddLinkInput.style.display = "none";
   }
-});
+}
+
+function toggleInput1() {
+  $("textarea#inputAddLinkMultiplePrice")
+    .each(function () {
+      this.setAttribute(
+        "style",
+        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+      );
+    })
+    .on("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+      var result = 0;
+    });
+  var wrapperAddLinkInput = document.getElementById(
+    "wrapper-elementInputMultiplePrice"
+  );
+  if (
+    wrapperAddLinkInput.style.display === "none" ||
+    wrapperAddLinkInput.style.display === ""
+  ) {
+    wrapperAddLinkInput.style.display = "block";
+  } else {
+    wrapperAddLinkInput.style.display = "none";
+  }
+}
+
+function toggleInput2() {
+  $("textarea#inputAddLinkMultiplePrice2")
+    .each(function () {
+      this.setAttribute(
+        "style",
+        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+      );
+    })
+    .on("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+      var result = 0;
+    });
+  var wrapperAddLinkInput = document.getElementById(
+    "wrapper-elementInputMultiplePrice2"
+  );
+  if (
+    wrapperAddLinkInput.style.display === "none" ||
+    wrapperAddLinkInput.style.display === ""
+  ) {
+    wrapperAddLinkInput.style.display = "block";
+  } else {
+    wrapperAddLinkInput.style.display = "none";
+  }
+}
+
+function toggleInputBonus() {
+  $("textarea#inputAddLinkBonus")
+    .each(function () {
+      this.setAttribute(
+        "style",
+        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+      );
+    })
+    .on("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+      var result = 0;
+    });
+  var wrapperAddLinkInput = document.getElementById(
+    "wrapper-elementInputBonus"
+  );
+  if (
+    wrapperAddLinkInput.style.display === "none" ||
+    wrapperAddLinkInput.style.display === ""
+  ) {
+    wrapperAddLinkInput.style.display = "block";
+  } else {
+    wrapperAddLinkInput.style.display = "none";
+  }
+}
+
+// add file
+function uploadFileSingle() {
+  const fileInput = document.getElementById("uploadFile");
+  const fileInputLabel = document.getElementById("uploadFileLabel");
+  const uploadedFilesContainer = document.getElementById("wrapper-uploadFile");
+
+  fileInput.addEventListener("change", function () {
+    if (fileInput.files.length > 0) {
+      const fileName = fileInput.files[0].name;
+      const uploadedFile = createUploadedFileElement(fileName);
+      uploadedFilesContainer.appendChild(uploadedFile);
+      fileInputLabel.textContent = "Upload File"; // Mengubah label setelah file dipilih
+    } else {
+      // Jika pengguna membatalkan pemilihan file, reset tampilan
+      uploadedFilesContainer.innerHTML = "";
+      fileInputLabel.textContent = "Pilih File"; // Mengembalikan label ke tampilan awal
+    }
+  });
+
+  function createUploadedFileElement(fileName) {
+    const elementFile = `
+          
+    <div class="wrapper-drag drag-btn" style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+    <button class=" drag-btnElement btn hover-tooltips"  data-tooltip="tooltip" data-placement="top" title="Drag to rearrange">        
+      <i class="fas fa-ellipsis-v"></i>      
+  </button>
+  </div>
+  <div class="wrapperName-file">
+    <p class="name-file hover-tooltips" data-tooltip="tooltip"  data-placement="bottom" title="${fileName}">${fileName}</p>
+  </div>
+  <div class="btn-event d-flex">
+            
+      <i class="fa-solid fa-download hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Download"></i>
+  
+    
+      <i class="fas fa-trash-alt item-icon-delete  hover-tooltips"  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
+  
+  
+  </div>
+         
+      `;
+
+    const uploadedFile = document.createElement("div");
+    uploadedFile.classList.add(
+      "wrapper-file",
+      "d-flex",
+      "justify-content-between",
+      "align-items-center"
+    );
+    // $('[data-toggle="tooltip"]').tooltip();
+
+    uploadedFile.innerHTML = elementFile;
+    // $(document).ready(function () {
+    //   $('[data-toggle="tooltip"]').tooltip();
+    // });
+    return uploadedFile;
+  }
+}
+uploadFileSingle();
+
+// add file
+function uploadFileMultiplePrice() {
+  const fileInput = document.getElementById("uploadFileMultiple");
+  const fileInputLabel = document.getElementById("uploadFileLabelMultiple");
+  const uploadedFilesContainer = document.getElementById(
+    "wrapper-uploadFileMultiplePrice"
+  );
+
+  fileInput.addEventListener("change", function () {
+    if (fileInput.files.length > 0) {
+      const fileName = fileInput.files[0].name;
+      const uploadedFile = createUploadedFileElement(fileName);
+      uploadedFilesContainer.appendChild(uploadedFile);
+      fileInputLabel.textContent = "Upload File"; // Mengubah label setelah file dipilih
+    } else {
+      // Jika pengguna membatalkan pemilihan file, reset tampilan
+      uploadedFilesContainer.innerHTML = "";
+      fileInputLabel.textContent = "Pilih File"; // Mengembalikan label ke tampilan awal
+    }
+  });
+
+  function createUploadedFileElement(fileName) {
+    const elementFile = `
+          
+    <div class="wrapper-drag drag-btnMultiplePrice" style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+    <button class=" drag-btnElement btn hover-tooltips"  data-tooltip="tooltip" data-placement="top" title="Drag to rearrange">        
+      <i class="fas fa-ellipsis-v"></i>      
+  </button>
+  </div>
+  <div class="wrapperName-file">
+    <p class="name-file hover-tooltips" data-tooltip="tooltip"  data-placement="bottom" title="${fileName}">${fileName}</p>
+  </div>
+  <div class="btn-event d-flex">
+            
+      <i class="fa-solid fa-download hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Download"></i>
+  
+    
+      <i class="fas fa-trash-alt item-icon-delete item-icon-deleteMultiple hover-tooltips"  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
+  
+  
+  </div>
+         
+      `;
+
+    const uploadedFile = document.createElement("div");
+    uploadedFile.classList.add(
+      "wrapper-file",
+      "d-flex",
+      "justify-content-between",
+      "align-items-center"
+    );
+    // $('[data-toggle="tooltip"]').tooltip();
+
+    uploadedFile.innerHTML = elementFile;
+    // $(document).ready(function () {
+    //   $('[data-toggle="tooltip"]').tooltip();
+    // });
+    return uploadedFile;
+  }
+}
+uploadFileMultiplePrice();
+
+function uploadFileMultiplePrice2() {
+  const fileInput = document.getElementById("uploadFileMultiple2");
+  const fileInputLabel = document.getElementById("uploadFileLabelMultiple2");
+  const uploadedFilesContainer = document.getElementById(
+    "wrapper-uploadFileMultiplePrice2"
+  );
+
+  fileInput.addEventListener("change", function () {
+    if (fileInput.files.length > 0) {
+      const fileName = fileInput.files[0].name;
+      const uploadedFile = createUploadedFileElement(fileName);
+      uploadedFilesContainer.appendChild(uploadedFile);
+      fileInputLabel.textContent = "Upload File"; // Mengubah label setelah file dipilih
+    } else {
+      // Jika pengguna membatalkan pemilihan file, reset tampilan
+      uploadedFilesContainer.innerHTML = "";
+      fileInputLabel.textContent = "Pilih File"; // Mengembalikan label ke tampilan awal
+    }
+  });
+
+  function createUploadedFileElement(fileName) {
+    const elementFile = `
+          
+    <div class="wrapper-drag drag-btnMultiplePrice2" style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+    <button class=" drag-btnElement btn hover-tooltips"  data-tooltip="tooltip" data-placement="top" title="Drag to rearrange">        
+      <i class="fas fa-ellipsis-v"></i>      
+  </button>
+  </div>
+  <div class="wrapperName-file">
+    <p class="name-file hover-tooltips" data-tooltip="tooltip"  data-placement="bottom" title="${fileName}">${fileName}</p>
+  </div>
+  <div class="btn-event d-flex">
+            
+      <i class="fa-solid fa-download hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Download"></i>
+  
+    
+      <i class="fas fa-trash-alt item-icon-delete item-icon-deleteMultiple2 hover-tooltips"  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
+  
+  
+  </div>
+         
+      `;
+
+    const uploadedFile = document.createElement("div");
+    uploadedFile.classList.add(
+      "wrapper-file",
+      "d-flex",
+      "justify-content-between",
+      "align-items-center"
+    );
+    // $('[data-toggle="tooltip"]').tooltip();
+
+    uploadedFile.innerHTML = elementFile;
+    // $(document).ready(function () {
+    //   $('[data-toggle="tooltip"]').tooltip();
+    // });
+    return uploadedFile;
+  }
+}
+uploadFileMultiplePrice2();
+
+function uploadFileMultipleBonus() {
+  const fileInput = document.getElementById("uploadFileBonus");
+  const fileInputLabel = document.getElementById("uploadFileLabelBonus");
+  const uploadedFilesContainer = document.getElementById(
+    "wrapper-uploadFileBonus"
+  );
+
+  fileInput.addEventListener("change", function () {
+    if (fileInput.files.length > 0) {
+      const fileName = fileInput.files[0].name;
+      const uploadedFile = createUploadedFileElement(fileName);
+      uploadedFilesContainer.appendChild(uploadedFile);
+      fileInputLabel.textContent = "Upload File"; // Mengubah label setelah file dipilih
+    } else {
+      // Jika pengguna membatalkan pemilihan file, reset tampilan
+      uploadedFilesContainer.innerHTML = "";
+      fileInputLabel.textContent = "Pilih File"; // Mengembalikan label ke tampilan awal
+    }
+  });
+
+  function createUploadedFileElement(fileName) {
+    const elementFile = `
+          
+   
+    <div class="wrapper-drag drag-btnBonus " style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+      <button class=" drag-btnElement btn hover-tooltips " style="cursor: grab;">        
+        <i class="fas fa-ellipsis-v"></i>      
+    </button>
+    </div>
+    <div class="wrapperName-file">
+      <p class="name-file" data-tooltip="tooltip" data-placement="bottom" title="" data-original-title="${fileName}">${fileName}</p>
+    </div>
+    <div class="btn-event d-flex">
+              
+        <i class="fa-solid fa-download hover-tooltips " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Download"></i>
+    
+      
+        <i class="fas fa-trash-alt  item-icon-delete hover-tooltips item-icon-deleteMultipleBonus" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>    
+
+  <!-- 
+  <button class="redirect-file btn" data-tooltip="tooltip" data-placement="top" title="" data-original-title="redirect file">        
+    <i class="fa-solid fa-up-right-from-square" data-tooltip="tooltip" data-placement="top" title="Open link"></i>
+</button> -->
+    </div>
+ 
+         
+      `;
+
+    const uploadedFile = document.createElement("div");
+    uploadedFile.classList.add(
+      "wrapper-file",
+      "d-flex",
+      "justify-content-between",
+      "align-items-center"
+    );
+    // $('[data-toggle="tooltip"]').tooltip();
+
+    uploadedFile.innerHTML = elementFile;
+    // $(document).ready(function () {
+    //   $('[data-toggle="tooltip"]').tooltip();
+    // });
+    return uploadedFile;
+  }
+}
+uploadFileMultipleBonus();
+
+function deleteSinglePrice() {
+  const sortableContainer = document.getElementById("wrapper-uploadFile");
+
+  sortableContainer.addEventListener("click", (event) => {
+    const clickedIcon = event.target;
+    if (clickedIcon.classList.contains("item-icon-delete")) {
+      const item = clickedIcon.closest(".wrapper-file");
+
+      item.remove();
+    }
+  });
+}
+deleteSinglePrice();
+
+function deleteMultiplePrice() {
+  const sortableContainer = document.getElementById(
+    "wrapper-uploadFileMultiplePrice"
+  );
+
+  sortableContainer.addEventListener("click", (event) => {
+    const clickedIcon = event.target;
+    if (clickedIcon.classList.contains("item-icon-deleteMultiple")) {
+      const item = clickedIcon.closest(".wrapper-file");
+
+      item.remove();
+    }
+  });
+}
+deleteMultiplePrice();
+
+function deleteMultiplePrice2() {
+  const sortableContainer = document.getElementById(
+    "wrapper-uploadFileMultiplePrice2"
+  );
+
+  sortableContainer.addEventListener("click", (event) => {
+    const clickedIcon = event.target;
+    if (clickedIcon.classList.contains("item-icon-deleteMultiple2")) {
+      const item = clickedIcon.closest(".wrapper-file");
+
+      item.remove();
+    }
+  });
+}
+deleteMultiplePrice2();
+
+function deleteMultipleBonus() {
+  const sortableContainer = document.getElementById("wrapper-uploadFileBonus");
+
+  sortableContainer.addEventListener("click", (event) => {
+    const clickedIcon = event.target;
+    if (clickedIcon.classList.contains("item-icon-deleteMultipleBonus")) {
+      const item = clickedIcon.closest(".wrapper-file");
+
+      item.remove();
+    }
+  });
+}
+deleteMultipleBonus();
 
 // cover image
 function uploadCover() {
