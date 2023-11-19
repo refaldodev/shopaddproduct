@@ -2314,3 +2314,13 @@ textarea {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
+
+.wrapper-form__Webhook {
+  padding: 20px;
+  border: 1px solid #b8b8b8;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}

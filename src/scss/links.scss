@@ -2495,165 +2495,6 @@ main {
   width: auto;
 }
 
-.wrapper-link {
-  .wrapper-mainPage {
-    margin-bottom: 30px;
-
-    .mr-2px {
-      margin-right: 2px;
-    }
-    .mr-14 {
-      margin-right: 14px;
-    }
-    .wrapper-mainPage--title {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 140%;
-      display: flex;
-      align-items: flex-end;
-      color: #000000;
-    }
-    .wrapper-mainPage--description {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 140%;
-      color: #595959;
-      margin-bottom: 8px;
-    }
-    .modal-link-mainPage {
-      background: #dffbdf;
-      border: 1px solid #76cc11;
-      font-size: 14px;
-      font-weight: 400;
-    }
-    .wrappper__card--itemModal {
-      border-radius: 10px;
-      padding: 15px 20px;
-      cursor: pointer;
-    }
-    .link-urlModal {
-      margin-bottom: 6px;
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 140%;
-      color: #000000;
-      &:hover {
-        color: #76cc11 !important;
-      }
-    }
-    .modal-open-link {
-      font-style: normal;
-      /* font-weight: 900; */
-      font-size: 14px;
-      line-height: 160%;
-      cursor: pointer;
-      color: #76cc11;
-      &:hover {
-        color: #6fc211 !important;
-      }
-    }
-    .modal-copy-link {
-      font-style: normal;
-      /* font-weight: 900; */
-      font-size: 14px;
-      line-height: 160%;
-      cursor: pointer;
-      color: #76cc11;
-      &:hover {
-        color: #6fc211 !important;
-      }
-    }
-
-    .link-anchor {
-      color: #000;
-      text-decoration: underline !important;
-      line-height: 140% !important;
-      &:hover {
-        color: #76cc11 !important;
-      }
-    }
-  }
-  .wrapper-simplePage {
-    .mr-14 {
-      margin-right: 14px;
-    }
-    .modal-open-linkDefault,
-    .modal-copy-linkDefault {
-      font-style: normal;
-      /* font-weight: 900; */
-      font-size: 14px;
-      line-height: 160%;
-      cursor: pointer;
-      color: #8d8d8d;
-      &:hover {
-        color: #5a5959 !important;
-      }
-    }
-    .modal-link-simplePage {
-      background: #ffffff;
-      border: 1px solid #b8b8b8;
-      font-size: 14px;
-      font-weight: 400;
-    }
-    .wrappper__card--itemModal {
-      border-radius: 10px;
-      padding: 15px 20px;
-      cursor: pointer;
-    }
-    .wrapper-mainPage--title {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 16px;
-      line-height: 140%;
-      display: flex;
-      align-items: flex-end;
-      color: #000000;
-    }
-    .wrapper-mainPage--description {
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 140%;
-      color: #595959;
-      margin-bottom: 8px;
-    }
-    .wrappper__card--itemModal {
-      border-radius: 10px;
-      padding: 15px 20px;
-      cursor: pointer;
-      &:not(:last-child) {
-        margin-bottom: 12px !important;
-      }
-    }
-
-    .link-urlModal {
-      margin-bottom: 6px;
-      font-family: "Open Sans";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 140%;
-      color: #000000;
-    }
-    .link-anchor {
-      color: #000;
-      text-decoration: underline !important;
-      line-height: 140% !important;
-      &:hover {
-        color: #007bff;
-      }
-    }
-  }
-}
-
 @media (min-width: 576px) {
   #thumbnail-icon-modal {
     .modal-dialog {
@@ -2895,4 +2736,82 @@ main {
 
 .customclass {
   color: black !important;
+}
+.wrapperDelivery {
+  display: none;
+}
+
+.wrapper-simplePage {
+  background-color: #fcfcfc;
+  .mr-14 {
+    margin-right: 14px;
+  }
+  .modal-open-linkDefault,
+  .modal-copy-linkDefault {
+    font-style: normal;
+    /* font-weight: 900; */
+    font-size: 14px;
+    line-height: 160%;
+    cursor: pointer;
+    color: #8d8d8d;
+    &:hover {
+      color: #5a5959 !important;
+    }
+  }
+  .modal-link-simplePage {
+    border: 1px solid #b8b8b8;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #fcfcfc;
+  }
+  .wrappper__card--itemModal {
+    border-radius: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+  }
+  .wrapper-mainPage--title {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    display: flex;
+    align-items: flex-end;
+    color: #000000;
+  }
+  .wrapper-mainPage--description {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: #595959;
+    margin-bottom: 8px;
+  }
+  .wrappper__card--itemModal {
+    border-radius: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-bottom: 12px !important;
+    }
+  }
+
+  .link-urlModal {
+    margin-bottom: 6px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #000000;
+  }
+  .link-anchor {
+    color: #000;
+    text-decoration: underline !important;
+    line-height: 140% !important;
+    &:hover {
+      color: #007bff;
+    }
+  }
 }

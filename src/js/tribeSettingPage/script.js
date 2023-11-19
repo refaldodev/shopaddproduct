@@ -994,7 +994,7 @@ function addOption1() {
                   </p>
                  
       
-                  <textarea type="text" id="titleMultiplePrice${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;">Lorem ipsum dolor sit amet consectetur adipis Lorem ipsum dolor sit amet consectetur adipisLorem ipsum dolor sit </textarea>
+                  <textarea type="text" id="titleMultiplePrice${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;"></textarea>
                   <div class="d-flex align-items-start flex  justify-content-between">
                     <p class="error-textarea">Cannot be empty</p>
                     <p class="countNumber" id="counttitleMultiplePrice${optionCount}">0  / 200</p>
@@ -1133,7 +1133,7 @@ function addOption2() {
                   </p>
                  
       
-                  <textarea type="text" id="titleMultiplePrices${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;">Lorem ipsum dolor sit amet consectetur adipis Lorem ipsum dolor sit amet consectetur adipisLorem ipsum dolor sit </textarea>
+                  <textarea type="text" id="titleMultiplePrices${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;"></textarea>
                   <div class="d-flex align-items-start flex  justify-content-between">
                     <p class="error-textarea">Cannot be empty</p>
                     <p class="countNumber" id="counttitleMultiplePrices${optionCount}">0  / 200</p>
@@ -2274,69 +2274,339 @@ $("#test").on("select2:select select2:unselect", function (e) {
   var lastSelectedItem = e.params.data.id;
   console.log(lastSelectedItem);
 });
+function QuantityExpand() {
+  const inputQuantity = document.getElementById("inputQuantity");
 
-const inputQuantity = document.getElementById("inputQuantity");
+  inputQuantity.addEventListener("input", function () {
+    const inputText = inputQuantity.value;
+    const textWidth = getTextWidth(
+      inputText,
+      window.getComputedStyle(inputQuantity).font
+    );
 
-inputQuantity.addEventListener("input", function () {
-  const inputText = inputQuantity.value;
-  const textWidth = getTextWidth(
-    inputText,
-    window.getComputedStyle(inputQuantity).font
-  );
+    // Set width input sesuai dengan panjang teksnya, tapi tidak kurang dari min-width
+    inputQuantity.style.width = Math.max(textWidth, 90) + "px";
+  });
 
-  // Set width input sesuai dengan panjang teksnya, tapi tidak kurang dari min-width
-  inputQuantity.style.width = Math.max(textWidth, 90) + "px";
-});
+  function getTextWidth(text, font) {
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    context.font = font;
+    const width = context.measureText(text).width;
+    canvas.remove();
+    return width;
+  }
+}
+QuantityExpand();
+function inputMinimunAmount() {
+  const inputMinimunAmount = document.getElementById("inputMinimunAmount");
 
-function getTextWidth(text, font) {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  context.font = font;
-  const width = context.measureText(text).width;
-  canvas.remove();
-  return width;
+  inputMinimunAmount.addEventListener("input", function () {
+    const inputText = inputMinimunAmount.value;
+    const textWidth = getTextWidth(
+      inputText,
+      window.getComputedStyle(inputMinimunAmount).font
+    );
+
+    // Set width input sesuai dengan panjang teksnya, tapi tidak kurang dari min-width
+    inputMinimunAmount.style.width = Math.max(textWidth, 90) + "px";
+  });
+
+  function getTextWidth(text, font) {
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    context.font = font;
+    const width = context.measureText(text).width;
+    canvas.remove();
+    return width;
+  }
+}
+inputMinimunAmount();
+
+function inputMaximumAmount() {
+  inputMaximumAmount = document.getElementById("inputMaximumAmount");
+
+  inputMaximumAmount.addEventListener("input", function () {
+    const inputText = inputMaximumAmount.value;
+    const textWidth = getTextWidth(
+      inputText,
+      window.getComputedStyle(inputMaximumAmount).font
+    );
+
+    // Set width input sesuai dengan panjang teksnya, tapi tidak kurang dari min-width
+    inputMaximumAmount.style.width = Math.max(textWidth, 90) + "px";
+  });
+
+  function getTextWidth(text, font) {
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    context.font = font;
+    const width = context.measureText(text).width;
+    canvas.remove();
+    return width;
+  }
+}
+inputMaximumAmount();
+
+function DiscountExpand() {
+  inputMaximumAmount = document.getElementById("inputExpandDiscount");
+
+  inputMaximumAmount.addEventListener("input", function () {
+    const inputText = inputMaximumAmount.value;
+    const textWidth = getTextWidth(
+      inputText,
+      window.getComputedStyle(inputMaximumAmount).font
+    );
+
+    // Set width input sesuai dengan panjang teksnya, tapi tidak kurang dari min-width
+    inputMaximumAmount.style.width = Math.max(textWidth, 90) + "px";
+  });
+
+  function getTextWidth(text, font) {
+    const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
+    context.font = font;
+    const width = context.measureText(text).width;
+    canvas.remove();
+    return width;
+  }
+}
+DiscountExpand();
+// button add options 1
+function addQuestions() {
+  const sortableContainer = document.getElementById("wrapperQuestions");
+
+  sortableContainer.addEventListener("click", (event) => {
+    const clickedIcon = event.target;
+    if (clickedIcon.classList.contains("item-icon-question")) {
+      const item = clickedIcon.closest(".container-wrapperQuestions");
+      const direction = clickedIcon.getAttribute("data-direction");
+
+      if (direction === "up" && item.previousElementSibling) {
+        sortableContainer.insertBefore(item, item.previousElementSibling);
+      } else if (direction === "down" && item.nextElementSibling) {
+        sortableContainer.insertBefore(item.nextElementSibling, item);
+      }
+
+      if (clickedIcon.classList.contains("delete-element-question")) {
+        item.remove();
+      }
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const addButton = document.getElementById("button-AddQuestions");
+    const container = document.getElementById("wrapperQuestions");
+    let optionCount = 400;
+
+    addButton.addEventListener("click", () => {
+      const optionDiv = createOptionDiv();
+      container.appendChild(optionDiv);
+      optionCount++;
+      descriptionCount++;
+
+      // text area
+      $("textarea.titleQuestion")
+        .each(function () {
+          this.setAttribute(
+            "style",
+            "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+          );
+        })
+        .on("input", function () {
+          this.style.height = "auto";
+          this.style.height = this.scrollHeight + "px";
+          var result = 0;
+        });
+    });
+
+    function createOptionDiv() {
+      const optionDiv = document.createElement("div");
+      optionDiv.className = `container-wrapperQuestions `;
+
+      const div = `
+      <div class="wrapper-questions mt-customQuestions " >
+       
+        <div class="wrapper-form mb-9">
+        <textarea type="text" id="titleQuestion${optionCount}" rows="1" class="form-control mt-9 messageInput titleQuestion" maxlength="200" style="height:84px;overflow-y:hidden;"></textarea>
+        <div class="d-flex align-items-start flex  justify-content-between">
+          <p class="error-textarea">Cannot be empty</p>
+          <p class="countNumber" id="counttitleQuestion${optionCount}">0  / 200</p>
+      </div>
+      </div>
+  <div class="wrapperEvent d-flex mt-5px">
+    <i class="fa-regular fa-circle-up mr-20 to-top item-icon-question" data-direction="up" data-toggle="tooltip" data-placement="top" title="Move position up"></i>
+    <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon-question" data-direction="down" data-toggle="tooltip" data-placement="top" title="Move position down"></i>
+    <i class="fa-regular fa-trash-can mr-20 delete-element-question item-icon-question" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
+  </div>
+      </div>
+`;
+      optionDiv.innerHTML = div;
+
+      // text area add options
+
+      return optionDiv;
+    }
+
+    // function deleteElement(element) {
+    //   element.remove();
+    // }
+  });
+}
+addQuestions();
+
+function cekRadioButtonDelivery(option) {
+  // Menyembunyikan semua elemen wrapper-form terlebih dahulu
+  var wrappers = document.querySelectorAll(".wrapperDelivery");
+  wrappers.forEach(function (wrapper) {
+    wrapper.style.display = "none";
+  });
+
+  // // Menampilkan elemen wrapper-form yang sesuai dengan radio button yang dicentang
+  // var wrapperToShow = document.getElementById(
+  //   "wrapper-form__delivery" + option
+  // );
+  // wrapperToShow.style.display = "block";
+  if (option === 1) {
+    $("#wrapperShipping").addClass("d-block");
+    $("#wrapperMultipleShipping").removeClass("d-block");
+  } else if (option === 2 || 3) {
+    $("#wrapperShipping").removeClass("d-block");
+    $("#wrapperMultipleShipping").addClass("d-block");
+  }
+  //  else if( optio)
 }
 
-const inputMinimunAmount = document.getElementById("inputMinimunAmount");
+// button add
+function addDelivery() {
+  const sortableContainer = document.getElementById("wrapperShippingCosts");
 
-inputMinimunAmount.addEventListener("input", function () {
-  const inputText = inputMinimunAmount.value;
-  const textWidth = getTextWidth(
-    inputText,
-    window.getComputedStyle(inputMinimunAmount).font
-  );
+  sortableContainer.addEventListener("click", (event) => {
+    const clickedIcon = event.target;
+    if (clickedIcon.classList.contains("item-iconShipping")) {
+      const item = clickedIcon.closest(".wrapper-form__delivery");
 
-  // Set width input sesuai dengan panjang teksnya, tapi tidak kurang dari min-width
-  inputMinimunAmount.style.width = Math.max(textWidth, 90) + "px";
-});
+      if (clickedIcon.classList.contains("delete-elementShipping")) {
+        item.remove();
+      }
+    }
+  });
 
-function getTextWidth(text, font) {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  context.font = font;
-  const width = context.measureText(text).width;
-  canvas.remove();
-  return width;
+  document.addEventListener("DOMContentLoaded", function () {
+    const addButton = document.getElementById("button-AddDestinations");
+    const container = document.getElementById("wrapperShippingCosts");
+    let optionCount = 400;
+
+    addButton.addEventListener("click", () => {
+      const optionDiv = createOptionDiv();
+      container.appendChild(optionDiv);
+      optionCount++;
+      descriptionCount++;
+    });
+
+    function createOptionDiv() {
+      const optionDiv = document.createElement("div");
+      optionDiv.className = `wrapper-form wrapper-form__delivery  mt-15`;
+      optionDiv.style.marginLeft = "28px";
+      const div = `
+      <div class="wrapper-oneShiping mb-14">
+      <p class="f-size16 font-weight-bold lh-140 mb-1">Destinations</p>
+      <div class="input-group ">
+       
+        <input type="text" class="form-control mt-9 messageInput " id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+      </div>
+    </div>
+    <div class="wrapper-oneShiping mb-14">
+    <p class="f-size16 font-weight-bold lh-140 mb-1">Amount alone</p>
+    <div class="input-group ">
+      <div class="input-group-prepend ">
+        <div class="input-group-text border-custom-currency">SGD</div>
+      </div>
+      <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+    </div>
+  </div>
+  <div class="wrapper-oneShiping">
+
+    <p class="f-size16 font-weight-bold lh-140 mb-1">Amount with others</p>
+    <div class="input-group ">
+      <div class="input-group-prepend ">
+        <div class="input-group-text border-custom-currency">SGD</div>
+      </div>
+      <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+    </div>
+  </div>
+  <div class="wrapperEvent d-flex mt-3">
+ 
+    <i class="fa-regular fa-trash-can mr-20 delete-elementShipping  item-iconShipping" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+  </div>
+`;
+      optionDiv.innerHTML = div;
+
+      // text area add options
+
+      return optionDiv;
+    }
+
+    // function deleteElement(element) {
+    //   element.remove();
+    // }
+  });
 }
+addDelivery();
 
-const inputMaximumAmount = document.getElementById("inputMaximumAmount");
+// button add
+function addWebhokLink() {
+  const sortableContainer = document.getElementById("wrapper-addWebhokLink");
 
-inputMaximumAmount.addEventListener("input", function () {
-  const inputText = inputMaximumAmount.value;
-  const textWidth = getTextWidth(
-    inputText,
-    window.getComputedStyle(inputMaximumAmount).font
-  );
+  sortableContainer.addEventListener("click", (event) => {
+    const clickedIcon = event.target;
+    if (clickedIcon.classList.contains("item-iconWebhook")) {
+      const item = clickedIcon.closest(".wrapper-form__Webhook");
 
-  // Set width input sesuai dengan panjang teksnya, tapi tidak kurang dari min-width
-  inputMaximumAmount.style.width = Math.max(textWidth, 90) + "px";
-});
+      if (clickedIcon.classList.contains("delete-elementWebhook")) {
+        item.remove();
+      }
+    }
+  });
 
-function getTextWidth(text, font) {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  context.font = font;
-  const width = context.measureText(text).width;
-  canvas.remove();
-  return width;
+  document.addEventListener("DOMContentLoaded", function () {
+    const addButton = document.getElementById("button-AddWebhook");
+    const container = document.getElementById("wrapper-addWebhokLink");
+    let optionCount = 400;
+
+    addButton.addEventListener("click", () => {
+      const optionDiv = createOptionDiv();
+      container.appendChild(optionDiv);
+      optionCount++;
+      descriptionCount++;
+    });
+
+    function createOptionDiv() {
+      const optionDiv = document.createElement("div");
+      optionDiv.className = `wrapper-form wrapper-form__Webhook  mt-15`;
+
+      const div = `
+      <div class="wrapper-addWebhok mb-14">
+        <p class="f-size16 font-weight-bold lh-140 mb-1">Webhook link</p>
+        <div class="input-group ">
+          <input type="text" class="form-control mt-9 messageInput " id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+        </div>
+        <p class="error-textarea">Cannot be empty</p>
+      </div>
+    <div class="wrapperEvent d-flex mt-3">
+      <i class="fa-regular fa-trash-can mr-20 delete-elementWebhook item-iconWebhook" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+    </div>
+`;
+      optionDiv.innerHTML = div;
+
+      // text area add options
+
+      return optionDiv;
+    }
+
+    // function deleteElement(element) {
+    //   element.remove();
+    // }
+  });
 }
+addWebhokLink();

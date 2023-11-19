@@ -3916,159 +3916,6 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   width: auto;
 }
 
-.wrapper-link .wrapper-mainPage {
-  margin-bottom: 30px;
-}
-.wrapper-link .wrapper-mainPage .mr-2px {
-  margin-right: 2px;
-}
-.wrapper-link .wrapper-mainPage .mr-14 {
-  margin-right: 14px;
-}
-.wrapper-link .wrapper-mainPage .wrapper-mainPage--title {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 140%;
-  display: flex;
-  align-items: flex-end;
-  color: #000000;
-}
-.wrapper-link .wrapper-mainPage .wrapper-mainPage--description {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 140%;
-  color: #595959;
-  margin-bottom: 8px;
-}
-.wrapper-link .wrapper-mainPage .modal-link-mainPage {
-  background: #dffbdf;
-  border: 1px solid #76cc11;
-  font-size: 14px;
-  font-weight: 400;
-}
-.wrapper-link .wrapper-mainPage .wrappper__card--itemModal {
-  border-radius: 10px;
-  padding: 15px 20px;
-  cursor: pointer;
-}
-.wrapper-link .wrapper-mainPage .link-urlModal {
-  margin-bottom: 6px;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  color: #000000;
-}
-.wrapper-link .wrapper-mainPage .link-urlModal:hover {
-  color: #76cc11 !important;
-}
-.wrapper-link .wrapper-mainPage .modal-open-link {
-  font-style: normal;
-  /* font-weight: 900; */
-  font-size: 14px;
-  line-height: 160%;
-  cursor: pointer;
-  color: #76cc11;
-}
-.wrapper-link .wrapper-mainPage .modal-open-link:hover {
-  color: #6fc211 !important;
-}
-.wrapper-link .wrapper-mainPage .modal-copy-link {
-  font-style: normal;
-  /* font-weight: 900; */
-  font-size: 14px;
-  line-height: 160%;
-  cursor: pointer;
-  color: #76cc11;
-}
-.wrapper-link .wrapper-mainPage .modal-copy-link:hover {
-  color: #6fc211 !important;
-}
-.wrapper-link .wrapper-mainPage .link-anchor {
-  color: #000;
-  text-decoration: underline !important;
-  line-height: 140% !important;
-}
-.wrapper-link .wrapper-mainPage .link-anchor:hover {
-  color: #76cc11 !important;
-}
-.wrapper-link .wrapper-simplePage .mr-14 {
-  margin-right: 14px;
-}
-.wrapper-link .wrapper-simplePage .modal-open-linkDefault,
-.wrapper-link .wrapper-simplePage .modal-copy-linkDefault {
-  font-style: normal;
-  /* font-weight: 900; */
-  font-size: 14px;
-  line-height: 160%;
-  cursor: pointer;
-  color: #8d8d8d;
-}
-.wrapper-link .wrapper-simplePage .modal-open-linkDefault:hover,
-.wrapper-link .wrapper-simplePage .modal-copy-linkDefault:hover {
-  color: #5a5959 !important;
-}
-.wrapper-link .wrapper-simplePage .modal-link-simplePage {
-  background: #ffffff;
-  border: 1px solid #b8b8b8;
-  font-size: 14px;
-  font-weight: 400;
-}
-.wrapper-link .wrapper-simplePage .wrappper__card--itemModal {
-  border-radius: 10px;
-  padding: 15px 20px;
-  cursor: pointer;
-}
-.wrapper-link .wrapper-simplePage .wrapper-mainPage--title {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 140%;
-  display: flex;
-  align-items: flex-end;
-  color: #000000;
-}
-.wrapper-link .wrapper-simplePage .wrapper-mainPage--description {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 140%;
-  color: #595959;
-  margin-bottom: 8px;
-}
-.wrapper-link .wrapper-simplePage .wrappper__card--itemModal {
-  border-radius: 10px;
-  padding: 15px 20px;
-  cursor: pointer;
-}
-.wrapper-link .wrapper-simplePage .wrappper__card--itemModal:not(:last-child) {
-  margin-bottom: 12px !important;
-}
-.wrapper-link .wrapper-simplePage .link-urlModal {
-  margin-bottom: 6px;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  color: #000000;
-}
-.wrapper-link .wrapper-simplePage .link-anchor {
-  color: #000;
-  text-decoration: underline !important;
-  line-height: 140% !important;
-}
-.wrapper-link .wrapper-simplePage .link-anchor:hover {
-  color: #007bff;
-}
-
 @media (min-width: 576px) {
   #thumbnail-icon-modal .modal-dialog {
     max-width: 660px;
@@ -4289,4 +4136,83 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
 
 .customclass {
   color: black !important;
+}
+
+.wrapperDelivery {
+  display: none;
+}
+
+.wrapper-simplePage {
+  background-color: #fcfcfc;
+}
+.wrapper-simplePage .mr-14 {
+  margin-right: 14px;
+}
+.wrapper-simplePage .modal-open-linkDefault,
+.wrapper-simplePage .modal-copy-linkDefault {
+  font-style: normal;
+  /* font-weight: 900; */
+  font-size: 14px;
+  line-height: 160%;
+  cursor: pointer;
+  color: #8d8d8d;
+}
+.wrapper-simplePage .modal-open-linkDefault:hover,
+.wrapper-simplePage .modal-copy-linkDefault:hover {
+  color: #5a5959 !important;
+}
+.wrapper-simplePage .modal-link-simplePage {
+  border: 1px solid #b8b8b8;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #fcfcfc;
+}
+.wrapper-simplePage .wrappper__card--itemModal {
+  border-radius: 10px;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.wrapper-simplePage .wrapper-mainPage--title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  display: flex;
+  align-items: flex-end;
+  color: #000000;
+}
+.wrapper-simplePage .wrapper-mainPage--description {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #595959;
+  margin-bottom: 8px;
+}
+.wrapper-simplePage .wrappper__card--itemModal {
+  border-radius: 10px;
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.wrapper-simplePage .wrappper__card--itemModal:not(:last-child) {
+  margin-bottom: 12px !important;
+}
+.wrapper-simplePage .link-urlModal {
+  margin-bottom: 6px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #000000;
+}
+.wrapper-simplePage .link-anchor {
+  color: #000;
+  text-decoration: underline !important;
+  line-height: 140% !important;
+}
+.wrapper-simplePage .link-anchor:hover {
+  color: #007bff;
 }/*# sourceMappingURL=links.css.map */
