@@ -994,7 +994,7 @@ function addOption1() {
                   </p>
                  
       
-                  <textarea type="text" id="titleMultiplePrice${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;"></textarea>
+                  <textarea type="text" id="titleMultiplePrice${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:38px;overflow-y:hidden;"></textarea>
                   <div class="d-flex align-items-start flex  justify-content-between">
                     <p class="error-textarea">Cannot be empty</p>
                     <p class="countNumber" id="counttitleMultiplePrice${optionCount}">0  / 200</p>
@@ -1133,7 +1133,7 @@ function addOption2() {
                   </p>
                  
       
-                  <textarea type="text" id="titleMultiplePrices${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;"></textarea>
+                  <textarea type="text" id="titleMultiplePrices${optionCount}" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:38px;overflow-y:hidden;"></textarea>
                   <div class="d-flex align-items-start flex  justify-content-between">
                     <p class="error-textarea">Cannot be empty</p>
                     <p class="countNumber" id="counttitleMultiplePrices${optionCount}">0  / 200</p>
@@ -2426,9 +2426,8 @@ function addQuestions() {
 
       const div = `
       <div class="wrapper-questions mt-customQuestions " >
-       
         <div class="wrapper-form mb-9">
-        <textarea type="text" id="titleQuestion${optionCount}" rows="1" class="form-control mt-9 messageInput titleQuestion" maxlength="200" style="height:84px;overflow-y:hidden;"></textarea>
+        <textarea type="text" id="titleQuestion${optionCount}" rows="1" class="form-control mt-9 messageInput titleQuestion" maxlength="200" style="height:38px;overflow-y:hidden;"></textarea>
         <div class="d-flex align-items-start flex  justify-content-between">
           <p class="error-textarea">Cannot be empty</p>
           <p class="countNumber" id="counttitleQuestion${optionCount}">0  / 200</p>
