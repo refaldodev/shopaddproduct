@@ -2326,7 +2326,9 @@ textarea {
 }
 
 /* color picker */
-
+#wrapper-cover-image {
+  cursor: pointer;
+}
 /* color picker */
 .sp-container button.sp-choose {
   background-color: none !important;

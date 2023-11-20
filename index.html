@@ -90,6 +90,19 @@
 </div>
 <!--Delete  profile -->
 
+<!-- delte  -->
+<div class="modal fade" id="deleteModalThumbnail" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn btn-fill-light active mb-3" data-dismiss="modal" id="confirm-delete-btnThumbnail">Hapus</button>
+        <button type="button" class="btn btn-fill-light" data-dismiss="modal" id="cancel-delete-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end -->
 
 <!--Delete Modal item -->
 <div class="modal fade" id="deleteModalItem" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
@@ -944,7 +957,7 @@
                   </p>
                  
       
-                  <textarea type="text" id="titleMultiplePrice" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;"></textarea>
+                  <textarea type="text" id="titleMultiplePrice" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:38px;overflow-y:hidden;"></textarea>
                   <div class="d-flex align-items-start flex  justify-content-between">
                     <p class="error-textarea">Cannot be empty</p>
                     <p class="countNumber" id="counttitleMultiplePrice">0  / 200</p>
@@ -1457,10 +1470,12 @@
                 </div>
                 <div class="subAccordion-bodySupporter bg-opacity  ">
                    <!-- user -->
-         <div class="profile-img-container profile-image display-none" id="wrapper-cover-image">
-          <img src="" alt="profile-image"  id="cover-image">
+                   <div class="wrapper-coverImageContainer">
+         <div class="profile-img-container profile-image display-none" id="wrapper-cover-image" >
+          <img src="" alt="profile-image"  id="cover-image" >
                  
                 </div>
+              </div>
                 <!-- user -->
             <div class="wrapper-upload wrapper-upploadCover">
               <div class="file-input-container">
@@ -2185,7 +2200,74 @@
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse18" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse18">
- Lorem10
+  <div class="wrapper-switch mt-0 mb-0"> 
+    <span class="switch-text">
+    Off
+  </span>
+    <div class="switch">
+      <input type="checkbox" id="switch-9"><label for="switch-9">Toggle</label> 
+    </div>
+    <span class="switch-text">
+    On
+    </span>
+  </div>
+  <p class="f-size12   font-weight-normal">Customize the page title and description to optimize for keywords and rank better in search results</p>
+      <div class="wrapper-form mb-9 mt-15">
+        <p class="form-title">
+          Page Tittle
+      </p>
+     
+
+      <textarea type="text" id="" rows="1" class="form-control mt-9 messageInput" maxlength="60" style="height:38px;overflow-y:hidden;"></textarea>
+      <div class="d-flex align-items-start flex  justify-content-between">
+        <p class="f-size12   font-weight-normal">If empty, we'll use the title from the "General Info" section.</p>
+        <p class="countNumber" id="counttitleGeneral">0  / 60</p>
+    </div>
+    </div>
+    <div class="wrapper-form mb-9">
+      <p class="form-title">
+        Page Description
+    </p>
+   
+
+    <textarea type="text" id="" rows="1" class="form-control mt-9 messageInput" maxlength="60" style="height:38px;overflow-y:hidden;"></textarea>
+    <div class="d-flex align-items-start flex  justify-content-between">
+      <p class="f-size12   font-weight-normal">If empty, we'll use the description from the "General Info" section.</p>
+      <p class="countNumber" id="counttitleGeneral">0  / 155</p>
+  </div>
+  </div>
+  
+  <p class="form-title">
+    Thumbnail Image
+</p>
+
+  <div class="profile-img-container profile-image display-none" id="wrapper-cover-imageThumbnail">
+    <img src="" alt="profile-image" id="upload-imageThumbnail">
+           
+          </div>
+          <div class="wrapper-upload wrapper-upploadCover">
+            <div class="file-input-container">
+              <input type="file" class=" d-none" id="uploadFileImageThumbnail">
+              <label class="button button-UploadImage font-weight-bolder " for="uploadFileImageThumbnail" id="uploadFileImageLabelThumbnail">Upload Image</label>
+            <!-- <button class="button button-UploadImage font-weight-bolder" data-toggle="modal" data-target="#profile-pic-modal">Upload Image</button> -->
+             <div class="display-none wrapper-deleteMarginLeft" id="wrapper-deleteThumbnail">
+            <div class="wrapper-delete " data-toggle="modal" data-target="#deleteModalThumbnail" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete">
+              <button type="button" class="" id="del-btnImageThumbnail">         
+                <i class="fas fa-trash-alt"></i> 
+              </button>
+            </div>
+          </div>
+          </div>
+          <ul class="image-ul">
+            <li> <span class="text-ulLi">Only this format: JPG, JPEG, PNG   </span></li>
+            <li> <span class="text-ulLi">Max file size: 2MB   </span></li>
+            <li> <span class="text-ulLi">Minimum image width: 1200px </span></li>
+            <li> <span class="text-ulLi">Minimum image height: 627px</span></li>
+            <li> <span class="text-ulLi">Recommended image ratio: 1.91 : 1 (width : height)</span></li>
+
+          </ul>
+          
+          </div>
 </div>
 </div>
 

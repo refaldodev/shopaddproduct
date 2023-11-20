@@ -1950,6 +1950,7 @@ function uploadCover() {
 
     if (file) {
       // Validasi format file
+      var fileName = file.name;
       var allowedFormats = ["image/jpeg", "image/jpg", "image/png"];
       if (allowedFormats.indexOf(file.type) === -1) {
         alert("Hanya file JPG, JPEG, atau PNG yang diizinkan.");
@@ -1968,10 +1969,15 @@ function uploadCover() {
       var reader = new FileReader();
       reader.onload = function (e) {
         var cover = document.getElementById("wrapper-cover-image");
+
         profileImage.src = e.target.result;
+
         var btn = document.getElementById("wrapper-deleteCoverImg");
         btn.style.display = "block";
         cover.style.display = "block";
+        cover.setAttribute("data-tooltip", "tooltip");
+        cover.setAttribute("data-placement", "top");
+        cover.setAttribute("title", `${fileName}`);
       };
       reader.readAsDataURL(file);
     } else {
@@ -2679,3 +2685,76 @@ $("#btn-color-txt").click(function () {
   $("#colorPicker-text").spectrum("toggle");
   return false;
 });
+
+
+
+
+
+// cover image
+function uploadThumbnail() {
+  var fileInput = document.getElementById("uploadFileImageThumbnail");
+  var profileImage = document.getElementById("upload-imageThumbnail");
+
+  fileInput.addEventListener("change", function () {
+    var file = fileInput.files[0];
+
+    if (file) {
+      // Validasi format file
+      var fileName = file.name;
+      var allowedFormats = ["image/jpeg", "image/jpg", "image/png"];
+      if (allowedFormats.indexOf(file.type) === -1) {
+        alert("Hanya file JPG, JPEG, atau PNG yang diizinkan.");
+        fileInput.value = ""; // Reset input file
+        return;
+      }
+
+      // Validasi ukuran file (maksimum 2MB)
+      if (file.size > 2 * 1024 * 1024) {
+        alert("Ukuran file maksimum adalah 2MB.");
+        fileInput.value = ""; // Reset input file
+        return;
+      }
+
+      // Tampilkan gambar dalam elemen dengan ID 'profile-image'
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var cover = document.getElementById("wrapper-cover-imageThumbnail");
+
+        profileImage.src = e.target.result;
+
+        var btn = document.getElementById("wrapper-deleteThumbnail");
+        btn.style.display = "block";
+        cover.style.display = "block";
+        cover.setAttribute("data-tooltip", "tooltip");
+        cover.setAttribute("data-placement", "top");
+        cover.setAttribute("title", `${fileName}`);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      // Reset gambar saat tidak ada file yang dipilih
+      profileImage.src = "";
+    }
+  });
+
+  function deleteImageItem() {
+    // Ambil element gambar
+    // const image = document.getElementById("item-image");
+    $("#upload-imageThumbnail").attr("src", "");
+    // Hapus element gambar
+    var item = document.getElementById("wrapper-cover-imageThumbnail");
+    var btn = document.getElementById("wrapper-deleteThumbnail");
+    btn.style.display = "none";
+
+    // image.parentNode.removeChild(image);
+    item.style.display = "none";
+  }
+
+  // // Event listener untuk menghapus image ketika tombol hapus diklik
+  const deleteButton = document.getElementById("confirm-delete-btnThumbnail");
+  deleteButton.addEventListener("click", function () {
+    deleteImageItem();
+    console.log("oke");
+  });
+}
+
+uploadThumbnail();

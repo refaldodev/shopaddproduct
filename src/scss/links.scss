@@ -1172,7 +1172,7 @@ main {
         margin-bottom: 13px;
         min-height: 36px;
         label {
-          border: 1px solid #76cc11;
+          border: 1px solid #40abfa;
           font-family: "Open Sans";
           font-style: normal;
           font-weight: 800;
@@ -1181,8 +1181,8 @@ main {
           min-width: 105px;
           max-height: 300px;
           min-height: 36px;
-          color: #76cc11;
-          background-color: #dffbdf;
+          color: #40abfa;
+          background-color: #dff8ff;
           border-radius: 20px;
           padding: 0.5rem 1rem;
           //margin-right: 10px;
@@ -1192,8 +1192,9 @@ main {
           -ms-border-radius: 20px;
           -o-border-radius: 20px;
           &:hover {
-            background-color: #76cc11;
-            color: white;
+            background-color: #40abfa;
+            color: rgb(255, 255, 255);
+            border: 1px solid #40abfa;
           }
         }
         input[type="file"] {
@@ -1216,11 +1217,11 @@ main {
             cursor: pointer;
           }
           button {
-            border: 1px solid #76cc11 !important;
+            border: 1px solid #40abfa !important;
             background: none;
             border: none;
             outline: none;
-            color: #76cc11;
+            color: #40abfa;
             cursor: pointer;
             width: 36px;
             height: 36px;
@@ -1231,7 +1232,7 @@ main {
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
             &:hover {
-              background-color: #76cc11;
+              background-color: #40abfa;
               color: white;
             }
           }
@@ -1314,10 +1315,15 @@ main {
       margin-top: 11px;
     }
     .profile-img-container {
-      height: 120px;
-      width: 120px;
+      height: 300px;
+      width: 300px;
+      max-width: 100%;
       background-color: #c2c2c2;
-      border-radius: 50%;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
       overflow: hidden;
       position: relative;
       flex: 0 0 100px;
