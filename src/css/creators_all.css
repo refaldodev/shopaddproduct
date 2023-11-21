@@ -1855,8 +1855,29 @@ main {
   display: block !important;
   width: 100%;
 }
-.select-container select {
-  font-weight: 400;
+.select-container-discount
+  .select2-container--default
+  .select2-selection--single {
+  border-radius: 6px !important;
+  -webkit-border-radius: 6px !important;
+  -moz-border-radius: 6px !important;
+  -ms-border-radius: 6px !important;
+  -o-border-radius: 6px !important;
+}
+.select-container-discount .select2-selection__rendered {
+  padding: 0 15px !important;
+  padding-right: 35px !important;
+  font-size: 16px !important;
+}
+
+.discount-dropdown {
+  border-radius: 6px !important;
+  -webkit-border-radius: 6px !important;
+  -moz-border-radius: 6px !important;
+  -ms-border-radius: 6px !important;
+  font-size: 16px !important;
+
+  -o-border-radius: 6px !important;
 }
 .select-container
   .select2-container--default

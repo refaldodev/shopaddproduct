@@ -38,6 +38,26 @@ $(document).ready(function () {
       .tooltip("update")
       .tooltip("hide");
   });
+  $(".discount").select2({
+    minimumResultsForSearch: -1,
+    dropdownCssClass: "discount-dropdown",
+  });
+
+  // Dapatkan nilai terpilih saat ada perubahan
+  $(".discount").on("change", function () {
+    var selectedValue = $(this).val();
+    console.log(selectedValue);
+    if (selectedValue === "Percentage") {
+      $("#amoundDiscount1").addClass("d-block");
+      $("#amoundDiscount2").removeClass("d-block");
+      console.log("oke");
+    } else if (selectedValue === "Specific amount") {
+      $("#amoundDiscount1").removeClass("d-block");
+      $("#amoundDiscount1").addClass("display-none");
+      $("#amoundDiscount2").addClass("d-block");
+      console.log("oke2");
+    }
+  });
 
   $(".select2").on("select2:open", function (e) {
     $(e.target).parent().toggleClass("rotate");
@@ -56,6 +76,12 @@ $(document).ready(function () {
     $(e.target).parent().toggleClass("rotate");
   });
   $(".type").on("select2:close", function (e) {
+    $(e.target).parent().toggleClass("rotate");
+  });
+  $(".discount").on("select2:open", function (e) {
+    $(e.target).parent().toggleClass("rotate");
+  });
+  $(".discount").on("select2:close", function (e) {
     $(e.target).parent().toggleClass("rotate");
   });
 });

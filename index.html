@@ -1878,16 +1878,32 @@
           <input type="text" class="quantity" id="inputExpandDiscount">
         </div>
       </div>
-      <div class="wrapper-oneShiping mb-14">
-      <p class="f-size16 font-weight-bold lh-140 mb-1">Give this type of discount</p>
-      <div class="input-group ">
-        <div class="input-group-prepend ">
-          <div class="input-group-text border-custom-currency">SGD</div>
-        </div>
-        <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+      <div class="wrapper-form  mb-14" >
+        <p class="f-size16 font-weight-bold lh-140 mb-1">Give this type of discount</p>
+        <div class="select-container select-container-discount ml-0 ">
+          <select class="discount">
+              <option value="Percentage">Percentage</option>
+              <option value="Specific amount">Specific amount</option>
+          </select>
+          <span class="arrow-icon">
+              <i class="fas fa-chevron-down"></i>
+          </span>
       </div>
-    </div>
-    <div class="wrapper-oneShiping">
+       
+      </div>
+
+      <div class="wrapper-oneShiping d-block" id="amoundDiscount1">
+
+        <p class="f-size16 font-weight-bold lh-140 mb-1">Amount of discount</p>
+        <div class="input-group ">
+        
+          <input type="number" class="form-control mt-9 messageInput border-discount" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+          <div class="input-group-prepend ">
+            <div class="input-group-text border-custom-discount">%</div>
+          </div>
+        </div>
+      </div>
+    <div class="wrapper-oneShiping display-none" id="amoundDiscount2">
 
       <p class="f-size16 font-weight-bold lh-140 mb-1">Amount of discount</p>
       <div class="input-group ">
@@ -1897,6 +1913,7 @@
         <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
       </div>
     </div>
+    
     <div class="wrapperEvent d-flex mt-3">
    
       <i class="fa-regular fa-trash-can mr-20 delete-elementShipping item-iconShipping" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
