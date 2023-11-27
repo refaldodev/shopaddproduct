@@ -2686,10 +2686,6 @@ $("#btn-color-txt").click(function () {
   return false;
 });
 
-
-
-
-
 // cover image
 function uploadThumbnail() {
   var fileInput = document.getElementById("uploadFileImageThumbnail");
@@ -2758,3 +2754,123 @@ function uploadThumbnail() {
 }
 
 uploadThumbnail();
+
+function addDiscount() {
+  const sortableContainer = document.getElementById("wrapper-addDiscount");
+
+  sortableContainer.addEventListener("click", (event) => {
+    const clickedIcon = event.target;
+    if (clickedIcon.classList.contains("item-iconDeleteDiscount")) {
+      const item = clickedIcon.closest(".wrapper-form__discount");
+
+      if (clickedIcon.classList.contains("delete-elementDiscount")) {
+        item.remove();
+      }
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const addButton = document.getElementById("button-AddDiscount");
+    const container = document.getElementById("wrapper-addDiscount");
+    let optionCount = 2;
+    let amountCount1 = 100;
+    let amountCount2 = 200;
+    addButton.addEventListener("click", () => {
+      const optionDiv = createOptionDiv();
+      container.appendChild(optionDiv);
+      changeDiscount(optionCount, amountCount1, amountCount2);
+      $(`.discount${optionCount}`).select2({
+        minimumResultsForSearch: -1,
+        dropdownCssClass: "discount-dropdown",
+      });
+
+      optionCount++;
+      amountCount1++;
+      amountCount2++;
+    });
+
+    function changeDiscount(optionCount, amountCount1, amountCount2) {
+      // Dapatkan nilai terpilih saat ada perubahan
+      $(`.discount${optionCount}`).on("change", function () {
+        var selectedValue = $(this).val();
+        console.log(selectedValue);
+        if (selectedValue === "Percentage") {
+          $(`#amoundDiscount${amountCount1}`).addClass("d-block");
+          $(`#amoundDiscount${amountCount2}`).removeClass("d-block");
+          console.log("oke");
+        } else if (selectedValue === "Specific amount") {
+          $(`#amoundDiscount${amountCount1}`).removeClass("d-block");
+          $(`#amoundDiscount${amountCount1}`).addClass("display-none");
+          $(`#amoundDiscount${amountCount2}`).addClass("d-block");
+          console.log("oke2");
+        }
+      });
+    }
+    function createOptionDiv() {
+      const optionDiv = document.createElement("div");
+      optionDiv.className = `wrapper-form wrapper-form__discount  mt-15`;
+
+      const div = `
+    
+      <div class="wrapper-oneShiping mb-14">
+        <p class="f-size16 font-weight-bold lh-140 mb-1">When buying more than this amount</p>
+        <div class="input-group ">
+         
+          <input type="text" class="quantity" id="inputExpandDiscount">
+        </div>
+      </div>
+      <div class="wrapper-form  mb-14" >
+        <p class="f-size16 font-weight-bold lh-140 mb-1">Give this type of discount</p>
+        <div class="select-container select-container-discount ml-0 ">
+          <select class="discount${optionCount}">
+              <option value="Percentage">Percentage</option>
+              <option value="Specific amount">Specific amount</option>
+          </select>
+          <span class="arrow-icon">
+              <i class="fas fa-chevron-down"></i>
+          </span>
+      </div>
+       
+      </div>
+
+      <div class="wrapper-oneShiping d-block" id="amoundDiscount${amountCount1}">
+
+        <p class="f-size16 font-weight-bold lh-140 mb-1">Amount of discount</p>
+        <div class="input-group ">
+        
+          <input type="number" class="form-control mt-9 messageInput border-discount" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+          <div class="input-group-prepend ">
+            <div class="input-group-text border-custom-discount">%</div>
+          </div>
+        </div>
+      </div>
+    <div class="wrapper-oneShiping display-none" id="amoundDiscount${amountCount2}">
+
+      <p class="f-size16 font-weight-bold lh-140 mb-1">Amount of discount</p>
+      <div class="input-group ">
+        <div class="input-group-prepend ">
+          <div class="input-group-text border-custom-currency">SGD</div>
+        </div>
+        <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+      </div>
+    </div>
+    
+    <div class="wrapperEvent d-flex mt-3">
+   
+      <i class="fa-regular fa-trash-can mr-20 delete-elementDiscount item-iconDeleteDiscount" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
+    </div>
+   
+`;
+      optionDiv.innerHTML = div;
+
+      // text area add options
+
+      return optionDiv;
+    }
+
+    // function deleteElement(element) {
+    //   element.remove();
+    // }
+  });
+}
+addDiscount();
