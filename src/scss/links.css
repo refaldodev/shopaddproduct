@@ -2838,7 +2838,8 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   margin-top: 11px;
 }
 .wrapper-accordion .accordion-container .profile-img-container {
-  height: 300px;
+  max-height: 300px;
+  height: auto;
   width: 300px;
   max-width: 100%;
   background-color: #c2c2c2;
@@ -3784,10 +3785,11 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   color: #000000;
 }
 .wrapper-accordion .subAccordion-containerSupporter .profile-img-container {
-  height: 300px;
+  max-height: 300px;
+  height: auto;
   width: 300px;
   max-width: 100%;
-  background-color: #c2c2c2;
+  background-color: transparent;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -4262,6 +4264,8 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
 
 .customclass {
   color: black !important;
+  font-weight: normal !important;
+  font-size: 13px !important;
 }
 
 .wrapperDelivery {

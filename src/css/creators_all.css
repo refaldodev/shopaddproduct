@@ -321,6 +321,9 @@ select.date:hover {
   min-height: 32px;
   user-select: none;
   -webkit-user-select: none;
+  /* height: 42px; */
+  padding-top: 5px;
+  padding-bottom: 0px !important;
 }
 .select2-container .select2-selection--multiple .select2-selection__rendered {
   display: inline;
@@ -523,8 +526,39 @@ select.date:hover {
   position: relative;
 }
 .select2-container--default
+  .select2-selection--multiple
+  .select2-search--inline
+  textarea.select2-search__field {
+  height: 18px !important;
+  max-height: 22px !important;
+  margin-top: 0px !important;
+}
+.select2-container--default
   .select2-selection--multiple.select2-selection--clearable {
   padding-right: 25px;
+}
+.labelCategori {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 2px;
+  background: #dff8ff;
+  border: none;
+  font-weight: 400;
+  margin-right: 0.2rem;
+  padding: 0.2rem 0.6rem;
+  display: flex;
+}
+.remove-tag {
+  color: #bfbfbf;
+  margin-left: 0.2rem;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.wrapper-preview {
+  display: flex;
+  margin-top: 8px;
+  flex-wrap: wrap;
 }
 /* .select2-container--default
   .select2-selection--multiple
@@ -2081,7 +2115,7 @@ main {
 .collapse-buyers {
   cursor: pointer;
 }
-/* .collapse-buyers::after {
+.collapse-buyersArrow::after {
   content: "\f078";
   color: #000;
   font-size: 12px !important;
@@ -2091,7 +2125,7 @@ main {
   position: absolute;
   right: 20px;
 }
-.collapse-buyers[aria-expanded="true"]::after {
+.collapse-buyersArrow[aria-expanded="true"]::after {
   content: "\f077";
   font-family: "Font Awesome 5 Free";
   margin-left: 0px;
@@ -2100,7 +2134,7 @@ main {
   font-weight: 900;
   position: absolute;
   right: 20px;
-} */
+}
 
 /*  */
 .arrow-iconAdditional {
@@ -2295,14 +2329,14 @@ textarea {
   border-radius: 2px;
   padding-left: 8px;
   padding-right: 8px;
-
+  line-height: 28px;
   border-radius: 4px;
   box-sizing: border-box;
   display: inline-block;
   margin-left: 5px;
-  margin-top: 5px;
-
+  margin-top: 5px !important;
   position: relative;
+  top: -6px;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;

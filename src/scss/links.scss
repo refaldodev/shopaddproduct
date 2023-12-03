@@ -1315,7 +1315,8 @@ main {
       margin-top: 11px;
     }
     .profile-img-container {
-      height: 300px;
+      max-height: 300px;
+      height: auto;
       width: 300px;
       max-width: 100%;
       background-color: #c2c2c2;
@@ -2341,10 +2342,11 @@ main {
       }
     }
     .profile-img-container {
-      height: 300px;
+      max-height: 300px;
+      height: auto;
       width: 300px;
       max-width: 100%;
-      background-color: #c2c2c2;
+      background-color: transparent;
       border-radius: 10px;
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
@@ -2856,6 +2858,8 @@ main {
 
 .customclass {
   color: black !important;
+  font-weight: normal !important;
+  font-size: 13px !important ;
 }
 .wrapperDelivery {
   display: none;

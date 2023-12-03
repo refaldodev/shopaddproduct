@@ -57,8 +57,14 @@ containerAccordion.addEventListener("click", function (e) {
           $("#countItemName").text(this.value.length + " " + " / 20");
         } else if (this.id === "titleAmount") {
           $("#countTitleAmount").text(this.value.length + " " + " / 100");
-        } else if (this.id === "titleNOS") {
-          $("#countTitleNOS").text(this.value.length + " " + " / 100");
+        } else if (this.id === "titleLabel") {
+          $("#countLabel").text(this.value.length + " " + " / 20");
+        } else if (this.id === "PageTittleInput") {
+          $("#countPageTittle").text(this.value.length + " " + " / 60");
+        } else if (this.id === "inputPageDesc") {
+          $("#countPageDesc").text(this.value.length + " " + " / 155");
+        } else if (this.id === "titlebuttonText") {
+          $("#countbuttonText").text(this.value.length + " " + " / 30");
         }
       })
       .on("input", function () {
@@ -87,13 +93,86 @@ containerAccordion.addEventListener("click", function (e) {
           $("#countItemName").text(this.value.length + " " + " / 20");
         } else if (this.id === "titleAmount") {
           $("#countTitleAmount").text(this.value.length + " " + " / 100");
-        } else if (this.id === "titleNOS") {
-          $("#countTitleNOS").text(this.value.length + " " + " / 100");
+        } else if (this.id === "titleLabel") {
+          $("#countLabel").text(this.value.length + " " + " / 20");
+        } else if (this.id === "PageTittleInput") {
+          $("#countPageTittle").text(this.value.length + " " + " / 60");
+        } else if (this.id === "inputPageDesc") {
+          $("#countPageDesc").text(this.value.length + " " + " / 155");
+        } else if (this.id === "titlebuttonText") {
+          $("#countbuttonText").text(this.value.length + " " + " / 30");
         }
       });
   }
 });
 
+// text area
+$("textarea")
+  .each(function () {
+    this.setAttribute(
+      "style",
+      "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+    );
+    if (this.id === "titleGeneral") {
+      $("#counttitleGeneral").text(this.value.length + " " + " / 60");
+    } else if (this.id === "titleMultiplePrice") {
+      $("#counttitleMultiplePrice").text(this.value.length + " " + " / 200");
+    } else if (this.id === "titleMultiplePrices") {
+      $("#counttitleMultiplePrices").text(this.value.length + " " + " / 200");
+    } else if (this.id === "word") {
+      $("#countword").text(this.value.length + " " + " / 200");
+    } else if (this.id === "profileName") {
+      $("#countProfileName").text(this.value.length + " " + " / 60");
+    } else if (this.id === "TextonButton") {
+      $("#countTextonButton").text(this.value.length + " " + " / 20");
+    } else if (this.id === "TextonButton2") {
+      $("#countTextonButton2").text(this.value.length + " " + " / 20");
+    } else if (this.id === "ItemName") {
+      $("#countItemName").text(this.value.length + " " + " / 20");
+    } else if (this.id === "titleAmount") {
+      $("#countTitleAmount").text(this.value.length + " " + " / 100");
+    } else if (this.id === "titleLabel") {
+      $("#countLabel").text(this.value.length + " " + " / 20");
+    } else if (this.id === "PageTittleInput") {
+      $("#countPageTittle").text(this.value.length + " " + " / 60");
+    } else if (this.id === "inputPageDesc") {
+      $("#countPageDesc").text(this.value.length + " " + " / 155");
+    } else if (this.id === "titlebuttonText") {
+      $("#countbuttonText").text(this.value.length + " " + " / 30");
+    }
+  })
+  .on("input", function () {
+    this.style.height = "auto";
+    this.style.height = this.scrollHeight + "px";
+    var result = 0;
+    if (this.id === "titleGeneral") {
+      $("#counttitleGeneral").text(this.value.length + " " + " / 60");
+    } else if (this.id === "titleMultiplePrice") {
+      $("#counttitleMultiplePrice").text(this.value.length + " " + " / 200");
+    } else if (this.id === "titleMultiplePrices") {
+      $("#counttitleMultiplePrices").text(this.value.length + " " + " / 200");
+    } else if (this.id === "word") {
+      $("#countword").text(this.value.length + " " + " / 200");
+    } else if (this.id === "profileName") {
+      $("#countProfileName").text(this.value.length + " " + " / 60");
+    } else if (this.id === "TextonButton") {
+      $("#countTextonButton").text(this.value.length + " " + " / 20");
+    } else if (this.id === "TextonButton2") {
+      $("#countTextonButton2").text(this.value.length + " " + " / 20");
+    } else if (this.id === "ItemName") {
+      $("#countItemName").text(this.value.length + " " + " / 20");
+    } else if (this.id === "titleAmount") {
+      $("#countTitleAmount").text(this.value.length + " " + " / 100");
+    } else if (this.id === "titleLabel") {
+      $("#countLabel").text(this.value.length + " " + " / 20");
+    } else if (this.id === "PageTittleInput") {
+      $("#countPageTittle").text(this.value.length + " " + " / 60");
+    } else if (this.id === "inputPageDesc") {
+      $("#countPageDesc").text(this.value.length + " " + " / 155");
+    } else if (this.id === "titlebuttonText") {
+      $("#countbuttonText").text(this.value.length + " " + " / 30");
+    }
+  });
 // sub accordion
 var subContainerAccordion = document.querySelector(".subAccordion-container");
 
@@ -926,7 +1005,11 @@ function addOption1() {
       }
 
       if (clickedIcon.classList.contains("delete-element")) {
+        // $("body").tooltip("hide");
+
+        $(clickedIcon).tooltip("hide");
         item.remove();
+        // $("body").tooltip("show");
       }
     }
   });
@@ -941,7 +1024,7 @@ function addOption1() {
     addButton.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
-
+      textareaMultiple(optionCount);
       var toolbarOptions = [
         // ["bold", "italic", "underline"], // toggled buttons
         [
@@ -965,6 +1048,31 @@ function addOption1() {
       descriptionCount++;
     });
 
+    function textareaMultiple(optionCount) {
+      // text area
+      $("textarea")
+        .each(function () {
+          this.setAttribute(
+            "style",
+            "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+          );
+          if (this.id === `titleMultiplePrice${optionCount}`) {
+            $(`#counttitleMultiplePrice${optionCount}`).text(
+              this.value.length + " " + " / 200"
+            );
+          }
+        })
+        .on("input", function () {
+          this.style.height = "auto";
+          this.style.height = this.scrollHeight + "px";
+          var result = 0;
+          if (this.id === `titleMultiplePrice${optionCount}`) {
+            $(`#counttitleMultiplePrice${optionCount}`).text(
+              this.value.length + " " + " / 200"
+            );
+          }
+        });
+    }
     function createOptionDiv() {
       const optionDiv = document.createElement("div");
       optionDiv.className = `multiple-prices wrapper-price mt-custom ml-28 `;
@@ -1065,6 +1173,7 @@ function addOption2() {
       }
 
       if (clickedIcon.classList.contains("delete-element")) {
+        $(clickedIcon).tooltip("hide");
         item.remove();
       }
     }
@@ -1079,7 +1188,7 @@ function addOption2() {
     addButton.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
-
+      textareaMultiple(optionCount);
       var toolbarOptions = [
         // ["bold", "italic", "underline"], // toggled buttons
         [
@@ -1104,6 +1213,31 @@ function addOption2() {
       console.log("oke");
     });
 
+    function textareaMultiple(optionCount) {
+      // text area
+      $("textarea")
+        .each(function () {
+          this.setAttribute(
+            "style",
+            "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+          );
+          if (this.id === `titleMultiplePrices${optionCount}`) {
+            $(`#counttitleMultiplePrices${optionCount}`).text(
+              this.value.length + " " + " / 200"
+            );
+          }
+        })
+        .on("input", function () {
+          this.style.height = "auto";
+          this.style.height = this.scrollHeight + "px";
+          var result = 0;
+          if (this.id === `titleMultiplePrices${optionCount}`) {
+            $(`#counttitleMultiplePrices${optionCount}`).text(
+              this.value.length + " " + " / 200"
+            );
+          }
+        });
+    }
     function createOptionDiv() {
       const optionDiv = document.createElement("div");
       optionDiv.className = `multiple-prices wrapper-price mt-15 ml-28 `;
@@ -1257,9 +1391,9 @@ function addLink() {
   <p class="name-file color-a" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
 </div>
 <div class="btn-event d-flex">
-<a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
+<a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square icon-deleteSingle hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
 
-<i class="fas fa-trash-alt item-icon-delete hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Delete it"></i>   
+<i class="fas fa-trash-alt item-icon-delete icon-deleteSingle hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Delete it"></i>   
 </div>
     `;
 
@@ -1270,9 +1404,9 @@ function addLink() {
       return uploadedFile;
     }
 
-    $("body").tooltip({
-      selector: ".hover-tooltips",
-    });
+    // $("body").tooltip({
+    //   selector: ".hover-tooltips",
+    // });
   });
 }
 addLink();
@@ -1345,9 +1479,9 @@ function addLinkMultiplePrice() {
       return uploadedFile;
     }
 
-    $("body").tooltip({
-      selector: ".hover-tooltips",
-    });
+    // $("body").tooltip({
+    //   selector: ".hover-tooltips",
+    // });
   });
 }
 addLinkMultiplePrice();
@@ -1423,9 +1557,9 @@ function addLinkMultiplePrice2() {
       return uploadedFile;
     }
 
-    $("body").tooltip({
-      selector: ".hover-tooltips",
-    });
+    // $("body").tooltip({
+    //   selector: ".hover-tooltips",
+    // });
   });
 }
 addLinkMultiplePrice2();
@@ -1499,9 +1633,9 @@ function addLinkMultipleBonus() {
       return uploadedFile;
     }
 
-    $("body").tooltip({
-      selector: ".hover-tooltips",
-    });
+    // $("body").tooltip({
+    //   selector: ".hover-tooltips",
+    // });
   });
 }
 addLinkMultipleBonus();
@@ -1663,10 +1797,10 @@ function uploadFileSingle() {
   </div>
   <div class="btn-event d-flex">
             
-      <i class="fa-solid fa-download hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Download"></i>
+      <i class="fa-solid fa-download icon-deleteSingle hover-tooltips"   data-tooltip="tooltip" data-placement="top" title="Download"></i>
   
     
-      <i class="fas fa-trash-alt item-icon-delete  hover-tooltips"  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
+      <i class="fas fa-trash-alt item-icon-delete icon-deleteSingle  hover-tooltips"  data-tooltip="tooltip" data-placement="top" title="Delete it"></i>    
   
   
   </div>
@@ -1887,6 +2021,7 @@ function deleteSinglePrice() {
     const clickedIcon = event.target;
     if (clickedIcon.classList.contains("item-icon-delete")) {
       const item = clickedIcon.closest(".wrapper-file");
+      $(clickedIcon).tooltip("hide");
 
       item.remove();
     }
@@ -2246,7 +2381,9 @@ audioFilesInput.addEventListener("change", function () {
 
 $("#category").select2({
   tags: true,
-  tokenSeparators: [",", " "],
+  // tokenSeparators: [",", " "],
+  tokenSeparators: [","],
+
   templateSelection: function (selection) {
     if (selection.selected) {
       return $.parseHTML(
@@ -2259,6 +2396,52 @@ $("#category").select2({
     }
   },
 });
+
+$("#category").on("change", function () {
+  // Get selected values
+  var selectedTags = $("#category").val();
+
+  // Display selected tags in another HTML element (e.g., a div)
+  displaySelectedTags(selectedTags);
+});
+
+// Display selected tags in the specified container
+function displaySelectedTags(selectedTags) {
+  var wrapper = $("#selectedTags");
+  wrapper.empty();
+
+  selectedTags.forEach(function (tag) {
+    var tagElement = $(
+      '<div class="labelCategori">' +
+        tag +
+        ' <span class="remove-tag" data-tag="' +
+        tag +
+        '">x</span></div>'
+    );
+    wrapper.append(tagElement);
+  });
+
+  // Attach click event for remove tag
+  $(".remove-tag").on("click", function () {
+    var tagToRemove = $(this).data("tag");
+    var currentTags = $("#category").val();
+    var index = currentTags.indexOf(tagToRemove);
+    if (index !== -1) {
+      currentTags.splice(index, 1);
+      $("#category").val(currentTags).trigger("change");
+    }
+  });
+}
+// $("#category").on("change", function () {
+//   // Get selected values
+//   var selectedTags = $("#category").val();
+//   console.log(selectedTags);
+//   // Display selected tags in another HTML element (e.g., a div)
+//   $(".wrapper-categoryPreview").html(
+//     `<div class="labelCategori">${selectedTags} <span class="remove-tag">x</span> </div>`
+//   );
+// });
+
 $("#test").on("select2:select", function (e) {
   $("li[aria-selected='true']").addClass("customclass");
   $("li[aria-selected='false']").removeClass("customclass");
@@ -2582,8 +2765,11 @@ function addWebhokLink() {
     addButton.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
+      textareaWebhook(optionCount);
       optionCount++;
       descriptionCount++;
+
+      // text area
     });
 
     function createOptionDiv() {
@@ -2594,7 +2780,8 @@ function addWebhokLink() {
       <div class="wrapper-addWebhok mb-14">
         <p class="f-size16 font-weight-bold lh-140 mb-1">Webhook link</p>
         <div class="input-group ">
-          <input type="text" class="form-control mt-9 messageInput " id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+          
+        <textarea type="text" id="webhook${optionCount}" rows="1" class="form-control messageInput webhookLink"  style="height:38px;overflow-y:hidden;"></textarea>
         </div>
         <p class="error-textarea">Cannot be empty</p>
       </div>
@@ -2609,13 +2796,27 @@ function addWebhokLink() {
       return optionDiv;
     }
 
+    function textareaWebhook(optionCount) {
+      // text area
+      $("textarea.webhookLink")
+        .each(function () {
+          this.setAttribute(
+            "style",
+            "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+          );
+        })
+        .on("input", function () {
+          this.style.height = "auto";
+          this.style.height = this.scrollHeight + "px";
+          var result = 0;
+        });
+    }
     // function deleteElement(element) {
     //   element.remove();
     // }
   });
 }
 addWebhokLink();
-
 // color picker
 
 const colorPicker = $("#colorPicker-profile");

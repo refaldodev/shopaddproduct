@@ -8,6 +8,14 @@ $(document).ready(function () {
 
   $(function () {
     $('[data-toggle="tooltip"]').tooltip({ trigger: "hover" });
+    $(".item-icon-deleteMultiple").tooltip({ trigger: "hover" });
+
+    $('.item-icon[data-toggle="tooltip"]').on("click", function () {
+      $(this).tooltip("hide");
+    });
+    $(".item-icon-deleteMultiple").on("click", function () {
+      $(this).tooltip("hide");
+    });
   });
 
   //when "tandai sudah dibaca" got clicked
