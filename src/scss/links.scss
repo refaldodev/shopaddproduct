@@ -209,7 +209,7 @@ body {
 .ql-container {
   .ql-editor {
     // min-height: 140px;
-    min-height: 90px;
+    min-height: 120px;
     height: auto;
     max-height: 100%;
     border-radius: 6px;
@@ -281,6 +281,9 @@ body {
 }
 .mb-30 {
   margin-bottom: 30px;
+}
+.mb-25 {
+  margin-bottom: 25px;
 }
 .mt-10 {
   margin-top: 10px;
@@ -1138,7 +1141,7 @@ main {
         font-weight: 700;
         font-size: 16px;
         line-height: 26px;
-        padding: 8px 20px 35px 20px;
+        padding: 12px 20px 37px 20px;
         text-decoration: none !important;
         min-height: 50px;
         z-index: 300;
@@ -1390,6 +1393,7 @@ main {
     -moz-border-radius: 0 6px 6px 0 !important;
     -ms-border-radius: 0 6px 6px 0 !important;
     -o-border-radius: 0 6px 6px 0 !important;
+    line-height: 1 !important;
   }
   .border-custom-currency {
     border-radius: 6px 0 0 6px !important;
@@ -1552,6 +1556,7 @@ main {
           -moz-border-radius: 0 6px 6px 0 !important;
           -ms-border-radius: 0 6px 6px 0 !important;
           -o-border-radius: 0 6px 6px 0 !important;
+          line-height: 1 !important;
         }
         .border-custom-currency {
           border-radius: 6px 0 0 6px !important;
@@ -1929,6 +1934,7 @@ main {
     .wrapper-video {
       width: 255px;
       margin-right: 20px;
+      cursor: grab;
       .profile-video-container {
         height: 142.8px;
         width: 100%;
@@ -1949,7 +1955,11 @@ main {
         cursor: pointer;
       }
     }
+    .wrapperAudio {
+      cursor: grab;
+    }
     .wrapper-audio {
+      cursor: grab;
       .audio {
         flex: 1;
       }
@@ -2086,6 +2096,7 @@ main {
           -moz-border-radius: 0 6px 6px 0 !important;
           -ms-border-radius: 0 6px 6px 0 !important;
           -o-border-radius: 0 6px 6px 0 !important;
+          line-height: 1 !important;
         }
         .border-custom-currency {
           border-radius: 6px 0 0 6px !important;
@@ -2645,12 +2656,12 @@ main {
     left: 0;
     top: 3px;
     height: 100%;
-    width: 20px;
+    width: 22px;
     border: none;
     border-radius: 50%;
     background-color: white;
     border: 1px solid #afafaf;
-    height: 20px;
+    height: 22px;
     &::before {
       content: "";
       position: absolute;
@@ -2792,7 +2803,7 @@ main {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  padding: 20px;
+  padding: 15px 20px 20px 20px;
 }
 // wrapper-price
 .wrapper-questions {
@@ -2952,5 +2963,47 @@ input.form-control.border-discount {
     box-shadow: none !important;
     outline: none;
     border-color: #b8b8b8 !important;
+  }
+}
+
+.wrapper-radioContainer {
+  .ql-container {
+    .ql-editor {
+      // min-height: 140px;
+      min-height: 80px !important;
+      height: auto;
+      max-height: 100%;
+      border-radius: 6px;
+      border: 1px solid #b8b8b8 !important;
+      border-radius: 6px !important;
+      -webkit-border-radius: 6px !important;
+      -moz-border-radius: 6px !important;
+      -ms-border-radius: 6px !important;
+      -o-border-radius: 6px !important;
+      a {
+        color: #007aff !important;
+        text-decoration: none;
+        -webkit-user-select: text !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word;
+        word-break: break-word;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+        &:hover {
+          text-decoration: underline;
+          color: #007aff !important;
+        }
+      }
+      &:focus {
+        border: 1px solid #76cc11 !important;
+        background: transparent !important;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none !important;
+        outline: none;
+        border-color: #76cc11 !important;
+      }
+    }
   }
 }

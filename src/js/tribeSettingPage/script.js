@@ -1117,7 +1117,7 @@ function addOption1() {
                   
                   </div>
                   <div class="collapse" id="collapse-element${optionCount}" aria-labelledby="heading-element${optionCount}" data-parent="#heading-element${optionCount}">
-                <div id="editorContainer${descriptionCount}"></div>
+                <div id="editorContainer${descriptionCount}" style="margin-bottom: 12px;"></div>
                 
               </div>
                 <!-- <div class="text-editor">
@@ -1282,7 +1282,7 @@ function addOption2() {
                   
                   </div>
                   <div class="collapse" id="collapse-element${optionCount}" aria-labelledby="heading-element${optionCount}" data-parent="#heading-element${optionCount}">
-                <div id="editorContainer${descriptionCount}"></div>
+                <div id="editorContainer${descriptionCount}" style="margin-bottom: 12px;"></div>
                 
               </div>
                 <!-- <div class="text-editor">
@@ -2371,11 +2371,14 @@ audioFilesInput.addEventListener("change", function () {
     });
 
     const audioWrapper = document.createElement("div");
+    const containerAudioWrapper = document.createElement("div");
+    containerAudioWrapper.className = "wrapperAudio";
     audioWrapper.className = "wrapper-audio d-flex align-items-center mb-20";
     audioWrapper.appendChild(audioElement);
     audioWrapper.appendChild(deleteButton);
+    containerAudioWrapper.appendChild(audioWrapper);
 
-    audioPreviewContainer.appendChild(audioWrapper);
+    audioPreviewContainer.appendChild(containerAudioWrapper);
   }
 });
 
@@ -3075,3 +3078,46 @@ function addDiscount() {
   });
 }
 addDiscount();
+
+// function rearrangeHandlerVideo() {
+//   //for input form
+//   let inputFormContainer = document.querySelector("#wrapper-container-video");
+//   new Sortable(inputFormContainer, {
+//     animation: 150,
+//     handle: ".wrapper-video",
+//     ghostClass: "ghost",
+//     forceFallback: true,
+//     onStart: function (evt) {
+//       document.documentElement.classList.add("draggable-cursor");
+//       $("[data-toggle=tooltip]").tooltip("hide");
+//       $("[data-toggle=tooltip]").tooltip("disable");
+//     },
+//     // Restores default page cursor
+//     onEnd: function (evt) {
+//       document.documentElement.classList.remove("draggable-cursor");
+//       $("[data-toggle=tooltip]").tooltip("enable");
+//     },
+//   });
+// }
+
+// rearrangeHandlerVideo();
+function rearrangeHandlerAudio() {
+  let audioPreviewContainer = document.querySelector("#audio-preview");
+  new Sortable(audioPreviewContainer, {
+    animation: 150,
+    handle: ".subwrapperAudio", // Selector untuk item yang dapat di-drag
+    ghostClass: "ghost",
+    forceFallback: true,
+    onStart: function (evt) {
+      document.documentElement.classList.add("draggable-cursor");
+    },
+    onEnd: function (evt) {
+      document.documentElement.classList.remove("draggable-cursor");
+    },
+  });
+}
+
+// Panggil fungsi setelah dokumen dimuat
+document.addEventListener("DOMContentLoaded", function () {
+  rearrangeHandlerAudio();
+});

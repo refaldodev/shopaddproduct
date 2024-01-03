@@ -49,7 +49,7 @@ h6 {
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
-  min-height: 46px;
+  min-height: 47px;
   text-align: center;
   font-weight: 800;
   font-size: 16px;
@@ -71,7 +71,7 @@ h6 {
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
-  min-height: 46px;
+  min-height: 47px;
   text-align: center;
   font-weight: 800;
   font-size: 16px;
@@ -91,7 +91,7 @@ h6 {
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
-  min-height: 46px;
+  min-height: 47px;
   text-align: center;
   font-weight: 800;
   font-size: 16px;
@@ -457,7 +457,7 @@ select.date:hover {
   .select2-selection--single
   .select2-selection__rendered {
   color: black;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 .select-container-type .select2-selection__rendered {
   color: #606060 !important;
@@ -1037,7 +1037,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
-  height: 55px;
+  height: 58px;
 }
 header .navbar {
   position: fixed;
@@ -2114,6 +2114,8 @@ main {
 }
 .collapse-buyers {
   cursor: pointer;
+
+  line-height: 1.4 !important;
 }
 .collapse-buyersArrow::after {
   content: "\f078";
