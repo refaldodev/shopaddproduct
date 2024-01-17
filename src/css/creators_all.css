@@ -120,8 +120,17 @@ h6 {
 .mt-5px {
   margin-top: 5px;
 }
+.mt-8 {
+  margin-top: 8px;
+}
 .mb-15 {
   margin-bottom: 15px;
+}
+.mb-12px {
+  margin-bottom: 12px;
+}
+.mt-14 {
+  margin-top: 14px;
 }
 .mb-10 {
   margin-bottom: 10px;
@@ -131,6 +140,9 @@ h6 {
 }
 .mb-25 {
   margin-bottom: 25px;
+}
+.mb-30 {
+  margin-bottom: 30.25px;
 }
 .ml-28 {
   margin-left: 28px;
@@ -267,8 +279,12 @@ select {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   margin-right: 8px;
+  padding: 7px;
 }
-
+.dateMonth,
+.dateDay {
+  padding: 7px 7.5px 7px 7.5px;
+}
 select.date:focus,
 select.date:hover {
   height: 40px;
@@ -2374,7 +2390,7 @@ textarea {
 }
 
 .wrapper-form__delivery {
-  padding: 20px;
+  padding: 15px 20px 20px 20px;
   border: 1px solid #b8b8b8;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -2384,7 +2400,7 @@ textarea {
 }
 
 .wrapper-form__discount {
-  padding: 20px;
+  padding: 18px;
   border: 1px solid #b8b8b8;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -2393,7 +2409,7 @@ textarea {
   -o-border-radius: 10px;
 }
 .wrapper-form__Webhook {
-  padding: 20px;
+  padding: 15px 18px 18px 18px;
   border: 1px solid #b8b8b8;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -2616,4 +2632,43 @@ textarea {
 .sp-preview-inner {
   border-radius: 50%;
   border: 1px solid #000000;
+}
+.audio-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.delete-icon {
+  cursor: pointer;
+  /* margin-left: 10px; */
+}
+.item-delete-audio {
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding: 10px 0 10px 10px;
+}
+
+.audio-item:first-child {
+  /* Properti CSS untuk elemen <AUDIo.audio-item> pertama */
+
+  padding: 0px 0 20px 0;
+}
+
+/* Semua elemen <AUDIo.audio-item> kecuali elemen pertama */
+.audio-item:not(:first-child) {
+  /* Properti CSS untuk semua elemen <AUDIo.audio-item> kecuali elemen pertama */
+  padding: 0px 0 20px 0;
+}
+audio {
+  flex: 1;
+}
+ul#sortable-list {
+  margin-bottom: 0px !important;
 }

@@ -1579,21 +1579,22 @@
                 </div>
                 <div class="subAccordion-bodySupporter bg-opacity  ">
                    <!-- user -->
-                       <div id="audio-preview">
-<div class="wrapperAudio">
-  <div class="subwrapperAudio" style="cursor: grab;">
-                   <div class="wrapper-audio d-flex align-items-center mb-20" data-tooltip="tooltip" data-placement="top" title="" data-original-title="audio">
-                   
-
-                    <audio controls class="audio mr-10" >
-                      <source src="" type="audio/ogg">
-                     
-                    Your browser does not support the audio element.
-                    </audio>
-                    <i class="fas fa-trash-alt  item-delete-audio  " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
-              </div>
-            </div>
-            </div>
+                    
+                  <div class="wrapperAudio">
+                        
+                    <ul id="sortable-list">
+                      <!-- Daftar audio akan ditampilkan di sini -->
+                      <!-- <li class="audio-item">
+                        <div class="audio-controls">
+                          <audio controls>
+                              <source src="${src}" type="audio/mp3">
+                              Your browser does not support the audio tag.
+                          </audio>
+                          <span class="delete-icon" onclick="deleteAudio(this)">❌</span>
+                      </div>
+                      </li> -->
+                  </ul>
+              
             
     </div>
                 <!-- user -->
@@ -1633,7 +1634,7 @@
               <div class="wrapper-icontext d-flex align-items-center">
               <!-- <i class="fa-solid fa-pen-to-square mr-10"></i> -->
             
-            <p class="text-left lineHeight160 mr-6  title-accordion">Additional Settings</p>
+            <p class="text-le ft lineHeight160 mr-6  title-accordion">Additional Settings</p>
             <!-- <i class="fa-solid fa-chevron-down"></i> -->
           </div>
          
@@ -1645,7 +1646,7 @@
             <div class="wrapper-accordion mt-0">
               <p class="mb-25 f-size14 lh-140 font-weight-normal">The following settings are optional. Set according to your needs.</pa>
 
-              <div class="wrapper-form  mb-25" id="wrapper-element-collapse">
+              <div class="wrapper-form  mb-30" id="wrapper-element-collapse">
                 <div class="collapse-buyers  d-flex justify-content-between mb-2 collapsed" data-toggle="collapse" data-target="#element-collapse1" aria-expanded="false" aria-controls="element-collapse1" onClick="$('#collapsed-chevron').toggleClass('fa-rotate-180')">
                 <p class="mr-6px">
                   Information that buyers need to know after purchasing
@@ -1659,7 +1660,7 @@
                <p class="f-size12 lh-140 font-weight-normal ">For example: instructions for use, how to access, etc.</p>
             </div>
             </div>
-            <div class="wrapper-form  mb-25" id="wrapper-element-collapse2">
+            <div class="wrapper-form  mb-30" id="wrapper-element-collapse2">
               <div class="collapse-buyers  d-flex justify-content-between mb-2 collapsed" data-toggle="collapse" data-target="#element-collapse2" aria-expanded="false" aria-controls="element-collapse2" onClick="$('#collapsed-chevron1').toggleClass('fa-rotate-180')">
               <!-- <p class="form-title "> -->
                 
@@ -1677,7 +1678,7 @@
           </div>
           </div>
          
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse3">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse3">
   <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#element-collapse3" aria-expanded="false" aria-controls="element-collapse3" onClick="$('#collapsed-chevron2').toggleClass('fa-rotate-180')">
   <!-- <p class="form-title "> -->
     
@@ -1695,7 +1696,7 @@
   <div class="container-wrapperQuestions " >
     <div class="wrapper-questions mt-customQuestions " >
      
-      <div class="wrapper-form mb-9">
+      <div class="wrapper-form mb-12px ">
        
      
 
@@ -1706,7 +1707,7 @@
     </div>
     </div>
 
-<div class="wrapperEvent d-flex mt-5px">
+<div class="wrapperEvent d-flex mt-8">
   <i class="fa-regular fa-circle-up mr-20 to-top item-icon-question" data-direction="up" data-toggle="tooltip" data-placement="top" title="Move position up"></i>
   <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon-question" data-direction="down" data-toggle="tooltip" data-placement="top" title="Move position down"></i>
   <i class="fa-regular fa-trash-can mr-20 delete-element-question item-icon-question" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
@@ -1719,7 +1720,7 @@
 </div>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse4">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse4">
   <div class="collapse-buyers d-flex justify-content-between mb-2 collapsed" data-toggle="collapse" data-target="#element-collapse4" aria-expanded="false" aria-controls="element-collapse4" onClick="$('#collapsed-chevron23').toggleClass('fa-rotate-180')">
   <!-- <p class="form-title "> -->
     
@@ -1741,7 +1742,7 @@
   
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse5">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse5">
   <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron3').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse5" aria-expanded="false" aria-controls="element-collapse5">
   <!-- <p class="form-title "> -->
     
@@ -1773,23 +1774,23 @@
       <option value="2022">2022</option>
     </select>
 
-    <select name="dateMonth" id="" class="opacity date">
-      <option value="2022">2022</option>
-      <option value="2022">2022</option>
-      <option value="2022">2022</option>
-      <option value="2022">2022</option>
+    <select name="dateMonth" id="" class="opacity date dateMonth">
+      <option value="13">12</option>
+      <option value="12">12</option>
+      <option value="12">12</option>
+      <option value="12">12</option>
     </select>
-    <select name="dateDay" id="" class="opacity date">
-      <option value="2022">2022</option>
-      <option value="2022">2022</option>
-      <option value="2022">2022</option>
-      <option value="2022">2022</option>
+    <select name="dateDay" id="" class="opacity date dateDay">
+      <option value="30">30</option>
+      <option value="30">30</option>
+      <option value="30">30</option>
+      <option value="30">30</option>
     </select>
   </div>
   <p class="f-size12 lh-140 font-weight-normal mt-1 color-greyCustom ">After the specified date has passed, no one can buy it anymore.</p>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse6">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse6">
   <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron4').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse6" aria-expanded="false" aria-controls="element-collapse6">
   <!-- <p class="form-title "> -->
     
@@ -1811,7 +1812,7 @@
   
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse7">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse7">
 <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron5').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse7" aria-expanded="false" aria-controls="element-collapse7">
 <!-- <p class="form-title "> -->
 
@@ -1836,7 +1837,7 @@
 </div>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse8">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse8">
 <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron6').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse8" aria-expanded="false" aria-controls="element-collapse8">
 <!-- <p class="form-title "> -->
   
@@ -1898,7 +1899,7 @@
       </div>
     </div>
     
-    <div class="wrapperEvent d-flex mt-3">
+    <div class="wrapperEvent d-flex mt-14">
    
       <i class="fa-regular fa-trash-can mr-20 delete-elementDiscount item-iconDeleteDiscount" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
     </div>
@@ -1906,7 +1907,7 @@
   </div>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse9">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse9">
 <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron7').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse9" aria-expanded="false" aria-controls="element-collapse9">
 <!-- <p class="form-title "> -->
   
@@ -2015,7 +2016,7 @@
 
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse10">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse10">
 <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron8').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse10" aria-expanded="false" aria-controls="element-collapse10">
 <!-- <p class="form-title "> -->
   
@@ -2034,7 +2035,7 @@
   <p class="error-textarea">Cannot be empty</p>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse11">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse11">
 <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron20').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse11" aria-expanded="false" aria-controls="element-collapse11">
 <!-- <p class="form-title "> -->
   <p class="mr-6px">
@@ -2053,7 +2054,7 @@
 </div>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse12">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse12">
   <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron9').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse12" aria-expanded="false" aria-controls="element-collapse12">
   <!-- <p class="form-title "> -->
     <p class="mr-6px">
@@ -2099,7 +2100,7 @@
   </div>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse13">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse13">
   <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron10').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse13" aria-expanded="false" aria-controls="element-collapse13">
   <!-- <p class="form-title "> -->
     
@@ -2126,30 +2127,30 @@
   </div>
   <p class="fs-14 font-weight-normal">Available for purchase after this date</p>
   <div class="wrapper-date mb-1">
-    <select name="dateYear" id="" class="opacity date">
+    <select name="dateYear" id="" class="opacity date ">
       <option value="2022">2022</option>
       <option value="2022">2022</option>
       <option value="2022">2022</option>
       <option value="2022">2022</option>
     </select>
 
-    <select name="dateMonth" id="" class="opacity date">
+    <select name="dateMonth" id="" class="opacity date dateMonth">
       <option value="13">12</option>
       <option value="12">12</option>
       <option value="12">12</option>
       <option value="12">12</option>
     </select>
-    <select name="dateDay" id="" class="opacity date">
-      <option value="2022">18</option>
-      <option value="18">18</option>
-      <option value="18">18</option>
-      <option value="18">18</option>
+    <select name="dateDay" id="" class="opacity date dateDay">
+      <option value="30">30</option>
+      <option value="30">30</option>
+      <option value="30">30</option>
+      <option value="30">30</option>
     </select>
   </div>
   <p class="f-size12 font-weight-normal lh-140" style="color: #595959;">It will be displayed on your page from the moment you make it live, but can only be purchased after the date specified above.</p>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse14">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse14">
   <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron11').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse14" aria-expanded="false" aria-controls="element-collapse14">
   <!-- <p class="form-title "> -->
     
@@ -2186,24 +2187,24 @@
       <option value="2022">2022</option>
     </select>
 
-    <select name="dateMonth" id="" class="opacity date">
+    <select name="dateMonth" id="" class="opacity date dateMonth">
       <option value="13">12</option>
       <option value="12">12</option>
       <option value="12">12</option>
       <option value="12">12</option>
     </select>
-    <select name="dateDay" id="" class="opacity date">
-      <option value="2022">18</option>
-      <option value="18">18</option>
-      <option value="18">18</option>
-      <option value="18">18</option>
+    <select name="dateDay" id="" class="opacity date dateDay">
+      <option value="30">30</option>
+      <option value="30">30</option>
+      <option value="30">30</option>
+      <option value="30">30</option>
     </select>
   </div>
   <p class="error-textarea">Cannot be empty</p>
 
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse15">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse15">
   <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron12').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse15" aria-expanded="false" aria-controls="element-collapse15" id="collapses15">
   <!-- <p class="form-title "> -->
     
@@ -2230,7 +2231,7 @@
         <p class="error-textarea">Cannot be empty</p>
       </div>
      
-    <div class="wrapperEvent d-flex mt-3">
+    <div class="wrapperEvent d-flex ">
    
       <i class="fa-regular fa-trash-can mr-20 delete-elementWebhook item-iconWebhook" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
     </div>
@@ -2238,7 +2239,7 @@
   </div>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse16">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse16">
   <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron13').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse16" aria-expanded="false" aria-controls="element-collapse16">
   <!-- <p class="form-title "> -->
     
@@ -2267,7 +2268,7 @@
   <p class="error-textarea">Cannot be empty</p>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse17">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse17">
   <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron14').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse17" aria-expanded="false" aria-controls="element-collapse17">
   <!-- <p class="form-title "> -->
     
@@ -2314,7 +2315,7 @@
   </div>
 </div>
 </div>
-<div class="wrapper-form mb-25 " id="wrapper-element-collapse18">
+<div class="wrapper-form mb-30 " id="wrapper-element-collapse18">
   <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron22').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse18" aria-expanded="false" aria-controls="element-collapse18">
   <!-- <p class="form-title "> -->
     
@@ -2342,7 +2343,7 @@
   <p class="f-size12   font-weight-normal">Customize the page title and description to optimize for keywords and rank better in search results</p>
       <div class="wrapper-form mb-9 mt-15">
         <p class="form-title">
-          Page Tittle
+          Page Title
       </p>
      
 
@@ -2897,7 +2898,12 @@ $(document).ready(function () {
 $('body').tooltip({
     selector: '.item-icon'
 });
-
+// $('body').tooltip({
+//     selector: '.audio-controls'
+// });
+// $('body').tooltip({
+//     selector: '.item-delete-audio'
+// });
 $('body').tooltip({
     selector: '#wrapper-cover-image'
 });

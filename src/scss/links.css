@@ -1838,7 +1838,7 @@ body {
 }
 
 #editorContainerTY.ql-container .ql-editor {
-  min-height: 32px !important;
+  min-height: 40px !important;
   height: auto;
   max-height: 100%;
   border-radius: 6px;

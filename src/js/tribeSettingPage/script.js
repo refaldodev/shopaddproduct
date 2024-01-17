@@ -1111,7 +1111,7 @@ function addOption1() {
 
                 <!-- multiple prices editor -->
                 <div class="wrapper-form mb-0" id="heading-element${optionCount}">
-                  <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element${optionCount}" aria-expanded="false" aria-controls="collapse-element${optionCount}">
+                  <div class="collapse-text form-title  FSize collapsed" data-toggle="collapse" data-target="#collapse-element${optionCount}" aria-expanded="false" aria-controls="collapse-element${optionCount}">
                   
                       Description
                   
@@ -1276,7 +1276,7 @@ function addOption2() {
 
                 <!-- multiple prices editor -->
                 <div class="wrapper-form mb-0" id="heading-element${optionCount}">
-                  <div class="collapse-text form-title mb-2 FSize collapsed" data-toggle="collapse" data-target="#collapse-element${optionCount}" aria-expanded="false" aria-controls="collapse-element${optionCount}">
+                  <div class="collapse-text form-title  FSize collapsed" data-toggle="collapse" data-target="#collapse-element${optionCount}" aria-expanded="false" aria-controls="collapse-element${optionCount}">
                   
                       Description
                   
@@ -2329,58 +2329,58 @@ function extractVideoId(url) {
 }
 
 // audio
-const audioFilesInput = document.getElementById("uploadFileAudio");
-const audioPreviewContainer = document.getElementById("audio-preview");
+// const audioFilesInput = document.getElementById("uploadFileAudio");
+// const audioPreviewContainer = document.getElementById("audio-preview");
 
-audioFilesInput.addEventListener("change", function () {
-  const files = audioFilesInput.files;
+// audioFilesInput.addEventListener("change", function () {
+//   const files = audioFilesInput.files;
 
-  if (files.length > 5) {
-    alert("Maximum 5 audio files allowed.");
-    return;
-  }
+//   if (files.length > 5) {
+//     alert("Maximum 5 audio files allowed.");
+//     return;
+//   }
 
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
+//   for (let i = 0; i < files.length; i++) {
+//     const file = files[i];
 
-    // if (file.type !== "audio/mp3") {
-    //   alert("Invalid audio format. Only MP3 files allowed.");
-    //   return;
-    // }
+//     // if (file.type !== "audio/mp3") {
+//     //   alert("Invalid audio format. Only MP3 files allowed.");
+//     //   return;
+//     // }
 
-    if (file.size > 10000000) {
-      alert("File size exceeds the limit of 10MB.");
-      return;
-    }
+//     if (file.size > 10000000) {
+//       alert("File size exceeds the limit of 10MB.");
+//       return;
+//     }
 
-    const audioElement = document.createElement("audio");
-    audioElement.controls = true;
-    audioElement.className = "audio mr-10";
-    const sourceElement = document.createElement("source");
-    sourceElement.src = URL.createObjectURL(file);
-    sourceElement.type = "audio/mpeg";
-    audioElement.appendChild(sourceElement);
+//     const audioElement = document.createElement("audio");
+//     audioElement.controls = true;
+//     audioElement.className = "audio mr-10";
+//     const sourceElement = document.createElement("source");
+//     sourceElement.src = URL.createObjectURL(file);
+//     sourceElement.type = "audio/mpeg";
+//     audioElement.appendChild(sourceElement);
 
-    const deleteButton = document.createElement("i");
-    deleteButton.className = "fas fa-trash-alt item-delete-audio";
-    deleteButton.setAttribute("data-tooltip", "tooltip");
-    deleteButton.setAttribute("data-placement", "top");
-    deleteButton.setAttribute("title", "Delete it");
-    deleteButton.addEventListener("click", function () {
-      audioPreviewContainer.removeChild(audioElement.parentElement);
-    });
+//     const deleteButton = document.createElement("i");
+//     deleteButton.className = "fas fa-trash-alt item-delete-audio";
+//     deleteButton.setAttribute("data-tooltip", "tooltip");
+//     deleteButton.setAttribute("data-placement", "top");
+//     deleteButton.setAttribute("title", "Delete it");
+//     deleteButton.addEventListener("click", function () {
+//       audioPreviewContainer.removeChild(audioElement.parentElement);
+//     });
 
-    const audioWrapper = document.createElement("div");
-    const containerAudioWrapper = document.createElement("div");
-    containerAudioWrapper.className = "wrapperAudio";
-    audioWrapper.className = "wrapper-audio d-flex align-items-center mb-20";
-    audioWrapper.appendChild(audioElement);
-    audioWrapper.appendChild(deleteButton);
-    containerAudioWrapper.appendChild(audioWrapper);
+//     const audioWrapper = document.createElement("div");
+//     const containerAudioWrapper = document.createElement("div");
+//     containerAudioWrapper.className = "wrapperAudio";
+//     audioWrapper.className = "wrapper-audio d-flex align-items-center mb-20";
+//     audioWrapper.appendChild(audioElement);
+//     audioWrapper.appendChild(deleteButton);
+//     containerAudioWrapper.appendChild(audioWrapper);
 
-    audioPreviewContainer.appendChild(containerAudioWrapper);
-  }
-});
+//     audioPreviewContainer.appendChild(containerAudioWrapper);
+//   }
+// });
 
 $("#category").select2({
   tags: true,
@@ -2618,7 +2618,7 @@ function addQuestions() {
 
       const div = `
       <div class="wrapper-questions mt-customQuestions " >
-        <div class="wrapper-form mb-9">
+        <div class="wrapper-form mb-12px ">
         <textarea type="text" id="titleQuestion${optionCount}" rows="1" class="form-control mt-9 messageInput titleQuestion" maxlength="200" style="height:38px;overflow-y:hidden;"></textarea>
         <div class="d-flex align-items-start flex  justify-content-between">
           <p class="error-textarea">Cannot be empty</p>
@@ -2788,7 +2788,7 @@ function addWebhokLink() {
         </div>
         <p class="error-textarea">Cannot be empty</p>
       </div>
-    <div class="wrapperEvent d-flex mt-3">
+    <div class="wrapperEvent d-flex">
       <i class="fa-regular fa-trash-can mr-20 delete-elementWebhook item-iconWebhook" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
     </div>
 `;
@@ -3059,7 +3059,7 @@ function addDiscount() {
       </div>
     </div>
     
-    <div class="wrapperEvent d-flex mt-3">
+    <div class="wrapperEvent d-flex mt-14">
    
       <i class="fa-regular fa-trash-can mr-20 delete-elementDiscount item-iconDeleteDiscount" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
     </div>
@@ -3100,24 +3100,100 @@ addDiscount();
 //   });
 // }
 
-// rearrangeHandlerVideo();
-function rearrangeHandlerAudio() {
-  let audioPreviewContainer = document.querySelector("#audio-preview");
-  new Sortable(audioPreviewContainer, {
-    animation: 150,
-    handle: ".subwrapperAudio", // Selector untuk item yang dapat di-drag
-    ghostClass: "ghost",
+// // rearrangeHandlerVideo();
+// function rearrangeHandlerAudio() {
+//   let audioPreviewContainer = document.querySelector("#audio-preview");
+//   new Sortable(audioPreviewContainer, {
+//     animation: 150,
+//     handle: ".audio", // Selector untuk item yang dapat di-drag
+//     ghostClass: "ghost",
+//     forceFallback: true,
+//     onStart: function (evt) {
+//       document.documentElement.classList.add("draggable-cursor");
+//       $("[data-toggle=tooltip]").tooltip("hide");
+//       $("[data-toggle=tooltip]").tooltip("disable");
+//     },
+//     // Restores default page cursor
+//     onEnd: function (evt) {
+//       document.documentElement.classList.remove("draggable-cursor");
+//       $("[data-toggle=tooltip]").tooltip("enable");
+//     },
+//   });
+// }
+
+// // Panggil fungsi setelah dokumen dimuat
+// document.addEventListener("DOMContentLoaded", function () {
+//   rearrangeHandlerAudio();
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  var sortableList = new Sortable(document.getElementById("sortable-list"), {
+    animation: 150, // Durasi animasi saat item diurutkan (ms)
     forceFallback: true,
+    ghostClass: "ghost",
+
     onStart: function (evt) {
       document.documentElement.classList.add("draggable-cursor");
     },
+    // Restores default page cursor
     onEnd: function (evt) {
       document.documentElement.classList.remove("draggable-cursor");
     },
   });
-}
 
-// Panggil fungsi setelah dokumen dimuat
-document.addEventListener("DOMContentLoaded", function () {
-  rearrangeHandlerAudio();
+  // Fungsi untuk menambahkan audio ke daftar
+  function addAudio(src, fileName) {
+    var listItem = document.createElement("li");
+    listItem.classList.add("audio-item");
+    listItem.innerHTML = `
+          <div class="audio-controls"  data-tooltip="tooltip" data-placement="top"  title="${fileName}">
+              <audio controls >
+                  <source src="${src}" type="audio/mp3">
+                  Your browser does not support the audio tag.
+              </audio>
+ <i class="fas fa-trash-alt  item-delete-audio  delete-icon"  data-tooltip="tooltip" data-placement="top"  title="Delete it" ></i>
+          </div>
+      `;
+    sortableList.el.appendChild(listItem);
+    // Tambahkan event handler onclick ke ikon delete
+    var deleteIcon = listItem.querySelector(".delete-icon");
+    deleteIcon.addEventListener("click", function () {
+      deleteAudio(listItem);
+    });
+    $(".audio-controls").tooltip();
+    $(".item-delete-audio").tooltip();
+
+    $(".item-delete-audio").on("click", function () {
+      $(this).tooltip("hide");
+    });
+    $(".audio-controls").on("click", function () {
+      $(this).tooltip("hide");
+      console.log(this);
+    });
+  }
+  // Fungsi untuk menghapus audio dari daftar
+  function deleteAudio(element) {
+    element.remove(); // Menggunakan metode remove() untuk menghapus elemen dari DOM
+    sortableList.sort(); // Memanggil fungsi sort() untuk memberitahu Sortable.js tentang perubahan
+  }
+
+  // Fungsi untuk menghandle event upload audio
+  document
+    .getElementById("uploadFileAudio")
+    .addEventListener("change", function (event) {
+      var file = event.target.files[0];
+      if (file) {
+        var objectURL = URL.createObjectURL(file);
+        addAudio(objectURL, file.name);
+        // Reset nilai input file untuk memungkinkan upload file yang sama
+        event.target.value = "";
+      }
+    });
+
+  // Contoh penggunaan hasil urutan setelah diurutkan
+  document
+    .getElementById("sortable-list")
+    .addEventListener("sortupdate", function () {
+      // Lakukan sesuatu dengan urutan audio yang sudah diurutkan
+    });
 });
