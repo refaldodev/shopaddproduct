@@ -2726,7 +2726,7 @@ function addDelivery() {
       <input type="number" class="form-control mt-9 messageInput border-currency" id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
     </div>
   </div>
-  <div class="wrapperEvent d-flex mt-3">
+  <div class="wrapperEvent d-flex mt-15">
  
     <i class="fa-regular fa-trash-can mr-20 delete-elementShipping  item-iconShipping" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
   </div>
