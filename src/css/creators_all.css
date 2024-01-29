@@ -342,14 +342,17 @@ select.date:hover {
   padding-bottom: 0px !important;
 }
 .select2-container .select2-selection--multiple .select2-selection__rendered {
-  display: inline;
-  list-style: none;
-  padding: 0;
+  display: inline !important;
+  list-style: none !important;
+  padding: 0 !important;
 }
 .select2-container .select2-selection--multiple .select2-selection__clear {
   background-color: transparent;
   border: none;
   font-size: 1em;
+}
+.wrapper-oneShiping span.selection .select2-selection {
+  padding-right: 25px;
 }
 .select2-container .select2-search--inline .select2-search__field {
   box-sizing: border-box;
@@ -1829,7 +1832,7 @@ footer .select-container span.arrow-icon {
 
 main {
   padding: 0 20px;
-  padding-top: 36px;
+  padding-top: 28px;
   padding-bottom: 100px;
 }
 
@@ -2255,6 +2258,7 @@ main {
 .wrapperEvent i {
   cursor: pointer;
 }
+
 .btn-event a {
   width: 26px;
   /* position: inherit; */
@@ -2634,15 +2638,14 @@ textarea {
   border: 1px solid #000000;
 }
 .audio-item {
-  display: flex;
-  justify-content: space-between;
+  /* display: flex;
+  justify-content: space-between; */
   align-items: center;
 }
 
 .audio-controls {
   display: flex;
   align-items: center;
-  flex: 1;
 }
 
 .delete-icon {
@@ -2667,8 +2670,64 @@ textarea {
   padding: 0px 0 20px 0;
 }
 audio {
-  flex: 1;
+  flex-grow: 1;
+  width: 100%;
 }
-ul#sortable-list {
+#sortable-list {
   margin-bottom: 0px !important;
+}
+
+.trumbowyg-box,
+.trumbowyg-editor {
+  min-height: 140px;
+}
+.trumbowyg-button-pane {
+  background-color: white;
+  color: black;
+}
+.video-container {
+  display: flex;
+  flex-wrap: wrap; /* Mengatur agar video-wrap turun ke bawah jika melebihi lebar container */
+}
+
+.video-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  cursor: pointer;
+  margin-bottom: 22px;
+  margin-right: 20px;
+  width: 255px; /* Lebar video container */
+}
+
+.video-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.video-iframe {
+  width: 100%; /* Menyesuaikan ukuran video dengan lebar container */
+  height: 142px;
+  border-radius: 10px;
+}
+
+.delete-iconVideo {
+  cursor: pointer;
+  margin-top: 8px;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@media (max-width: 665px) {
+  .video-item {
+    width: 100% !important;
+    /* height: 200px; */
+    margin-bottom: 22px;
+    margin-right: 0px;
+  }
 }

@@ -587,7 +587,30 @@ $(document).ready(function () {
     dropdownCssClass: "typeColor",
   });
 });
+// $(document).ready(function () {
+//   $(".destination").select2({
+//     dropdownCssClass: "typeColor",
+//     tags: true,
+//   });
+// });
 
+$(".destination").select2({
+  tags: true,
+  // tokenSeparators: [",", " "],
+  tokenSeparators: [","],
+
+  templateSelection: function (selection) {
+    if (selection.selected) {
+      return $.parseHTML(
+        '<span class="customclass">' + selection.text + "</span>"
+      );
+    } else {
+      return $.parseHTML(
+        '<span class="customclass">' + selection.text + "</span>"
+      );
+    }
+  },
+});
 // Function untuk mengupload video
 // function uploadVideo() {
 //   // Ambil element form dan file yang akan diupload
@@ -863,46 +886,100 @@ var toolbarOptions = [
 //   },
 //   minHeight: 0,
 // });
-var quill = new Quill("#editorContainer", {
-  theme: "bubble",
-  bounds: "#editorContainer",
-  scrollingContainer: "#editorContainer",
-  modules: {
-    toolbar: toolbarOptions,
-  },
-});
-var quill = new Quill("#editorContainer2", {
-  theme: "bubble",
-  bounds: "#editorContainer2",
-  scrollingContainer: "#editorContainer2",
-  modules: {
-    toolbar: toolbarOptions,
-  },
-});
-var quill = new Quill("#editorContainerBuyers", {
-  theme: "bubble",
-  bounds: "#editorContainerBuyers",
-  scrollingContainer: "#editorContainerBuyers",
-  modules: {
-    toolbar: toolbarOptions,
-  },
+// var quill = new Quill("#editorContainer", {
+//   theme: "bubble",
+//   bounds: "#editorContainer",
+//   scrollingContainer: "#editorContainer",
+//   modules: {
+//     toolbar: toolbarOptions,
+//   },
+// });
+
+// editor
+
+$("#trumbowyg-container").trumbowyg({
+  btns: [
+    ["bold", "italic", "underline"],
+    ["unorderedList", "orderedList"],
+    ["link"],
+  ],
+  minimalLinks: true, // Menyembunyikan opsi 'Target' dan 'Title'
+  resetCss: true,
+  autogrowOnEnter: true,
+  autogrow: true,
 });
 
-var quill = new Quill("#editorContainerTY", {
-  theme: "bubble",
-  bounds: "#editorContainerTY",
-  scrollingContainer: "#editorContainerTY",
-  modules: {
-    toolbar: toolbarOptions,
-  },
+$("#editorContainer2").trumbowyg({
+  btns: [
+    ["bold", "italic", "underline"],
+    ["unorderedList", "orderedList"],
+    ["link"],
+  ],
+  minimalLinks: true, // Menyembunyikan opsi 'Target' dan 'Title'
+  resetCss: true,
+  autogrowOnEnter: true,
+  autogrow: true,
 });
-var quill = new Quill("#editorContainer199", {
-  theme: "bubble",
-  bounds: "#editorContainer199",
-  scrollingContainer: "#editorContainer199",
-  modules: {
-    toolbar: toolbarOptions,
-  },
+
+// var quill = new Quill("#editorContainer2", {
+//   theme: "bubble",
+//   bounds: "#editorContainer2",
+//   scrollingContainer: "#editorContainer2",
+//   modules: {
+//     toolbar: toolbarOptions,
+//   },
+// });
+
+$("#editorContainerBuyers").trumbowyg({
+  btns: [
+    ["bold", "italic", "underline"],
+    ["unorderedList", "orderedList"],
+    ["link"],
+  ],
+  minimalLinks: true, // Menyembunyikan opsi 'Target' dan 'Title'
+  resetCss: true,
+  autogrowOnEnter: true,
+  autogrow: true,
+});
+// var quill = new Quill("#editorContainerBuyers", {
+//   theme: "bubble",
+//   bounds: "#editorContainerBuyers",
+//   scrollingContainer: "#editorContainerBuyers",
+//   modules: {
+//     toolbar: toolbarOptions,
+//   },
+// });
+
+// var quill = new Quill("#editorContainerTY", {
+//   theme: "bubble",
+//   bounds: "#editorContainerTY",
+//   scrollingContainer: "#editorContainerTY",
+//   modules: {
+//     toolbar: toolbarOptions,
+//   },
+// });
+
+$("#editorContainerTY").trumbowyg({
+  btns: [
+    ["bold", "italic", "underline"],
+    ["unorderedList", "orderedList"],
+    ["link"],
+  ],
+  minimalLinks: true, // Menyembunyikan opsi 'Target' dan 'Title'
+  resetCss: true,
+  autogrowOnEnter: true,
+  autogrow: true,
+});
+$("#editorContainer199").trumbowyg({
+  btns: [
+    ["bold", "italic", "underline"],
+    ["unorderedList", "orderedList"],
+    ["link"],
+  ],
+  minimalLinks: true, // Menyembunyikan opsi 'Target' dan 'Title'
+  resetCss: true,
+  autogrowOnEnter: true,
+  autogrow: true,
 });
 
 // conTOHU
@@ -1025,24 +1102,36 @@ function addOption1() {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
       textareaMultiple(optionCount);
-      var toolbarOptions = [
-        // ["bold", "italic", "underline"], // toggled buttons
-        [
-          "bold",
-          "italic",
-          "underline",
-          { list: "ordered" },
-          { list: "bullet" },
-          "link",
+      // var toolbarOptions = [
+      //   // ["bold", "italic", "underline"], // toggled buttons
+      //   [
+      //     "bold",
+      //     "italic",
+      //     "underline",
+      //     { list: "ordered" },
+      //     { list: "bullet" },
+      //     "link",
+      //   ],
+      // ];
+      // var quill = new Quill(`#editorContainer${optionCount}`, {
+      //   theme: "bubble",
+      //   bounds: `#editorContainer${optionCount}`,
+      //   scrollingContainer: `#editorContainer${optionCount}`,
+      //   modules: {
+      //     toolbar: toolbarOptions,
+      //   },
+      // });
+
+      $(`#editorContainer${optionCount}`).trumbowyg({
+        btns: [
+          ["bold", "italic", "underline"],
+          ["unorderedList", "orderedList"],
+          ["link"],
         ],
-      ];
-      var quill = new Quill(`#editorContainer${optionCount}`, {
-        theme: "bubble",
-        bounds: `#editorContainer${optionCount}`,
-        scrollingContainer: `#editorContainer${optionCount}`,
-        modules: {
-          toolbar: toolbarOptions,
-        },
+        minimalLinks: true, // Menyembunyikan opsi 'Target' dan 'Title'
+        resetCss: true,
+        autogrowOnEnter: true,
+        autogrow: true,
       });
       optionCount++;
       descriptionCount++;
@@ -1117,7 +1206,7 @@ function addOption1() {
                   
                   </div>
                   <div class="collapse" id="collapse-element${optionCount}" aria-labelledby="heading-element${optionCount}" data-parent="#heading-element${optionCount}">
-                <div id="editorContainer${descriptionCount}" style="margin-bottom: 12px;"></div>
+                <div id="editorContainer${optionCount}" style="margin-bottom: 12px;"></div>
                 
               </div>
                 <!-- <div class="text-editor">
@@ -1189,24 +1278,16 @@ function addOption2() {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
       textareaMultiple(optionCount);
-      var toolbarOptions = [
-        // ["bold", "italic", "underline"], // toggled buttons
-        [
-          "bold",
-          "italic",
-          "underline",
-          { list: "ordered" },
-          { list: "bullet" },
-          "link",
+      $(`#editorContainer${optionCount}`).trumbowyg({
+        btns: [
+          ["bold", "italic", "underline"],
+          ["unorderedList", "orderedList"],
+          ["link"],
         ],
-      ];
-      var quill = new Quill(`#editorContainer${optionCount}`, {
-        theme: "bubble",
-        bounds: `#editorContainer${optionCount}`,
-        scrollingContainer: `#editorContainer${optionCount}`,
-        modules: {
-          toolbar: toolbarOptions,
-        },
+        minimalLinks: true, // Menyembunyikan opsi 'Target' dan 'Title'
+        resetCss: true,
+        autogrowOnEnter: true,
+        autogrow: true,
       });
       optionCount++;
       descriptionCount++;
@@ -2176,7 +2257,7 @@ function uploadImagePreview() {
         var divElement = document.createElement("div");
         divElement.className = "profile-img-container2 mr-20 profile-image  ";
         var wrapperdivElement = document.createElement("div");
-        wrapperdivElement.className = "hover-tooltips  wrapperImg";
+        wrapperdivElement.className = "hover-tooltips  wrapperImg ";
         wrapperdivElement.setAttribute("data-tooltip", "tooltip");
         wrapperdivElement.setAttribute("data-placement", "top");
         wrapperdivElement.setAttribute("title", `${fileName}`);
@@ -2191,7 +2272,7 @@ function uploadImagePreview() {
         // Buat elemen ikon delete
         var deleteIcon = document.createElement("i");
         deleteIcon.className =
-          "fas fa-trash-alt item-icon-delete hover-tooltips custom-position-icon";
+          "fas fa-trash-alt item-icon-delete hover-tooltips custom-position-icon icon-delete-img";
         deleteIcon.setAttribute("data-tooltip", "tooltip");
         deleteIcon.setAttribute("data-placement", "top");
         deleteIcon.setAttribute("title", "Delete it");
@@ -2208,6 +2289,13 @@ function uploadImagePreview() {
         divElement.appendChild(deleteIcon);
         profileImageContainer.appendChild(divElement);
         // }
+        $(".icon-delete-img").tooltip();
+
+        $(".icon-delete-img").on("click", function () {
+          $(this).tooltip("hide");
+          $(".wrapperImg").tooltip("hide");
+        });
+        $(".wrapperImg").tooltip();
       };
 
       imageElement.src = URL.createObjectURL(file);
@@ -2265,7 +2353,7 @@ function rearrangeHandlerImgPreview() {
     // Restores default page cursor
     onEnd: function (evt) {
       document.documentElement.classList.remove("draggable-cursor");
-      // $("[data-toggle=tooltip]").tooltip("enable");
+      $("[data-toggle=tooltip]").tooltip("enable");
     },
   });
 }
@@ -2273,114 +2361,151 @@ function rearrangeHandlerImgPreview() {
 rearrangeHandlerImgPreview();
 
 // add video
-function showVideoPreview() {
-  var youtubeLink = document.getElementById("inputAddVideo").value;
-  var videoId = extractVideoId(youtubeLink);
+document.addEventListener("DOMContentLoaded", function () {
+  var sortableListVideo = new Sortable(
+    document.getElementById("sortable-list-video"),
+    {
+      animation: 150, // Durasi animasi saat item diurutkan (ms)
+      forceFallback: true,
+      ghostClass: "ghost",
 
-  if (videoId) {
-    var videoPreview = document.querySelector(".wrapper-container-video");
-
-    const wrapper = document.createElement("div");
-
-    wrapper.className = "wrapper-video ";
-    // Tambahkan video preview baru
-    var wrapperVideo = `
-     
-                  <div class="profile-video-container  ">
-                
-                  <iframe src="https://www.youtube.com/embed/${videoId}" class="preview" id="yt-preview">
-                    </iframe>
-                         </div>
-                         <i class="fas fa-trash-alt  item-icon-delete hover-tooltips custom-position-iconVideo " data-tooltip="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
-                       
-      
-      `;
-    wrapper.innerHTML = wrapperVideo;
-    videoPreview.appendChild(wrapper);
-  } else {
-    alert("Tautan YouTube tidak valid.");
-  }
-}
-function deleteYt() {
-  const sortableContainer = document.getElementById("wrapper-containerVideo");
-
-  sortableContainer.addEventListener("click", (event) => {
-    const clickedIcon = event.target;
-    if (clickedIcon.classList.contains("item-icon-delete")) {
-      const item = clickedIcon.closest(".wrapper-video");
-
-      if (clickedIcon.classList.contains("custom-position-iconVideo")) {
-        item.remove();
-      }
+      onStart: function (evt) {
+        document.documentElement.classList.add("draggable-cursor");
+      },
+      // Restores default page cursor
+      onEnd: function (evt) {
+        document.documentElement.classList.remove("draggable-cursor");
+      },
     }
-  });
-}
-deleteYt();
-function extractVideoId(url) {
-  var regExp =
-    /^(https?:\/\/)?(www\.)?(youtube|youtu|youtube-nocookie)\.(com|be)\/(watch\?v=|embed\/|v\/|.+\?v=)?([^&=%\?]{11})/;
-  var match = url.match(regExp);
+  );
+  window.addVideo = function () {
+    var videoLinkInput = document.getElementById("videoLinkInput");
+    var videoLink = videoLinkInput.value;
 
-  if (match && match[6].length === 11) {
-    return match[6];
-  } else {
-    return null;
+    if (videoLink) {
+      var listItemVideo = document.createElement("li");
+      listItemVideo.classList.add("video-item");
+      listItemVideo.innerHTML = `
+              <div class="video-controls">
+                  <iframe class="video-iframe" src="${getEmbeddedVideoUrl(
+                    videoLink
+                  )}" frameborder="0" allowfullscreen></iframe>
+                 
+                  <i class="fas fa-trash-alt  delete-iconVideo  " data-tooltip="tooltip" data-placement="right" title="Delete it" onclick="deleteVideo(this)"></i>
+              </div>
+          `;
+      sortableListVideo.el.appendChild(listItemVideo);
+
+      // Inisialisasi tooltip Bootstrap secara manual
+      // deleteIcon.addEventListener("click", function () {
+      //   deleteAudio(listItemVideo);
+      // });
+      $(".delete-iconVideo").tooltip();
+
+      $(".delete-iconVideo").on("click", function () {
+        $(this).tooltip("hide");
+      });
+
+      // Reset nilai input setelah menambahkan video
+      videoLinkInput.value = "";
+    }
+  };
+
+  window.deleteVideo = function (element) {
+    var listItemVideo = element.closest(".video-item");
+    listItemVideo.remove();
+    sortableListVideo.sort();
+  };
+
+  function getEmbeddedVideoUrl(youtubeUrl) {
+    // Ambil ID video dari URL YouTube
+    var videoId = youtubeUrl.match(
+      /(?:youtu\.be\/|youtube\.com(?:\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|\/(?:[^\/\n\s]+\/\S+\/|\S*?[?&]v=)))([a-zA-Z0-9_-]{11})/
+    );
+
+    if (videoId) {
+      // Bangun ulang URL untuk menyematkan video
+      return `https://www.youtube.com/embed/${videoId[1]}`;
+    } else {
+      // URL tidak valid atau tidak ditemukan ID video
+      console.error("Invalid YouTube URL");
+      return "";
+    }
   }
-}
+});
 
 // audio
-// const audioFilesInput = document.getElementById("uploadFileAudio");
-// const audioPreviewContainer = document.getElementById("audio-preview");
+document.addEventListener("DOMContentLoaded", function () {
+  var sortableList = new Sortable(document.getElementById("sortable-list"), {
+    animation: 150, // Durasi animasi saat item diurutkan (ms)
+    forceFallback: true,
+    ghostClass: "ghost",
 
-// audioFilesInput.addEventListener("change", function () {
-//   const files = audioFilesInput.files;
+    onStart: function (evt) {
+      document.documentElement.classList.add("draggable-cursor");
+    },
+    // Restores default page cursor
+    onEnd: function (evt) {
+      document.documentElement.classList.remove("draggable-cursor");
+    },
+  });
 
-//   if (files.length > 5) {
-//     alert("Maximum 5 audio files allowed.");
-//     return;
-//   }
+  // Fungsi untuk menambahkan audio ke daftar
+  function addAudio(src, fileName) {
+    var listItem = document.createElement("div");
+    listItem.classList.add("audio-item");
+    listItem.innerHTML = `
+          <div class="audio-controls"  data-tooltip="tooltip" data-placement="top"  title="${fileName}">
+          
+              <audio controls >
+                  <source src="${src}" type="audio/mp3">
+                  Your browser does not support the audio tag.
+              </audio>
+ <i class="fas fa-trash-alt  item-delete-audio  delete-icon"  data-tooltip="tooltip" data-placement="top"  title="Delete it" ></i>
+          </div>
+      `;
+    sortableList.el.appendChild(listItem);
+    // Tambahkan event handler onclick ke ikon delete
+    var deleteIcon = listItem.querySelector(".delete-icon");
+    deleteIcon.addEventListener("click", function () {
+      deleteAudio(listItem);
+    });
+    $(".audio-controls").tooltip();
+    $(".item-delete-audio").tooltip();
 
-//   for (let i = 0; i < files.length; i++) {
-//     const file = files[i];
+    $(".item-delete-audio").on("click", function () {
+      $(this).tooltip("hide");
+    });
+    $(".audio-controls").on("click", function () {
+      $(this).tooltip("hide");
+    });
+  }
+  // Fungsi untuk menghapus audio dari daftar
+  function deleteAudio(element) {
+    element.remove(); // Menggunakan metode remove() untuk menghapus elemen dari DOM
+    sortableList.sort(); // Memanggil fungsi sort() untuk memberitahu Sortable.js tentang perubahan
+  }
 
-//     // if (file.type !== "audio/mp3") {
-//     //   alert("Invalid audio format. Only MP3 files allowed.");
-//     //   return;
-//     // }
+  // Fungsi untuk menghandle event upload audio
+  document
+    .getElementById("uploadFileAudio")
+    .addEventListener("change", function (event) {
+      var file = event.target.files[0];
+      if (file) {
+        var objectURL = URL.createObjectURL(file);
+        addAudio(objectURL, file.name);
+        // Reset nilai input file untuk memungkinkan upload file yang sama
+        event.target.value = "";
+      }
+    });
 
-//     if (file.size > 10000000) {
-//       alert("File size exceeds the limit of 10MB.");
-//       return;
-//     }
-
-//     const audioElement = document.createElement("audio");
-//     audioElement.controls = true;
-//     audioElement.className = "audio mr-10";
-//     const sourceElement = document.createElement("source");
-//     sourceElement.src = URL.createObjectURL(file);
-//     sourceElement.type = "audio/mpeg";
-//     audioElement.appendChild(sourceElement);
-
-//     const deleteButton = document.createElement("i");
-//     deleteButton.className = "fas fa-trash-alt item-delete-audio";
-//     deleteButton.setAttribute("data-tooltip", "tooltip");
-//     deleteButton.setAttribute("data-placement", "top");
-//     deleteButton.setAttribute("title", "Delete it");
-//     deleteButton.addEventListener("click", function () {
-//       audioPreviewContainer.removeChild(audioElement.parentElement);
-//     });
-
-//     const audioWrapper = document.createElement("div");
-//     const containerAudioWrapper = document.createElement("div");
-//     containerAudioWrapper.className = "wrapperAudio";
-//     audioWrapper.className = "wrapper-audio d-flex align-items-center mb-20";
-//     audioWrapper.appendChild(audioElement);
-//     audioWrapper.appendChild(deleteButton);
-//     containerAudioWrapper.appendChild(audioWrapper);
-
-//     audioPreviewContainer.appendChild(containerAudioWrapper);
-//   }
-// });
+  // Contoh penggunaan hasil urutan setelah diurutkan
+  document
+    .getElementById("sortable-list")
+    .addEventListener("sortupdate", function () {
+      // Lakukan sesuatu dengan urutan audio yang sudah diurutkan
+    });
+});
 
 $("#category").select2({
   tags: true,
@@ -2674,6 +2799,7 @@ function addDelivery() {
 
   sortableContainer.addEventListener("click", (event) => {
     const clickedIcon = event.target;
+
     if (clickedIcon.classList.contains("item-iconShipping")) {
       const item = clickedIcon.closest(".wrapper-form__delivery");
 
@@ -2691,8 +2817,26 @@ function addDelivery() {
     addButton.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
+
+      $(`.destination${optionCount}`).select2({
+        tags: true,
+        // tokenSeparators: [",", " "],
+        tokenSeparators: [","],
+
+        templateSelection: function (selection) {
+          if (selection.selected) {
+            return $.parseHTML(
+              '<span class="customclass">' + selection.text + "</span>"
+            );
+          } else {
+            return $.parseHTML(
+              '<span class="customclass">' + selection.text + "</span>"
+            );
+          }
+        },
+      });
       optionCount++;
-      descriptionCount++;
+      // descriptionCount++;
     });
 
     function createOptionDiv() {
@@ -2704,7 +2848,269 @@ function addDelivery() {
       <p class="f-size16 font-weight-bold lh-140 mb-1">Destinations</p>
       <div class="input-group ">
        
-        <input type="text" class="form-control mt-9 messageInput " id="inlineFormInputGroup" style="height:0px;overflow-y:hidden;">
+      <div class="select-container select-container-type ml-0 w-100">
+            <select class="destination${optionCount}" multiple="multiple">
+           
+                <option disabled>select country</option>
+                <option value="AF">Afghanistan</option>
+                <option value="AX">Aland Islands</option>
+                <option value="AL">Albania</option>
+                <option value="DZ">Algeria</option>
+                <option value="AS">American Samoa</option>
+                <option value="AD">Andorra</option>
+                <option value="AO">Angola</option>
+                <option value="AI">Anguilla</option>
+                <option value="AQ">Antarctica</option>
+                <option value="AG">Antigua and Barbuda</option>
+                <option value="AR">Argentina</option>
+                <option value="AM">Armenia</option>
+                <option value="AW">Aruba</option>
+                <option value="AU">Australia</option>
+                <option value="AT">Austria</option>
+                <option value="AZ">Azerbaijan</option>
+                <option value="BS">Bahamas</option>
+                <option value="BH">Bahrain</option>
+                <option value="BD">Bangladesh</option>
+                <option value="BB">Barbados</option>
+                <option value="BY">Belarus</option>
+                <option value="BE">Belgium</option>
+                <option value="BZ">Belize</option>
+                <option value="BJ">Benin</option>
+                <option value="BM">Bermuda</option>
+                <option value="BT">Bhutan</option>
+                <option value="BO">Bolivia</option>
+                <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                <option value="BA">Bosnia and Herzegovina</option>
+                <option value="BW">Botswana</option>
+                <option value="BV">Bouvet Island</option>
+                <option value="BR">Brazil</option>
+                <option value="IO">British Indian Ocean Territory</option>
+                <option value="BN">Brunei Darussalam</option>
+                <option value="BG">Bulgaria</option>
+                <option value="BF">Burkina Faso</option>
+                <option value="BI">Burundi</option>
+                <option value="KH">Cambodia</option>
+                <option value="CM">Cameroon</option>
+                <option value="CA">Canada</option>
+                <option value="CV">Cape Verde</option>
+                <option value="KY">Cayman Islands</option>
+                <option value="CF">Central African Republic</option>
+                <option value="TD">Chad</option>
+                <option value="CL">Chile</option>
+                <option value="CN">China</option>
+                <option value="CX">Christmas Island</option>
+                <option value="CC">Cocos (Keeling) Islands</option>
+                <option value="CO">Colombia</option>
+                <option value="KM">Comoros</option>
+                <option value="CG">Congo</option>
+                <option value="CD">Congo, Democratic Republic of the Congo</option>
+                <option value="CK">Cook Islands</option>
+                <option value="CR">Costa Rica</option>
+                <option value="CI">Cote D'Ivoire</option>
+                <option value="HR">Croatia</option>
+                <option value="CU">Cuba</option>
+                <option value="CW">Curacao</option>
+                <option value="CY">Cyprus</option>
+                <option value="CZ">Czech Republic</option>
+                <option value="DK">Denmark</option>
+                <option value="DJ">Djibouti</option>
+                <option value="DM">Dominica</option>
+                <option value="DO">Dominican Republic</option>
+                <option value="EC">Ecuador</option>
+                <option value="EG">Egypt</option>
+                <option value="SV">El Salvador</option>
+                <option value="GQ">Equatorial Guinea</option>
+                <option value="ER">Eritrea</option>
+                <option value="EE">Estonia</option>
+                <option value="ET">Ethiopia</option>
+                <option value="FK">Falkland Islands (Malvinas)</option>
+                <option value="FO">Faroe Islands</option>
+                <option value="FJ">Fiji</option>
+                <option value="FI">Finland</option>
+                <option value="FR">France</option>
+                <option value="GF">French Guiana</option>
+                <option value="PF">French Polynesia</option>
+                <option value="TF">French Southern Territories</option>
+                <option value="GA">Gabon</option>
+                <option value="GM">Gambia</option>
+                <option value="GE">Georgia</option>
+                <option value="DE">Germany</option>
+                <option value="GH">Ghana</option>
+                <option value="GI">Gibraltar</option>
+                <option value="GR">Greece</option>
+                <option value="GL">Greenland</option>
+                <option value="GD">Grenada</option>
+                <option value="GP">Guadeloupe</option>
+                <option value="GU">Guam</option>
+                <option value="GT">Guatemala</option>
+                <option value="GG">Guernsey</option>
+                <option value="GN">Guinea</option>
+                <option value="GW">Guinea-Bissau</option>
+                <option value="GY">Guyana</option>
+                <option value="HT">Haiti</option>
+                <option value="HM">Heard Island and Mcdonald Islands</option>
+                <option value="VA">Holy See (Vatican City State)</option>
+                <option value="HN">Honduras</option>
+                <option value="HK">Hong Kong</option>
+                <option value="HU">Hungary</option>
+                <option value="IS">Iceland</option>
+                <option value="IN">India</option>
+                <option value="ID">Indonesia</option>
+                <option value="IR">Iran, Islamic Republic of</option>
+                <option value="IQ">Iraq</option>
+                <option value="IE">Ireland</option>
+                <option value="IM">Isle of Man</option>
+                <option value="IL">Israel</option>
+                <option value="IT">Italy</option>
+                <option value="JM">Jamaica</option>
+                <option value="JP">Japan</option>
+                <option value="JE">Jersey</option>
+                <option value="JO">Jordan</option>
+                <option value="KZ">Kazakhstan</option>
+                <option value="KE">Kenya</option>
+                <option value="KI">Kiribati</option>
+                <option value="KP">Korea, Democratic People's Republic of</option>
+                <option value="KR">Korea, Republic of</option>
+                <option value="XK">Kosovo</option>
+                <option value="KW">Kuwait</option>
+                <option value="KG">Kyrgyzstan</option>
+                <option value="LA">Lao People's Democratic Republic</option>
+                <option value="LV">Latvia</option>
+                <option value="LB">Lebanon</option>
+                <option value="LS">Lesotho</option>
+                <option value="LR">Liberia</option>
+                <option value="LY">Libyan Arab Jamahiriya</option>
+                <option value="LI">Liechtenstein</option>
+                <option value="LT">Lithuania</option>
+                <option value="LU">Luxembourg</option>
+                <option value="MO">Macao</option>
+                <option value="MK">Macedonia, the Former Yugoslav Republic of</option>
+                <option value="MG">Madagascar</option>
+                <option value="MW">Malawi</option>
+                <option value="MY">Malaysia</option>
+                <option value="MV">Maldives</option>
+                <option value="ML">Mali</option>
+                <option value="MT">Malta</option>
+                <option value="MH">Marshall Islands</option>
+                <option value="MQ">Martinique</option>
+                <option value="MR">Mauritania</option>
+                <option value="MU">Mauritius</option>
+                <option value="YT">Mayotte</option>
+                <option value="MX">Mexico</option>
+                <option value="FM">Micronesia, Federated States of</option>
+                <option value="MD">Moldova, Republic of</option>
+                <option value="MC">Monaco</option>
+                <option value="MN">Mongolia</option>
+                <option value="ME">Montenegro</option>
+                <option value="MS">Montserrat</option>
+                <option value="MA">Morocco</option>
+                <option value="MZ">Mozambique</option>
+                <option value="MM">Myanmar</option>
+                <option value="NA">Namibia</option>
+                <option value="NR">Nauru</option>
+                <option value="NP">Nepal</option>
+                <option value="NL">Netherlands</option>
+                <option value="AN">Netherlands Antilles</option>
+                <option value="NC">New Caledonia</option>
+                <option value="NZ">New Zealand</option>
+                <option value="NI">Nicaragua</option>
+                <option value="NE">Niger</option>
+                <option value="NG">Nigeria</option>
+                <option value="NU">Niue</option>
+                <option value="NF">Norfolk Island</option>
+                <option value="MP">Northern Mariana Islands</option>
+                <option value="NO">Norway</option>
+                <option value="OM">Oman</option>
+                <option value="PK">Pakistan</option>
+                <option value="PW">Palau</option>
+                <option value="PS">Palestinian Territory, Occupied</option>
+                <option value="PA">Panama</option>
+                <option value="PG">Papua New Guinea</option>
+                <option value="PY">Paraguay</option>
+                <option value="PE">Peru</option>
+                <option value="PH">Philippines</option>
+                <option value="PN">Pitcairn</option>
+                <option value="PL">Poland</option>
+                <option value="PT">Portugal</option>
+                <option value="PR">Puerto Rico</option>
+                <option value="QA">Qatar</option>
+                <option value="RE">Reunion</option>
+                <option value="RO">Romania</option>
+                <option value="RU">Russian Federation</option>
+                <option value="RW">Rwanda</option>
+                <option value="BL">Saint Barthelemy</option>
+                <option value="SH">Saint Helena</option>
+                <option value="KN">Saint Kitts and Nevis</option>
+                <option value="LC">Saint Lucia</option>
+                <option value="MF">Saint Martin</option>
+                <option value="PM">Saint Pierre and Miquelon</option>
+                <option value="VC">Saint Vincent and the Grenadines</option>
+                <option value="WS">Samoa</option>
+                <option value="SM">San Marino</option>
+                <option value="ST">Sao Tome and Principe</option>
+                <option value="SA">Saudi Arabia</option>
+                <option value="SN">Senegal</option>
+                <option value="RS">Serbia</option>
+                <option value="CS">Serbia and Montenegro</option>
+                <option value="SC">Seychelles</option>
+                <option value="SL">Sierra Leone</option>
+                <option value="SG">Singapore</option>
+                <option value="SX">Sint Maarten</option>
+                <option value="SK">Slovakia</option>
+                <option value="SI">Slovenia</option>
+                <option value="SB">Solomon Islands</option>
+                <option value="SO">Somalia</option>
+                <option value="ZA">South Africa</option>
+                <option value="GS">South Georgia and the South Sandwich Islands</option>
+                <option value="SS">South Sudan</option>
+                <option value="ES">Spain</option>
+                <option value="LK">Sri Lanka</option>
+                <option value="SD">Sudan</option>
+                <option value="SR">Suriname</option>
+                <option value="SJ">Svalbard and Jan Mayen</option>
+                <option value="SZ">Swaziland</option>
+                <option value="SE">Sweden</option>
+                <option value="CH">Switzerland</option>
+                <option value="SY">Syrian Arab Republic</option>
+                <option value="TW">Taiwan, Province of China</option>
+                <option value="TJ">Tajikistan</option>
+                <option value="TZ">Tanzania, United Republic of</option>
+                <option value="TH">Thailand</option>
+                <option value="TL">Timor-Leste</option>
+                <option value="TG">Togo</option>
+                <option value="TK">Tokelau</option>
+                <option value="TO">Tonga</option>
+                <option value="TT">Trinidad and Tobago</option>
+                <option value="TN">Tunisia</option>
+                <option value="TR">Turkey</option>
+                <option value="TM">Turkmenistan</option>
+                <option value="TC">Turks and Caicos Islands</option>
+                <option value="TV">Tuvalu</option>
+                <option value="UG">Uganda</option>
+                <option value="UA">Ukraine</option>
+                <option value="AE">United Arab Emirates</option>
+                <option value="GB">United Kingdom</option>
+                <option value="US">United States</option>
+                <option value="UM">United States Minor Outlying Islands</option>
+                <option value="UY">Uruguay</option>
+                <option value="UZ">Uzbekistan</option>
+                <option value="VU">Vanuatu</option>
+                <option value="VE">Venezuela</option>
+                <option value="VN">Viet Nam</option>
+                <option value="VG">Virgin Islands, British</option>
+                <option value="VI">Virgin Islands, U.s.</option>
+                <option value="WF">Wallis and Futuna</option>
+                <option value="EH">Western Sahara</option>
+                <option value="YE">Yemen</option>
+                <option value="ZM">Zambia</option>
+                <option value="ZW">Zimbabwe</option>
+            
+            </select>
+            <span class="arrow-icon">
+                <i class="fas fa-chevron-down"></i>
+            </span>
+        </div>  
+
       </div>
     </div>
     <div class="wrapper-oneShiping mb-14">
@@ -2732,8 +3138,6 @@ function addDelivery() {
   </div>
 `;
       optionDiv.innerHTML = div;
-
-      // text area add options
 
       return optionDiv;
     }
@@ -3099,101 +3503,3 @@ addDiscount();
 //     },
 //   });
 // }
-
-// // rearrangeHandlerVideo();
-// function rearrangeHandlerAudio() {
-//   let audioPreviewContainer = document.querySelector("#audio-preview");
-//   new Sortable(audioPreviewContainer, {
-//     animation: 150,
-//     handle: ".audio", // Selector untuk item yang dapat di-drag
-//     ghostClass: "ghost",
-//     forceFallback: true,
-//     onStart: function (evt) {
-//       document.documentElement.classList.add("draggable-cursor");
-//       $("[data-toggle=tooltip]").tooltip("hide");
-//       $("[data-toggle=tooltip]").tooltip("disable");
-//     },
-//     // Restores default page cursor
-//     onEnd: function (evt) {
-//       document.documentElement.classList.remove("draggable-cursor");
-//       $("[data-toggle=tooltip]").tooltip("enable");
-//     },
-//   });
-// }
-
-// // Panggil fungsi setelah dokumen dimuat
-// document.addEventListener("DOMContentLoaded", function () {
-//   rearrangeHandlerAudio();
-// });
-
-document.addEventListener("DOMContentLoaded", function () {
-  var sortableList = new Sortable(document.getElementById("sortable-list"), {
-    animation: 150, // Durasi animasi saat item diurutkan (ms)
-    forceFallback: true,
-    ghostClass: "ghost",
-
-    onStart: function (evt) {
-      document.documentElement.classList.add("draggable-cursor");
-    },
-    // Restores default page cursor
-    onEnd: function (evt) {
-      document.documentElement.classList.remove("draggable-cursor");
-    },
-  });
-
-  // Fungsi untuk menambahkan audio ke daftar
-  function addAudio(src, fileName) {
-    var listItem = document.createElement("li");
-    listItem.classList.add("audio-item");
-    listItem.innerHTML = `
-          <div class="audio-controls"  data-tooltip="tooltip" data-placement="top"  title="${fileName}">
-              <audio controls >
-                  <source src="${src}" type="audio/mp3">
-                  Your browser does not support the audio tag.
-              </audio>
- <i class="fas fa-trash-alt  item-delete-audio  delete-icon"  data-tooltip="tooltip" data-placement="top"  title="Delete it" ></i>
-          </div>
-      `;
-    sortableList.el.appendChild(listItem);
-    // Tambahkan event handler onclick ke ikon delete
-    var deleteIcon = listItem.querySelector(".delete-icon");
-    deleteIcon.addEventListener("click", function () {
-      deleteAudio(listItem);
-    });
-    $(".audio-controls").tooltip();
-    $(".item-delete-audio").tooltip();
-
-    $(".item-delete-audio").on("click", function () {
-      $(this).tooltip("hide");
-    });
-    $(".audio-controls").on("click", function () {
-      $(this).tooltip("hide");
-      console.log(this);
-    });
-  }
-  // Fungsi untuk menghapus audio dari daftar
-  function deleteAudio(element) {
-    element.remove(); // Menggunakan metode remove() untuk menghapus elemen dari DOM
-    sortableList.sort(); // Memanggil fungsi sort() untuk memberitahu Sortable.js tentang perubahan
-  }
-
-  // Fungsi untuk menghandle event upload audio
-  document
-    .getElementById("uploadFileAudio")
-    .addEventListener("change", function (event) {
-      var file = event.target.files[0];
-      if (file) {
-        var objectURL = URL.createObjectURL(file);
-        addAudio(objectURL, file.name);
-        // Reset nilai input file untuk memungkinkan upload file yang sama
-        event.target.value = "";
-      }
-    });
-
-  // Contoh penggunaan hasil urutan setelah diurutkan
-  document
-    .getElementById("sortable-list")
-    .addEventListener("sortupdate", function () {
-      // Lakukan sesuatu dengan urutan audio yang sudah diurutkan
-    });
-});

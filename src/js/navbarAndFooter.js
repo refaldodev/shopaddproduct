@@ -86,6 +86,14 @@ $(document).ready(function () {
   $(".type").on("select2:close", function (e) {
     $(e.target).parent().toggleClass("rotate");
   });
+
+  $(".destination").on("select2:open", function (e) {
+    $(e.target).parent().toggleClass("rotate");
+  });
+  $(".destination").on("select2:close", function (e) {
+    $(e.target).parent().toggleClass("rotate");
+  });
+
   $(".discount").on("select2:open", function (e) {
     $(e.target).parent().toggleClass("rotate");
   });

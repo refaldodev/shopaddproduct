@@ -214,9 +214,9 @@ input::placeholder {
 
 .phone-container {
   height: 680px;
-  width: 331px;
+  width: 349px;
   position: sticky;
-  top: 0.9rem;
+  top: 4.5rem;
   pointer-events: all;
   border: 15px solid black;
   border-radius: 50px;
@@ -2294,7 +2294,7 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   .wrapper-video .profile-video-container img[src=""] {
     display: none;
   }
-  .wrapper-video .custom-position-iconVideo {
+  .wrapper-video .iconVideo {
     position: relative;
     left: 50%;
     color: rgba(0, 0, 0, 0.3);
@@ -4210,6 +4210,10 @@ main .content-wrapper .nav-tabs .nav-item .nav-link {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   padding: 15px 20px 20px 20px;
+}
+
+.wrapper-price .trumbowyg-box {
+  margin-bottom: 12px;
 }
 
 .wrapper-questions {

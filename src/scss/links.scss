@@ -691,7 +691,7 @@ main {
         display: none;
       }
     }
-    .custom-position-iconVideo {
+    .iconVideo {
       position: relative;
       left: 50%;
       color: rgba(0, 0, 0, 0.3);
@@ -2806,6 +2806,10 @@ main {
   -o-border-radius: 10px;
   padding: 15px 20px 20px 20px;
 }
+.wrapper-price .trumbowyg-box {
+  margin-bottom: 12px;
+}
+
 // wrapper-price
 .wrapper-questions {
   border: 1px solid #b8b8b8;
