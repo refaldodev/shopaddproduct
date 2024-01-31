@@ -2486,7 +2486,7 @@
 <!-- </p> -->
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse15" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse15">
-  <button class="btn button-AddLink " id="button-AddWebhook" type="button" onclick="showAddWebhook()">Add Webhook</button>
+  <button class="btn button-AddLink " id="button-AddWebhook" type="button" >Add Webhook</button>
   <div id="wrapper-addWebhokLink">
     <div class="wrapper-form wrapper-form__Webhook  mt-15" > 
       <div class="wrapper-addWebhok mb-14">
@@ -3165,9 +3165,9 @@ actionCopy ()
 // $("body").tooltip({ selector: '[data-toggle=tooltip]' });
 $(document).ready(function () {
 
-$('body').tooltip({
-    selector: '.item-icon'
-});
+
+$(".item-icon").tooltip();
+
 // $('body').tooltip({
 //     selector: '.audio-controls'
 // });
@@ -3178,8 +3178,14 @@ $('body').tooltip({
     selector: '#wrapper-cover-image'
 });
 
-$('body').tooltip({
-    selector: '.icon-deleteSingle'
+// $('body').tooltip({
+//     selector: '.icon-deleteSingle'
+// });
+$(".hover-tooltips").tooltip();
+$(".icon-deleteSingle").tooltip();
+
+$(".icon-deleteSingle").on("click", function () {
+  $(this).tooltip("hide");
 });
 $('body').tooltip({
     selector: '.hover-tooltips'
@@ -3197,6 +3203,26 @@ $(".wrapperImg").tooltip();
 $(".delete-elementShipping").tooltip();
     
 $(".delete-elementShipping").on("click", function () {
+  $(this).tooltip("hide");
+});
+ $(".item-icon-deleteMultiple2").tooltip();
+
+      $(".item-icon-deleteMultiple2").on("click", function () {
+        $(this).tooltip("hide");
+      });
+      $(".item-icon-deleteMultipleBonus").tooltip();
+
+$(".item-icon-deleteMultipleBonus").on("click", function () {
+  $(this).tooltip("hide");
+});
+      $(".item-icon-deleteMultiple").tooltip();
+
+      $(".item-icon-deleteMultiple").on("click", function () {
+        $(this).tooltip("hide");
+      });
+      $(".item-iconDeleteDiscount").tooltip();
+
+$(".item-iconDeleteDiscount").on("click", function () {
   $(this).tooltip("hide");
 });
 </script>

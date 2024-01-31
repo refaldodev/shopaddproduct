@@ -1084,7 +1084,11 @@ function addOption1() {
       if (clickedIcon.classList.contains("delete-element")) {
         // $("body").tooltip("hide");
 
-        $(clickedIcon).tooltip("hide");
+        $(".item-icon").tooltip();
+
+        $(".item-icon").on("click", function () {
+          $(this).tooltip("hide");
+        });
         item.remove();
         // $("body").tooltip("show");
       }
@@ -1102,6 +1106,11 @@ function addOption1() {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
       textareaMultiple(optionCount);
+      $(".item-icon").tooltip();
+
+      $(".item-icon").on("click", function () {
+        $(this).tooltip("hide");
+      });
       // var toolbarOptions = [
       //   // ["bold", "italic", "underline"], // toggled buttons
       //   [
@@ -1262,8 +1271,13 @@ function addOption2() {
       }
 
       if (clickedIcon.classList.contains("delete-element")) {
-        $(clickedIcon).tooltip("hide");
+        // $(clickedIcon).tooltip("hide");
         item.remove();
+        $(".item-icon").tooltip();
+
+        $(".item-icon").on("click", function () {
+          $(this).tooltip("hide");
+        });
       }
     }
   });
@@ -1278,6 +1292,11 @@ function addOption2() {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
       textareaMultiple(optionCount);
+      $(".item-icon").tooltip();
+
+      $(".item-icon").on("click", function () {
+        $(this).tooltip("hide");
+      });
       $(`#editorContainer${optionCount}`).trumbowyg({
         btns: [
           ["bold", "italic", "underline"],
@@ -1291,7 +1310,6 @@ function addOption2() {
       });
       optionCount++;
       descriptionCount++;
-      console.log("oke");
     });
 
     function textareaMultiple(optionCount) {
@@ -1453,8 +1471,12 @@ function addLink() {
     btnAddLink.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       uploadedFilesContainer.appendChild(optionDiv);
+      $(".icon-deleteSingle").tooltip();
+      $(".hover-tooltips").tooltip();
 
-      console.log("oke");
+      $(".icon-deleteSingle").on("click", function () {
+        $(this).tooltip("hide");
+      });
     });
     function createOptionDiv() {
       var inputValue = document.getElementById("inputAddLink").value;
@@ -1469,7 +1491,7 @@ function addLink() {
 </button>
 </div>
 <div class="wrapperName-file">
-  <p class="name-file color-a" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
+  <p class="name-file color-a hover-tooltips" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
 </div>
 <div class="btn-event d-flex">
 <a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square icon-deleteSingle hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
@@ -1524,8 +1546,12 @@ function addLinkMultiplePrice() {
     btnAddLink.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       uploadedFilesContainer.appendChild(optionDiv);
+      $(".hover-tooltips").tooltip();
+      $(".item-icon-deleteMultiple").tooltip();
 
-      console.log("oke");
+      $(".item-icon-deleteMultiple").on("click", function () {
+        $(this).tooltip("hide");
+      });
     });
     function createOptionDiv() {
       var inputValue = document.getElementById(
@@ -1544,7 +1570,7 @@ function addLinkMultiplePrice() {
 </button>
 </div>
 <div class="wrapperName-file">
-  <p class="name-file color-a" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
+  <p class="name-file color-a hover-tooltips" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
 </div>
 <div class="btn-event d-flex">
 <a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
@@ -1602,8 +1628,12 @@ function addLinkMultiplePrice2() {
     btnAddLink.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       uploadedFilesContainer.appendChild(optionDiv);
+      $(".hover-tooltips").tooltip();
+      $(".item-icon-deleteMultiple2").tooltip();
 
-      console.log("oke");
+      $(".item-icon-deleteMultiple2").on("click", function () {
+        $(this).tooltip("hide");
+      });
     });
     function createOptionDiv() {
       var inputValue = document.getElementById(
@@ -1622,7 +1652,7 @@ function addLinkMultiplePrice2() {
 </button>
 </div>
 <div class="wrapperName-file">
-  <p class="name-file color-a" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
+  <p class="name-file color-a hover-tooltips" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
 </div>
 <div class="btn-event d-flex">
 <a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
@@ -1682,8 +1712,12 @@ function addLinkMultipleBonus() {
     btnAddLink.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       uploadedFilesContainer.appendChild(optionDiv);
+      $(".hover-tooltips").tooltip();
+      $(".item-icon-deleteMultipleBonus").tooltip();
 
-      console.log("oke");
+      $(".item-icon-deleteMultipleBonus").on("click", function () {
+        $(this).tooltip("hide");
+      });
     });
     function createOptionDiv() {
       var inputValue = document.getElementById("inputAddLinkBonus").value;
@@ -1698,7 +1732,7 @@ function addLinkMultipleBonus() {
 </button>
 </div>
 <div class="wrapperName-file">
-  <p class="name-file color-a" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
+  <p class="name-file color-a hover-tooltips" data-tooltip="tooltip" data-placement="bottom" title="${inputValue}" > <a href="${inputValue}" target="_blank">${inputValue} </a></p>
 </div>
 <div class="btn-event d-flex">
 <a href="${inputValue}" target="_blank" ><i class="fa-solid fa-up-right-from-square hover-tooltips "  data-tooltip="tooltip" data-placement="top" title="Open link"></i> </a>
@@ -1858,6 +1892,12 @@ function uploadFileSingle() {
       const uploadedFile = createUploadedFileElement(fileName);
       uploadedFilesContainer.appendChild(uploadedFile);
       fileInputLabel.textContent = "Upload File"; // Mengubah label setelah file dipilih
+      $(".hover-tooltips").tooltip();
+      $(".icon-deleteSingle").tooltip();
+
+      $(".icon-deleteSingle").on("click", function () {
+        $(this).tooltip("hide");
+      });
     } else {
       // Jika pengguna membatalkan pemilihan file, reset tampilan
       uploadedFilesContainer.innerHTML = "";
@@ -1920,6 +1960,12 @@ function uploadFileMultiplePrice() {
       const uploadedFile = createUploadedFileElement(fileName);
       uploadedFilesContainer.appendChild(uploadedFile);
       fileInputLabel.textContent = "Upload File"; // Mengubah label setelah file dipilih
+      $(".hover-tooltips").tooltip();
+
+      $(".item-icon-deleteMultiple").tooltip();
+      $(".item-icon-deleteMultiple").on("click", function () {
+        $(this).tooltip("hide");
+      });
     } else {
       // Jika pengguna membatalkan pemilihan file, reset tampilan
       uploadedFilesContainer.innerHTML = "";
@@ -1981,6 +2027,12 @@ function uploadFileMultiplePrice2() {
       const uploadedFile = createUploadedFileElement(fileName);
       uploadedFilesContainer.appendChild(uploadedFile);
       fileInputLabel.textContent = "Upload File"; // Mengubah label setelah file dipilih
+      $(".hover-tooltips").tooltip();
+
+      $(".item-icon-deleteMultiple2").tooltip();
+      $(".item-icon-deleteMultiple2").on("click", function () {
+        $(this).tooltip("hide");
+      });
     } else {
       // Jika pengguna membatalkan pemilihan file, reset tampilan
       uploadedFilesContainer.innerHTML = "";
@@ -2042,6 +2094,12 @@ function uploadFileMultipleBonus() {
       const uploadedFile = createUploadedFileElement(fileName);
       uploadedFilesContainer.appendChild(uploadedFile);
       fileInputLabel.textContent = "Upload File"; // Mengubah label setelah file dipilih
+      $(".hover-tooltips").tooltip();
+
+      $(".item-icon-deleteMultipleBonus").tooltip();
+      $(".item-icon-deleteMultipleBonus").on("click", function () {
+        $(this).tooltip("hide");
+      });
     } else {
       // Jika pengguna membatalkan pemilihan file, reset tampilan
       uploadedFilesContainer.innerHTML = "";
@@ -2053,13 +2111,13 @@ function uploadFileMultipleBonus() {
     const elementFile = `
           
    
-    <div class="wrapper-drag drag-btnBonus " style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="" data-original-title="Drag to reorder">
+    <div class="wrapper-drag drag-btnBonus hover-tooltips" style="cursor: grab;" data-tooltip="tooltip" data-placement="top" title="Drag to reorder">
       <button class=" drag-btnElement btn hover-tooltips " style="cursor: grab;">        
         <i class="fas fa-ellipsis-v"></i>      
     </button>
     </div>
     <div class="wrapperName-file">
-      <p class="name-file" data-tooltip="tooltip" data-placement="bottom" title="" data-original-title="${fileName}">${fileName}</p>
+      <p class="name-file hover-tooltips" data-tooltip="tooltip" data-placement="bottom" title="${fileName}">${fileName}</p>
     </div>
     <div class="btn-event d-flex">
               
@@ -2219,7 +2277,6 @@ function uploadCover() {
   const deleteButton = document.getElementById("confirm-delete-btnCoverImg");
   deleteButton.addEventListener("click", function () {
     deleteImageItem();
-    console.log("oke");
   });
 }
 
@@ -2716,6 +2773,9 @@ function addQuestions() {
       }
 
       if (clickedIcon.classList.contains("delete-element-question")) {
+        $(".item-icon-question").on("click", function () {
+          $(this).tooltip("hide");
+        });
         item.remove();
       }
     }
@@ -2728,9 +2788,15 @@ function addQuestions() {
 
     addButton.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
+
       container.appendChild(optionDiv);
+      $(".item-icon-question").tooltip();
+
+      $(".item-icon-question").on("click", function () {
+        $(this).tooltip("hide");
+      });
       optionCount++;
-      descriptionCount++;
+      // descriptionCount++;
 
       // text area
       $("textarea.titleQuestion")
@@ -2827,7 +2893,11 @@ function addDelivery() {
     addButton.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
+      $(".delete-elementShipping").tooltip();
 
+      $(".delete-elementShipping").on("click", function () {
+        $(this).tooltip("hide");
+      });
       $(`.destination${optionCount}`).select2({
         tags: true,
         // tokenSeparators: [",", " "],
@@ -3148,11 +3218,7 @@ function addDelivery() {
   </div>
 `;
       optionDiv.innerHTML = div;
-      $(".delete-elementShipping").tooltip();
 
-      $(".delete-elementShipping").on("click", function () {
-        $(this).tooltip("hide");
-      });
       return optionDiv;
     }
 
@@ -3187,8 +3253,13 @@ function addWebhokLink() {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
       textareaWebhook(optionCount);
+      $(".delete-elementWebhook").tooltip();
+
+      $(".delete-elementWebhook").on("click", function () {
+        $(this).tooltip("hide");
+      });
       optionCount++;
-      descriptionCount++;
+      // descriptionCount++;
 
       // text area
     });
@@ -3371,7 +3442,6 @@ function uploadThumbnail() {
   const deleteButton = document.getElementById("confirm-delete-btnThumbnail");
   deleteButton.addEventListener("click", function () {
     deleteImageItem();
-    console.log("oke");
   });
 }
 
@@ -3400,6 +3470,11 @@ function addDiscount() {
     addButton.addEventListener("click", () => {
       const optionDiv = createOptionDiv();
       container.appendChild(optionDiv);
+      $(".item-iconDeleteDiscount").tooltip();
+
+      $(".item-iconDeleteDiscount").on("click", function () {
+        $(this).tooltip("hide");
+      });
       changeDiscount(optionCount, amountCount1, amountCount2);
       $(`.discount${optionCount}`).select2({
         minimumResultsForSearch: -1,
@@ -3419,7 +3494,6 @@ function addDiscount() {
         if (selectedValue === "Percentage") {
           $(`#amoundDiscount${amountCount1}`).addClass("d-block");
           $(`#amoundDiscount${amountCount2}`).removeClass("d-block");
-          console.log("oke");
         } else if (selectedValue === "Specific amount") {
           $(`#amoundDiscount${amountCount1}`).removeClass("d-block");
           $(`#amoundDiscount${amountCount1}`).addClass("display-none");
