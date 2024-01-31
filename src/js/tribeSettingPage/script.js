@@ -2368,7 +2368,8 @@ document.addEventListener("DOMContentLoaded", function () {
       animation: 150, // Durasi animasi saat item diurutkan (ms)
       forceFallback: true,
       ghostClass: "ghost",
-
+      filter: ".delete-iconVideo",
+      handle: ".drag-video",
       onStart: function (evt) {
         document.documentElement.classList.add("draggable-cursor");
       },
@@ -2390,8 +2391,10 @@ document.addEventListener("DOMContentLoaded", function () {
                   <iframe class="video-iframe" src="${getEmbeddedVideoUrl(
                     videoLink
                   )}" frameborder="0" allowfullscreen></iframe>
-                 
+                 <div class="d-flex justify-content-center " style="margin-top:8px;">
                   <i class="fas fa-trash-alt  delete-iconVideo  " data-tooltip="tooltip" data-placement="right" title="Delete it" onclick="deleteVideo(this)"></i>
+                  <i class="fa-solid fa-grip-vertical drag-video" data-tooltip="tooltip" data-placement="right" title="Drag video"></i>
+                  </div>
               </div>
           `;
       sortableListVideo.el.appendChild(listItemVideo);
@@ -2405,7 +2408,11 @@ document.addEventListener("DOMContentLoaded", function () {
       $(".delete-iconVideo").on("click", function () {
         $(this).tooltip("hide");
       });
+      $(".drag-video").tooltip();
 
+      $(".drag-video").on("click", function () {
+        $(this).tooltip("hide");
+      });
       // Reset nilai input setelah menambahkan video
       videoLinkInput.value = "";
     }
@@ -2440,7 +2447,7 @@ document.addEventListener("DOMContentLoaded", function () {
     animation: 150, // Durasi animasi saat item diurutkan (ms)
     forceFallback: true,
     ghostClass: "ghost",
-
+    filter: ".item-delete-audio",
     onStart: function (evt) {
       document.documentElement.classList.add("draggable-cursor");
     },
@@ -2462,6 +2469,9 @@ document.addEventListener("DOMContentLoaded", function () {
                   Your browser does not support the audio tag.
               </audio>
  <i class="fas fa-trash-alt  item-delete-audio  delete-icon"  data-tooltip="tooltip" data-placement="top"  title="Delete it" ></i>
+ 
+ 
+
           </div>
       `;
     sortableList.el.appendChild(listItem);
@@ -3134,11 +3144,15 @@ function addDelivery() {
   </div>
   <div class="wrapperEvent d-flex mt-15">
  
-    <i class="fa-regular fa-trash-can mr-20 delete-elementShipping  item-iconShipping" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
+    <i class="fa-regular fa-trash-can mr-20 delete-elementShipping  item-iconShipping" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
   </div>
 `;
       optionDiv.innerHTML = div;
+      $(".delete-elementShipping").tooltip();
 
+      $(".delete-elementShipping").on("click", function () {
+        $(this).tooltip("hide");
+      });
       return optionDiv;
     }
 
