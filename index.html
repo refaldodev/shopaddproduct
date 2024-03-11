@@ -1117,10 +1117,14 @@
             </div>
             <!-- container radio -->
               <div class="wrapper-form " id="element-buyers">
-                <div class="collapse-buyers collapse-buyersArrow mb-2 collapsed" data-toggle="collapse" data-target="#element-buyersCollapse" aria-expanded="false" aria-controls="element-buyersCollapse">
-                <!-- <p class="form-title "> -->
+                <div class="collapse-buyers collapse-buyersArrow mb-2 collapsed d-flex justify-content-between " data-toggle="collapse" data-target="#element-buyersCollapse" aria-expanded="false" aria-controls="element-buyersCollapse" onclick="$('#collapsed-chevronBuyers').toggleClass('fa-rotate-180')">
+                <p class="form-title ">
+              
                   Buyers can pay what they want
-              <!-- </p> -->
+              </p>
+              <span class="arrow-iconAdditional">
+                <i class="fas fa-chevron-down" id="collapsed-chevronBuyers"></i>
+            </span>
             </div>
               <div class="wrapper-buyers collapse " id="element-buyersCollapse" aria-labelledby="element-buyers" data-parent="#element-buyers">
               <div class="wrapper-switch mt-0"> 
@@ -1557,7 +1561,7 @@
                  
                 <div class="wrapper-elementInput mb-20"  id="wrapper-elementInput"  >
                   
-                  <textarea type="text" id="videoLinkInput" rows="1" class="form-control mt-9 inputAddLink mb-10 " ></textarea>
+                  <textarea type="text" id="videoLinkInput" rows="1" class="form-control mt-9 inputAddLink mb-10 " placeholder="Youtube Video Link"></textarea>
                   <button class="btn button-AddLink "  type="button" onclick="addVideo()" >Add Video</button>
                 </div>
     
@@ -1833,11 +1837,11 @@
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse7" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse7">
   <div class="font-weight-normal mb-14 ">
-  <p class="fs-14">Minimum</p>
+  <p class="fs-14 lh-140">Minimum</p>
   <input type="text" class="quantity" id="inputMinimunAmount" >
 </div>
 <div class="font-weight-normal  ">
-  <p class="fs-14">Maximum</p>
+  <p class="fs-14 lh-140">Maximum</p>
   <input type="text" class="quantity" id="inputMaximumAmount" >
 </div>
 </div>
@@ -2315,8 +2319,8 @@
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse11" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse11">
   <textarea type="text" id="titlebuttonText" rows="1" class="form-control mt-9 messageInput" maxlength="30" ></textarea>
-  <div class="d-flex align-items-start flex  justify-content-between">
-    <p class="f-size12   font-weight-normal" style="flex:1;">If empty, it will show the default text “Buy Now”</p>
+  <div class="d-flex align-items-start flex  justify-content-between ">
+    <p class="f-size12   font-weight-normal  lh-140 mt-1" style="flex:1;">If empty, it will show the default text “Buy Now”</p>
     <p class="countNumber" id="countbuttonText">0  / 30</p>
 </div>
 </div>
@@ -2346,7 +2350,7 @@
     On
     </span>
   </div>
-  <p class="fs-14 font-weight-normal">If enabled, what you sell will not be displayed on your page, only accessible via direct link.</p>
+  <p class="fs-14 font-weight-normal lh-140">If enabled, what you sell will not be displayed on your page, only accessible via direct link.</p>
   <div class="wrapper-simplePage mt-2">
   <div class="wrappper__card--itemModal modal-link-simplePage ">
     <div class="link-urlModal fs16">
@@ -2392,7 +2396,7 @@
     On
     </span>
   </div>
-  <p class="fs-14 font-weight-normal">Available for purchase after this date</p>
+  <p class="fs-14 font-weight-normal lh-140 mb-1">Available for purchase after this date</p>
   <div class="wrapper-date mb-1">
     <select name="dateYear" id="" class="opacity date ">
       <option value="2022">2022</option>
@@ -2578,12 +2582,12 @@
       <input type="text" id="colorPicker-text" class="colorPicker" value="black">
       <p class="btn-color-text font-weight-normal fs-14 " id="btn-color-txt" >Text color</p>
     </div>
-    <p class="btn-color-desc f-size12 font-weight-normal">Click the color to change it</p>
+    <p class="btn-color-desc f-size12 font-weight-normal lh-140">Click the color to change it</p>
   </div>
 </div>
 </div>
-<div class="wrapper-form mb-30 " id="wrapper-element-collapse18">
-  <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron22').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse18" aria-expanded="false" aria-controls="element-collapse18">
+<div class="wrapper-form  " id="wrapper-element-collapse18">
+  <div class="collapse-buyers   collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron22').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse18" aria-expanded="false" aria-controls="element-collapse18">
   <!-- <p class="form-title "> -->
     
     
@@ -2595,7 +2599,7 @@
   </span>
 <!-- </p> -->
 </div>
-<div class="wrapper-buyers collapse " id="element-collapse18" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse18">
+<div class="wrapper-buyers collapse mt-2" id="element-collapse18" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse18">
   <div class="wrapper-switch mt-0 mb-0"> 
     <span class="switch-text">
     Off
@@ -2607,7 +2611,7 @@
     On
     </span>
   </div>
-  <p class="f-size12   font-weight-normal">Customize the page title and description to optimize for keywords and rank better in search results</p>
+  <p class="f-size12   font-weight-normal lh-140 mt-1">Customize the page title and description to optimize for keywords and rank better in search results</p>
       <div class="wrapper-form mb-9 mt-15">
         <p class="form-title">
           Page Title
@@ -2616,7 +2620,7 @@
 
       <textarea type="text" id="PageTittleInput" rows="1" class="form-control mt-9 messageInput" maxlength="60" style="height:38px;overflow-y:hidden;"></textarea>
       <div class="d-flex align-items-start flex  justify-content-between">
-        <p class="f-size12   font-weight-normal" style="flex:1;">If empty, we'll use the title from the "General Info" section.</p>
+        <p class="f-size12   font-weight-normal lh-140 mt-1" style="flex:1;">If empty, we'll use the title from the "General Info" section.</p>
         <p class="countNumber" id="countPageTittle">0  / 60</p>
     </div>
     </div>
@@ -2628,7 +2632,7 @@
 
     <textarea type="text" id="inputPageDesc" rows="1" class="form-control mt-9 messageInput" maxlength="155" style="height:38px;overflow-y:hidden;"></textarea>
     <div class="d-flex align-items-start flex  justify-content-between">
-      <p class="f-size12   font-weight-normal" style="flex:1;">If empty, we'll use the description from the "General Info" section.</p>
+      <p class="f-size12   font-weight-normal lh-140 mt-1" style="flex:1;">If empty, we'll use the description from the "General Info" section.</p>
       <p class="countNumber" id="countPageDesc">0  / 155</p>
   </div>
   </div>
@@ -2654,7 +2658,7 @@
             </div>
           </div>
           </div>
-          <ul class="image-ul">
+          <ul class="image-ul tumbnail-image">
             <li> <span class="text-ulLi">Only this format: JPG, JPEG, PNG   </span></li>
             <li> <span class="text-ulLi">Max file size: 2MB   </span></li>
             <li> <span class="text-ulLi">Minimum image width: 1200px </span></li>
