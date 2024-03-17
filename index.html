@@ -910,7 +910,7 @@
                     <input type="radio" name="radioGroup" onclick="cekRadioButton(1)" >
                     <span class="fake-radio"></span>
                 </label>
-                <div class="wrapper-form wrappper-event mt-2" style="padding-left:28px" id="wrapperForm1"> 
+                <div class="wrapper-form wrappper-event mt-2 mb-26" style="padding-left:28px" id="wrapperForm1"> 
                   <div class="input-group ">
                     <div class="input-group-prepend ">
                       <div class="input-group-text border-custom-currency">SGD</div>
@@ -967,10 +967,13 @@
 
                 <!-- multiple prices editor -->
                 <div class="wrapper-form mb-0" id="heading-element">
-                  <div class="collapse-text form-title  FSize collapsed" data-toggle="collapse" data-target="#collapse-element" aria-expanded="false" aria-controls="collapse-element">
-                  
+                  <div class="collapse-text form-title  FSize collapsed d-flex" data-toggle="collapse" data-target="#collapse-element" aria-expanded="false" aria-controls="collapse-element" onClick="$('#collapsed-chevronBuyers').toggleClass('fa-rotate-180')">
+                  <div class="text-desc">
                       Description
-                  
+                    </div>
+                    <span class="arrow-iconDesc">
+                      <i class="fas fa-chevron-down" id="collapsed-chevronBuyers"></i>
+                  </span>
                   </div>
                   <div class="collapse" id="collapse-element" aria-labelledby="heading-element" data-parent="#heading-element">
                 <div id="editorContainer2" style="margin-bottom: 12px;"></div>
@@ -984,7 +987,7 @@
                 
             </div>
 
-            <div class="wrapperEvent d-flex mt-7px">
+            <div class="wrapperEvent d-flex mt-12px">
               <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up" data-toggle="tooltip" data-placement="top" title="Move position up"></i>
               <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down" data-toggle="tooltip" data-placement="top" title="Move position down"></i>
               <i class="fa-regular fa-trash-can mr-20 delete-element item-icon" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
@@ -995,7 +998,7 @@
                 
               </div>
 
-              <div class="addOptions">
+              <div class="addOptions mb-26 ">
                 <button class="addOptionsBtn btn" id="addOptionsBtnPrice1">Add Option</button>
               </div>
             </div>
@@ -1069,10 +1072,15 @@
   
                   <!-- multiple prices editor -->
                   <div class="wrapper-form mb-0" id="heading-element199">
-                    <div class="collapse-text form-title  FSize collapsed" data-toggle="collapse" data-target="#collapse-element199" aria-expanded="false" aria-controls="collapse-element199">
+                    <div class="collapse-text form-title d-flex FSize collapsed" data-toggle="collapse" data-target="#collapse-element199" aria-expanded="false" aria-controls="collapse-element199" onClick="$('#collapsed-chevronBuyers2').toggleClass('fa-rotate-180')">
                     
-                        Description
-                    
+                        
+                        <div class="text-desc">
+                          Description
+                        </div>
+                        <span class="arrow-iconDesc">
+                          <i class="fas fa-chevron-down" id="collapsed-chevronBuyers2"></i>
+                      </span>
                     </div>
                     <div class="collapse" id="collapse-element199" aria-labelledby="heading-element" data-parent="#heading-element199">
                   <div id="editorContainer199" style="margin-bottom: 12px;"></div>
@@ -1086,7 +1094,7 @@
                   
               </div>
   
-              <div class="wrapperEvent d-flex mt-7px">
+              <div class="wrapperEvent d-flex mt-12px">
                 <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up" data-toggle="tooltip" data-placement="top" title="" data-original-title="Move position up"></i>
                 <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down" data-toggle="tooltip" data-placement="top" title="" data-original-title="Move position down"></i>
                 <i class="fa-regular fa-trash-can mr-20 delete-element item-icon" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete it"></i>
@@ -1096,7 +1104,7 @@
                   </div>
                   
                 </div>
-                <div class="addOptions">
+                <div class="addOptions mb-26 ">
                   <button class="addOptionsBtn btn" id="addOptionsBtnPrice2">Add Option</button>
                 </div>
               </div>
@@ -1127,7 +1135,7 @@
             </span>
             </div>
               <div class="wrapper-buyers collapse " id="element-buyersCollapse" aria-labelledby="element-buyers" data-parent="#element-buyers">
-              <div class="wrapper-switch mt-0"> 
+              <div class="wrapper-switch mt-0 mb-11"> 
                 <span class="switch-text">
                 Off
               </span>

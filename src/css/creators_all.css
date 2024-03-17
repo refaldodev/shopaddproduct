@@ -129,6 +129,9 @@ h6 {
 .mt-14 {
   margin-top: 14px;
 }
+.mt-12px {
+  margin-top: 12px;
+}
 .mb-10 {
   margin-bottom: 10px;
 }
@@ -138,6 +141,9 @@ h6 {
 .mb-25 {
   margin-bottom: 25px;
 }
+.mb-26 {
+  margin-bottom: 26px;
+}
 .mb-30 {
   margin-bottom: 30.25px;
 }
@@ -145,7 +151,7 @@ h6 {
   margin-left: 28px;
 }
 .mb-11 {
-  margin-bottom: 11px;
+  margin-bottom: 11px !important;
 }
 p {
   margin-bottom: 0;
@@ -1623,6 +1629,7 @@ a.btn.btn-primary {
   border-radius: 6px !important;
   height: 40px;
   border-color: #b8b8b8;
+  color: #000;
 }
 
 .form-control:focus {
@@ -2114,7 +2121,7 @@ main {
     transform: rotate(360deg);
   }
 }
-.collapse-text::after {
+/* .collapse-text::after {
   content: "\f078";
   color: #000;
   font-size: 12px !important;
@@ -2129,7 +2136,7 @@ main {
   color: #000;
   font-size: 12px !important;
   font-weight: 900;
-}
+} */
 .collapse-buyers {
   cursor: pointer;
 
@@ -2139,6 +2146,11 @@ main {
 /*  */
 .arrow-iconAdditional {
   font-size: 12px;
+  margin-top: 4px;
+}
+.arrow-iconDesc {
+  font-size: 13px;
+  margin-left: 5px;
 }
 /* add options */
 .addOptions {

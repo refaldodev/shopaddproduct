@@ -1061,6 +1061,9 @@ main {
           font-size: 16px;
           line-height: 140%;
           /* or 22px */
+          overflow-wrap: break-word !important;
+          word-wrap: break-word;
+          word-break: break-word;
           cursor: pointer;
           margin-bottom: 5px;
           color: #000000;
@@ -1539,6 +1542,9 @@ main {
           font-weight: 700;
           font-size: 16px;
           line-height: 140%;
+          overflow-wrap: break-word !important;
+          word-wrap: break-word;
+          word-break: break-word;
           /* or 22px */
 
           margin-bottom: 5px;
@@ -2078,6 +2084,9 @@ main {
           font-family: "Open Sans";
           font-style: normal;
           font-weight: 700;
+          overflow-wrap: break-word !important;
+          word-wrap: break-word;
+          word-break: break-word;
           font-size: 16px;
           line-height: 140%;
           /* or 22px */
@@ -2628,7 +2637,7 @@ main {
 // radio
 .textRadioBtn {
   line-height: 140%;
-  padding-top: 2px;
+  padding-top: 3px;
   font-size: 16px;
   color: black;
   font-weight: 700;
@@ -2636,7 +2645,7 @@ main {
 .radio-container {
   position: relative;
   line-height: 140%;
-  padding-left: 28px;
+  padding-left: 30px;
   display: block;
   cursor: pointer;
   font-family: "Open Sans";
@@ -2817,7 +2826,7 @@ main {
   padding: 15px 20px 20px 20px;
 }
 .wrapper-price .trumbowyg-box {
-  margin-bottom: 12px;
+  margin-bottom: 17px;
 }
 
 // wrapper-price
@@ -3040,4 +3049,5 @@ input.form-control.border-discount {
   min-height: 40px !important;
   font-size: 16px !important;
   line-height: 1.7 !important;
+  margin-bottom: 13px !important;
 }

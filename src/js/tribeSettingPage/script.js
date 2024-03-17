@@ -1209,9 +1209,14 @@ function addOption1() {
 
                 <!-- multiple prices editor -->
                 <div class="wrapper-form mb-0" id="heading-element${optionCount}">
-                  <div class="collapse-text form-title  FSize collapsed" data-toggle="collapse" data-target="#collapse-element${optionCount}" aria-expanded="false" aria-controls="collapse-element${optionCount}">
+                  <div class="collapse-text form-title  FSize collapsed d-flex" data-toggle="collapse" data-target="#collapse-element${optionCount}" aria-expanded="false" aria-controls="collapse-element${optionCount}" onClick="$('#collapsed-chevronBuyers${optionCount}').toggleClass('fa-rotate-180')">
                   
-                      Description
+                  <div class="text-desc">
+                  Description
+                </div>
+                <span class="arrow-iconDesc">
+                  <i class="fas fa-chevron-down" id="collapsed-chevronBuyers${optionCount}"></i>
+              </span>
                   
                   </div>
                   <div class="collapse" id="collapse-element${optionCount}" aria-labelledby="heading-element${optionCount}" data-parent="#heading-element${optionCount}">
@@ -1226,7 +1231,7 @@ function addOption1() {
                 
             </div>
 
-            <div class="wrapperEvent d-flex mt-5px">
+            <div class="wrapperEvent d-flex mt-12px">
               <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up" data-toggle="tooltip" data-placement="top" title="Move position up"></i>
               <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down" data-toggle="tooltip" data-placement="top" title="Move position down"></i>
               <i class="fa-regular fa-trash-can mr-20 delete-element item-icon" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
@@ -1375,9 +1380,14 @@ function addOption2() {
 
                 <!-- multiple prices editor -->
                 <div class="wrapper-form mb-0" id="heading-element${optionCount}">
-                  <div class="collapse-text form-title  FSize collapsed" data-toggle="collapse" data-target="#collapse-element${optionCount}" aria-expanded="false" aria-controls="collapse-element${optionCount}">
-                  
-                      Description
+                  <div class="collapse-text form-title  FSize collapsed d-flex" data-toggle="collapse" data-target="#collapse-element${optionCount}" aria-expanded="false" aria-controls="collapse-element${optionCount}" onClick="$('#collapsed-chevronBuyers${optionCount}').toggleClass('fa-rotate-180')">
+                  <div class="text-desc">
+                  Description
+                </div>
+                <span class="arrow-iconDesc">
+                  <i class="fas fa-chevron-down" id="collapsed-chevronBuyers${optionCount}"></i>
+              </span>
+                      
                   
                   </div>
                   <div class="collapse" id="collapse-element${optionCount}" aria-labelledby="heading-element${optionCount}" data-parent="#heading-element${optionCount}">
@@ -1392,7 +1402,7 @@ function addOption2() {
                 
             </div>
 
-            <div class="wrapperEvent d-flex mt-5px">
+            <div class="wrapperEvent d-flex mt-12px">
               <i class="fa-regular fa-circle-up mr-20 to-top item-icon" data-direction="up" data-toggle="tooltip" data-placement="top" title="Move position up"></i>
               <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon" data-direction="down" data-toggle="tooltip" data-placement="top" title="Move position down"></i>
               <i class="fa-regular fa-trash-can mr-20 delete-element item-icon" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
@@ -2826,7 +2836,7 @@ function addQuestions() {
           <p class="countNumber" id="counttitleQuestion${optionCount}">0  / 200</p>
       </div>
       </div>
-  <div class="wrapperEvent d-flex mt-5px">
+  <div class="wrapperEvent d-flex mt-12px">
     <i class="fa-regular fa-circle-up mr-20 to-top item-icon-question" data-direction="up" data-toggle="tooltip" data-placement="top" title="Move position up"></i>
     <i class="fa-regular fa-circle-down mr-20 to-bottom item-icon-question" data-direction="down" data-toggle="tooltip" data-placement="top" title="Move position down"></i>
     <i class="fa-regular fa-trash-can mr-20 delete-element-question item-icon-question" data-toggle="tooltip" data-placement="top" title="Delete it"></i>
