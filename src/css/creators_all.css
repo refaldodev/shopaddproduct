@@ -2308,6 +2308,9 @@ main {
 textarea {
   min-height: 36px !important;
 }
+textarea#messagetobuyyers {
+  min-height: 38px;
+}
 .img-preview {
   cursor: pointer;
 }

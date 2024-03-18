@@ -907,7 +907,7 @@
                 <label class="radio-container">
                     
                     <p class="textRadioBtn">One price</p>
-                    <input type="radio" name="radioGroup" onclick="cekRadioButton(1)" >
+                    <input type="radio" name="radioGroup" onclick="cekRadioButton(1)" id="radioBtn1" >
                     <span class="fake-radio"></span>
                 </label>
                 <div class="wrapper-form wrappper-event mt-2 mb-26" style="padding-left:28px" id="wrapperForm1"> 
@@ -928,7 +928,7 @@
                     
                     
                   <p class="textRadioBtn"> Multiple prices<span class="font-weight-normal"> (Buyer can only choose one) </span></p>
-                    <input type="radio" name="radioGroup" onclick="cekRadioButton(2)">
+                    <input type="radio" name="radioGroup" onclick="cekRadioButton(2)" id="radioBtn2">
                     <span class="fake-radio"></span>
                 </label>
                 <div class="wrappper-event" id="wrapperForm2">
@@ -1007,7 +1007,7 @@
                 <label class="radio-container">
                   
                   <p class="textRadioBtn">  Multiple prices<span class="font-weight-normal"> (Buyer can choose more than one or all) </span></p>
-                    <input type="radio" name="radioGroup" onclick="cekRadioButton(3)">
+                    <input type="radio" name="radioGroup" onclick="cekRadioButton(3)" id="radioBtn3">
                     <span class="fake-radio"></span>
                 </label>
                 <div class="wrappper-event" id="wrapperForm3">
@@ -1063,7 +1063,7 @@
                     </p>
                    
         
-                    <textarea type="text" id="titleMultiplePrices" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;"> </textarea>
+                    <textarea type="text" id="titleMultiplePrices" rows="1" class="form-control mt-9 messageInput" maxlength="200" style="height:84px;overflow-y:hidden;"></textarea>
                     <div class="d-flex align-items-start flex  justify-content-between">
                       <p class="error-textarea">Cannot be empty</p>
                       <p class="countNumber" id="counttitleMultiplePrices">0  / 200</p>
@@ -1114,7 +1114,7 @@
                 <label class="radio-container">
                   
                   <p class="textRadioBtn">Free</p>
-                    <input type="radio" name="radioGroup" onclick="cekRadioButton(4)">
+                    <input type="radio" name="radioGroup" onclick="cekRadioButton(4)" id="radioBtn4">
                     <span class="fake-radio"></span>
                 </label>
                 <div class="wrappper-event" id="wrapperForm4">
@@ -1664,7 +1664,7 @@
               <p class="mb-25 f-size14 lh-140 font-weight-normal">The following settings are optional. Set according to your needs.</pa>
 
               <div class="wrapper-form  mb-30" id="wrapper-element-collapse">
-                <div class="collapse-buyers  d-flex justify-content-between mb-2 collapsed" data-toggle="collapse" data-target="#element-collapse1" aria-expanded="false" aria-controls="element-collapse1" onClick="$('#collapsed-chevron').toggleClass('fa-rotate-180')">
+                <div class="collapse-buyers  addSettings d-flex justify-content-between mb-2 collapsed" data-toggle="collapse" data-target="#element-collapse1" aria-expanded="false" aria-controls="element-collapse1" onClick="$('#collapsed-chevron').toggleClass('fa-rotate-180')">
                 <p class="mr-6px lh-140">
                   Information that buyers need to know after purchasing
               </p>
@@ -1677,26 +1677,25 @@
                <p class="f-size12 lh-140 font-weight-normal ">For example: instructions for use, how to access, etc.</p>
             </div>
             </div>
-            <div class="wrapper-form  mb-30" id="wrapper-element-collapse2">
-              <div class="collapse-buyers  d-flex justify-content-between mb-2 collapsed" data-toggle="collapse" data-target="#element-collapse2" aria-expanded="false" aria-controls="element-collapse2" onClick="$('#collapsed-chevron1').toggleClass('fa-rotate-180')">
-              <!-- <p class="form-title "> -->
-                
-                <p class="mr-6px lh-140">
-                  Thank you message to buyers
-              </p>
-              <span class="arrow-iconAdditional" >
-                <i class="fas fa-chevron-down" id="collapsed-chevron1"></i>
-            </span>
-            <!-- </p> -->
+            <div class="wrapper-form mb-30" id="wrapper-element-collapse2">
+              <div class="collapse-buyers  addSettings d-flex justify-content-between mb-2" data-toggle="collapse" data-target="#element-collapse2" aria-expanded="true" aria-controls="element-collapse2" id="wrapper-buyerss" onclick="$('#collapsed-chevron1').toggleClass('fa-rotate-180')">
+                  <p class="mr-6px lh-140">
+                      Thank you message to buyers
+                  </p>
+                  <span class="arrow-iconAdditional">
+                      <i class="fas fa-chevron-down" id="collapsed-chevron1"></i>
+                  </span>
+              </div>
+              <div class="wrapper-buyers collapse " id="element-collapse2" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse2">
+                  <textarea type="text" id="messagetobuyyers" class="form-control mt-9 messageInput" rows="1" style="height: 38px; overflow-y: hidden;"></textarea>
+                  <p class="f-size12 lh-140 font-weight-normal mt-1">The message will be read by buyers after making payment</p>
+              </div>
           </div>
-            <div class="wrapper-buyers collapse " id="element-collapse2" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse2">
-              <div id="editorContainerTY"></div>
-              <p class="f-size12 lh-140 font-weight-normal mt-1">The message will be read by buyers after making payment</p>
-          </div>
-          </div>
+          
+          
          
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse3">
-  <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#element-collapse3" aria-expanded="false" aria-controls="element-collapse3" onClick="$('#collapsed-chevron2').toggleClass('fa-rotate-180')">
+  <div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" data-toggle="collapse" data-target="#element-collapse3" aria-expanded="false" aria-controls="element-collapse3" onClick="$('#collapsed-chevron2').toggleClass('fa-rotate-180')">
   <!-- <p class="form-title "> -->
     
     <p class="mr-6px lh-140">
@@ -1738,7 +1737,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse4">
-  <div class="collapse-buyers d-flex justify-content-between mb-2 collapsed" data-toggle="collapse" data-target="#element-collapse4" aria-expanded="false" aria-controls="element-collapse4" onClick="$('#collapsed-chevron23').toggleClass('fa-rotate-180')">
+  <div class="collapse-buyers  addSettings d-flex justify-content-between mb-2 collapsed" data-toggle="collapse" data-target="#element-collapse4" aria-expanded="false" aria-controls="element-collapse4" onClick="$('#collapsed-chevron23').toggleClass('fa-rotate-180')">
   <!-- <p class="form-title "> -->
     
 
@@ -1760,7 +1759,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse5">
-  <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron3').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse5" aria-expanded="false" aria-controls="element-collapse5">
+  <div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron3').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse5" aria-expanded="false" aria-controls="element-collapse5">
   <!-- <p class="form-title "> -->
     
     <p class="mr-6px lh-140">
@@ -1808,7 +1807,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse6">
-  <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron4').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse6" aria-expanded="false" aria-controls="element-collapse6">
+  <div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron4').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse6" aria-expanded="false" aria-controls="element-collapse6">
   <!-- <p class="form-title "> -->
     
     
@@ -1830,7 +1829,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse7">
-<div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron5').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse7" aria-expanded="false" aria-controls="element-collapse7">
+<div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron5').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse7" aria-expanded="false" aria-controls="element-collapse7">
 <!-- <p class="form-title "> -->
 
   
@@ -1855,7 +1854,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse8">
-<div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron6').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse8" aria-expanded="false" aria-controls="element-collapse8">
+<div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron6').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse8" aria-expanded="false" aria-controls="element-collapse8">
 <!-- <p class="form-title "> -->
   
 
@@ -1925,7 +1924,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse9">
-<div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron7').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse9" aria-expanded="false" aria-controls="element-collapse9">
+<div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron7').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse9" aria-expanded="false" aria-controls="element-collapse9">
 <!-- <p class="form-title "> -->
   
   <p class="mr-6px lh-140">
@@ -2296,7 +2295,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse10">
-<div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron8').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse10" aria-expanded="false" aria-controls="element-collapse10">
+<div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron8').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse10" aria-expanded="false" aria-controls="element-collapse10">
 <!-- <p class="form-title "> -->
   
   
@@ -2310,12 +2309,12 @@
 </div>
 <div class="wrapper-buyers collapse " id="element-collapse10" aria-labelledby="element-buyers" data-parent="#wrapper-element-collapse10">
  <p class="font-weight-normal f-size14">https://sociabuzz.com/username/p/</p> 
-  <textarea type="text" id="titleCustomize" rows="1" class="form-control mt-9 messageInput" maxlength="200" ></textarea>
+  <textarea type="text" id="titleCustomize" rows="1" class="form-control mt-9 messageInput" ></textarea>
   <p class="error-textarea">Cannot be empty</p>
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse11">
-<div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron20').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse11" aria-expanded="false" aria-controls="element-collapse11">
+<div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron20').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse11" aria-expanded="false" aria-controls="element-collapse11">
 <!-- <p class="form-title "> -->
   <p class="mr-6px lh-140">
     Customize the buy button text
@@ -2334,7 +2333,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse12">
-  <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron9').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse12" aria-expanded="false" aria-controls="element-collapse12">
+  <div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron9').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse12" aria-expanded="false" aria-controls="element-collapse12">
   <!-- <p class="form-title "> -->
     <p class="mr-6px lh-140">
       Set as unlisted from your SHOP page
@@ -2380,7 +2379,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse13">
-  <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron10').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse13" aria-expanded="false" aria-controls="element-collapse13">
+  <div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron10').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse13" aria-expanded="false" aria-controls="element-collapse13">
   <!-- <p class="form-title "> -->
     
     <p class="mr-6px lh-140">
@@ -2430,7 +2429,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse14">
-  <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron11').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse14" aria-expanded="false" aria-controls="element-collapse14">
+  <div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron11').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse14" aria-expanded="false" aria-controls="element-collapse14">
   <!-- <p class="form-title "> -->
     
     
@@ -2484,7 +2483,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse15">
-  <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron12').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse15" aria-expanded="false" aria-controls="element-collapse15" id="collapses15">
+  <div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron12').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse15" aria-expanded="false" aria-controls="element-collapse15" id="collapses15">
   <!-- <p class="form-title "> -->
     
     
@@ -2519,7 +2518,7 @@
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse16">
-  <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron13').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse16" aria-expanded="false" aria-controls="element-collapse16">
+  <div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron13').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse16" aria-expanded="false" aria-controls="element-collapse16">
   <!-- <p class="form-title "> -->
     
     
@@ -2543,12 +2542,12 @@
     On
     </span>
   </div>
-  <textarea type="text" id="titleCustomize" rows="1" class="form-control mt-9 messageInput mt-2" maxlength="200"></textarea>
+  <textarea type="text" id="titleCustomizeLink" rows="1" class="form-control mt-9 messageInput mt-2" maxlength="200"></textarea>
   <p class="error-textarea">Cannot be empty</p>
 </div>
 </div>
 <div class="wrapper-form mb-30 " id="wrapper-element-collapse17">
-  <div class="collapse-buyers  mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron14').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse17" aria-expanded="false" aria-controls="element-collapse17">
+  <div class="collapse-buyers  addSettings mb-2 collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron14').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse17" aria-expanded="false" aria-controls="element-collapse17">
   <!-- <p class="form-title "> -->
     
     
@@ -2595,7 +2594,7 @@
 </div>
 </div>
 <div class="wrapper-form  " id="wrapper-element-collapse18">
-  <div class="collapse-buyers   collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron22').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse18" aria-expanded="false" aria-controls="element-collapse18">
+  <div class="collapse-buyers  addSettings  collapsed d-flex justify-content-between" onClick="$('#collapsed-chevron22').toggleClass('fa-rotate-180')" data-toggle="collapse" data-target="#element-collapse18" aria-expanded="false" aria-controls="element-collapse18">
   <!-- <p class="form-title "> -->
     
     

@@ -29,6 +29,7 @@ containerAccordion.addEventListener("click", function (e) {
     }
 
     // text area
+
     $("textarea")
       .each(function () {
         this.setAttribute(
@@ -959,17 +960,6 @@ $("#editorContainerBuyers").trumbowyg({
 //   },
 // });
 
-$("#editorContainerTY").trumbowyg({
-  btns: [
-    ["bold", "italic", "underline"],
-    ["unorderedList", "orderedList"],
-    ["link"],
-  ],
-  minimalLinks: true, // Menyembunyikan opsi 'Target' dan 'Title'
-  resetCss: true,
-  autogrowOnEnter: true,
-  autogrow: true,
-});
 $("#editorContainer199").trumbowyg({
   btns: [
     ["bold", "italic", "underline"],
@@ -1430,6 +1420,47 @@ function addOption2() {
 }
 addOption2();
 
+// function cekRadioButton(option) {
+//   // Menyembunyikan semua elemen wrapper-form terlebih dahulu
+//   var wrappers = document.querySelectorAll(".wrappper-event");
+//   wrappers.forEach(function (wrapper) {
+//     wrapper.style.display = "none";
+//   });
+
+//   // Menampilkan elemen wrapper-form yang sesuai dengan radio button yang dicentang
+//   var wrapperToShow = document.getElementById("wrapperForm" + option);
+//   wrapperToShow.style.display = "block";
+//   if (option === 1) {
+//     $("#wrapperOnePrice").addClass("d-block");
+//     $("#wrapperMultiplePrice").removeClass("d-block");
+//   } else if (option === 2 || 3) {
+//     $("#wrapperOnePrice").removeClass("d-block");
+//     $("#wrapperMultiplePrice").addClass("d-block");
+//     $("textarea")
+//       .each(function () {
+//         this.setAttribute(
+//           "style",
+//           "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+//         );
+//         if (this.id === `titleMultiplePrice`) {
+//           $(`#counttitleMultiplePrice`).text(
+//             this.value.length + " " + " / 200"
+//           );
+//         }
+//       })
+//       .on("input", function () {
+//         this.style.height = "auto";
+//         this.style.height = this.scrollHeight + "px";
+//         var result = 0;
+//         if (this.id === `titleMultiplePrice`) {
+//           $(`#counttitleMultiplePrice`).text(
+//             this.value.length + " " + " / 200"
+//           );
+//         }
+//       });
+//   }
+//   //  else if( optio)
+// }
 function cekRadioButton(option) {
   // Menyembunyikan semua elemen wrapper-form terlebih dahulu
   var wrappers = document.querySelectorAll(".wrappper-event");
@@ -1440,36 +1471,31 @@ function cekRadioButton(option) {
   // Menampilkan elemen wrapper-form yang sesuai dengan radio button yang dicentang
   var wrapperToShow = document.getElementById("wrapperForm" + option);
   wrapperToShow.style.display = "block";
-  if (option === 1) {
-    $("#wrapperOnePrice").addClass("d-block");
-    $("#wrapperMultiplePrice").removeClass("d-block");
-  } else if (option === 2 || 3) {
-    $("#wrapperOnePrice").removeClass("d-block");
-    $("#wrapperMultiplePrice").addClass("d-block");
-    $("textarea")
-      .each(function () {
-        this.setAttribute(
-          "style",
-          "height:" + this.scrollHeight + "px;overflow-y:hidden;"
-        );
-        if (this.id === `titleMultiplePrice`) {
-          $(`#counttitleMultiplePrice`).text(
-            this.value.length + " " + " / 200"
-          );
-        }
-      })
-      .on("input", function () {
-        this.style.height = "auto";
-        this.style.height = this.scrollHeight + "px";
-        var result = 0;
-        if (this.id === `titleMultiplePrice`) {
-          $(`#counttitleMultiplePrice`).text(
-            this.value.length + " " + " / 200"
-          );
-        }
-      });
-  }
-  //  else if( optio)
+  $("textarea")
+    .each(function () {
+      this.setAttribute(
+        "style",
+        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+      );
+      if (this.id === `titleMultiplePrice`) {
+        $(`#counttitleMultiplePrice`).text(this.value.length + " " + " / 200");
+      }
+    })
+    .on("input", function () {
+      this.style.height = "auto";
+      this.style.height = this.scrollHeight + "px";
+      var result = 0;
+      if (this.id === `titleMultiplePrice`) {
+        $(`#counttitleMultiplePrice`).text(this.value.length + " " + " / 200");
+      }
+    });
+  // Scroll ke atas body (top) dengan animasi dan mengatur posisi agar radio button berada 70px dari atas halaman
+  $("html, body").animate(
+    {
+      scrollTop: $("#wrapperForm" + option).offset().top - 100,
+    },
+    500
+  );
 }
 
 function addLink() {
@@ -3601,3 +3627,72 @@ addDiscount();
 //     },
 //   });
 // }
+// Fungsi untuk menyesuaikan tinggi textarea saat elemen collapse ditampilkan atau disembunyikan
+function adjustTextareaHeight() {
+  var textarea = document.getElementById("messagetobuyyers");
+  textarea.style.height = "auto"; // Atur kembali tinggi textarea menjadi auto
+  textarea.style.height = textarea.scrollHeight + "px"; // Atur tinggi textarea berdasarkan scrollHeight yang didapat
+}
+
+// Panggil fungsi adjustTextareaHeight() saat halaman dimuat
+$(document).ready(function () {
+  adjustTextareaHeight();
+});
+
+// Panggil fungsi adjustTextareaHeight() saat elemen collapse ditampilkan atau disembunyikan dan putar ikon panah
+$("#element-collapse2").on("hidden.bs.collapse shown.bs.collapse", function () {
+  adjustTextareaHeight();
+});
+
+function adjustTextareaHeightTitle() {
+  var textarea = document.getElementById("titleCustomize");
+  textarea.style.height = "auto"; // Atur kembali tinggi textarea menjadi auto
+  textarea.style.height = textarea.scrollHeight + "px"; // Atur tinggi textarea berdasarkan scrollHeight yang didapat
+}
+
+// Panggil fungsi adjustTextareaHeight() saat halaman dimuat
+$(document).ready(function () {
+  adjustTextareaHeightTitle();
+});
+
+// Panggil fungsi adjustTextareaHeight() saat elemen collapse ditampilkan atau disembunyikan dan putar ikon panah
+$("#element-collapse10").on(
+  "hidden.bs.collapse shown.bs.collapse",
+  function () {
+    adjustTextareaHeightTitle();
+  }
+);
+
+function adjustTextareaHeightLink() {
+  var textarea = document.getElementById("titleCustomizeLink");
+  textarea.style.height = "auto"; // Atur kembali tinggi textarea menjadi auto
+  textarea.style.height = textarea.scrollHeight + "px"; // Atur tinggi textarea berdasarkan scrollHeight yang didapat
+}
+
+// Panggil fungsi adjustTextareaHeight() saat halaman dimuat
+$(document).ready(function () {
+  adjustTextareaHeightLink();
+});
+
+// Panggil fungsi adjustTextareaHeight() saat elemen collapse ditampilkan atau disembunyikan dan putar ikon panah
+$("#element-collapse16").on(
+  "hidden.bs.collapse shown.bs.collapse",
+  function () {
+    adjustTextareaHeightLink();
+  }
+);
+
+// Event listener untuk menangani klik pada elemen collapse
+$(".addSettings").on("click", function () {
+  var target = $(this).data("target"); // Ambil target collapse dari atribut data-target
+  var $target = $(target);
+
+  // Tutup semua elemen collapse kecuali yang diklik
+  $(".addSettings")
+    .not(this)
+    .each(function () {
+      var otherTarget = $(this).data("target");
+      var $otherTarget = $(otherTarget);
+      $otherTarget.collapse("hide");
+    });
+});
