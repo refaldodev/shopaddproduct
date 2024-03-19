@@ -1420,47 +1420,6 @@ function addOption2() {
 }
 addOption2();
 
-// function cekRadioButton(option) {
-//   // Menyembunyikan semua elemen wrapper-form terlebih dahulu
-//   var wrappers = document.querySelectorAll(".wrappper-event");
-//   wrappers.forEach(function (wrapper) {
-//     wrapper.style.display = "none";
-//   });
-
-//   // Menampilkan elemen wrapper-form yang sesuai dengan radio button yang dicentang
-//   var wrapperToShow = document.getElementById("wrapperForm" + option);
-//   wrapperToShow.style.display = "block";
-//   if (option === 1) {
-//     $("#wrapperOnePrice").addClass("d-block");
-//     $("#wrapperMultiplePrice").removeClass("d-block");
-//   } else if (option === 2 || 3) {
-//     $("#wrapperOnePrice").removeClass("d-block");
-//     $("#wrapperMultiplePrice").addClass("d-block");
-//     $("textarea")
-//       .each(function () {
-//         this.setAttribute(
-//           "style",
-//           "height:" + this.scrollHeight + "px;overflow-y:hidden;"
-//         );
-//         if (this.id === `titleMultiplePrice`) {
-//           $(`#counttitleMultiplePrice`).text(
-//             this.value.length + " " + " / 200"
-//           );
-//         }
-//       })
-//       .on("input", function () {
-//         this.style.height = "auto";
-//         this.style.height = this.scrollHeight + "px";
-//         var result = 0;
-//         if (this.id === `titleMultiplePrice`) {
-//           $(`#counttitleMultiplePrice`).text(
-//             this.value.length + " " + " / 200"
-//           );
-//         }
-//       });
-//   }
-//   //  else if( optio)
-// }
 function cekRadioButton(option) {
   // Menyembunyikan semua elemen wrapper-form terlebih dahulu
   var wrappers = document.querySelectorAll(".wrappper-event");
@@ -1471,24 +1430,79 @@ function cekRadioButton(option) {
   // Menampilkan elemen wrapper-form yang sesuai dengan radio button yang dicentang
   var wrapperToShow = document.getElementById("wrapperForm" + option);
   wrapperToShow.style.display = "block";
-  $("textarea")
-    .each(function () {
-      this.setAttribute(
-        "style",
-        "height:" + this.scrollHeight + "px;overflow-y:hidden;"
-      );
-      if (this.id === `titleMultiplePrice`) {
-        $(`#counttitleMultiplePrice`).text(this.value.length + " " + " / 200");
-      }
-    })
-    .on("input", function () {
-      this.style.height = "auto";
-      this.style.height = this.scrollHeight + "px";
-      var result = 0;
-      if (this.id === `titleMultiplePrice`) {
-        $(`#counttitleMultiplePrice`).text(this.value.length + " " + " / 200");
-      }
-    });
+  if (option === 1) {
+    $("#wrapperOnePrice").addClass("d-block");
+    $("#wrapperMultiplePrice").removeClass("d-block");
+  } else if (option === 2 || 3) {
+    $("#wrapperOnePrice").removeClass("d-block");
+    $("#wrapperMultiplePrice").addClass("d-block");
+    $("textarea")
+      .each(function () {
+        this.setAttribute(
+          "style",
+          "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+        );
+        if (this.id === `titleMultiplePrice`) {
+          $(`#counttitleMultiplePrice`).text(
+            this.value.length + " " + " / 200"
+          );
+        }
+      })
+      .on("input", function () {
+        this.style.height = "auto";
+        this.style.height = this.scrollHeight + "px";
+        var result = 0;
+        if (this.id === `titleMultiplePrice`) {
+          $(`#counttitleMultiplePrice`).text(
+            this.value.length + " " + " / 200"
+          );
+        }
+      });
+  }
+  //  else if( optio)
+}
+
+function cekRadioButton(option) {
+  // Menyembunyikan semua elemen wrapper-form terlebih dahulu
+  var wrappers = document.querySelectorAll(".wrappper-event");
+  wrappers.forEach(function (wrapper) {
+    wrapper.style.display = "none";
+  });
+
+  // Menampilkan elemen wrapper-form yang sesuai dengan radio button yang dicentang
+  var wrapperToShow = document.getElementById("wrapperForm" + option);
+  wrapperToShow.style.display = "block";
+  // Menampilkan elemen wrapper-form yang sesuai dengan radio button yang dicentang
+
+  if (option === 1) {
+    $("#wrapperOnePrice").addClass("d-block");
+    $("#wrapperMultiplePrice").removeClass("d-block");
+  } else if (option === 2 || 3) {
+    $("#wrapperOnePrice").removeClass("d-block");
+    $("#wrapperMultiplePrice").addClass("d-block");
+    $("textarea")
+      .each(function () {
+        this.setAttribute(
+          "style",
+          "height:" + this.scrollHeight + "px;overflow-y:hidden;"
+        );
+        if (this.id === `titleMultiplePrice`) {
+          $(`#counttitleMultiplePrice`).text(
+            this.value.length + " " + " / 200"
+          );
+        }
+      })
+      .on("input", function () {
+        this.style.height = "auto";
+        this.style.height = this.scrollHeight + "px";
+        var result = 0;
+        if (this.id === `titleMultiplePrice`) {
+          $(`#counttitleMultiplePrice`).text(
+            this.value.length + " " + " / 200"
+          );
+        }
+      });
+  }
   // Scroll ke atas body (top) dengan animasi dan mengatur posisi agar radio button berada 70px dari atas halaman
   $("html, body").animate(
     {
