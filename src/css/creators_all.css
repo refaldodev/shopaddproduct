@@ -136,7 +136,10 @@ h6 {
   margin-bottom: 10px;
 }
 .mb-20 {
-  margin-bottom: 20px;
+  margin-bottom: 20px !important;
+}
+.pb-22 {
+  padding-bottom: 22px !important;
 }
 .mb-25 {
   margin-bottom: 25px;
